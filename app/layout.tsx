@@ -1,7 +1,7 @@
 import './globals.css'
-import Script from "next/script";
 import { GoogleTagManager, GoogleAnalytics  } from '@next/third-parties/google';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-HNTYGBLFK3";
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 
 export const metadata = {
   title: 'ReferralVerse — Best Referral Offers & Coupons',
@@ -51,8 +51,8 @@ export default function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <GoogleAnalytics gaId="G-HNTYGBLFK3" />
-         <GoogleTagManager gtmId="GTM-MW2XFXF7" />
+        <GoogleAnalytics gaId={GA_ID} />
+         <GoogleTagManager gtmId={GTM_ID} />
         {children}
       </body>
     </html>

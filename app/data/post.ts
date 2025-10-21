@@ -57,7 +57,7 @@ export const posts: Post[] = [
   },
   {
     slug: 'cultfit-referral-code',
-    title: 'cultfit referral code',
+    title: 'Cultfit Referral code',
     category: Category.Health,
     summary: 'Sharing a Cult Fit referral code is a smart way to unlock exclusive discounts while promoting a healthier lifestyle. When a friend signs up using your code, both of you benefit—whether it’s discounted memberships, free sessions, or access to premium fitness content. It’s a win-win that turns your fitness journey into a shared, rewarding experience.',
     brand: {

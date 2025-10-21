@@ -7,6 +7,34 @@ import PostActions from '../../components/PostActions';
 
 type Props = { params: { slug: string } };
 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = posts.find((p) => p.slug === params.slug);
+  if (!post) {
+    return {
+      title: 'Offer not found — ReferralVerse',
+      description: 'Offer not found'
+    };
+  }
+
+  return {
+    title: `${post.title}`,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      url: `https://referralverse.in/${post.slug}`,
+      images: [
+        {
+          url: post.brand.logoUrl,
+          width: 1200,
+          height: 630,
+          alt: post.brand.name
+        }
+      ]
+    }
+  };
+}
+
 export default function PostPage({ params }: Props) {
   const post: Post | undefined = posts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
