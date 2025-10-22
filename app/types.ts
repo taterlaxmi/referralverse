@@ -22,10 +22,15 @@ export interface Post {
   referralBonus: string;
   validity: string;
   steps: string[];
+  // stepsToRefer: string[];
   ctaText: string;
   offer: {
     price: number;
     currency: string;
   };
+  // ...existing fields...
+  howToRefer?: string[]; // Array of steps for referring
+  termsAndConitions?: string[];      // Array of terms and conditions
+  similarApps?: { name: string; link: string }[];
   postedOn: string;
 }

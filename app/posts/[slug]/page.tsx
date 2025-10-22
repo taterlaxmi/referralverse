@@ -10,7 +10,6 @@ type Props = { params: { slug: string } };
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const post = posts.find(p => p.slug === slug);
-  //const post = posts.find((p) => p.slug === params.slug);
   if (!post) {
     return {
       title: 'Offer not found — ReferralVerse',
@@ -40,7 +39,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function PostPage({ params }: Props) {
   const { slug } = await params;
   const post = posts.find(p => p.slug === slug);
-  //const post: Post | undefined = posts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
   const howToJson = {
@@ -195,19 +193,131 @@ export default async function PostPage({ params }: Props) {
         {/* Insert the client-side actions (copy + CTA) */}
         <PostActions post={post} />
 
-        <section className="mb-6">
-          <h3 className="text-2xl font-semibold text-gray-800 mb-4">How to Claim</h3>
-          <ol className="list-decimal list-inside space-y-3">
-            {post.steps.map((s, i) => (
-              <li key={i} className="text-gray-700 flex items-start gap-3">
-                <svg className="h-5 w-5 text-green-500 flex-shrink-0 mt-1" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                </svg>
-                <span>{s}</span>
-              </li>
-            ))}
-          </ol>
-        </section>
+        {/* How to Claim */}
+        {post.steps?.length > 0 && (
+          <section className="my-16">
+            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3">
+              <svg
+                className="w-7 h-7 text-indigo-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+              How to Claim
+            </h2>
+
+            <ol className="relative border-l border-indigo-200 ml-4 space-y-6">
+              {post.steps.map((step, index) => (
+                <li key={index} className="pl-8 relative group">
+                  {/* Step bullet number */}
+                  <div className="absolute -left-4 top-1.5 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-semibold shadow-md transition-transform group-hover:scale-110">
+                    {index + 1}
+                  </div>
+
+                  <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4 hover:border-indigo-300 hover:shadow-lg transition-all duration-300">
+                    <p className="text-gray-800 leading-relaxed">{step}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+
+
+        {/* How to Refer */}
+        {Array.isArray(post.howToRefer) && post.howToRefer?.length > 0 && (
+          <section className="my-12">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+              <svg
+                className="w-6 h-6 text-indigo-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13 16h-1v-4h-1m0-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+              How to refer {post.brand?.name} app?
+            </h2>
+
+            <ol className="space-y-4">
+              {post.howToRefer.map((step, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 border border-indigo-100 hover:border-indigo-300 transition"
+                >
+                  <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-semibold shadow-sm">
+                    {idx + 1}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{step}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
+
+        {/* Terms and Conditions */}
+        {Array.isArray(post.termsAndConitions) && post.termsAndConitions.length > 0 && (
+          <section className="my-12">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+              <svg
+                className="w-6 h-6 text-indigo-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8v8m0 0H8m4 0h4M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6"
+                />
+              </svg>
+              Terms & Conditions
+            </h2>
+
+            <ul className="space-y-3">
+              {post.termsAndConitions.map((terms, idx) => (
+                <li
+                  key={idx}
+                  className="relative pl-6 text-gray-700 leading-relaxed before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-indigo-400 before:rounded-full"
+                >
+                  {terms}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Show similar apps if available */}
+        {post.similarApps && post.similarApps.length > 0 && (
+          <section className="my-12">
+            <h2 className="text-xl font-bold mb-6 text-gray-800">Similar Apps</h2>
+            <div className="flex flex-wrap gap-4">
+              {post.similarApps.map((app, i) => (
+                <Link
+                  key={i}
+                  href={app.link}
+                  className="px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md hover:scale-105 transition-transform"
+                >
+                  {app.name}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </article>
     </>
   );

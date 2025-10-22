@@ -18,7 +18,7 @@ export default function Home() {
   const filteredPosts = useMemo(() => {
     return posts.filter(post => {
       const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-      const matchesSearch = searchTerm === '' || 
+      const matchesSearch = searchTerm === '' ||
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.referralCode.toLowerCase().includes(searchTerm.toLowerCase());
@@ -28,7 +28,7 @@ export default function Home() {
 
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   // Calculate the posts to display based on the current page
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
   const currentPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
@@ -57,19 +57,19 @@ export default function Home() {
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
         {/* Category Menu */}
-        <CategoryMenu 
-          categories={categories} 
-          selectedCategory={selectedCategory} 
-          setSelectedCategory={setSelectedCategory} 
+        <CategoryMenu
+          categories={categories}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {currentPosts.map((post: Post) => (
             <div key={post.slug} className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
-                <img 
-                  src={post.brand.logoUrl} 
-                  alt={post.brand.name} 
+                <img
+                  src={post.brand.logoUrl}
+                  alt={post.brand.name}
                   className="w-12 h-12 rounded-full mr-4"
                 />
                 <div>
@@ -77,7 +77,24 @@ export default function Home() {
                   <p className="text-sm text-gray-600">{post.brand.name}</p>
                 </div>
               </div>
-              <p className="text-gray-700 mb-4">{post.summary}</p>
+
+              {/* Post Summary */}
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                {post.summary.length > 70 ? (
+                  <>
+                    {post.summary.slice(0, 70)}…
+                    <a
+                      href={`/${post.slug}`}
+                      className="text-blue-600 font-medium hover:text-blue-700 hover:underline transition-colors duration-200 ml-1"
+                    >
+                      Read more
+                    </a>
+                  </>
+                ) : (
+                  post.summary
+                )}
+              </p>
+
               <div className="flex justify-between items-center">
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
                   {post.category}
@@ -86,7 +103,7 @@ export default function Home() {
                   {post.offer.currency}{post.offer.price}
                 </span>
               </div>
-              <a 
+              <a
                 href={`/${post.slug}`}
                 className="mt-4 block w-full text-center bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors"
               >
@@ -98,17 +115,17 @@ export default function Home() {
 
         {/* Pagination Controls */}
         <div className="flex justify-between mt-6">
-          <button 
-            onClick={handlePrevPage} 
-            disabled={currentPage === 1} 
+          <button
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
           >
             Previous
           </button>
           <span className="self-center">Page {currentPage} of {totalPages}</span>
-          <button 
-            onClick={handleNextPage} 
-            disabled={currentPage === totalPages} 
+          <button
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
           >
             Next
