@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://referralverse.in
+
+# Sitemaps
+Sitemap: https://referralverse.in/sitemap.xml
