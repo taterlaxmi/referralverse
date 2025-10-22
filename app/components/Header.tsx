@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from "next/image";
 
 const MenuIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -41,10 +42,23 @@ const Header: React.FC = () => {
       <a href="#content" className="sr-only focus:not-sr-only p-2">Skip to content</a>
 
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition-colors">
-          Referral<span className="text-indigo-600">Verse</span>
-        </Link>
-        
+     {/* Group logo and site name */}
+        <div className="flex items-center space-x-3">
+          <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+            <Image
+              src="/logo.png"
+              alt="Site logo"
+              fill
+              style={{ objectFit: "contain" }}
+              sizes="(max-width: 640px) 40px, 48px"
+              priority
+            />
+          </div>
+          <Link href="/" className="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition-colors">
+            Referral<span className="text-indigo-600">Verse</span>
+          </Link>
+        </div>
+
         {/* Desktop Navigation */}
         <nav role="navigation" aria-label="Primary" className="hidden md:flex items-center">
           <ul className="flex space-x-4">
@@ -59,9 +73,9 @@ const Header: React.FC = () => {
           onClick={handleNav}
           className='block md:hidden text-gray-800 cursor-pointer p-2'
         >
-          {navOpen ? <CloseIcon className="h-6 w-6"/> : <MenuIcon className="h-6 w-6" />}
+          {navOpen ? <CloseIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
         </button>
-        
+
         {/* Mobile Navigation Menu */}
         <div id="mobile-menu" className={navOpen ? 'fixed left-0 top-0 w-[65%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%] top-0 h-full w-[65%]'}>
           <div className="p-4">

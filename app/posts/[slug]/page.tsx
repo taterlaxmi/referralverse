@@ -8,7 +8,9 @@ import PostActions from '../../components/PostActions';
 type Props = { params: { slug: string } };
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = posts.find((p) => p.slug === params.slug);
+  const { slug } = await params;
+  const post = posts.find(p => p.slug === slug);
+  //const post = posts.find((p) => p.slug === params.slug);
   if (!post) {
     return {
       title: 'Offer not found — ReferralVerse',
@@ -35,8 +37,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function PostPage({ params }: Props) {
-  const post: Post | undefined = posts.find((p) => p.slug === params.slug);
+export default async function PostPage({ params }: Props) {
+  const { slug } = await params;
+  const post = posts.find(p => p.slug === slug);
+  //const post: Post | undefined = posts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
 
   const howToJson = {
