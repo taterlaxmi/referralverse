@@ -6,7 +6,7 @@ export const posts: Post[] = [
     brand:"Drinkprime",
     category: Category.Health,
     title: 'Signup with Drinkprime referral code to get ₹200 Joining Bonus',
-    summary: 'Get 7 days free trial and ₹200 off on your Drinkprime subscription with our exclusive referral code.Get 7 days free trial and ₹200 off on your Drinkprime subscription with our exclusive referral code.Get 7 days free trial and ₹200 off on your Drinkprime subscription with our exclusive referral code.Get 7 days free trial and ₹200 off on your Drinkprime subscription with our exclusive referral code.Get 7 days free trial and ₹200 off on your Drinkprime subscription with our exclusive referral code.',
+    summary: 'DrinkPrime App is a smart water purifier subscription service that lets you enjoy clean and healthy drinking water at home without any upfront cost of new filter. With our exclusive DrinkPrime referral code, you’ll get a 7-day free trial and an instant ₹200 discount on your first subscription. Drinkprime subscription plans start from as low as ₹349 per month for single users.',
     referralCode: 'QZ5TQZOJ',
     referralLink: 'http://drinkprime.in/lp46?referral_code=QZ5TQZOJ&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button',
     signupBonus: '₹200 Off',
@@ -21,7 +21,7 @@ export const posts: Post[] = [
     ctaText: 'Download Now',
     offer: {
       price: 200,
-      currency: 'INR'
+      currency: '₹'
     },
     howToRefer: [
       "Open the Drinkprime app and log in to your account.",
@@ -61,7 +61,7 @@ export const posts: Post[] = [
     ctaText: 'Get Livpure Subscription',
     offer: {
       price: 100,
-      currency: 'INR'
+      currency: '₹'
     },
   },
   {
@@ -84,7 +84,7 @@ export const posts: Post[] = [
     ctaText: 'Get Extra 15 days membership',
     offer: {
       price: 0,
-      currency: 'INR'
+      currency: '₹'
     },
   },
   {
@@ -107,6 +107,6 @@ export const posts: Post[] = [
     ctaText: 'Apply for TataNeu Credit Card',
     offer: {
       price: 500,
-      currency: 'INR'
+      currency: '₹'
     },
   }];
