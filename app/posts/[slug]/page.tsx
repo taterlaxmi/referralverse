@@ -140,67 +140,46 @@ export default async function PostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      <article id="content" className="container mx-auto px-4 py-8">
-        <Link href="/" className="text-sm text-indigo-600 mb-4 inline-block">
+      <article id="content" className="container mx-auto px-4 py-12">
+        {/* Back Link */}
+        <Link href="/" className="text-sm text-indigo-600 mb-6 inline-block hover:underline">
           ← Back to offers
         </Link>
 
-        <header className="mb-6">
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+        {/* Header */}
+        <header className="mb-8">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
             {post.title}
           </h1>
         </header>
 
-        <div className="mb-10 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-all duration-300 p-6">
-          <p className="text-gray-700 leading-relaxed text-lg">
-            {post.summary}
-          </p>
+        {/* Summary */}
+        <div className="mb-12 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
+          <p className="text-gray-700 leading-relaxed text-lg">{post.summary}</p>
         </div>
 
-
+        {/* Post Offer Details */}
         <PostOfferDetails post={post} />
 
-        {/* How to Claim */}
+        {/* How to Claim / Signup Steps */}
         {post.steps?.length > 0 && (
           <section className="my-20">
-            {/* Section Header */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
-              <svg
-                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
+            <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              How to sign up with {post.brand} referral code
+              How to sign up with  {post.brand} referral code?
             </h2>
 
-            {/* Steps List */}
-            <ol className="relative border-l border-indigo-100 ml-4 space-y-8">
+            <ol className="relative border-l border-indigo-100 ml-5 space-y-8">
               {post.steps.map((step, index) => (
-                <li
-                  key={index}
-                  className="pl-10 relative group transition-all duration-300 hover:translate-x-1"
-                >
-                  {/* Step bullet */}
+                <li key={index} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
                   <div className="absolute -left-5 top-1.5 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {index + 1}
                   </div>
-
-                  {/* Step Card */}
                   <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300">
-                    <p className="text-gray-800 leading-relaxed text-[1.05rem]">
-                      {step}
-                    </p>
+                    <p className="text-gray-800 leading-relaxed text-[1.05rem]">{step}</p>
                   </div>
-
-                  {/* Optional connector animation */}
                   {index < post.steps.length - 1 && (
                     <div className="absolute left-[-1px] top-10 h-full w-[2px] bg-gradient-to-b from-indigo-200 via-purple-100 to-transparent" />
                   )}
@@ -210,78 +189,47 @@ export default async function PostPage({ params }: Props) {
           </section>
         )}
 
-
-
         {/* How to Refer */}
-        {Array.isArray(post.howToRefer) && post.howToRefer.length > 0 && (
+        {(post.howToRefer ?? []).length > 0 && (
           <section className="my-20">
-            {/* Section Title */}
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
-              <svg
-                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13 16h-1v-4h-1m0-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
-                />
+            <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m0-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
               </svg>
-              How to refer{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500">
-                {post.brand}
-              </span>{" "}
-              app?
+              How to refer {post.brand} app
             </h2>
 
-            {/* Steps */}
-            <ol className="relative ml-3 space-y-6">
-              {post.howToRefer.map((step, idx) => (
-                <li
-                  key={idx}
-                  className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:shadow-md hover:border-indigo-200 transition-all duration-300"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+            <ol className="relative border-l border-gray-100 ml-5 space-y-6">
+              {post.howToRefer?.map((step, idx) => (
+                <li key={idx} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
+                  <div className="absolute -left-5 top-1.5 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {idx + 1}
                   </div>
-                  <p className="text-gray-800 leading-relaxed text-[1.05rem]">
-                    {step}
-                  </p>
+                  <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300">
+                    <p className="text-gray-800 leading-relaxed text-[1.05rem]">{step}</p>
+                  </div>
+                  {post.howToRefer && idx < post.howToRefer.length - 1 && (
+                    <div className="absolute left-[-1px] top-10 h-full w-[2px] bg-gradient-to-b from-indigo-200 via-purple-100 to-transparent" />
+                  )}
                 </li>
               ))}
             </ol>
           </section>
         )}
 
-        {/* Terms and Conditions */}
-        {Array.isArray(post.termsAndConitions) && post.termsAndConitions.length > 0 && (
+        {/* Terms & Conditions */}
+        {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (
           <section className="my-20">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
-              <svg
-                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 8v8m0 0H8m4 0h4M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6"
-                />
+            <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m0 0H8m4 0h4M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6" />
               </svg>
               Terms & Conditions
             </h2>
 
-            <ul className="space-y-5">
-              {post.termsAndConitions.map((term, idx) => (
-                <li
-                  key={idx}
-                  className="relative pl-7 text-gray-800 leading-relaxed before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-gradient-to-r before:from-indigo-500 before:to-purple-500"
-                >
+            <ul className="space-y-5 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+              {post.termsAndConditions.map((term, idx) => (
+                <li key={idx} className="relative pl-7 text-gray-800 leading-relaxed before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-gradient-to-r before:from-indigo-500 before:to-purple-500">
                   {term}
                 </li>
               ))}
@@ -289,24 +237,56 @@ export default async function PostPage({ params }: Props) {
           </section>
         )}
 
-        {/* Show similar apps if available */}
+
+
+        {/* Similar Apps */}
         {post.similarApps && post.similarApps.length > 0 && (
-          <section className="my-12">
-            <h2 className="text-xl font-bold mb-6 text-gray-800">Similar Apps</h2>
-            <div className="flex flex-wrap gap-4">
-              {post.similarApps.map((app, i) => (
+          <section className="my-24">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-10 text-gray-900 flex items-center gap-3 tracking-tight">
+              <svg
+                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6"
+                />
+              </svg>
+              Similar Apps
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {post.similarApps?.map((app, idx) => (
                 <Link
-                  key={i}
+                  key={idx}
                   href={app.link}
-                  className="px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md hover:scale-105 transition-transform"
+                  className="relative group bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-center gap-4 hover:shadow-md hover:border-indigo-200 transition-all duration-300"
                 >
-                  {app.name}
+                  {/* Step-like Number Circle */}
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold text-lg shadow-md group-hover:scale-110 transition-transform duration-300">
+                    {idx + 1}
+                  </div>
+
+                  {/* App Name */}
+                  <span className="text-gray-900 font-semibold text-lg group-hover:text-indigo-600 transition-colors duration-300">
+                    {app.name}
+                  </span>
                 </Link>
               ))}
             </div>
           </section>
         )}
+
+
+
+
+
       </article>
-    </>
-  );
+
+
+    </>);
 }

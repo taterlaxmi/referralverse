@@ -30,7 +30,7 @@ export const posts: Post[] = [
       "Share it with your friends and family.",
       "Earn rewards when they sign up using your code!"
     ],
-    termsAndConitions: [
+    termsAndConditions: [
       "Offer valid for new users only.",
       "Referral bonus will be credited after successful signup and first purchase.",
       "Drinkprime reserves the right to change or withdraw the offer at any time.",

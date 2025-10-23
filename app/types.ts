@@ -25,6 +25,6 @@ export interface Post {
     currency: string;
   };
   howToRefer?: string[]; 
-  termsAndConitions?: string[];  
+  termsAndConditions?: string[];  
   similarApps?: { name: string; link: string }[];
 }
