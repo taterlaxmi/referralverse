@@ -67,14 +67,8 @@ export default function Home() {
           {currentPosts.map((post: Post) => (
             <div key={post.slug} className="border rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
-                <img
-                  src={post.brand.logoUrl}
-                  alt={post.brand.name}
-                  className="w-12 h-12 rounded-full mr-4"
-                />
                 <div>
                   <h2 className="text-xl font-semibold">{post.title}</h2>
-                  <p className="text-sm text-gray-600">{post.brand.name}</p>
                 </div>
               </div>
 

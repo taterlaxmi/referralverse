@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import { posts } from '../../data/post';
-import { Post } from '../../types';
-import PostActions from '../../components/PostActions';
+import PostOfferDetails from '../../components/PostOfferDetails';
 
 type Props = { params: { slug: string } };
 
@@ -24,14 +22,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: post.title,
       description: post.summary,
       url: `https://referralverse.in/${post.slug}`,
-      images: [
-        {
-          url: post.brand.logoUrl,
-          width: 1200,
-          height: 630,
-          alt: post.brand.name
-        }
-      ]
     }
   };
 }
@@ -44,7 +34,7 @@ export default async function PostPage({ params }: Props) {
   const howToJson = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": `How to claim ${post.title}`,
+    "name": `How to signup with ${post.brand} referral code`,
     "description": post.summary,
     "step": post.steps.map((s, i) => ({
       "@type": "HowToStep",
@@ -155,50 +145,28 @@ export default async function PostPage({ params }: Props) {
           ← Back to offers
         </Link>
 
-        <nav aria-label="Breadcrumb" className="mb-4">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-gray-500 hover:text-indigo-600">Home</Link>
-            </li>
-            <li>
-              <span className="text-gray-400">/</span>
-            </li>
-            <li>
-              <span className="text-gray-500">Offers</span>
-            </li>
-            <li>
-              <span className="text-gray-400">/</span>
-            </li>
-            <li aria-current="page" className="font-medium text-gray-700 truncate">
-              {post.title}
-            </li>
-          </ol>
-        </nav>
-
-        <header className="flex items-center gap-4 mb-6">
-          <Image src={post.brand.logoUrl} alt={post.brand.name} width={64} height={64} className="rounded-full" />
-          <div>
-            <h1 className="text-2xl font-bold">{post.title}</h1>
-            <p className="text-sm text-gray-600">{post.brand.name} • {post.postedOn}</p>
-          </div>
+        <header className="mb-6">
+          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-gray-900">
+            {post.title}
+          </h1>
         </header>
 
-        <p className="mb-6 text-gray-700">{post.summary}</p>
+        <div className="mb-10 rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-all duration-300 p-6">
+          <p className="text-gray-700 leading-relaxed text-lg">
+            {post.summary}
+          </p>
+        </div>
 
-        <section className="mb-6">
-          <h2 className="font-semibold mb-2">Offer</h2>
-          <p>{post.offer.currency}{post.offer.price} — {post.ctaText}</p>
-        </section>
 
-        {/* Insert the client-side actions (copy + CTA) */}
-        <PostActions post={post} />
+        <PostOfferDetails post={post} />
 
         {/* How to Claim */}
         {post.steps?.length > 0 && (
-          <section className="my-16">
-            <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3">
+          <section className="my-20">
+            {/* Section Header */}
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
               <svg
-                className="w-7 h-7 text-indigo-500"
+                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -210,20 +178,32 @@ export default async function PostPage({ params }: Props) {
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              How to Claim
+              How to sign up with {post.brand} referral code
             </h2>
 
-            <ol className="relative border-l border-indigo-200 ml-4 space-y-6">
+            {/* Steps List */}
+            <ol className="relative border-l border-indigo-100 ml-4 space-y-8">
               {post.steps.map((step, index) => (
-                <li key={index} className="pl-8 relative group">
-                  {/* Step bullet number */}
-                  <div className="absolute -left-4 top-1.5 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-semibold shadow-md transition-transform group-hover:scale-110">
+                <li
+                  key={index}
+                  className="pl-10 relative group transition-all duration-300 hover:translate-x-1"
+                >
+                  {/* Step bullet */}
+                  <div className="absolute -left-5 top-1.5 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {index + 1}
                   </div>
 
-                  <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-100 rounded-xl p-4 hover:border-indigo-300 hover:shadow-lg transition-all duration-300">
-                    <p className="text-gray-800 leading-relaxed">{step}</p>
+                  {/* Step Card */}
+                  <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300">
+                    <p className="text-gray-800 leading-relaxed text-[1.05rem]">
+                      {step}
+                    </p>
                   </div>
+
+                  {/* Optional connector animation */}
+                  {index < post.steps.length - 1 && (
+                    <div className="absolute left-[-1px] top-10 h-full w-[2px] bg-gradient-to-b from-indigo-200 via-purple-100 to-transparent" />
+                  )}
                 </li>
               ))}
             </ol>
@@ -233,11 +213,12 @@ export default async function PostPage({ params }: Props) {
 
 
         {/* How to Refer */}
-        {Array.isArray(post.howToRefer) && post.howToRefer?.length > 0 && (
-          <section className="my-12">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+        {Array.isArray(post.howToRefer) && post.howToRefer.length > 0 && (
+          <section className="my-20">
+            {/* Section Title */}
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
               <svg
-                className="w-6 h-6 text-indigo-500"
+                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -249,19 +230,26 @@ export default async function PostPage({ params }: Props) {
                   d="M13 16h-1v-4h-1m0-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z"
                 />
               </svg>
-              How to refer {post.brand?.name} app?
+              How to refer{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500">
+                {post.brand}
+              </span>{" "}
+              app?
             </h2>
 
-            <ol className="space-y-4">
+            {/* Steps */}
+            <ol className="relative ml-3 space-y-6">
               {post.howToRefer.map((step, idx) => (
                 <li
                   key={idx}
-                  className="flex items-start gap-3 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-4 border border-indigo-100 hover:border-indigo-300 transition"
+                  className="flex items-start gap-4 bg-white rounded-2xl border border-gray-100 shadow-sm p-5 hover:shadow-md hover:border-indigo-200 transition-all duration-300"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-indigo-600 text-white font-semibold shadow-sm">
+                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {idx + 1}
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{step}</p>
+                  <p className="text-gray-800 leading-relaxed text-[1.05rem]">
+                    {step}
+                  </p>
                 </li>
               ))}
             </ol>
@@ -270,10 +258,10 @@ export default async function PostPage({ params }: Props) {
 
         {/* Terms and Conditions */}
         {Array.isArray(post.termsAndConitions) && post.termsAndConitions.length > 0 && (
-          <section className="my-12">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
+          <section className="my-20">
+            <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900 flex items-center gap-3">
               <svg
-                className="w-6 h-6 text-indigo-500"
+                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -288,13 +276,13 @@ export default async function PostPage({ params }: Props) {
               Terms & Conditions
             </h2>
 
-            <ul className="space-y-3">
-              {post.termsAndConitions.map((terms, idx) => (
+            <ul className="space-y-5">
+              {post.termsAndConitions.map((term, idx) => (
                 <li
                   key={idx}
-                  className="relative pl-6 text-gray-700 leading-relaxed before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:bg-indigo-400 before:rounded-full"
+                  className="relative pl-7 text-gray-800 leading-relaxed before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-gradient-to-r before:from-indigo-500 before:to-purple-500"
                 >
-                  {terms}
+                  {term}
                 </li>
               ))}
             </ul>
