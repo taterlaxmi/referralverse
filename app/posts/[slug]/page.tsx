@@ -15,9 +15,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
   }
 
+  const canonicalUrl = `https://referralverse.in/${post.slug}`;
+
   return {
     title: `${post.title}`,
     description: post.summary,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: post.title,
       description: post.summary,
