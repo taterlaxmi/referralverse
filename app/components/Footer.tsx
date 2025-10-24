@@ -7,8 +7,7 @@ const Footer: React.FC = () => {
         <p>&copy; {new Date().getFullYear()} ReferralVerse. All rights reserved.</p>
         <p className="text-sm text-gray-400 mt-1">Your source for the best coupons and referral codes.</p>
         <div className="mt-4">
-          <a href="/about" className="text-gray-400 hover:text-white mx-2">About Us</a>
-          <a href="/contact" className="text-gray-400 hover:text-white mx-2">Contact</a>
+          <a href="/drinkprime-referral-code" className="text-gray-400 hover:text-white mx-2">DrinkPrime</a>
         </div>
       </div>
     </footer>

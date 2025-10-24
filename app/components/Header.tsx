@@ -29,10 +29,7 @@ const Header: React.FC = () => {
         <Link href="/" className="text-gray-300 md:text-gray-600 hover:text-indigo-400 md:hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</Link>
       </li>
       <li className="p-4 border-b border-gray-600 md:border-0 md:p-0">
-        <Link href="/about" className="text-gray-300 md:text-gray-600 hover:text-indigo-400 md:hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">About</Link>
-      </li>
-      <li className="p-4 md:border-0 md:p-0">
-        <Link href="/contact" className="text-gray-300 md:text-gray-600 hover:text-indigo-400 md:hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</Link>
+        <Link href="/drinkprime-referral-code" className="text-gray-300 md:text-gray-600 hover:text-indigo-400 md:hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Drinkprime</Link>
       </li>
     </>
   );

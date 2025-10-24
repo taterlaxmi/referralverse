@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   return {
     title: `${post.title}`,
-    description: post.summary,
+    description: post.metaDescription,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
       title: post.title,
-      description: post.summary,
+      description: post.metaDescription,
       url: `https://referralverse.in/${post.slug}`,
     }
   };
