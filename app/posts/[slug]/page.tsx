@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
+import Comments from '../../components/CommentsProps';
+
 
 type Props = { params: { slug: string } };
 
@@ -258,6 +260,8 @@ export default async function PostPage({ params }: Props) {
             </ul>
           </section>
         )}
+        
+        {/* <Comments post={post} /> */}
       </article>
     </>);
 }
