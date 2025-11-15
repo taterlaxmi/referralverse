@@ -9,8 +9,9 @@ export enum Category {
 
 export interface Post {
   slug: string;
-  brand:string;
+  brand: string;
   title: string;
+  referralImage?: string;
   category: Category;
   summary: string;
   metaDescription: string
@@ -25,7 +26,10 @@ export interface Post {
     price: number;
     currency: string;
   };
-  howToRefer?: string[]; 
-  termsAndConditions?: string[];  
-  similarApps?: { name: string; link: string }[];
+  howToRefer?: string[];
+  termsAndConditions?: string[];
+  OtherDetails?: {
+    name: string;
+    value: string | string[];
+  }[];
 }

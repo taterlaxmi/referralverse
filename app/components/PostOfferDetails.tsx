@@ -26,6 +26,8 @@ export default function PostOfferDetails({ post }: { post: Post }) {
         <span>Offer Details</span>
       </h3>
 
+
+
       {/* Table Container */}
       <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 shadow-sm hover:shadow-md transition-all duration-300">
         <table className="min-w-full divide-y divide-gray-100">

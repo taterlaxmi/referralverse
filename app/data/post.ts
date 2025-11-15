@@ -13,6 +13,7 @@ export const posts: Post[] = [
     signupBonus: '₹200 Off',
     referralBonus: '₹1000',
     validity: 'Valid until Dec 31, 2025',
+    referralImage: "/drinkprime.png",
     steps: [
       'Download the Drinkprime app from the Play Store or App Store.',
       'Enter your details to sign up for a new account.',
@@ -37,9 +38,19 @@ export const posts: Post[] = [
       "Drinkprime reserves the right to change or withdraw the offer at any time.",
       "Other terms may apply. Please check the Drinkprime app for details."
     ],
-    similarApps: [
-      { name: "Livpure Smart", link: "/livpure-smart-referral-code" },
-      { name: "CultFit", link: "/cultfit-referral-code" }
+    OtherDetails: [
+      {
+        name: "Livpure Smart vs DrinkPrime",
+        value: ["Drinkprime is better", "Drinkprime"]
+      },
+      {
+        name: "DrinkPrime Plan Details",
+        value: "Plan is good"
+      },
+      {
+        name: "DrinkPrime Reviews",
+        value: ["Reviews are good", "This is good"]
+      }
     ],
   },
   {
@@ -51,14 +62,15 @@ export const posts: Post[] = [
     metaDescription: "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
     referralCode: 'J0YEN7',
     referralLink: 'https://play.google.com/store/apps/details?id=com.livpure.safedrink',
-    signupBonus: '50% off first 3 months',
+    signupBonus: '7 day free trail + ₹100 off',
     referralBonus: '₹500 Amazon Voucher',
     validity: 'Limited time offer',
+    referralImage: "/livpure-smart.png",
     steps: [
       'Click on the "Claim Now" button to download Livpure Smart app.',
       'Now open the app and sign up for a new account',
       'Choose your plan and apply coupon J0YEN7.',
-      'Complete the payment and you will get  ₹100 off on your subscription.'
+      'Complete the payment and you will get ₹100 off on your subscription.'
     ],
     ctaText: 'Get Livpure Subscription',
     offer: {
@@ -70,25 +82,38 @@ export const posts: Post[] = [
     slug: 'cultfit-referral-code',
     brand: "CultFit",
     category: Category.Health,
-    title: 'Save on your Fitness Journey with CultFit Referral Code IUMEQHMT',
-    summary: 'Sharing a Cult Fit referral code is a smart way to unlock exclusive discounts while promoting a healthier lifestyle. When a friend signs up using your code, both of you benefit—whether it’s discounted memberships, free sessions, or access to premium fitness content. It’s a win-win that turns your fitness journey into a shared, rewarding experience.',
-    metaDescription: "Use CultFit referral code IUMEQHMT to get 15 extra days of membership. Stay fit, save more, and enjoy premium workouts with CultFit today.",
+    title: 'Save on Your Fitness Journey with CultFit Referral Code IUMEQHMT',
+    summary: 'Sharing a CultFit referral code is a smart way to unlock exclusive discounts while promoting a healthier lifestyle. When a friend signs up using your code, both of you benefit—whether it’s discounted memberships, free sessions, or access to premium fitness content. It’s a win-win that turns your fitness journey into a shared, rewarding experience.',
+    metaDescription: "Use CultFit referral code IUMEQHMT to get up to ₹1000 off on CultPass Lux membership. Stay fit, save more, and enjoy premium workouts with CultFit today.",
     referralCode: 'IUMEQHMT',
     referralLink: 'https://www.cult.fit/referral/invite?referralCode=IUMEQHMT',
-    signupBonus: 'Extra 15 days membership',
-    referralBonus: 'Extra 15 days membership',
+    signupBonus: 'Get up to ₹1000 off on CultPass Lux',
+    referralBonus: 'Get 30-day membership extension',
     validity: 'Ongoing Offer',
+    referralImage: "/cultfit.png",
     steps: [
-      'Visit the Cultfit app using our link.',
+      'Visit the Cult App using above link.',
       'Enter your mobile number and verify with OTP.',
-      'Choose your plan and apply coupon IUMEQHMT.',
-      'Complete the payment and you will get extra 15 days membership.'
+      'Choose your plan and complete payment.',
+      'You will get up to ₹1000 off on CultPass Lux, up to ₹750 off on CultPass Elite, or up to ₹500 off on CultPass Pro.'
     ],
-    ctaText: 'Get Extra 15 days membership',
+    ctaText: 'Get your CultPass',
     offer: {
-      price: 0,
+      price: 1000,
       currency: '₹'
     },
+    howToRefer: [
+      'Open the Cult App and go to Profile (top-left).',
+      "Click on 'Referral, Vouchers & Gift Cards' → 'Refer a friend'.",
+      'Copy your unique referral code or link.',
+      'Share it with your friends and family.'
+    ],
+    termsAndConditions: [
+      'Get up to ₹1000 off on CultPass Lux, up to ₹750 off on CultPass Elite, or up to ₹500 off on CultPass Pro.',
+      'Referral offer is valid only if your friend completes payment within 30 days of signup.',
+      "Referral offer is valid only if your friend's first CultPass purchase is worth ₹5,000 or more.",
+      'Referral benefits apply to the first 10 successful referrals.'
+    ]
   },
   {
     slug: 'tata-neu-credit-card-referral-code',

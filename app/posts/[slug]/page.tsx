@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
 
@@ -159,12 +160,28 @@ export default async function PostPage({ params }: Props) {
         </header>
 
         {/* Summary */}
-        <div className="mb-12 p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
-          <p className="text-gray-700 leading-relaxed text-lg">{post.summary}</p>
+        <div className="mb-12 p-6 bg-white rounded-2xl border border-gray-200 ring-1 ring-gray-300/40 shadow-sm hover:shadow-md transition-all duration-300">
+          <p className="text-gray-700 leading-relaxed text-lg">
+            {post.summary}
+          </p>
         </div>
 
         {/* Post Offer Details */}
         <PostOfferDetails post={post} />
+
+        {/* Post Offer Image */}
+        {post.referralImage && (
+          <div className="mb-6 flex justify-center">
+            <Image
+              src={post.referralImage}
+              alt={`${post.brand} referral code — ${post.title}. ${post.summary.slice(0, 70)}...`}
+              width={600}
+              height={400}
+              className="w-full max-w-md rounded-2xl shadow-md border border-gray-200 object-cover"
+              priority={false}
+            />
+          </div>
+        )}
 
         {/* How to Claim / Signup Steps */}
         {post.steps?.length > 0 && (
@@ -241,57 +258,6 @@ export default async function PostPage({ params }: Props) {
             </ul>
           </section>
         )}
-
-
-
-        {/* Similar Apps */}
-        {post.similarApps && post.similarApps.length > 0 && (
-          <section className="my-24">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-10 text-gray-900 flex items-center gap-3 tracking-tight">
-              <svg
-                className="w-8 h-8 text-indigo-500 drop-shadow-sm"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6"
-                />
-              </svg>
-              Similar Apps
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {post.similarApps?.map((app, idx) => (
-                <Link
-                  key={idx}
-                  href={app.link}
-                  className="relative group bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex items-center gap-4 hover:shadow-md hover:border-indigo-200 transition-all duration-300"
-                >
-                  {/* Step-like Number Circle */}
-                  <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold text-lg shadow-md group-hover:scale-110 transition-transform duration-300">
-                    {idx + 1}
-                  </div>
-
-                  {/* App Name */}
-                  <span className="text-gray-900 font-semibold text-lg group-hover:text-indigo-600 transition-colors duration-300">
-                    {app.name}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
-
-
-
-
-
       </article>
-
-
     </>);
 }
