@@ -141,13 +141,13 @@ export default function FAQSection({
 
   return (
     <section className="mt-12">
-    <div className="mb-6 flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <HelpCircle className="w-6 h-6 text-indigo-600" />
-        <h2 className="text-2xl font-semibold text-gray-900">{heading}</h2>
+      <div className="mb-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <HelpCircle className="w-6 h-6 text-indigo-600" />
+          <h2 className="text-2xl font-semibold text-gray-900">{heading}</h2>
+        </div>
+        <p className="text-sm text-gray-500">{subheading}</p>
       </div>
-      <p className="text-sm text-gray-500">{subheading}</p>
-    </div>
 
       <div className="space-y-4">
         {faq.map((item, idx) => (
