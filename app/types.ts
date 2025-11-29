@@ -28,8 +28,8 @@ export interface Post {
   };
   howToRefer?: string[];
   termsAndConditions?: string[];
-  OtherDetails?: {
-    name: string;
-    value: string | string[];
+  faq?: {
+    question: string;
+    answer: string | string[];
   }[];
 }

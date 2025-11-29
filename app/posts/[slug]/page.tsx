@@ -3,8 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
-import Comments from '../../components/CommentsProps';
-
+import FAQSection from '../../components/FAQSection';
 
 type Props = { params: { slug: string } };
 
@@ -96,7 +95,17 @@ export default async function PostPage({ params }: Props) {
           "@type": "Answer",
           "text": post.validity
         }
-      }
+      },
+      (Array.isArray(post.faq)
+        ? post.faq.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": Array.isArray(f.answer) ? f.answer.join(" ") : f.answer
+          }
+        }))
+        : [])
     ]
   };
 
@@ -260,8 +269,11 @@ export default async function PostPage({ params }: Props) {
             </ul>
           </section>
         )}
-        
-        {/* <Comments post={post} /> */}
+
+        {/* FAQ Section (Accordion variant) */}
+        {post.faq && post.faq.length > 0 && (
+          <FAQSection faq={post.faq} />
+        )}
       </article>
     </>);
 }

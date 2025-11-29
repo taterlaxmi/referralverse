@@ -38,21 +38,20 @@ export const posts: Post[] = [
       "Drinkprime reserves the right to change or withdraw the offer at any time.",
       "Other terms may apply. Please check the Drinkprime app for details."
     ],
-    OtherDetails: [
-      {
-        name: "Livpure Smart vs DrinkPrime",
-        value: ["Drinkprime is better", "Drinkprime"]
-      },
-      {
-        name: "DrinkPrime Plan Details",
-        value: "Plan is good"
-      },
-      {
-        name: "DrinkPrime Reviews",
-        value: ["Reviews are good", "This is good"]
-      }
-    ],
+faq: [
+  {
+    question: "How does Livpure Smart compare to DrinkPrime?",
+    answer: ["Drinkprime is better", "Drinkprime"]
   },
+  {
+    question: "What are the DrinkPrime plan details?",
+    answer: "Plan is good"
+  },
+  {
+    question: "What do users say about DrinkPrime?",
+    answer: ["Reviews are good", "This is good"]
+  }
+]  },
   {
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
