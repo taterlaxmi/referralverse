@@ -253,9 +253,9 @@ export default async function PostPage({ params }: Props) {
         {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (
           <section className="my-20">
             <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
-              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4" />
               </svg>
               Terms &amp; Conditions
             </h2>
