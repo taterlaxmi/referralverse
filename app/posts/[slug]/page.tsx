@@ -96,7 +96,7 @@ export default async function PostPage({ params }: Props) {
           "text": post.validity
         }
       },
-      (Array.isArray(post.faq)
+      ...(Array.isArray(post.faq)
         ? post.faq.map(f => ({
           "@type": "Question",
           "name": f.question,
@@ -198,16 +198,15 @@ export default async function PostPage({ params }: Props) {
         {post.steps?.length > 0 && (
           <section className="my-20">
             <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
-              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2       m8-10a4 4 0 100-8 4 4 0 000 8zm8 4h-3m0 0v-3m0 3v3" />
               </svg>
               How to sign up with  {post.brand} referral code?
             </h2>
-
-            <ol className="relative border-l border-indigo-100 ml-5 space-y-8">
+            <ol className="relative border-l border-indigo-100 ml-5 space-y-2">
               {post.steps.map((step, index) => (
                 <li key={index} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
-                  <div className="absolute -left-5 top-1.5 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+                  <div className="absolute -left-5 top-2 w-[34px] h-[34px] flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {index + 1}
                   </div>
                   <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300">
@@ -232,16 +231,16 @@ export default async function PostPage({ params }: Props) {
               How to refer {post.brand} app
             </h2>
 
-            <ol className="relative border-l border-gray-100 ml-5 space-y-6">
-              {post.howToRefer?.map((step, idx) => (
-                <li key={idx} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
-                  <div className="absolute -left-5 top-1.5 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
-                    {idx + 1}
+            <ol className="relative border-l border-indigo-100 ml-5 space-y-2">
+              {post.howToRefer?.map((step, index) => (
+                <li key={index} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
+                  <div className="absolute -left-5 top-2 w-[34px] h-[34px] flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+                    {index + 1}
                   </div>
                   <div className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-300">
                     <p className="text-gray-800 leading-relaxed text-[1.05rem]">{step}</p>
                   </div>
-                  {post.howToRefer && idx < post.howToRefer.length - 1 && (
+                  {post.howToRefer && index < post.howToRefer.length - 1 && (
                     <div className="absolute left-[-1px] top-10 h-full w-[2px] bg-gradient-to-b from-indigo-200 via-purple-100 to-transparent" />
                   )}
                 </li>
@@ -254,12 +253,12 @@ export default async function PostPage({ params }: Props) {
         {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (
           <section className="my-20">
             <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
-              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v8m0 0H8m4 0h4M4 6h16M4 6l1.5 14a2 2 0 002 1.8h9a2 2 0 002-1.8L20 6" />
+              <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4" />
               </svg>
-              Terms & Conditions
+              Terms &amp; Conditions
             </h2>
-
             <ul className="space-y-5 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
               {post.termsAndConditions.map((term, idx) => (
                 <li key={idx} className="relative pl-7 text-gray-800 leading-relaxed before:absolute before:left-0 before:top-2.5 before:w-2 before:h-2 before:rounded-full before:bg-gradient-to-r before:from-indigo-500 before:to-purple-500">
