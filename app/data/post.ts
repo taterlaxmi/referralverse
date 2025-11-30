@@ -38,20 +38,86 @@ export const posts: Post[] = [
       "Drinkprime reserves the right to change or withdraw the offer at any time.",
       "Other terms may apply. Please check the Drinkprime app for details."
     ],
-faq: [
-  {
-    question: "How does Livpure Smart compare to DrinkPrime?",
-    answer: ["Drinkprime is better", "Drinkprime"]
+    faq: [
+      {
+        "question": "What are the available DrinkPrime subscription plans?",
+        "answer": {
+          "headers": ["Plan Name", "Starting Price/Month", "Key Features"],
+          "rows": [
+            ["DrinkPrime UV", "₹299", "UV purification"],
+            ["DrinkPrime RO+", "₹349", "RO + UV purification"],
+            ["DrinkPrime Copper", "₹417", "Copper-enriched water"],
+            ["DrinkPrime Alkaline+", "₹429", "Alkaline water option"],
+            ["DrinkPrime Under-the-Sink", "₹629", "Compact purifier for kitchens"]
+          ]
+        }
+      },
+      {
+        "question": "Is DrinkPrime better than Livpure Smart?",
+        "answer": [
+          "DrinkPrime starts at ₹299/month, Livpure Smart starts at ₹429/month.",
+          "DrinkPrime offers free relocation, Livpure Smart usually charges ₹1,000."
+        ]
+      },
+      {
+        "question": "How does DrinkPrime compare to traditional water purifiers?",
+        "answer": {
+          "headers": ["Option", "Upfront Cost", "Annual Maintenance", "Yearly Total"],
+          "rows": [
+            ["Traditional RO Purifier", "₹10,000–₹20,000", "₹3,000–₹6,000", "₹13,000–₹26,000"],
+            ["DrinkPrime Subscription", "₹0 + ₹1,500 refundable deposit", "₹0", "₹7,548 (highest plan)"]
+          ]
+        }
+      },
+      {
+        question: "What is the minimum lock-in period for DrinkPrime?",
+        answer: "The minimum lock-in period is 3 months. If you cancel during this period, a ₹1,500 cancellation fee applies. After the lock-in, cancellation is free."
+      },
+      {
+        question: "Does DrinkPrime offer a free trial?",
+        answer: "Yes, DrinkPrime provides a 7-day free trial for new users. There are no cancellation charges during the trial period."
+      },
+      {
+        question: "Are there installation, maintenance, or relocation charges?",
+        answer: "Installation is free. DrinkPrime offers lifetime free maintenance and free relocation within their serviceable regions."
+      },
+      {
+        question: "What is the security deposit and when is it refunded?",
+        answer: "A refundable security deposit of ₹1,500 is collected during signup. It is refunded once you complete the minimum lock-in period and return the purifier in good working condition."
+      },
+      {
+        question: "Are there any hidden charges in DrinkPrime subscription?",
+        answer: "No. The subscription fee includes installation, purifier usage, maintenance, free filter changes, and relocation. Additional charges apply only if the device is damaged or not returned after cancellation."
+      },
+      {
+        question: "In which cities is DrinkPrime available?",
+        answer: [
+          "Bengaluru",
+          "Hyderabad",
+          "Delhi",
+          "Gurugram",
+          "Ghaziabad",
+          "Faridabad",
+          "Chennai",
+          "Mumbai",
+          "Noida"
+        ]
+      },
+      {
+        question: "Is DrinkPrime water safe to drink?",
+        answer: "Yes. DrinkPrime uses RO + UV + UF purification technology. Technicians replace filters whenever needed at no cost, ensuring consistently safe and high-quality drinking water."
+      },
+      {
+        question: "How do I cancel my DrinkPrime subscription?",
+        answer: "You can cancel directly through the DrinkPrime app or by contacting customer support. After the 3-month lock-in period, cancellation is free. During lock-in, a ₹1,500 charge applies."
+      },
+      {
+        question: "How often does DrinkPrime replace filters?",
+        answer: "Filters are replaced automatically based on your water usage. The purifier tracks usage data, and technicians replace filters as required at no extra cost."
+      }
+    ],
+    playStoreId: 'waterwala.com.prime',
   },
-  {
-    question: "What are the DrinkPrime plan details?",
-    answer: "Plan is good"
-  },
-  {
-    question: "What do users say about DrinkPrime?",
-    answer: ["Reviews are good", "This is good"]
-  }
-]  },
   {
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
@@ -76,6 +142,7 @@ faq: [
       price: 100,
       currency: '₹'
     },
+    playStoreId: 'com.livpure.safedrink',
   },
   {
     slug: 'cultfit-referral-code',

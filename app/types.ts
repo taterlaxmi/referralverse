@@ -30,6 +30,11 @@ export interface Post {
   termsAndConditions?: string[];
   faq?: {
     question: string;
-    answer: string | string[];
+    answer: string | 
+    string[] | {                     // table structure
+      headers: string[];  // column headers
+      rows: string[][];   // array of rows
+    };
   }[];
+  playStoreId?: string;
 }

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
 import FAQSection from '../../components/FAQSection';
+import {fetchAppInfo} from '../../../lib/reviews';
 
 type Props = { params: { slug: string } };
 
@@ -38,6 +39,10 @@ export default async function PostPage({ params }: Props) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return notFound();
 
+
+  // Fetch Play Store rating
+  // const playStoreInfo =  post.playStoreId ? await fetchAppInfo(post.playStoreId) : null; 
+  // console.log("Play Store Info:", playStoreInfo);
   const howToJson = {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -130,7 +135,11 @@ export default async function PostPage({ params }: Props) {
         "position": 3,
         "name": post.title
       }
-    ]
+    ],
+
+
+
+
   };
 
   return (

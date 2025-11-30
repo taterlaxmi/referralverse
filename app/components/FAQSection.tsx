@@ -2,7 +2,15 @@
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import { HelpCircle } from "lucide-react";
 
-type FAQ = { question: string; answer: string | string[] };
+type FAQ = {
+  question: string;
+  answer: string
+  | string[]
+  | {
+    headers: string[];  // column headers
+    rows: string[][];   // array of rows
+  }
+};
 
 type FAQSectionProps = {
   faq: FAQ[];
@@ -115,15 +123,63 @@ function FAQItem({
         aria-hidden={!open}
       >
         <div className="pt-3 pb-5">
-          {Array.isArray(item.answer) ? (
-            <ul className="mt-1 list-disc pl-5 text-gray-700 space-y-1">
-              {item.answer.map((ans, i) => (
-                <li key={i}>{ans}</li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-gray-700 leading-relaxed mt-1">{item.answer}</p>
-          )}
+          {(() => {
+            // 1️⃣ Case: answer is a string
+            if (typeof item.answer === "string") {
+              return (
+                <p className="text-gray-700 leading-relaxed mt-1">
+                  {item.answer}
+                </p>
+              );
+            }
+
+            // 2️⃣ Case: answer is an array of strings (bullets)
+            if (Array.isArray(item.answer)) {
+              return (
+                <ul className="mt-1 list-disc pl-5 text-gray-700 space-y-1">
+                  {item.answer.map((ans, i) => (
+                    <li key={i}>{ans}</li>
+                  ))}
+                </ul>
+              );
+            }
+
+            // 3️⃣ Case: answer is a table { headers, rows }
+            if ("headers" in item.answer && "rows" in item.answer) {
+              return (
+                <div className=" overflow-x-auto bg-white       border border-gray-100       rounded-2xl       shadow-sm       hover:shadow-md       transition-all duration-300">
+                  <table className="min-w-full text-gray-800">
+                    <thead className="bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-gray-200">
+                      <tr>
+                        {item.answer.headers.map((header, index) => (
+                          <th
+                            key={index}
+                            className="px-5 py-3 text-left font-semibold text-gray-900"                          >
+                            {header}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item.answer.rows.map((row, rowIndex) => (
+                        <tr
+                          key={rowIndex} className={`${rowIndex % 2 === 0 ? "bg-white" : "bg-indigo-50/20"}                 transition-all duration-300 `} >
+                          {row.map((col, colIndex) => (
+                            <td key={colIndex} className="px-5 py-3 border-b border-gray-100 text-[1.02rem]" >
+                              {col}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+
+            return null;
+          })()}
+
         </div>
       </div>
     </div>
