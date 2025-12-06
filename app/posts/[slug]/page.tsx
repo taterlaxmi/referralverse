@@ -8,6 +8,20 @@ import {fetchAppInfo} from '../../../lib/reviews';
 
 type Props = { params: { slug: string } };
 
+ // helper to normalize FAQ answers (string | string[] | table) into a single string for JSON-LD
+  function formatFaqAnswer(answer: any): string {
+    if (typeof answer === 'string') return answer;
+    if (Array.isArray(answer)) return answer.join(' ');
+    if (answer && typeof answer === 'object' && Array.isArray(answer.headers) && Array.isArray(answer.rows)) {
+      // Render table as plain-text: header row then each row joined with " | "
+      const headerLine = answer.headers.join(' | ');
+      const rowsText = answer.rows.map((r: string[]) => r.join(' | ')).join(' ; ');
+      return `${headerLine}\n${rowsText}`;
+    }
+    return '';
+  }
+
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const { slug } = await params;
   const post = posts.find(p => p.slug === slug);
@@ -101,13 +115,13 @@ export default async function PostPage({ params }: Props) {
           "text": post.validity
         }
       },
-      ...(Array.isArray(post.faq)
+     ...(Array.isArray(post.faq)
         ? post.faq.map(f => ({
           "@type": "Question",
           "name": f.question,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": Array.isArray(f.answer) ? f.answer.join(" ") : f.answer
+            "text": formatFaqAnswer(f.answer)
           }
         }))
         : [])

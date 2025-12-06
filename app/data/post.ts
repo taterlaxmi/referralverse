@@ -179,6 +179,26 @@ export const posts: Post[] = [
       'Referral offer is valid only if your friend completes payment within 30 days of signup.',
       "Referral offer is valid only if your friend's first CultPass purchase is worth ₹5,000 or more.",
       'Referral benefits apply to the first 10 successful referrals.'
+    ],
+    faq: [
+      {
+        question: "In which cities is Cultfit available?",
+        answer: [
+          "Bengaluru",
+          "Hyderabad",
+          "Delhi",
+          "Gurugram",
+          "Ghaziabad",
+          "Faridabad",
+          "Chennai",
+          "Mumbai",
+          "Noida"
+        ]
+      },
+      {
+        question: "How many people can i refer in Cultfit?",
+        answer: "You can refer max of 10 people."
+      }
     ]
   },
   {

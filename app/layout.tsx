@@ -1,5 +1,5 @@
 import './globals.css'
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import {  GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-HNTYGBLFK3";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 
@@ -28,7 +28,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'ReferralVerse',
     description: 'Find top referral offers and coupons',
-    creator: '@yourHandle'
+    creator: '@referralverse'
   }
 }
 
