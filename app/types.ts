@@ -28,12 +28,17 @@ export interface Post {
   };
   howToRefer?: string[];
   termsAndConditions?: string[];
-  benefits?: { 
+  benefits?: {
     title?: string;
     description?: string;
     emoji?: string;
     icon?: string; // optional URL for an icon image
   }[];
+  comparisonTable?: {
+    title: string;
+    columns: string[];
+    rows: string[][];
+  };
   faq?: {
     question: string;
     answer: string |

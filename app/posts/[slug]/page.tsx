@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
 import FAQSection from '../../components/FAQSection';
-import { fetchAppInfo } from '../../../lib/reviews';
+import ComparisonSection from "@/app/components/ComparisonSection";
 import BenefitsSection from "@/app/components/BenefitsSection";
 
 type Props = { params: { slug: string } };
@@ -276,6 +276,9 @@ export default async function PostPage({ params }: Props) {
 
         {/* Benefits (conditional component) */}
         <BenefitsSection benefits={post.benefits} brand={post.brand} />
+
+        {/* Benefits (conditional component) */}
+        {post.comparisonTable && <ComparisonSection data={post.comparisonTable} brand={post.brand} />}
 
         {/* Terms & Conditions */}
         {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (

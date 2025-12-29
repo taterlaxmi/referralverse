@@ -178,7 +178,7 @@ export const posts: Post[] = [
     category: Category.Health,
     title: 'Save on Your Fitness Journey with CultFit Referral Code IUMEQHMT',
     summary: 'Sharing a CultFit referral code is a smart way to unlock exclusive discounts while promoting a healthier lifestyle. When a friend signs up using your code, both of you benefit—whether it’s discounted memberships, free sessions, or access to premium fitness content. It’s a win-win that turns your fitness journey into a shared, rewarding experience.',
-    metaDescription: "Use CultFit referral code IUMEQHMT to get up to ₹1000 off on CultPass Lux membership. Stay fit, save more, and enjoy premium workouts with CultFit today.",
+    metaDescription: "Use the latest Cultfit referral code to get exclusive discounts and referral benefits. Learn how Cultfit referral works, benefits, and how to redeem offers.",
     referralCode: 'IUMEQHMT',
     referralLink: 'https://www.cult.fit/referral/invite?referralCode=IUMEQHMT',
     signupBonus: 'Get up to ₹1000 off on CultPass Lux',
@@ -240,6 +240,66 @@ export const posts: Post[] = [
         emoji: "🔄"
       }
     ],
+    comparisonTable: {
+      title: "Cultfit vs Fitpass vs Traditional Gyms – Feature Comparison",
+      columns: ["Feature", "Cultfit", "Fitpass", "Traditional Gyms"],
+      rows: [
+        [
+          "Gym & Studio Access",
+          "Unlimited access to Cultpass ELITE & PRO gyms in a city",
+          "Access to 8100+ gyms and fitness studios in 75+ cities",
+          "Access limited to your specific gym location"
+        ],
+        [
+          "Workout Variety",
+          "Gym, group classes (Yoga, HIIT, Dance, Strength), Live & virtual sessions",
+          "Gym workouts, Yoga, CrossFit, Zumba, MMA, Pilates, Aerobics, Yoga etc.",
+          "Depends on gym; usually gym + basic classes"
+        ],
+        [
+          "Online / At-Home Workouts",
+          "Yes – unlimited online workouts & guided sessions",
+          "Yes – large library of live & on-demand workouts",
+          "No (unless offered separately)"
+        ],
+        [
+          "Flexibility of Use",
+          "Use across multiple centers within a city with elite packs",
+          "Use gym/studio anywhere in network, 81+ cities",
+          "Limited to single gym location"
+        ],
+        [
+          "Trainer-Led Classes",
+          "Yes – Trainer-led group classes included",
+          "Yes – varies by partner studio availability",
+          "Yes – depends on gym package"
+        ],
+        [
+          "Membership Pricing",
+          "Starts moderate-to-premium (varies by city & pack)",
+          "Flexible pass based pricing (often affordable per region)",
+          "Wide range — basic to premium, varies hugely"
+        ],
+        [
+          "Nutrition & Wellness Support",
+          "Available (guided plans & wellness ecosystem)",
+          "Some tie-ins available (meal logs, suggestions)",
+          "Rarely included"
+        ],
+        [
+          "Booking Convenience",
+          "App based booking & scheduling",
+          "App based showroom bookings & classes",
+          "Many require on-site check in"
+        ],
+        [
+          "Best For",
+          "Structured fitness community with both online & offline",
+          "Wide choice and flexibility for gym & studio access",
+          "Local gym experience, niche community feel"
+        ]
+      ]
+    },
     faq: [
       {
         question: "How do I redeem a Cultfit voucher?",
@@ -279,6 +339,21 @@ export const posts: Post[] = [
         question: "How many people can I refer on Cultfit?",
         answer:
           "You can refer up to 10 people on Cultfit using your referral link. Referral benefits may vary based on ongoing Cultfit referral offers."
+      },
+      {
+        question: "What are the benefits of using a Cultfit referral code?",
+        answer:
+          "Using a Cultfit referral code gives new users exclusive discounts on Cultfit memberships. Referral benefits may include flat discounts, extra validity, or special joining offers depending on the active campaign."
+      },
+      {
+        question: "Does Cultfit offer any referral discount?",
+        answer:
+          "Yes, Cultfit offers referral discounts for new users who sign up using a valid Cultfit referral code. The discount amount may vary based on the selected plan and ongoing offers."
+      },
+      {
+        question: "How much discount do I get with a Cultfit referral?",
+        answer:
+          "Cultfit referral discounts typically range from ₹500 to ₹2,000 depending on the membership plan and current promotions. Always check the latest offer before purchasing."
       }
     ]
   },
