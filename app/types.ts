@@ -28,9 +28,15 @@ export interface Post {
   };
   howToRefer?: string[];
   termsAndConditions?: string[];
+  benefits?: { 
+    title?: string;
+    description?: string;
+    emoji?: string;
+    icon?: string; // optional URL for an icon image
+  }[];
   faq?: {
     question: string;
-    answer: string | 
+    answer: string |
     string[] | {                     // table structure
       headers: string[];  // column headers
       rows: string[][];   // array of rows

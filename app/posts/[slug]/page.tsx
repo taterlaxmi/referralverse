@@ -4,22 +4,23 @@ import Image from 'next/image';
 import { posts } from '../../data/post';
 import PostOfferDetails from '../../components/PostOfferDetails';
 import FAQSection from '../../components/FAQSection';
-import {fetchAppInfo} from '../../../lib/reviews';
+import { fetchAppInfo } from '../../../lib/reviews';
+import BenefitsSection from "@/app/components/BenefitsSection";
 
 type Props = { params: { slug: string } };
 
- // helper to normalize FAQ answers (string | string[] | table) into a single string for JSON-LD
-  function formatFaqAnswer(answer: any): string {
-    if (typeof answer === 'string') return answer;
-    if (Array.isArray(answer)) return answer.join(' ');
-    if (answer && typeof answer === 'object' && Array.isArray(answer.headers) && Array.isArray(answer.rows)) {
-      // Render table as plain-text: header row then each row joined with " | "
-      const headerLine = answer.headers.join(' | ');
-      const rowsText = answer.rows.map((r: string[]) => r.join(' | ')).join(' ; ');
-      return `${headerLine}\n${rowsText}`;
-    }
-    return '';
+// helper to normalize FAQ answers (string | string[] | table) into a single string for JSON-LD
+function formatFaqAnswer(answer: any): string {
+  if (typeof answer === 'string') return answer;
+  if (Array.isArray(answer)) return answer.join(' ');
+  if (answer && typeof answer === 'object' && Array.isArray(answer.headers) && Array.isArray(answer.rows)) {
+    // Render table as plain-text: header row then each row joined with " | "
+    const headerLine = answer.headers.join(' | ');
+    const rowsText = answer.rows.map((r: string[]) => r.join(' | ')).join(' ; ');
+    return `${headerLine}\n${rowsText}`;
   }
+  return '';
+}
 
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
@@ -115,7 +116,7 @@ export default async function PostPage({ params }: Props) {
           "text": post.validity
         }
       },
-     ...(Array.isArray(post.faq)
+      ...(Array.isArray(post.faq)
         ? post.faq.map(f => ({
           "@type": "Question",
           "name": f.question,
@@ -271,6 +272,10 @@ export default async function PostPage({ params }: Props) {
             </ol>
           </section>
         )}
+
+
+        {/* Benefits (conditional component) */}
+        <BenefitsSection benefits={post.benefits} brand={post.brand} />
 
         {/* Terms & Conditions */}
         {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (

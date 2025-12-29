@@ -5,89 +5,121 @@ export const posts: Post[] = [
     slug: 'drinkprime-referral-code',
     brand: "Drinkprime",
     category: Category.Health,
-    title: 'Signup with Drinkprime referral code to get ₹200 Bonus',
-    summary: 'DrinkPrime App is a smart water purifier subscription service that lets you enjoy clean and healthy drinking water at home without any upfront cost of new filter. With our exclusive DrinkPrime referral code, you’ll get a 7-day free trial and an instant ₹200 discount on your first subscription. Drinkprime subscription plans start from as low as ₹349 per month for single users.',
-    metaDescription: "Get clean, healthy drinking water with DrinkPrime smart purifiers. Use our DrinkPrime referral code for a 7-day free trial and ₹200 off your plan.",
+    title: 'DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)',
+    summary: 'DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.',
+    metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month. Updated Jan 2025.',
     referralCode: 'QZ5TQZOJ',
     referralLink: 'http://drinkprime.in/lp46?referral_code=QZ5TQZOJ&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button',
     signupBonus: '₹200 Off',
     referralBonus: '₹1000',
     validity: 'Valid until Dec 31, 2025',
     referralImage: "/drinkprime.png",
+    ctaText: 'Download DrinkPrime App',
+    offer: { price: 200, currency: '₹' },
     steps: [
-      'Download the Drinkprime app from the Play Store or App Store.',
-      'Enter your details to sign up for a new account.',
-      'Apply the referral code QZ5TQZOJ at checkout.',
-      'You will get 7 days of free trial and ₹200 off on your subscription.'
+      'Download the DrinkPrime app from the Play Store or App Store.',
+      'Sign up as a new user using your mobile number.',
+      'Apply the DrinkPrime referral code QZ5TQZOJ during checkout.',
+      'Enjoy a 7-day free trial and ₹200 instant discount on your subscription.'
     ],
-    ctaText: 'Download Now',
-    offer: {
-      price: 200,
-      currency: '₹'
-    },
     howToRefer: [
-      "Open the Drinkprime app and log in to your account.",
-      "Go to the referral section from the menu.",
+      "Open the DrinkPrime app and log in.",
+      "Go to the Referral section from the menu.",
       "Copy your unique referral code or link.",
-      "Share it with your friends and family.",
-      "Earn rewards when they sign up using your code!"
+      "Share it with friends or family.",
+      "Earn ₹1,000 when they successfully subscribe."
     ],
     termsAndConditions: [
-      "Offer valid for new users only.",
-      "Referral bonus will be credited after successful signup and first purchase.",
-      "Drinkprime reserves the right to change or withdraw the offer at any time.",
-      "Other terms may apply. Please check the Drinkprime app for details."
+      "Offer valid only for new DrinkPrime users.",
+      "₹200 signup bonus applies on first successful subscription.",
+      "₹1,000 referral bonus is credited after the referee completes signup and first payment.",
+      "DrinkPrime reserves the right to modify or withdraw offers at any time."
+    ],
+    benefits: [
+      {
+        title: "Certified RO + UV + Copper Water Purification",
+        description:
+          "DrinkPrime water purifiers use advanced RO + UV + Copper purification technology to remove up to 99.9% of bacteria, viruses, heavy metals, and impurities, ensuring safe and healthy drinking water for Indian households.",
+        emoji: "💧"
+      },
+      {
+        title: "Smart IoT-Based Water Purifier with App Control",
+        description:
+          "DrinkPrime offers IoT-enabled smart water purifiers that automatically track water usage, TDS levels, and filter life. Get real-time alerts and service updates directly through the DrinkPrime mobile app.",
+        emoji: "📱"
+      },
+      {
+        title: "Zero Installation & Lifetime Free Maintenance",
+        description:
+          "With DrinkPrime subscription plans, installation, regular servicing, filter replacements, and repairs are completely free. No hidden costs or annual maintenance contracts.",
+        emoji: "🔧"
+      },
+      {
+        title: "Affordable Water Purifier Subscription Plans",
+        description:
+          "DrinkPrime subscription plans start from ₹299 per month with zero upfront cost. Even premium plans cost less than buying and maintaining a traditional RO water purifier.",
+        emoji: "💰"
+      },
+      {
+        title: "Flexible Plans with Free Relocation",
+        description:
+          "DrinkPrime allows easy plan upgrades, free relocation when you move homes, and hassle-free cancellation after the minimum lock-in period, making it ideal for renters and working professionals.",
+        emoji: "🚚"
+      }
     ],
     faq: [
       {
-        "question": "What are the available DrinkPrime subscription plans?",
-        "answer": {
-          "headers": ["Plan Name", "Starting Price/Month", "Key Features"],
-          "rows": [
+        question: "What are the available DrinkPrime subscription plans?",
+        answer: {
+          headers: ["Plan Name", "Starting Price/Month", "Key Features"],
+          rows: [
             ["DrinkPrime UV", "₹299", "UV purification"],
             ["DrinkPrime RO+", "₹349", "RO + UV purification"],
             ["DrinkPrime Copper", "₹417", "Copper-enriched water"],
             ["DrinkPrime Alkaline+", "₹429", "Alkaline water option"],
-            ["DrinkPrime Under-the-Sink", "₹629", "Compact purifier for kitchens"]
+            ["DrinkPrime Under-the-Sink", "₹629", "Compact kitchen purifier"]
           ]
         }
       },
       {
-        "question": "Is DrinkPrime better than Livpure Smart?",
-        "answer": [
-          "DrinkPrime starts at ₹299/month, Livpure Smart starts at ₹429/month.",
-          "DrinkPrime offers free relocation, Livpure Smart usually charges ₹1,000."
+        question: "Is DrinkPrime worth it compared to buying an RO purifier?",
+        answer: "Yes. DrinkPrime eliminates upfront RO costs, AMC charges, and filter replacement expenses. For renters and frequent movers, the subscription model is significantly cheaper over 1–2 years."
+      },
+      {
+        question: "Is DrinkPrime better than Livpure Smart?",
+        answer: [
+          "DrinkPrime plans start at ₹299/month, while Livpure Smart starts around ₹429/month.",
+          "DrinkPrime offers free relocation and maintenance, whereas Livpure may charge relocation fees."
         ]
       },
       {
-        "question": "How does DrinkPrime compare to traditional water purifiers?",
-        "answer": {
-          "headers": ["Option", "Upfront Cost", "Annual Maintenance", "Yearly Total"],
-          "rows": [
-            ["Traditional RO Purifier", "₹10,000–₹20,000", "₹3,000–₹6,000", "₹13,000–₹26,000"],
-            ["DrinkPrime Subscription", "₹0 + ₹1,500 refundable deposit", "₹0", "₹7,548 (highest plan)"]
-          ]
-        }
+        question: "Who Should Use DrinkPrime?",
+        answer: [
+          'Renters who don’t want to invest in buying an RO purifier',
+          'Families that relocate frequently',
+          'Users tired of AMC and filter replacement costs',
+          'Students and working professionals in metro cities'
+        ]
       },
       {
-        question: "What is the minimum lock-in period for DrinkPrime?",
-        answer: "The minimum lock-in period is 3 months. If you cancel during this period, a ₹1,500 cancellation fee applies. After the lock-in, cancellation is free."
+        question: "Who Should Avoid Using DrinkPrime?",
+        answer: [
+          'Users living outside DrinkPrime serviceable cities',
+          'Those who prefer owning a water purifier',
+          'Users planning to cancel within the 3-month lock-in period'
+        ]
+      },
+      {
+        question: "What is the lock-in period and cancellation charge?",
+        answer: "DrinkPrime has a minimum lock-in period of 3 months. Cancelling during this period incurs a ₹1,500 charge. After lock-in, cancellation is free."
       },
       {
         question: "Does DrinkPrime offer a free trial?",
-        answer: "Yes, DrinkPrime provides a 7-day free trial for new users. There are no cancellation charges during the trial period."
+        answer: "Yes, new users get a 7-day free trial with no cancellation charges during the trial period."
       },
       {
-        question: "Are there installation, maintenance, or relocation charges?",
-        answer: "Installation is free. DrinkPrime offers lifetime free maintenance and free relocation within their serviceable regions."
-      },
-      {
-        question: "What is the security deposit and when is it refunded?",
-        answer: "A refundable security deposit of ₹1,500 is collected during signup. It is refunded once you complete the minimum lock-in period and return the purifier in good working condition."
-      },
-      {
-        question: "Are there any hidden charges in DrinkPrime subscription?",
-        answer: "No. The subscription fee includes installation, purifier usage, maintenance, free filter changes, and relocation. Additional charges apply only if the device is damaged or not returned after cancellation."
+        question: "Are there any hidden charges?",
+        answer: "No. The subscription includes installation, maintenance, filter replacements, and relocation. Charges apply only if the purifier is damaged or not returned."
       },
       {
         question: "In which cities is DrinkPrime available?",
@@ -105,18 +137,14 @@ export const posts: Post[] = [
       },
       {
         question: "Is DrinkPrime water safe to drink?",
-        answer: "Yes. DrinkPrime uses RO + UV + UF purification technology. Technicians replace filters whenever needed at no cost, ensuring consistently safe and high-quality drinking water."
+        answer: "Yes. DrinkPrime uses RO + UV + UF purification and replaces filters automatically based on usage to ensure consistent water quality."
       },
       {
-        question: "How do I cancel my DrinkPrime subscription?",
-        answer: "You can cancel directly through the DrinkPrime app or by contacting customer support. After the 3-month lock-in period, cancellation is free. During lock-in, a ₹1,500 charge applies."
-      },
-      {
-        question: "How often does DrinkPrime replace filters?",
-        answer: "Filters are replaced automatically based on your water usage. The purifier tracks usage data, and technicians replace filters as required at no extra cost."
+        question: "How often are filters replaced?",
+        answer: "Filters are replaced automatically based on consumption data. Users do not need to request replacements."
       }
     ],
-    playStoreId: 'waterwala.com.prime',
+    playStoreId: 'waterwala.com.prime'
   },
   {
     slug: 'livpure-smart-referral-code',
@@ -180,7 +208,59 @@ export const posts: Post[] = [
       "Referral offer is valid only if your friend's first CultPass purchase is worth ₹5,000 or more.",
       'Referral benefits apply to the first 10 successful referrals.'
     ],
+    benefits: [
+      {
+        title: "All-in-One Fitness, Yoga & Wellness Platform",
+        description:
+          "Cult.fit (formerly Cure.fit) offers gym workouts, yoga, meditation, strength training, and home fitness programs in one app, making it easy to stay fit anytime, anywhere.",
+        emoji: "🏋️"
+      },
+      {
+        title: "Unlimited Access to Gyms & Live Classes",
+        description:
+          "With a Cult.fit membership, you get unlimited access to Cult gyms, group classes, and live trainer-led workouts across multiple cities and online.",
+        emoji: "🎥"
+      },
+      {
+        title: "Personalized Workout & Nutrition Guidance",
+        description:
+          "Cult.fit provides personalized fitness plans, guided workouts, and nutrition insights tailored to your fitness goals, whether weight loss, muscle gain, or overall wellness.",
+        emoji: "🥗"
+      },
+      {
+        title: "Affordable Fitness Membership Plans",
+        description:
+          "Cult.fit membership plans are more affordable than traditional gyms and personal trainers, offering premium fitness experiences at a fraction of the cost.",
+        emoji: "💳"
+      },
+      {
+        title: "Flexible Membership with Easy Cancellation",
+        description:
+          "Cult.fit subscriptions come with flexible plans, easy pause or cancellation options, and access across multiple locations, making it ideal for busy lifestyles.",
+        emoji: "🔄"
+      }
+    ],
     faq: [
+      {
+        question: "How do I redeem a Cultfit voucher?",
+        answer:
+          "To redeem a Cultfit voucher, open the Cultfit app, go to the Offers or Subscription section, enter your Cultfit voucher code, and apply it before completing the payment. The discount will be applied instantly if the voucher is valid."
+      },
+      {
+        question: "Where can I find a working Cultfit coupon code?",
+        answer:
+          "You can find the latest working Cultfit coupon codes and referral vouchers on this page."
+      },
+      {
+        question: "Why is my Cultfit voucher not working?",
+        answer:
+          "A Cultfit voucher may not work if it has expired, reached its usage limit, is not applicable to your selected plan, or if you are an existing user. Always check the voucher terms before applying."
+      },
+      {
+        question: "How can I contact Cultfit support?",
+        answer:
+          "You can contact Cultfit support through the Cultfit app by visiting the Help or Support section or mail at hello@cult.fit "
+      },
       {
         question: "In which cities is Cultfit available?",
         answer: [
@@ -196,8 +276,9 @@ export const posts: Post[] = [
         ]
       },
       {
-        question: "How many people can i refer in Cultfit?",
-        answer: "You can refer max of 10 people."
+        question: "How many people can I refer on Cultfit?",
+        answer:
+          "You can refer up to 10 people on Cultfit using your referral link. Referral benefits may vary based on ongoing Cultfit referral offers."
       }
     ]
   },
