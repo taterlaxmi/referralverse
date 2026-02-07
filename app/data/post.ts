@@ -8,8 +8,8 @@ export const posts: Post[] = [
     title: 'DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)',
     summary: 'DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.',
     metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month. Updated Jan 2025.',
-    referralCode: 'QZ5TQZOJ',
-    referralLink: 'http://drinkprime.in/lp46?referral_code=QZ5TQZOJ&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button',
+    referralCode: 'ZIHCQMNY',
+    referralLink: 'http://drinkprime.in/lp46?referral_code=ZIHCQMNY&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button',
     signupBonus: '₹200 Off',
     referralBonus: '₹1000',
     validity: 'Valid until Dec 31, 2025',
@@ -19,7 +19,7 @@ export const posts: Post[] = [
     steps: [
       'Download the DrinkPrime app from the Play Store or App Store.',
       'Sign up as a new user using your mobile number.',
-      'Apply the DrinkPrime referral code QZ5TQZOJ during checkout.',
+      'Apply the DrinkPrime referral code ZIHCQMNY during checkout.',
       'Enjoy a 7-day free trial and ₹200 instant discount on your subscription.'
     ],
     howToRefer: [
