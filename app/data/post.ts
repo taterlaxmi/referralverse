@@ -13,7 +13,7 @@ export const posts: Post[] = [
     signupBonus: '₹200 Off',
     referralBonus: '₹1000',
     validity: 'Valid until Dec 31, 2025',
-    referralImage: "/drinkprime.png",
+    referralImage: "/drinkprime.webp",
     ctaText: 'Download DrinkPrime App',
     offer: { price: 200, currency: '₹' },
     steps: [
