@@ -158,7 +158,7 @@ export const posts: Post[] = [
     signupBonus: '7 day free trail + ₹100 off',
     referralBonus: '₹500 Amazon Voucher',
     validity: 'Limited time offer',
-    referralImage: "/livpure-smart.png",
+    referralImage: "/livpure-smart.webp",
     steps: [
       'Click on the "Claim Now" button to download Livpure Smart app.',
       'Now open the app and sign up for a new account',
@@ -184,7 +184,7 @@ export const posts: Post[] = [
     signupBonus: 'Get up to ₹1000 off on CultPass Lux',
     referralBonus: 'Get 30-day membership extension',
     validity: 'Ongoing Offer',
-    referralImage: "/cultfit.png",
+    referralImage: "/cultfit.webp",
     steps: [
       'Visit the Cult App using above link.',
       'Enter your mobile number and verify with OTP.',
