@@ -3,6 +3,8 @@ name: Lighthouse CI
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "0 0 * * *" # every day at 12 AM UTC
 
 jobs:
   lighthouse:
@@ -10,16 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 'lts/*'
 
       - run: npm ci
-      - run: npm run build
 
-      - run: npm install -g @lhci/cli
-
-      - run: |
-          npm start &
-          npx wait-on http://localhost:3000
-          lhci autorun
+      - name: Run Lighthouse CI
+        run: npx lhci autorun
