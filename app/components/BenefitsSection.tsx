@@ -1,5 +1,3 @@
-import React from "react";
-
 type Benefit = {
     title?: string;
     description?: string;

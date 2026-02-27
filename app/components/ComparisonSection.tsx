@@ -1,5 +1,3 @@
-import React from "react";
-
 type ComparisonTable = {
   title: string;
   columns: string[];
