@@ -11,7 +11,6 @@ A modern referral offers directory built with Next.js, React, and TypeScript. De
 - **Styling:** [PostCSS](https://postcss.org/) (see [`postcss.config.mjs`](postcss.config.mjs))
 - **Hosting:** [Netlify](https://www.netlify.com/)
 - **SEO:** Dynamic metadata, Open Graph, and structured data
-- **Comments:** Disqus integration
 
 ---
 
@@ -38,7 +37,14 @@ A modern referral offers directory built with Next.js, React, and TypeScript. De
 
 ---
 
-## 🚀 Getting Started (Local Development)
+### GitHub Workflows
+
+- **Lighthouse CI:** Runs Lighthouse audits nightly and on main branch pushes.
+- **Security Audit:** Checks for vulnerable dependencies every Monday.
+
+See `.github/workflows/` for workflow files.
+
+# 🚀 Getting Started (Local Development)
 
 1. **Clone the repository:**
    ```sh
