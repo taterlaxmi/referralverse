@@ -1,5 +1,3 @@
-// NO "use client"
-
 import { HelpCircle } from "lucide-react";
 
 type FAQ = {
