@@ -42,6 +42,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                   {post.referralCode}
                 </span>
                 <button
+                  id="copyReferralCodeBtn"
                   onClick={copyToClipboard}
                   className={`flex items-center justify-center p-2.5 rounded-lg border transition-all duration-200 ${
                     isCopied
