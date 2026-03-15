@@ -380,4 +380,41 @@ export const posts: Post[] = [
       price: 500,
       currency: '₹'
     },
-  }];
+  },
+   {
+    slug: 'supermoney-creditcard-referral-code',
+    brand: "SuperMoney",
+    category: Category.Finance,
+    title: 'SuperMoney Credit Card Referral Code – Lifetime Free Axis RuPay Card (Upto 5% Cashback)',
+    summary: 'SuperMoney offers a lifetime free RuPay credit card backed by Axis Bank. You can use it for UPI payments and earn up to 5% cashback on dining, travel, and everyday spends using this SuperMoney credit card referral code.',
+    metaDescription: "Use the latest SuperMoney Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
+    referralCode: 'gJGY9KiLKUb',
+    referralLink: 'https://link.super.money/gJGY9KiLKUb',
+    signupBonus: '7 day free trail + ₹100 off',
+    referralBonus: '₹100 Joining Bonus',
+    validity: 'Limited time offer',
+    steps: [
+      'Click on the "Claim Now" button to download SuperMoney App.',
+      'Signup for a new account using your mobile number.',
+      'Apply for the Lifetime Free SuperMoney Credit Card.',
+      'Complete your first payment and you will get ₹100 cahback.'
+    ],
+    ctaText: 'Get LTF SuperMoney Credit Card',
+    offer: {
+      price: 100,
+      currency: '₹'
+    },
+    playStoreId: 'money.super.payments',
+  faq: [
+      {
+        question: "Is SuperMoney Credit Card really free for life?",
+        answer: "Yes. SuperMoney Credit Card have no annual or joining fees."
+      },
+      {
+        question: "What is minimum withdrawal amount?",
+        answer: "Minimum withdrawal amount is ₹10. "
+      }
+       
+    ]   
+  }
+];
