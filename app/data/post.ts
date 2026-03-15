@@ -390,14 +390,14 @@ export const posts: Post[] = [
     metaDescription: "Use the latest SuperMoney Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
     referralCode: 'gJGY9KiLKUb',
     referralLink: 'https://link.super.money/gJGY9KiLKUb',
-    signupBonus: '7 day free trail + ₹100 off',
-    referralBonus: '₹100 Joining Bonus',
+    signupBonus: '₹100 cashback on first payment',
+    referralBonus: '₹100',
     validity: 'Limited time offer',
     steps: [
-      'Click on the "Claim Now" button to download SuperMoney App.',
+      'Click on the above referral link button to download SuperMoney App.',
       'Signup for a new account using your mobile number.',
       'Apply for the Lifetime Free SuperMoney Credit Card.',
-      'Complete your first payment and you will get ₹100 cahback.'
+      'Complete your first payment and you will get ₹100 cashback.'
     ],
     ctaText: 'Get LTF SuperMoney Credit Card',
     offer: {
@@ -416,5 +416,41 @@ export const posts: Post[] = [
       }
        
     ]   
+  },
+     {
+    slug: 'club-corra-referral-code',
+    brand: "Club Corra",
+    category: Category.Finance,
+    title: 'Club Corra Referral Code: Get Cashback on Every Bill Upload',
+    summary: 'Use the Club Corra referral code to earn rewards when you upload shopping bills. Club Corra lets users upload bills from apps like Myntra, Swiggy, and Zepto to earn cashback points that can be redeemed later.',
+    metaDescription: "Use the latest Club Corra referral code to earn cashback on every bill upload. Upload bills from Myntra, Swiggy, Zepto and more to earn Club Corra points.",
+    referralCode: 'CORRAE48F',
+    referralLink: 'https://clubcorra.com/?ref=CORRAE48F',
+    signupBonus: '50 club corra point',
+    referralBonus: '₹50',
+    validity: 'Limited time offer',
+    steps: [
+    "Click on the referral link above to open the Club Corra website.",
+    "Sign up for a new account using your mobile number.",
+    "Enter the referral code CORRAE48F during signup.",
+    "Upload your first shopping bill and select the 'Get Cashback' option before submitting."
+  ],
+    ctaText: "Get Cashback on Bill Upload",
+  offer: {
+    "price": 50,
+    "currency": "₹"
+  },
+  faq: [
+    {
+      "question": "Which apps' bills are accepted on Club Corra?",
+      "answer": "Club Corra accepts bills from popular e-commerce and delivery apps such as Myntra, Swiggy, Zepto and other supported platforms."
+    },
+    {
+      "question": "What is the value of 1 Club Corra point?",
+      "answer": "1 Club Corra point is equal to ₹1 and can be redeemed for rewards or cashback depending on available options."
+    }
+       
+    ]   
   }
+
 ];
