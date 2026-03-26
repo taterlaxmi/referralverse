@@ -9,6 +9,15 @@ import BenefitsSection from "@/app/components/BenefitsSection";
 
 type Props = { params: { slug: string } };
 
+export async function generateStaticParams() {
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export const dynamicParams = true; // Optional: allows rendering new paths at runtime if added later
+
+
 // helper to normalize FAQ answers (string | string[] | table) into a single string for JSON-LD
 function formatFaqAnswer(answer: any): string {
   if (typeof answer === 'string') return answer;
