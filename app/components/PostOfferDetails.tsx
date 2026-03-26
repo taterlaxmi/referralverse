@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import type { Post } from "../types";
 import { Copy as CopyIcon, Check as CheckIcon, Link as LinkIcon, Gift } from "lucide-react";
 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Post } from './types';
 import { posts } from './data/post';
 import Header from './components/Header';
