@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { RefreshCw, ExternalLink, Copy, Check } from 'lucide-react';
+import { ExternalLink, Copy, Check, Calendar } from 'lucide-react';
+import aggregatedDeals from '../data/aggregated-deals.json';
 
 interface Deal {
   application: string;
@@ -11,51 +12,29 @@ interface Deal {
   referralBonus: string;
 }
 
-const REDDIT_SOURCE = {
-  label: 'Reddit Community',
-  emoji: '🔴',
-  apiPath: '/api/reddit-referrals',
-  description: 'Fetching the latest real-time referral codes from r/IndiaReferral.',
-};
-
 export default function ReferralAggregatorPage() {
-  const [loading, setLoading] = useState(false);
-  const [deals, setDeals] = useState<Deal[]>([]);
-  const [hasFetched, setHasFetched] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [deals, setDeals] = useState<Deal[]>(aggregatedDeals.deals);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-
-  const handleFetchDeals = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await fetch(REDDIT_SOURCE.apiPath);
-      if (!response.ok) throw new Error('Failed to fetch from community API');
-      const data = await response.json();
-
-      if (data.warning) {
-        setError(`Note: ${data.warning}`);
-      }
-
-      const fetchedDeals = data.deals || [];
-      setDeals(fetchedDeals);
-      setHasFetched(true);
-
-      if (!data.warning && fetchedDeals.length === 0) {
-        setError('No new referral codes found in the last hour. Please try again later.');
-      }
-    } catch (e) {
-      console.error(e);
-      setError('Connection error: Unable to reach the referral community at the moment.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const [lastUpdated, setLastUpdated] = useState<string>(aggregatedDeals.lastUpdated);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setCopiedCode(text);
     setTimeout(() => setCopiedCode(null), 2000);
+  };
+
+  const formatDate = (dateString: string) => {
+    try {
+      return new Intl.DateTimeFormat('en-IN', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+      }).format(new Date(dateString));
+    } catch {
+      return dateString;
+    }
   };
 
   return (
@@ -67,50 +46,33 @@ export default function ReferralAggregatorPage() {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-50 rounded-full">
-              Live Feed
+              Verified Collection
             </span>
             <h1 className="text-4xl md:text-6xl font-black text-gray-900 mb-6 tracking-tight">
               Referral <span className="text-indigo-600">Aggregator</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Real-time referral codes aggregated from Reddit's most active communities, verified and structured by AI.
+              A curated collection of verified referral codes from across the Indian community, updated automatically by AI.
             </p>
           </div>
 
-          {/* Action Center */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-10 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-            
-            <div className="flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2 text-sm text-gray-500 font-medium">
-                <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                {REDDIT_SOURCE.description}
-              </div>
-              
-              <button
-                onClick={handleFetchDeals}
-                disabled={loading}
-                className={`
-                  group relative inline-flex items-center gap-3 px-10 py-4 
-                  bg-gray-900 text-white font-bold rounded-2xl
-                  shadow-[0_10px_20px_-10px_rgba(0,0,0,0.3)]
-                  hover:bg-indigo-600 hover:shadow-indigo-200/50
-                  transition-all duration-300 transform active:scale-95
-                  disabled:opacity-70 disabled:cursor-not-allowed
-                `}
-              >
-                <RefreshCw className={`w-5 h-5 ${loading ? 'animate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
-                {loading ? 'Processing Reddit Data...' : hasFetched ? 'Update Live Feed' : 'Launch Aggregator'}
-              </button>
-            </div>
+          {/* Status Bar */}
+          <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+             <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-indigo-50 flex items-center justify-center">
+                  <Calendar className="w-5 h-5 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Last Updated</p>
+                  <p className="text-sm font-bold text-gray-800">{formatDate(lastUpdated)}</p>
+                </div>
+             </div>
+             
+             <div className="px-6 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                {deals.length} Active Referral Codes
+             </div>
           </div>
-
-          {/* Error / Warning States */}
-          {error && (
-            <div className="mb-8 p-5 bg-indigo-50/50 border border-indigo-100 text-indigo-900 rounded-2xl text-center font-medium animate-in fade-in slide-in-from-top-4">
-              {error}
-            </div>
-          )}
 
           {/* Results Table */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
@@ -128,20 +90,13 @@ export default function ReferralAggregatorPage() {
                   {deals.length === 0 ? (
                     <tr>
                       <td colSpan={4} className="p-24 text-center">
-                        {loading ? (
-                          <div className="flex flex-col items-center gap-4">
-                            <div className="w-12 h-12 border-4 border-indigo-100 border-t-indigo-600 rounded-full animate-spin"></div>
-                            <p className="text-gray-400 font-medium">Scouring the community for codes...</p>
+                        <div className="flex flex-col items-center gap-3">
+                          <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-2">
+                            <ExternalLink className="w-8 h-8 text-gray-300" />
                           </div>
-                        ) : (
-                          <div className="flex flex-col items-center gap-3">
-                            <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-2">
-                              <ExternalLink className="w-8 h-8 text-gray-300" />
-                            </div>
-                            <p className="text-gray-500 font-semibold text-lg">No codes fetched yet</p>
-                            <p className="text-gray-400 text-sm">Click the button above to start the aggregation process.</p>
-                          </div>
-                        )}
+                          <p className="text-gray-500 font-semibold text-lg">Collection Empty</p>
+                          <p className="text-gray-400 text-sm">The automated aggregator will update this list shortly.</p>
+                        </div>
                       </td>
                     </tr>
                   ) : (
@@ -173,18 +128,18 @@ export default function ReferralAggregatorPage() {
             </div>
           </div>
 
-          {deals.length > 0 && (
-            <div className="flex items-center justify-center gap-6 mt-8">
-              <div className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                {deals.length} Active Codes
-              </div>
-              <div className="h-4 w-px bg-gray-200"></div>
-              <div className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                AI Structured results
-              </div>
-            </div>
-          )}
+          <div className="mt-12 p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Want to add your referral code?</h3>
+            <p className="text-gray-600 mb-6">Post your referral codes in the <strong>r/IndiaReferral</strong> subreddit to get featured in our automated tracker.</p>
+            <a 
+              href="https://www.reddit.com/r/IndiaReferral/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 text-indigo-600 font-bold hover:underline"
+            >
+              Visit Community <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
 
         </div>
       </main>

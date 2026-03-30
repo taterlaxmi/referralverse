@@ -1,0 +1,23 @@
+{
+  "lastUpdated": "2026-03-31T00:30:00.000Z",
+  "deals": [
+    {
+      "application": "Angel One",
+      "code": "RAHU7325",
+      "signUpBonus": "Free Demat Account",
+      "referralBonus": "₹500 Gift Voucher"
+    },
+    {
+      "application": "Upstox",
+      "code": "7325RAHU",
+      "signUpBonus": "Zero Brokerage for 30 days",
+      "referralBonus": "₹300 Cash"
+    },
+    {
+      "application": "Groww",
+      "code": "GROWW100",
+      "signUpBonus": "₹100 Welcome Bonus",
+      "referralBonus": "₹100 per referral"
+    }
+  ]
+}
