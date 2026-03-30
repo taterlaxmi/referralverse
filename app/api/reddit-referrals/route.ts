@@ -73,7 +73,7 @@ export async function GET() {
     if (!llmResponse.ok) {
       const errText = await llmResponse.text();
       console.error("Gemini API Error:", errText);
-      throw new Error("Failed to process data with LLM");
+      throw new Error(`Gemini API Error: ${errText.slice(0, 100)}...`);
     }
 
     const llmData = await llmResponse.json();
@@ -84,13 +84,16 @@ export async function GET() {
       processedDeals = JSON.parse(rawJsonText);
     } catch (e) {
       console.error("Failed to parse LLM JSON output:", rawJsonText);
-      // Fallback
-      processedDeals = [];
+      throw new Error("Failed to parse extracted deals from AI response.");
     }
 
     return NextResponse.json({ success: true, deals: processedDeals });
   } catch (error: any) {
     console.error('Error fetching Reddit referrals:', error);
-    return NextResponse.json({ success: false, error: 'Failed to fetch referral codes' }, { status: 500 });
+    return NextResponse.json({ 
+      success: false, 
+      error: 'Failed to process referral codes',
+      diagnostics: error.message 
+    }, { status: 500 });
   }
 }
