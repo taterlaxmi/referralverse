@@ -361,19 +361,19 @@ export const posts: Post[] = [
     slug: 'tata-neu-credit-card-referral-code',
     brand: "Tata Neu",
     category: Category.Finance,
-    title: 'Use Tata Neu Referral code RAHU7325 to get ₹500 joining bonus',
-    summary: 'Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card  – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers  across fashion, groceries, electronics, medicines, flights and much more with  NeuCard. Travel in style with complementary airport lounge access plus  exclusive offers on hotel stay and dining! Apply now and enjoy unmatched privileges.',
-    metaDescription: "Apply with Tata Neu referral code RAHU7325 to get ₹500 joining bonus + 499 NeuCoins. Enjoy cashback, lounge access & exclusive shopping rewards.",
+    title: 'Tata Neu Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback)',
+    summary: 'Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers across fashion, groceries, electronics, medicines, flights and much more with NeuCard. Enjoy Tata Neu referral benefits including a ₹500 joining bonus and additional NeuCoins on your first spend.',
+    metaDescription: "Apply with Tata Neu referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive shopping rewards.",
     referralCode: 'RAHU7325',
     referralLink: 'https://www.tatadigital.com/finance/creditcard/product-detail?referralCode=RAHU7325&amp;utm_content=RAHU7325',
-    signupBonus: '499 Neu coins on first transaction within 60 days',
-    referralBonus: '₹500',
+    signupBonus: '500 Neu coins on first transaction within 60 days',
+    referralBonus: '₹700',
     validity: 'Valid for new users only',
     steps: [
       'Click on the "Apply for TataNeu Credit Card".',
       'Apply for the card using referral code RAHU7325.',
       'Complete the application and once you get approved make transactions worth ₹3000 within 60 days.',
-      'You will get 499 Neu coins.'
+      'You will get 500 Neu coins.'
     ],
     ctaText: 'Apply for TataNeu Credit Card',
     offer: {
@@ -417,6 +417,18 @@ export const posts: Post[] = [
         description:
           "Earn around 5–6.5% effective cashback on gold and jewellery purchases at Tanishq and Titan with Tata Neu Infinity card, making it one of the best cards for jewellery spending.",
         emoji: "💍"
+      },
+      {
+        title: "Unlimited Referrals: Earn up to 3 Lakh NeuCoins Monthly",
+        description:
+          "Refer friends and family to earn 500 NeuCoins per successful referral. While there's no limit on invites, you can earn up to 3,00,000 NeuCoins (worth ₹3 Lakh) every calendar month.",
+        emoji: "🤝"
+      },
+      {
+        title: "NeuPass Membership: Free Deliveries & Exclusive Perks",
+        description:
+          "Being a Tata Neu user grants you NeuPass benefits, including free delivery on BigBasket and 1mg (on eligible orders), early access to sales, and special member-only pricing.",
+        emoji: "👑"
       }
     ],
     faq: [
@@ -480,8 +492,16 @@ export const posts: Post[] = [
         ]
       },
       {
-        question: "Do Tata Neu coins expire?",
-        answer: "Yes, Tata Neu coins (NeuCoins) expire after 12 months from the end of the month in which they are credited. It is recommended to redeem them regularly to avoid expiry."
+        question: "How many people can I refer on Tata Neu?",
+        answer: "There is no limit to the number of people you can invite to Tata Neu. However, you can earn a maximum of 3,00,000 NeuCoins (equivalent to 600 successful referrals) per calendar month."
+      },
+      {
+        question: "What is NeuPass and what are its benefits?",
+        answer: "NeuPass is Tata Neu's exclusive loyalty program. Benefits include earning at least 5% NeuCoins on every spend (NeuCoins + Card rewards), free delivery on BigBasket, 1mg, and other partner brands (minimum order values apply), and exclusive member-only offers."
+      },
+      {
+        question: "Do NeuCoins have an expiration date?",
+        answer: "Yes, NeuCoins typically expire 365 days after they are earned. However, if you make a transaction or earn/redeem coins, the validity of your entire balance is often extended for another 365 days, keeping your rewards active."
       },
       {
         question: "Is lounge access free with Tata Neu credit card and what are the conditions?",
@@ -534,6 +554,40 @@ export const posts: Post[] = [
     ]
   },
   {
+    slug: 'kiwi-referral-code',
+    brand: "Kiwi",
+    category: Category.Finance,
+    title: 'Kiwi Credit Card Referral Code – Lifetime Free Axis RuPay Card (Upto 5% Cashback)',
+    summary: 'Kiwi offers a lifetime free RuPay credit card backed by Axis Bank. You can use it for UPI payments and earn up to 5% cashback on dining, travel, and everyday spends using this Kiwi credit card referral code.',
+    metaDescription: "Use the latest Kiwi Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
+    referralCode: 'JAKK6F',
+    referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
+    signupBonus: '₹100 cashback on first payment',
+    referralBonus: '₹100',
+    validity: 'Limited time offer',
+    steps: [
+      'Click on the above referral link button to download Kiwi App.',
+      'Signup for a new account using your mobile number.',
+      'Apply for the Kiwi Credit Card.',
+      'Complete your first payment and you will get ₹100 cashback.'
+    ],
+    ctaText: 'Enjoy 1.5% Cashback on UPI with Kiwi Credit Card',
+    offer: {
+      price: 100,
+      currency: '₹'
+    },
+    faq: [
+      {
+        question: "Is Kiwi really free for life?",
+        answer: "Yes. Kiwi have no annual or joining fees."
+      },
+      {
+        question: "What is minimum withdrawal amount?",
+        answer: "Minimum withdrawal amount is ₹10. "
+      }
+    ]
+  },
+  {
     slug: 'club-corra-referral-code',
     brand: "Club Corra",
     category: Category.Finance,
@@ -567,6 +621,122 @@ export const posts: Post[] = [
       }
 
     ]
+  },
+  {
+    slug: 'goldenpi-referral-code',
+    brand: "GoldenPi",
+    category: Category.Finance,
+    title: 'GoldenPi Referral Code: NASM1516936 (Earn Rewards on Bond Investments)',
+    summary: 'Start investing in high-yield bonds with GoldenPi – India’s trusted digital bond platform. Use referral code NASM1516936 to unlock exclusive benefits when you sign up and invest. Explore curated corporate bonds, fixed income options, and earn stable returns better than traditional FDs.',
+    metaDescription: "Use GoldenPi referral code NASM1516936 to start bond investing and earn rewards. Invest in corporate bonds with higher returns than FDs on India’s trusted platform.",
+    referralCode: 'NASM1516936',
+    referralLink: 'https://goldenpi.com/sign-up?referrer=NASM1516936',
+    signupBonus: 'Referral benefits vary (generally rewards/credits after first investment)',
+    referralBonus: 'Earn rewards when your friend invests via your link',
+    validity: 'Valid for new users signing up via referral link',
+    steps: [
+      'Click on the "Start Investing with GoldenPi" button.',
+      'Register using your mobile number and complete KYC verification.',
+      'Ensure referral code NASM1516936 is applied automatically via the link.',
+      'Browse available bonds and make your first investment.',
+      'Referral rewards will be credited after successful investment (as per campaign terms).'
+    ],
+    ctaText: 'Start Investing with GoldenPi',
+    offer: {
+      price: 0,
+      currency: '₹'
+    },
+    benefits: [
+      {
+        title: "Invest in High-Yield Corporate Bonds (Better than FD)",
+        description:
+          "GoldenPi allows you to invest in curated corporate bonds that typically offer higher returns than fixed deposits. Many users report returns in the range of 8–11% depending on the bond rating and tenure.",
+        emoji: "📈"
+      },
+      {
+        title: "Zero Account Opening Charges",
+        description:
+          "There are no charges to create an account on GoldenPi. You can explore bonds, compare yields, and invest without any upfront platform fee, making it beginner-friendly.",
+        emoji: "💸"
+      },
+      {
+        title: "Trusted Platform Backed by Regulatory Framework",
+        description:
+          "GoldenPi operates within SEBI regulations and partners with trusted financial institutions, making it a relatively safe platform for bond investments compared to unverified alternatives.",
+        emoji: "🛡️"
+      },
+      {
+        title: "Curated Bonds with Risk Transparency",
+        description:
+          "Each bond listing includes credit ratings, issuer details, and risk indicators. This helps investors make informed decisions instead of blindly investing like in traditional FDs.",
+        emoji: "🔍"
+      },
+      {
+        title: "Regular Fixed Income (Monthly/Quarterly Payouts)",
+        description:
+          "Many bonds on GoldenPi provide fixed interest payouts monthly or quarterly, making it ideal for passive income seekers like retirees or conservative investors.",
+        emoji: "💰"
+      },
+      {
+        title: "Easy Online Investment Experience",
+        description:
+          "The platform simplifies bond investing with a clean UI, digital KYC, and seamless payment options. Even first-time investors can get started within minutes.",
+        emoji: "📱"
+      },
+      {
+        title: "Referral Program for Extra Earnings",
+        description:
+          "GoldenPi occasionally offers referral rewards when your invited friend completes an investment. While rewards may vary, it's an easy way to earn extra benefits alongside investing.",
+        emoji: "🤝"
+      },
+      {
+        title: "Diversification Beyond FD & Mutual Funds",
+        description:
+          "If your portfolio is heavily dependent on FDs or mutual funds, bonds offer a middle ground with fixed income and moderate risk, helping diversify your investments.",
+        emoji: "📊"
+      }
+    ],
+    faq: [
+      {
+        question: "How does GoldenPi referral program work?",
+        answer: "You earn 1% of your friend’s investment when they sign up using your referral link and invest in eligible bonds. The reward is capped at ₹2,000 per transaction and ₹10,000 per user."
+      },
+      {
+        question: "What is the minimum investment required for referral rewards?",
+        answer: "Your referral must invest at least ₹1,00,000 in secondary bonds with a remaining tenure of more than 12 months to make you eligible for rewards."
+      },
+      {
+        question: "What is the maximum I can earn from GoldenPi referrals?",
+        answer: "You can earn up to ₹10,000 per referral and a total of ₹5,00,000 across all referrals (limited to first 50 referred users)."
+      },
+      {
+        question: "Do I need to invest to earn referral rewards?",
+        answer: "No. You only need to complete KYC verification. You can start earning without investing your own money."
+      },
+      {
+        question: "Are all investments eligible for referral rewards?",
+        answer: "No. Only investments in secondary market bonds qualify. Fixed deposits (FDs) and NCD IPOs are not eligible."
+      },
+      {
+        question: "What is the time limit for earning referral rewards?",
+        answer: "Your referred user must complete a qualifying investment within 90 days of signing up using your referral link."
+      },
+      {
+        question: "When will I receive my referral reward?",
+        answer: "Rewards are typically processed and credited in the first week of the following month after successful investment verification."
+      },
+      {
+        question: "Is there any limit on number of referrals?",
+        answer: "You can refer unlimited users, but rewards are applicable only for the first 50 successful referrals."
+      },
+      {
+        question: "Can I share my GoldenPi referral link anywhere?",
+        answer: "Yes, you can share your referral link via WhatsApp, social media, blogs, or email. Just ensure users sign up through your link."
+      },
+      {
+        question: "Is GoldenPi referral program worth it?",
+        answer: "Yes, especially if you can refer high-value investors. Since rewards are linked to investment size, even a few successful referrals can generate significant income."
+      }
+    ]
   }
-
 ];
