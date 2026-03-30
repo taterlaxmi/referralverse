@@ -43,3 +43,6 @@ next-env.d.ts
 lhci_reports_before/
 lhci_reports/
 .lighthouse*
+app/referral-aggregator/page.tsx
+app/api/reddit-referrals/route.ts
+public/sitemap-0.xml

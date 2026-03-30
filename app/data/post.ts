@@ -370,7 +370,7 @@ export const posts: Post[] = [
     referralBonus: '₹500',
     validity: 'Valid for new users only',
     steps: [
-      'Click on the "Get TataNeu Credit Card" button to apply for the Tata Neu Credit Card.',
+      'Click on the "Apply for TataNeu Credit Card".',
       'Apply for the card using referral code RAHU7325.',
       'Complete the application and once you get approved make transactions worth ₹3000 within 60 days.',
       'You will get 499 Neu coins.'
@@ -380,8 +380,124 @@ export const posts: Post[] = [
       price: 500,
       currency: '₹'
     },
+
+    benefits: [
+      {
+        title: "Up to 10% Cashback on Tata Neu App Purchases",
+        description:
+          "Earn up to 10% back as NeuCoins when you shop via the Tata Neu app using Tata Neu Infinity card (5% card + 5% NeuPass benefits). This makes it one of the highest rewarding cards for groceries, electronics, and Tata brand spends.",
+        emoji: "💰"
+      },
+      {
+        title: "Best Credit Card for BigBasket & Grocery Shopping",
+        description:
+          "Get consistent high returns (~10%) on BigBasket orders via Tata Neu. Smart users split orders around ₹7,000 to maximize cashback within per-transaction limits.",
+        emoji: "🛒"
+      },
+      {
+        title: "Simple Rewards System (1 NeuCoin = ₹1 Value)",
+        description:
+          "Unlike complex reward systems, Tata Neu offers direct value where 1 NeuCoin equals ₹1. There are no conversion losses, making cashback easy to track and redeem.",
+        emoji: "🔍"
+      },
+      {
+        title: "Earn Rewards on UPI Payments with RuPay Credit Card",
+        description:
+          "Use Tata Neu Infinity RuPay card on UPI via Tata Neu app to earn up to 1.5% cashback on everyday payments, making it useful for daily transactions.",
+        emoji: "📱"
+      },
+      {
+        title: "Extra Cashback on Tata Brands like Croma, 1mg & Tata Cliq",
+        description:
+          "Get higher rewards when shopping across Tata ecosystem brands like Croma, Tata 1mg, Westside, and Tata Cliq. Returns are significantly higher when purchases are made through Tata Neu app.",
+        emoji: "🛍️"
+      },
+      {
+        title: "High Returns on Gold & Jewellery Purchases (Tanishq & Titan)",
+        description:
+          "Earn around 5–6.5% effective cashback on gold and jewellery purchases at Tanishq and Titan with Tata Neu Infinity card, making it one of the best cards for jewellery spending.",
+        emoji: "💍"
+      }
+    ],
+    faq: [
+      {
+        question: "Does Tata Neu credit card offer flat 5% cashback on all transactions?",
+        answer: "No, Tata Neu credit card does not offer flat 5% cashback on all transactions. Cashback (NeuCoins) varies based on spend category, Tata vs non-Tata brands, payment method, and whether you have an active NeuPass membership."
+      },
+      {
+        question: "What are the joining and annual fees for Tata Neu Infinity and Plus credit cards?",
+        answer: {
+          headers: ["Fee Type", "Tata Neu Infinity Card", "Tata Neu Plus Card"],
+          rows: [
+            ["Joining Fee", "₹1,499 (Currently ₹0 under limited-time offer)", "₹499 (Currently ₹0 under limited-time offer)"],
+            ["Annual / Renewal Fee", "₹1,499 + GST", "₹499 + GST"],
+            ["Annual Fee Waiver", "Waived on ₹3,00,000 annual spend", "Waived on ₹1,00,000 annual spend"]
+          ]
+        }
+      },
+      {
+        question: "How much cashback can I earn per transaction with Tata Neu credit card?",
+        answer: {
+          headers: ["Transaction Type", "Tata Neu Infinity Card", "Tata Neu Plus Card"],
+          rows: [
+            ["Tata brand spends (with NeuPass membership)", "10% back as NeuCoins", "7% back as NeuCoins"],
+            ["Tata brand spends (without NeuPass)", "5% back as NeuCoins", "2% back as NeuCoins"],
+            ["Non-Tata brand spends", "1.5% back as NeuCoins", "1% back as NeuCoins"],
+            ["Merchant EMI transactions", "1.5% back as NeuCoins", "1% back as NeuCoins"],
+            ["UPI payments via Tata Neu UPI ID", "1.5% back as NeuCoins", "1% back as NeuCoins"],
+            ["UPI payments via other apps (GPay, PhonePe, etc.)", "0.5% back as NeuCoins", "0.25% back as NeuCoins"]
+          ]
+        }
+      },
+      {
+        question: "Which transactions are not eligible for cashback (NeuCoins) on Tata Neu credit card?",
+        answer: {
+          headers: ["Category", "Transactions Not Eligible for NeuCoins"],
+          rows: [
+            ["Fuel & Wallet", "Fuel spends, wallet loads, gift cards, prepaid card loads, and voucher purchases"],
+            ["Payments & Charges", "Cash advances, credit card bill payments, card fees, and other charges"],
+            ["EMI Transactions", "Smart EMI and Dial-an-EMI transactions"],
+            ["Rent & Government", "Rental payments and government-related transactions such as taxes and challans"],
+            ["Education Payments", "Payments via third-party apps like CRED, Cheq, and MobiKwik (direct school/college payments are eligible)"],
+            ["Gaming Transactions", "Online skill-based gaming transactions (MCC-5816)"]
+          ]
+        }
+      },
+      {
+        question: "What is the value of 1 NeuCoin in Tata Neu credit card?",
+        answer: "1 NeuCoin equals ₹1 and can be directly redeemed for purchases across Tata Neu and partner brands, making it a simple and transparent cashback system."
+      },
+      {
+        question: "Can Tata Neu cashback (NeuCoins) be converted into cash or bank balance?",
+        answer: "No, NeuCoins cannot be converted into cash or transferred to your bank account. They can only be used for purchases within the Tata Neu ecosystem."
+      },
+      {
+        question: "How can I redeem Tata Neu cashback (NeuCoins)?",
+        answer: [
+          "NeuCoins can be redeemed across Tata Neu and partner platforms like BigBasket, Croma, Tata Cliq, Tata 1mg, Westside, IHCL hotels, Titan, and Tanishq.",
+          "Via Tata Pay: Select Tata Pay at checkout and choose the number of NeuCoins to redeem.",
+          "At offline stores: Share your registered mobile number at checkout and ask the cashier to apply NeuCoins to your purchase using OTP verification."
+        ]
+      },
+      {
+        question: "Do Tata Neu coins expire?",
+        answer: "Yes, Tata Neu coins (NeuCoins) expire after 12 months from the end of the month in which they are credited. It is recommended to redeem them regularly to avoid expiry."
+      },
+      {
+        question: "Is lounge access free with Tata Neu credit card and what are the conditions?",
+        answer: {
+          headers: ["Feature", "Tata Neu Infinity Card", "Tata Neu Plus Card"],
+          rows: [
+            ["Is Lounge Access Free?", "No, milestone-based (₹50,000 spend per quarter required)", "No, milestone-based (₹50,000 spend per quarter required)"],
+            ["Domestic Lounge Access", "2 visits per quarter (up to 8 per year)", "1 visit per quarter (up to 4 per year)"],
+            ["International Lounge Access", "4 visits per year (1 per quarter)", "Not available"],
+            ["Spend Requirement", "Minimum ₹50,000 per calendar quarter", "Minimum ₹50,000 per calendar quarter"]
+          ]
+        }
+      }
+    ]
   },
-   {
+  {
     slug: 'supermoney-creditcard-referral-code',
     brand: "SuperMoney",
     category: Category.Finance,
@@ -405,7 +521,7 @@ export const posts: Post[] = [
       currency: '₹'
     },
     playStoreId: 'money.super.payments',
-  faq: [
+    faq: [
       {
         question: "Is SuperMoney Credit Card really free for life?",
         answer: "Yes. SuperMoney Credit Card have no annual or joining fees."
@@ -414,10 +530,10 @@ export const posts: Post[] = [
         question: "What is minimum withdrawal amount?",
         answer: "Minimum withdrawal amount is ₹10. "
       }
-       
-    ]   
+
+    ]
   },
-     {
+  {
     slug: 'club-corra-referral-code',
     brand: "Club Corra",
     category: Category.Finance,
@@ -430,27 +546,27 @@ export const posts: Post[] = [
     referralBonus: '₹50',
     validity: 'Limited time offer',
     steps: [
-    "Click on the referral link above to open the Club Corra website.",
-    "Sign up for a new account using your mobile number.",
-    "Enter the referral code CORRAE48F during signup.",
-    "Upload your first shopping bill and select the 'Get Cashback' option before submitting."
-  ],
+      "Click on the referral link above to open the Club Corra website.",
+      "Sign up for a new account using your mobile number.",
+      "Enter the referral code CORRAE48F during signup.",
+      "Upload your first shopping bill and select the 'Get Cashback' option before submitting."
+    ],
     ctaText: "Get Cashback on Bill Upload",
-  offer: {
-    "price": 50,
-    "currency": "₹"
-  },
-  faq: [
-    {
-      "question": "Which apps' bills are accepted on Club Corra?",
-      "answer": "Club Corra accepts bills from popular e-commerce and delivery apps such as Myntra, Swiggy, Zepto and other supported platforms."
+    offer: {
+      "price": 50,
+      "currency": "₹"
     },
-    {
-      "question": "What is the value of 1 Club Corra point?",
-      "answer": "1 Club Corra point is equal to ₹1 and can be redeemed for rewards or cashback depending on available options."
-    }
-       
-    ]   
+    faq: [
+      {
+        "question": "Which apps' bills are accepted on Club Corra?",
+        "answer": "Club Corra accepts bills from popular e-commerce and delivery apps such as Myntra, Swiggy, Zepto and other supported platforms."
+      },
+      {
+        "question": "What is the value of 1 Club Corra point?",
+        "answer": "1 Club Corra point is equal to ₹1 and can be redeemed for rewards or cashback depending on available options."
+      }
+
+    ]
   }
 
 ];
