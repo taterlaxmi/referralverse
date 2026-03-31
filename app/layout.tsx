@@ -1,5 +1,5 @@
 import './globals.css'
-import {  GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-HNTYGBLFK3";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 
@@ -7,7 +7,7 @@ export const metadata = {
   title: 'ReferralVerse — Best Referral Offers & Coupons',
   description: 'Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.',
   icons: {
-    icon: "/logo.png",
+    icon: "/logo.webp",
   },
   openGraph: {
     title: 'ReferralVerse',
@@ -42,7 +42,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ReferralVerse",
     "url": "https://referralverse.in",
-    "logo": "https://referralverse.in/logo.png"
+    "logo": "https://referralverse.in/logo.webp"
   };
 
   return (

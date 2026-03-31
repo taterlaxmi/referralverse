@@ -38,11 +38,11 @@ const Header: React.FC = () => {
       <a href="#content" className="sr-only focus:not-sr-only p-2">Skip to content</a>
 
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-     {/* Group logo and site name */}
+        {/* Group logo and site name */}
         <div className="flex items-center space-x-3">
           <div className="relative w-10 h-10 sm:w-12 sm:h-12">
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Site logo"
               fill
               style={{ objectFit: "contain" }}
