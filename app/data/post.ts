@@ -557,36 +557,119 @@ export const posts: Post[] = [
     slug: 'kiwi-referral-code',
     brand: "Kiwi",
     category: Category.Finance,
-    title: 'Kiwi Credit Card Referral Code – Lifetime Free Axis RuPay Card (Upto 5% Cashback)',
-    summary: 'Kiwi offers a lifetime free RuPay credit card backed by Axis Bank. You can use it for UPI payments and earn up to 5% cashback on dining, travel, and everyday spends using this Kiwi credit card referral code.',
-    metaDescription: "Use the latest Kiwi Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
+    title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
+    summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
+    metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
     referralCode: ['JAKK6F', 'Z2F29R', 'Y72C6E', 'L367EN', 'UN6G66', 'FVZ9KE', 'FZWFLD'],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
-    signupBonus: '₹100 cashback on first payment',
-    referralBonus: '₹1500',
+    signupBonus: '₹100 Cashback on first UPI transaction',
+    referralBonus: '₹1500 per successful referral',
     validity: 'Limited time offer',
     steps: [
-      'Click on the above referral link button to download Kiwi App.',
-      'Signup for a new account using your mobile number.',
-      'Apply Kiwi Referral code during signup.',
-      'Apply for the Kiwi Credit Card.',
-      'Complete your first payment and you will get ₹100 cashback.'
+      'Download the Kiwi App from Play Store/App Store using the link.',
+      'Sign up with your mobile number and complete the basic profile.',
+      'Enter the Kiwi referral code during the credit card application.',
+      'Wait for your digital RuPay Credit Card to be issued.',
+      'Make your first UPI transaction with the Kiwi card to claim ₹100 cashback.'
     ],
-    ctaText: 'Enjoy 1.5% Cashback on UPI with Kiwi Credit Card',
+    ctaText: 'Apply for Kiwi Credit Card',
     offer: {
       price: 100,
       currency: '₹'
     },
-    faq: [
+    howToRefer: [
+      'Open the Kiwi app and navigate to the "Refer & Earn" section.',
+      'Copy your unique referral link or invite code.',
+      'Share it with friends. Once they get their card and make their 1st UPI spend, you earn ₹1200.',
+      'Track your rewards directly in your Kiwi Kiwis balance.'
+    ],
+    benefits: [
       {
-        question: "Is Kiwi really free for life?",
-        answer: "Yes. Kiwi have no annual or joining fees."
+        title: "Up to 2% Cashback on UPI Scan & Pay Transactions",
+        description:
+          "Regular users get 1.5% cashback on UPI Scan & Pay (merchant QR codes), while Kiwi Neon members enjoy an accelerated 2% reward. This is one of the highest cashback rates in the industry for UPI spends.",
+        emoji: "⚡"
       },
       {
-        question: "What is minimum withdrawal amount?",
-        answer: "Minimum withdrawal amount is ₹10. "
+        title: "Exclusive Kiwi Neon Rewards (Up to 5% Milestone Payout)",
+        description:
+          "Enrolling in Kiwi Neon unlocks monthly rewards capped at 1% of your credit limit and high-value milestone payouts: 3% on ₹50k, 4% on ₹100k, and 5% on ₹1.5L annual eligible spends.",
+        emoji: "🔥"
+      },
+      {
+        title: "Airport Lounge Access via Milestone Completion",
+        description:
+          "Unlock complimentary airport lounge access by achieving spend milestones. Achieve ₹50,000, ₹1L, or ₹1.5L spends to trigger high-quality lounge passes valid for 6 months.",
+        emoji: "🛫"
+      },
+      {
+        title: "Transparent Rewards (4 Kiwis = ₹1 Value)",
+        description:
+          "Kiwi rewards you in 'Kiwis'. 4 Kiwis equal ₹1. You can redeem them directly into your linked bank account once you accumulate 500 Kiwis (₹125 value).",
+        emoji: "💰"
+      },
+      {
+        title: "RuPay Credit Card Benefits with UPI Integration",
+        description:
+          "Being a RuPay card, you can link it to any UPI app (Kiwi, Google Pay, PhonePe) to pay merchants directly from your credit line, earning rewards where others earn nothing.",
+        emoji: "💳"
       }
-    ]
+    ],
+    faq: [
+      {
+        question: "What are the Joining and Annual charges for the Kiwi Credit Card?",
+        answer: "The Kiwi RuPay credit card is typically issued as a 'Lifetime Free' (LTF) card with ₹0 joining fee and ₹0 annual fee for most users. However, for exclusive benefits, users can opt for the 'Kiwi Neon' membership which has an annual fee of ₹999 + taxes. Always check your specific offer in the app before applying."
+      },
+      {
+        question: "Is Kiwi really giving 1.5% cashback on everything?",
+        answer: "No, Kiwi does not provide flat 1.5% cashback on all transactions. The 1.5% (or 2% with Neon) is mainly applicable on UPI Scan & Pay transactions. Online payments typically earn 0.5%, and some categories like fuel, rent, utilities, and government payments are excluded."
+      }, {
+        question: "Which transactions are excluded from earning rewards on Kiwi?",
+        answer: {
+          headers: ["Category", "Excluded Transactions"],
+          rows: [
+            ["Agricultural Services", "Agricultural Services and Cooperatives"],
+            ["Horticultural & Vet", "Horticultural, Landscaping, and Veterinary Services"],
+            ["Business Services", "Auto Rentals, Repairs, Paint Shops, and Jewelry/Watch Repair"],
+            ["Government Services", "Tax Payments, Court Costs, Postal Services, and Fines"],
+            ["Marketing & Advertising", "Direct Marketing and Advertising spends"],
+            ["Professional Services", "Legal, Accounting, and Educational Institutions"],
+            ["Retail Services", "Auto Dealers, Fuel Stations, Jewelry, and Petroleum"],
+            ["Transportation", "Bridge Fees, Tolls, and Misc. Transportation Services"],
+            ["Utilities", "Cable, Telecom, Electricity, and Water"],
+            ["Miscellaneous", "Financial Institutions, Insurance, Real Estate, and Gift cards"]
+          ]
+        }
+      },
+      {
+        question: "What is Kiwi Neon Membership? Benefits & Charges Explained",
+        answer: "Kiwi Neon is a premium membership offered by Kiwi that enhances your credit card rewards. It comes with an annual fee of ₹999 (plus GST) and provides benefits like 2% cashback on UPI scan & pay transactions, milestone-based rewards up to 5%, and lounge access on eligible spends. It is best suited for users who frequently use UPI payments, as regular usage helps recover the membership cost through higher cashback earnings."
+      },
+      {
+        question: "How much cashback can I earn per transaction with and without Kiwi Neon?",
+        answer: {
+          headers: ["Transaction Type", "Kiwi Neon Membership", "Regular Kiwi User"],
+          rows: [
+            ["Unlimited Scan & Pay (UPI QR)", "2% Cashback", "1.5% Cashback"],
+            ["Online / In-app Merchant Spends", "0.5% Cashback", "0.5% Cashback"],
+            ["Annual Milestone (₹50,000 spend)", "3% Effective Cashback", "N/A"],
+            ["Annual Milestone (₹1,00,000 spend)", "4% Effective Cashback", "N/A"],
+            ["Annual Milestone (₹1,50,000 spend)", "5% Effective Cashback", "N/A"]
+          ]
+        }
+      },
+      {
+        question: "What is the value of 1 Kiwi reward point?",
+        answer: "1 Kiwi is worth ₹0.25 (i.e., 4 Kiwis = ₹1). You need at least 500 Kiwis to redeem rewards."
+      },
+      {
+        question: "How do I redeem my Kiwi cashback (Kiwis)?",
+        answer: "Redemption is simple. Once you reach 500 Kiwis (worth ₹125), you can redeem them in multiples of 500 directly to your linked bank account via UPI. 4 Kiwis = ₹1."
+      },
+      {
+        question: "Does Kiwi support milestone rewards for lounge access?",
+        answer: "Yes, Kiwi Neon members get complimentary lounge access upon reaching spend milestones of ₹50k, ₹1L, and ₹1.5L in a year. Once a milestone is hit, the lounge pass is unlocked in the app home page."
+      }]
   },
   {
     slug: 'club-corra-referral-code',

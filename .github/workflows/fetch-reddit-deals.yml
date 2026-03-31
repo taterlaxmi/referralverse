@@ -2,7 +2,7 @@ name: Fetch Reddit Referral Deals
 
 on:
   schedule:
-    - cron: '30 9 * * 2' # Every Tuesday afternoon
+    - cron: '30 3 * * 3' # 9:00 AM IST (3:30 AM UTC) every Wednesday
   workflow_dispatch: # Allows manual trigger
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22' # Using latest node version
 
       - name: Run Fetch Script
         run: node scripts/fetch-deals.mjs
