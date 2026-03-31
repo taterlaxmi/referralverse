@@ -560,14 +560,15 @@ export const posts: Post[] = [
     title: 'Kiwi Credit Card Referral Code – Lifetime Free Axis RuPay Card (Upto 5% Cashback)',
     summary: 'Kiwi offers a lifetime free RuPay credit card backed by Axis Bank. You can use it for UPI payments and earn up to 5% cashback on dining, travel, and everyday spends using this Kiwi credit card referral code.',
     metaDescription: "Use the latest Kiwi Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
-    referralCode: 'JAKK6F',
+    referralCode: ['JAKK6F', 'Z2F29R', 'Y72C6E', 'L367EN', 'UN6G66', 'FVZ9KE', 'FZWFLD'],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 cashback on first payment',
-    referralBonus: '₹100',
+    referralBonus: '₹1500',
     validity: 'Limited time offer',
     steps: [
       'Click on the above referral link button to download Kiwi App.',
       'Signup for a new account using your mobile number.',
+      'Apply Kiwi Referral code during signup.',
       'Apply for the Kiwi Credit Card.',
       'Complete your first payment and you will get ₹100 cashback.'
     ],

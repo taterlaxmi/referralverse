@@ -15,7 +15,7 @@ export interface Post {
   category: Category;
   summary: string;
   metaDescription: string
-  referralCode: string;
+  referralCode: string | string[];
   referralLink: string;
   signupBonus: string;
   referralBonus: string;

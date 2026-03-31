@@ -19,7 +19,9 @@ export default function PostFeed() {
             const matchesSearch = searchTerm === '' ||
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                post.referralCode.toLowerCase().includes(searchTerm.toLowerCase());
+                (Array.isArray(post.referralCode) 
+                    ? post.referralCode.some(code => code.toLowerCase().includes(searchTerm.toLowerCase()))
+                    : post.referralCode.toLowerCase().includes(searchTerm.toLowerCase()));
             return matchesCategory && matchesSearch;
         });
     }, [searchTerm, selectedCategory]);
