@@ -4,13 +4,25 @@ export async function GET() {
   try {
     const redditUrl = 'https://www.reddit.com/r/IndiaReferral/new.json?limit=50';
     
-    const response = await fetch(redditUrl, {
+    let response = await fetch(redditUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 ReferralVerse/1.0.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/json',
+        'Accept-Language': 'en-US,en;q=0.9',
       },
       // Next.js cache for 1 hour to prevent rate limits
       next: { revalidate: 3600 } 
     });
+
+    if (response.status === 403) {
+      console.warn("Reddit 403 blocked in API route. Trying old.reddit fallback.");
+      const fallbackUrl = redditUrl.replace('www.reddit.com', 'old.reddit.com');
+      response = await fetch(fallbackUrl, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        }
+      });
+    }
 
     if (!response.ok) {
       throw new Error(`Reddit API returned status: ${response.status}`);
@@ -57,7 +69,7 @@ export async function GET() {
     ${JSON.stringify(topPosts)}
     `;
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
     
     const llmResponse = await fetch(geminiUrl, {
       method: 'POST',
