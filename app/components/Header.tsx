@@ -66,6 +66,7 @@ const Header: React.FC = () => {
         <button
           aria-expanded={navOpen}
           aria-controls="mobile-menu"
+          aria-label={navOpen ? "Close menu" : "Open menu"}
           onClick={handleNav}
           className='block md:hidden text-gray-800 cursor-pointer p-2'
         >

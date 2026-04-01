@@ -52,10 +52,10 @@ export default function PostOfferDetails({ post }: { post: Post }) {
   return (
     <div className="my-10">
       {/* Header */}
-      <h3 className="text-2xl font-semibold mb-6 text-gray-900 flex items-center gap-2">
+      <h2 className="text-2xl font-semibold mb-6 text-gray-900 flex items-center gap-2">
         <Gift className="text-indigo-500" size={22} />
         <span>Offer Details</span>
-      </h3>
+      </h2>
 
       {/* Table Container with Visible Scrollbar */}
       <div className="overflow-x-auto rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 shadow-sm hover:shadow-md transition-all duration-300 custom-scrollbar">

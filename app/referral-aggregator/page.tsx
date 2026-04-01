@@ -8,14 +8,14 @@ import aggregatedDeals from '../data/aggregated-deals.json';
 interface Deal {
   application: string;
   code: string;
-  signUpBonus: string;
-  referralBonus: string;
+  signUpBonus: string | null;
+  referralBonus: string | null;
 }
 
 export default function ReferralAggregatorPage() {
-  const [deals, setDeals] = useState<Deal[]>(aggregatedDeals.deals);
+  const [deals] = useState<Deal[]>(aggregatedDeals.deals);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-  const [lastUpdated, setLastUpdated] = useState<string>(aggregatedDeals.lastUpdated);
+  const [lastUpdated] = useState<string>(aggregatedDeals.lastUpdated);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -58,20 +58,20 @@ export default function ReferralAggregatorPage() {
 
           {/* Status Bar */}
           <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
-             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-indigo-50 flex items-center justify-center">
-                  <Calendar className="w-5 h-5 text-indigo-600" />
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Last Updated</p>
-                  <p className="text-sm font-bold text-gray-800">{formatDate(lastUpdated)}</p>
-                </div>
-             </div>
-             
-             <div className="px-6 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                {deals.length} Active Referral Codes
-             </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-2xl bg-indigo-50 flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-indigo-600" />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Last Updated</p>
+                <p className="text-sm font-bold text-gray-800">{formatDate(lastUpdated)}</p>
+              </div>
+            </div>
+
+            <div className="px-6 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm font-bold border border-emerald-100 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              {deals.length} Active Referral Codes
+            </div>
           </div>
 
           {/* Results Table */}
@@ -115,10 +115,10 @@ export default function ReferralAggregatorPage() {
                           </button>
                         </td>
                         <td className="p-6">
-                          <div className="text-gray-700 font-medium">{deal.signUpBonus}</div>
+                          <div className="text-gray-700 font-medium">{deal.signUpBonus || 'Not specified'}</div>
                         </td>
                         <td className="p-6">
-                          <div className="text-emerald-600 font-bold">{deal.referralBonus}</div>
+                          <div className="text-emerald-600 font-bold">{deal.referralBonus || 'Not specified'}</div>
                         </td>
                       </tr>
                     ))
@@ -131,10 +131,10 @@ export default function ReferralAggregatorPage() {
           <div className="mt-12 p-8 bg-gray-50 rounded-3xl border border-gray-100 text-center">
             <h3 className="text-lg font-bold text-gray-900 mb-2">Want to add your referral code?</h3>
             <p className="text-gray-600 mb-6">Post your referral codes in the <strong>r/IndiaReferral</strong> subreddit to get featured in our automated tracker.</p>
-            <a 
-              href="https://www.reddit.com/r/IndiaReferral/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.reddit.com/r/IndiaReferral/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-indigo-600 font-bold hover:underline"
             >
               Visit Community <ExternalLink className="w-4 h-4" />
@@ -147,5 +147,3 @@ export default function ReferralAggregatorPage() {
     </div>
   );
 }
-
-0

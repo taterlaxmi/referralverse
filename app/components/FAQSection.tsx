@@ -41,9 +41,9 @@ export default function FAQSection({
             className="group rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
           >
             <summary className="cursor-pointer list-none px-5 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl flex justify-between items-center">
-              <h4 className="text-indigo-600 text-lg font-semibold text-left">
+              <h3 className="text-indigo-600 text-lg font-semibold text-left">
                 {item.question}
-              </h4>
+              </h3>
 
               <span className="transition-transform duration-300 group-open:rotate-180">
                 <svg

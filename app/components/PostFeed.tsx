@@ -79,7 +79,7 @@ export default function PostFeed() {
                                 <>
                                     {post.summary.slice(0, 70)}…
                                     <span className="text-indigo-600 font-medium ml-1 group-hover:underline transition-all duration-200">
-                                        Read more
+                                        Read more <span className="sr-only">about {post.brand} referral code</span>
                                     </span>
                                 </>
                             ) : (
@@ -92,7 +92,7 @@ export default function PostFeed() {
                             <span className="bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">
                                 {post.category}
                             </span>
-                            <span className="text-green-600 font-semibold">
+                            <span className="text-green-700 font-semibold">
                                 {post.offer.currency}{post.offer.price}
                             </span>
                         </div>
