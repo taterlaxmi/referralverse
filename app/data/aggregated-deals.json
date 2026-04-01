@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-31T00:30:00.000Z",
+  "lastUpdated": "2026-04-01T06:42:54.208Z",
   "deals": [
     {
       "application": "Angel One",
@@ -18,6 +18,18 @@
       "code": "GROWW100",
       "signUpBonus": "₹100 Welcome Bonus",
       "referralBonus": "₹100 per referral"
+    },
+    {
+      "application": "WeCatchAi",
+      "code": "ref-2953-adf80838",
+      "signUpBonus": null,
+      "referralBonus": null
+    },
+    {
+      "application": "WeCatchAi",
+      "code": "ref-3332-de31945e",
+      "signUpBonus": null,
+      "referralBonus": null
     }
   ]
 }

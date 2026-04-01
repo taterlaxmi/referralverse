@@ -1,50 +1,99 @@
 import { readFile, writeFile } from 'fs/promises';
+import { existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = path.join(__dirname, '../app/data/aggregated-deals.json');
+const ENV_FILE = path.join(__dirname, '../.env.local');
 
-async function fetchDeals() {
-    console.log("🚀 Starting Reddit Referral Scraper...");
-    
-    // 1. Fetch from Reddit
-    const redditUrl = 'https://www.reddit.com/r/IndiaReferral/new.json?limit=50';
-    let redditResponse = await fetch(redditUrl, {
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': 'application/json',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache',
-        }
-    });
-
-    if (redditResponse.status === 403) {
-        console.warn("⚠️ Reddit 403 blocked. Attempting fallback to old.reddit.com...");
-        const fallbackUrl = redditUrl.replace('www.reddit.com', 'old.reddit.com');
-        redditResponse = await fetch(fallbackUrl, {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+// Manually load .env.local for standard node execution
+async function loadEnv() {
+    if (existsSync(ENV_FILE)) {
+        const content = await readFile(ENV_FILE, 'utf8');
+        content.split(/\r?\n/).forEach(line => {
+            const trimmedLine = line.trim();
+            if (!trimmedLine || trimmedLine.startsWith('#')) return;
+            const [key, ...valueParts] = trimmedLine.split('=');
+            if (key && valueParts.length > 0) {
+                const value = valueParts.join('=').trim();
+                process.env[key.trim()] = value;
             }
         });
     }
+}
 
-    if (!redditResponse.ok) {
-        throw new Error(`Reddit API error: ${redditResponse.status}`);
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function fetchFromReddit() {
+    const urls = [
+        'https://www.reddit.com/r/IndiaReferral/new.json?limit=50',
+        'https://old.reddit.com/r/IndiaReferral/new.json?limit=50',
+        'https://www.reddit.com/r/IndiaReferral/new.rss?limit=50'
+    ];
+
+    for (const url of urls) {
+        try {
+            console.log(`📡 Attempting fetch: ${url}`);
+            const response = await fetch(url, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                    'Accept': url.endsWith('.json') ? 'application/json' : 'application/rss+xml'
+                }
+            });
+
+            if (!response.ok) {
+                console.warn(`⚠️ Method failed (${url}): ${response.status}`);
+                continue;
+            }
+
+            if (url.endsWith('.json')) {
+                const data = await response.json();
+                const posts = data.data.children
+                    .filter((post) => {
+                        const flair = post.data.link_flair_text || '';
+                        return flair === 'Referral Code 🔑' || flair.toLowerCase() === 'referral code';
+                    })
+                    .map((post) => ({
+                        title: post.data.title,
+                        description: post.data.selftext,
+                    }));
+                if (posts.length > 0) return posts;
+            } else {
+                const xml = await response.text();
+                const entries = [];
+                const entryRegex = /<entry>([\s\S]*?)<\/entry>/g;
+                let match;
+                while ((match = entryRegex.exec(xml)) !== null) {
+                    const content = match[1];
+                    const titleMatch = /<title>(.*?)<\/title>/.exec(content);
+                    const textMatch = /&lt;div class=&quot;md&quot;&gt;([\s\S]*?)&lt;\/div&gt;/.exec(content);
+                    if (titleMatch) {
+                        entries.push({
+                            title: titleMatch[1].replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>'),
+                            description: textMatch ? textMatch[1].replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&') : ''
+                        });
+                    }
+                }
+                if (entries.length > 0) return entries;
+            }
+        } catch (e) {
+            console.warn(`❌ Error with ${url}: ${e.message}`);
+        }
     }
+    throw new Error("Failed to fetch from all Reddit sources.");
+}
 
-    const redditData = await redditResponse.json();
-    const rawPosts = redditData.data.children
-        .filter((post) => {
-            const flair = post.data.link_flair_text || '';
-            return flair === 'Referral Code 🔑' || flair.toLowerCase() === 'referral code';
-        })
-        .map((post) => ({
-            title: post.data.title,
-            description: post.data.selftext,
-        }));
+async function fetchDeals() {
+    await loadEnv(); 
+    console.log("🚀 Starting Reddit Referral Scraper...");
+    
+    // Debug keys (masking for security)
+    const geminiKey = process.env.GEMINI_API_KEY;
+    const groqKey = process.env.GROQ_API_KEY;
+    console.log(`🔑 Config loaded: Gemini=${geminiKey ? 'YES' : 'NO'}, Groq=${groqKey ? 'YES' : 'NO'}`);
 
+    const rawPosts = await fetchFromReddit();
     console.log(`📡 Found ${rawPosts.length} relevant posts on Reddit.`);
 
     if (rawPosts.length === 0) {
@@ -52,70 +101,103 @@ async function fetchDeals() {
         return;
     }
 
-    // 2. Extract with Gemini
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-        throw new Error("Missing GEMINI_API_KEY environment variable.");
-    }
-
     const promptText = `
-    You are an AI assistant that extracts referral codes and deals from Reddit posts.
-    I will provide you with a list of Reddit posts. Each post has a title and a description.
-    Please extract the application name, the referral code, the sign up bonus, and the referral bonus for each post.
-    Return the result strictly as a valid JSON array of objects.
-    Each object must have the following keys:
-    - "application": string
-    - "code": string (the referral code to use)
-    - "signUpBonus": string (the bonus the new user gets, e.g. "Rs 100" or "N/A" if not specified)
-    - "referralBonus": string (the bonus the referrer gets, or "N/A" if not specified)
-    
-    If a post does not contain a clear referral code, skip it.
-    Output ONLY the JSON array without any markdown formatting, backticks, or extra text.
-    
+    Extract referral deals as JSON array with application, code, signUpBonus, referralBonus.
     Reddit Posts:
-    ${JSON.stringify(rawPosts.slice(0, 10))}
+    ${JSON.stringify(rawPosts.slice(0, 5))}
     `;
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-    
-    const geminiResponse = await fetch(geminiUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            contents: [{ parts: [{ text: promptText }] }],
-            generationConfig: {
-                responseMimeType: "application/json",
-            }
-        })
-    });
+    let extractedDeals = [];
+    let success = false;
 
-    if (!geminiResponse.ok) {
-        const errText = await geminiResponse.text();
-        throw new Error(`Gemini API Error: ${errText}`);
+    // 1. Attempt Gemini 2.0 Flash
+    if (geminiKey) {
+        try {
+            console.log("🤖 Attempting extraction with Gemini 2.0 Flash...");
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: promptText }] }],
+                    generationConfig: { responseMimeType: "application/json" }
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
+                const parsed = JSON.parse(rawJsonText);
+                extractedDeals = Array.isArray(parsed) ? parsed : (parsed.deals || (Object.values(parsed)[0]));
+                console.log(`✅ Success with Gemini! Extracted ${extractedDeals.length} deals.`);
+                success = true;
+            } else {
+                console.warn(`⚠️ Gemini failed with status ${response.status}.`);
+            }
+        } catch (e) {
+            console.warn(`❌ Gemini error: ${e.message}`);
+        }
     }
 
-    const geminiData = await geminiResponse.json();
-    const rawJsonText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
-    const newDeals = JSON.parse(rawJsonText);
-    
-    console.log(`🤖 AI extracted ${newDeals.length} deals.`);
+    // 2. Fallback to Groq
+    if (!success && groqKey) {
+        try {
+            console.log("🤖 Attempting fallback to Groq (Llama-3)...");
+            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${groqKey}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    model: 'llama-3.3-70b-versatile',
+                    messages: [
+                        { role: 'user', content: promptText + "\nReturn ONLY valid JSON array." }
+                    ],
+                    response_format: { type: 'json_object' }
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const content = data.choices?.[0]?.message?.content || "{}";
+                const parsed = JSON.parse(content);
+                extractedDeals = Array.isArray(parsed) ? parsed : (parsed.deals || (Object.values(parsed)[0]));
+                if (!Array.isArray(extractedDeals)) extractedDeals = [];
+                console.log(`✅ Success with Groq! Extracted ${extractedDeals.length} deals.`);
+                success = true;
+            } else {
+                console.warn(`⚠️ Groq failed with status ${response.status}.`);
+            }
+        } catch (e) {
+            console.warn(`❌ Groq error: ${e.message}`);
+        }
+    }
+
+    if (!success) {
+        throw new Error("Both extraction methods failed. Please check your API keys and quotas.");
+    }
 
     // 3. Merge and Save
     const existingData = JSON.parse(await readFile(DATA_FILE, 'utf8'));
-    
-    // Deduplication logic: brand + code
     const dealMap = new Map();
-    existingData.deals.forEach(d => dealMap.set(`${d.application.toLowerCase()}-${d.code.toLowerCase()}`, d));
-    newDeals.forEach(d => dealMap.set(`${d.application.toLowerCase()}-${d.code.toLowerCase()}`, d));
-
-    const updatedDeals = Array.from(dealMap.values());
+    existingData.deals.forEach(d => {
+        if (d.application && d.code) {
+           dealMap.set(`${d.application.toLowerCase()}-${d.code.toLowerCase()}`, d);
+        }
+    });
+    extractedDeals.forEach(d => {
+        if (d.application && d.code) {
+           dealMap.set(`${d.application.toLowerCase()}-${d.code.toLowerCase()}`, d);
+        }
+    });
 
     await writeFile(DATA_FILE, JSON.stringify({
         lastUpdated: new Date().toISOString(),
-        deals: updatedDeals
+        deals: Array.from(dealMap.values())
     }, null, 2));
 
-    console.log(`💾 Saved ${updatedDeals.length} total deals to JSON.`);
+    console.log(`💾 Saved ${dealMap.size} total deals to JSON.`);
 }
 
 fetchDeals().catch(err => {
