@@ -31,5 +31,3 @@ jobs:
       - name: Run Lighthouse Audit
         run: |
           npx lhci autorun
-        env:
-          LHCI_URL: 'https://referralverse.in'
