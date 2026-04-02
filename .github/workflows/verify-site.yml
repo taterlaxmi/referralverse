@@ -1,0 +1,35 @@
+name: Verify Site (Tests & Lighthouse Analysis)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Run Unit Tests (SEO & Data)
+        run: npm test
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run Lighthouse Audit
+        run: |
+          npx lhci autorun
+        env:
+          LHCI_URL: 'https://referralverse.in'

@@ -1,6 +1,6 @@
-# ReferralVerse
+# ReferralVerse 🚀
 
-A modern referral offers directory built with Next.js, React, and TypeScript. Deployed on Netlify.
+A high-performance referral offers directory built with **Next.js**, **React**, and **TypeScript**. Optimized for SEO, core web vitals, and accessibility.
 
 ---
 
@@ -8,70 +8,57 @@ A modern referral offers directory built with Next.js, React, and TypeScript. De
 
 - **Framework:** [Next.js](https://nextjs.org/) (App Router)
 - **Language:** [TypeScript](https://www.typescriptlang.org/)
-- **Styling:** [PostCSS](https://postcss.org/) (see [`postcss.config.mjs`](postcss.config.mjs))
-- **Hosting:** [Netlify](https://www.netlify.com/)
-- **SEO:** Dynamic metadata, Open Graph, and structured data
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **SEO/Sitemap:** [next-sitemap](https://github.com/iamvishnusankar/next-sitemap)
+- **Testing:** [Vitest](https://vitest.dev/) & [Playwright](https://playwright.dev/)
+- **Audit:** [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 ---
 
-## 📁 Folder Structure
+## 📁 Key Folder Structure
 
-```
-.
-├── app/                # Main application routes and components (App Router)
-│   ├── components/     # Reusable React components
-│   ├── posts/          # Dynamic post pages ([slug])
-│   └── ...             # Other route segments
-├── lib/                # Utility libraries and helpers
-├── public/             # Static assets (images, favicon, etc.)
-├── .next/              # Next.js build output (auto-generated)
-├── .idea/              # JetBrains IDE config (optional)
-├── next.config.js      # Next.js configuration (JS)
-├── next.config.ts      # Next.js configuration (TS, optional)
-├── netlify.toml        # Netlify deployment configuration
-├── postcss.config.mjs  # PostCSS configuration
-├── package.json        # Project dependencies and scripts
-├── tsconfig.json       # TypeScript configuration
-└── README.md           # Project documentation
-```
+- `app/`: Main application logic and routes.
+  - `components/`: UI components (Header, Footer, FAQ, etc.).
+  - `data/`: Centralized store for all referral post data.
+  - `posts/[slug]/`: Generated individual offer landing pages.
+- `scripts/`: Data fetching automation.
+- `public/`: Optimized static assets (WebP format).
 
 ---
 
-### GitHub Workflows
+## ✅ Quality Assurance & Testing
 
-- **Lighthouse CI:** Runs Lighthouse audits nightly and on main branch pushes.
-- **Security Audit:** Checks for vulnerable dependencies every Monday.
+### 1. Unit Tests (SEO & Data)
+Automated verification of metadata and content integrity.
+```bash
+npm test
+```
 
-See `.github/workflows/` for workflow files.
+### 2. Lighthouse Audit
+Automated performance and accessibility audits.
+```bash
+npx lhci autorun
+```
 
-# 🚀 Getting Started (Local Development)
+### 3. Case-Insensitive Search & Filtering
+The offer feed supports dynamic search and category filtering with URL-based pagination for SEO friendliness.
 
-1. **Clone the repository:**
-   ```sh
+---
+
+## 🚀 Getting Started (Local Development)
+
+1. **Clone & Install:**
+   ```bash
    git clone https://github.com/your-username/referralverse.git
-   cd referralverse
-   ```
-
-2. **Install dependencies:**
-   ```sh
    npm install
-   # or
-   yarn install
    ```
 
-3. **Run the development server:**
-   ```sh
+2. **Development:**
+   ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-4. **Build for production:**
-   ```sh
+3. **Build & Build Info:**
+   ```bash
    npm run build
-   npm start
    ```
-
- 

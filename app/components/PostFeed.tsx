@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Post } from '../types';
 import { posts } from '../data/post';
 import SearchBar from './SearchBar';
@@ -7,9 +8,17 @@ import CategoryMenu from './CategoryMenu';
 
 const POSTS_PER_PAGE = 6;
 
-export default function PostFeed() {
+function PostFeedContent() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // States for search and category
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+    // Get current page from URL params, default to 1
+    const currentPageParam = searchParams.get('page');
+    const currentPage = currentPageParam ? parseInt(currentPageParam, 10) : 1;
 
     const categories = ['All', ...new Set(posts.map(post => post.category))];
 
@@ -19,7 +28,7 @@ export default function PostFeed() {
             const matchesSearch = searchTerm === '' ||
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                 post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (Array.isArray(post.referralCode) 
+                (Array.isArray(post.referralCode)
                     ? post.referralCode.some(code => code.toLowerCase().includes(searchTerm.toLowerCase()))
                     : post.referralCode.toLowerCase().includes(searchTerm.toLowerCase()));
             return matchesCategory && matchesSearch;
@@ -27,35 +36,62 @@ export default function PostFeed() {
     }, [searchTerm, selectedCategory]);
 
     const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
-    const [currentPage, setCurrentPage] = useState(1);
 
     // Calculate the posts to display based on the current page
     const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
     const currentPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
+    const updatePage = (newPage: number) => {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set('page', newPage.toString());
+        router.push(`/?${params.toString()}`, { scroll: false });
+
+        // Scroll to top of the feed grid when page changes
+        const feedElement = document.getElementById('post-feed-grid');
+        if (feedElement) {
+            feedElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     const handleNextPage = () => {
         if (currentPage < totalPages) {
-            setCurrentPage(currentPage + 1);
+            updatePage(currentPage + 1);
         }
     };
 
     const handlePrevPage = () => {
         if (currentPage > 1) {
-            setCurrentPage(currentPage - 1);
+            updatePage(currentPage - 1);
         }
+    };
+
+    const handleSearchChange = (newTerm: string) => {
+        setSearchTerm(newTerm);
+        // Reset to page 1 when search changes
+        const params = new URLSearchParams(searchParams.toString());
+        params.delete('page');
+        router.push(`/?${params.toString()}`, { scroll: false });
+    };
+
+    const handleCategoryChange = (newCategory: string) => {
+        setSelectedCategory(newCategory);
+        // Reset to page 1 when category changes
+        const params = new URLSearchParams(searchParams.toString());
+        params.delete('page');
+        router.push(`/?${params.toString()}`, { scroll: false });
     };
 
     return (
         <>
-            <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+            <SearchBar searchTerm={searchTerm} setSearchTerm={handleSearchChange} />
 
             <CategoryMenu
                 categories={categories}
                 selectedCategory={selectedCategory}
-                setSelectedCategory={setSelectedCategory}
+                setSelectedCategory={handleCategoryChange}
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="post-feed-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-20">
                 {currentPosts.map((post: Post) => (
                     <a
                         key={post.slug}
@@ -154,5 +190,13 @@ export default function PostFeed() {
                 </button>
             </div>
         </>
+    );
+}
+
+export default function PostFeed() {
+    return (
+        <Suspense fallback={<div className="text-center py-12">Loading posts...</div>}>
+            <PostFeedContent />
+        </Suspense>
     );
 }

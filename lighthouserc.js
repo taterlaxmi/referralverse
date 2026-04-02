@@ -1,8 +1,9 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['referralverse.in'],
+      url: ['http://localhost:3000'],
       numberOfRuns: 3,
+      startServerCommand: 'npm run start',
     },
     assert: {
       assertions: {
