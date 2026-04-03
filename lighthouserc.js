@@ -1,7 +1,10 @@
 module.exports = {
   ci: {
     collect: {
-      url: ['http://localhost:3000'],
+      url: [
+        'http://localhost:3000/',
+        'http://localhost:3000/drinkprime-referral-code'
+      ],
       numberOfRuns: 3,
       startServerCommand: 'npm run start',
     },

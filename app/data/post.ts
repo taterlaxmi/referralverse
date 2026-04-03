@@ -521,36 +521,84 @@ export const posts: Post[] = [
     slug: 'supermoney-creditcard-referral-code',
     brand: "SuperMoney",
     category: Category.Finance,
-    title: 'SuperMoney Credit Card Referral Code – Lifetime Free Axis RuPay Card (Upto 5% Cashback)',
-    summary: 'SuperMoney offers a lifetime free RuPay credit card backed by Axis Bank. You can use it for UPI payments and earn up to 5% cashback on dining, travel, and everyday spends using this SuperMoney credit card referral code.',
-    metaDescription: "Use the latest SuperMoney Credit Card referral code to get a Lifetime Free RuPay credit card backed by Axis Bank. Enjoy up to 5% cashback on UPI, dining, travel and more.",
-    referralCode: 'gJGY9KiLKUb',
+    title: 'SuperMoney Credit Card Referral Link: Upto 5% Cashback (RuPay LTF)',
+    summary: 'SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹100 cashback on your first payment.',
+    metaDescription: "Use the latest SuperMoney Credit Card referral link to get a Lifetime Free RuPay credit card backed by Utkarsh, Kotak or Axis Bank. Enjoy up to 5% cashback on UPI.",
+    referralCode: [],
     referralLink: 'https://link.super.money/gJGY9KiLKUb',
     signupBonus: '₹100 cashback on first payment',
-    referralBonus: '₹100',
+    referralBonus: 'Up to ₹100 (Cashback Match for 30 days)',
     validity: 'Limited time offer',
     steps: [
-      'Click on the above referral link button to download SuperMoney App.',
+      'Click on the above referral link button to download the SuperMoney App. (Note: No manual code needed).',
       'Signup for a new account using your mobile number.',
       'Apply for the Lifetime Free SuperMoney Credit Card.',
-      'Complete your first payment and you will get ₹100 cashback.'
+      'Complete your first UPI payment using the app to get ₹100 cashback.'
     ],
     ctaText: 'Get LTF SuperMoney Credit Card',
     offer: {
       price: 100,
       currency: '₹'
     },
-    playStoreId: 'money.super.payments',
-    faq: [
+    benefits: [
       {
-        question: "Is SuperMoney Credit Card really free for life?",
-        answer: "Yes. SuperMoney Credit Card have no annual or joining fees."
+        title: "Two Distinct Card Options",
+        description: "Get an unsecured Lifetime Free (LTF) Axis Bank RuPay Credit Card, or an FD-backed RuPay card via Kotak811 / Utkarsh requiring a minimum ₹1,000 Fixed Deposit (giving a credit limit of 90% of FD value).",
+        emoji: "💳"
       },
       {
-        question: "What is minimum withdrawal amount?",
-        answer: "Minimum withdrawal amount is ₹10. "
+        title: "Up to 5% Cashback on Spends",
+        description: "Kotak users enjoy flat 5% on Myntra, 2% on Flipkart, and 1% on UPI scans. Axis users earn 3% on SuperMoney UPI scans (capped) and unlimited 1% on other UPI or non-UPI spends.",
+        emoji: "💸"
+      },
+      {
+        title: "Link to Any UPI App",
+        description: "Since it's a RuPay credit card, you can link it directly to SuperMoney, PhonePe, Google Pay, or Paytm and scan any merchant QR code to pay using credit.",
+        emoji: "📱"
       }
-
+    ],
+    faq: [
+      {
+        question: "Does SuperMoney have a referral code?",
+        answer: "No, SuperMoney does not require a manual referral code. You just need to click a valid referral link, download the app, and make your first payment to automatically qualify for the signup bonus."
+      },
+      {
+        question: "Is the SuperMoney Credit Card really free for life?",
+        answer: "Yes, the annual fee is NIL. However, for the Kotak811 FD-backed variant, a ₹249 joining fee applies if your credit limit is less than ₹4,500 and you opt for a physical card."
+      },
+      {
+        question: "How does the cashback structure work for Axis Bank SuperMoney card?",
+        answer: "Axis issues a 3% cashback on UPI QR scans made strictly via the super.money app. However, this 3% is dynamically capped at the total cashback you earned from all other 1% non-super.money spends in that cycle (with a minimum ₹100 cap). You also earn an unlimited 1% on all other qualifying spends."
+      },
+      {
+        question: "What are the specific cashback exclusions?",
+        answer: "First, all transactions below ₹100 earn zero cashback. Furthermore, categories like Repayments, Utilities, Fuel, Jewelry/Watch stores, Cash withdrawals, Wallet loads, Insurance, Education, Government services, Rent, Telecom, and any EMI-converted purchases are completely excluded from earning cashback."
+      },
+      {
+        question: "What is the FD requirement for the Kotak811 SuperMoney Card?",
+        answer: "You must book a fixed deposit of at least ₹1,000. Your credit limit will be exactly 90% of your FD value. While linked, your FD will continue to earn up to 6% interest risk-free."
+      },
+      {
+        question: "What is the minimum withdrawal amount for cashback?",
+        answer: "The minimum withdrawal amount built into the super.money app is ₹10."
+      },
+      {
+        question: "How does the SuperMoney referral bonus (Cashback Match) work?",
+        answer: "When you refer a friend, it triggers a 30-day 'Cashback Match' period after their first transaction. Whenever your friend earns eligible cashback on their own transactions during this period, you earn a 100% matching amount, up to a maximum cap of ₹100 per friend."
+      },
+      {
+        question: "How do the Axis Bank vs. Kotak/Utkarsh SuperMoney Cards compare?",
+        answer: {
+          headers: ["Feature / Spends", "Axis Bank super.money", "Kotak / Utkarsh super.money"],
+          rows: [
+            ["Default Card Type", "Unsecured (Lifetime Free)", "FD-Backed (Min ₹1,000)"],
+            ["UPI Spends (Via super.money app)", "3% Cashback (Capped vs other spends)", "1% Cashback (Max ₹500/month)"],
+            ["Other UPI & Non-UPI Spends", "1% Cashback (Unlimited)", "1% Cashback (Max ₹10,000/month)"],
+            ["Preferred Merchants (Myntra/Flipkart)", "No special preferred rate", "5% Myntra / 2% Flipkart (Max ₹500/month)"],
+            ["Minimum Spend to Earn", "₹100 per transaction", "₹100 per transaction"]
+          ]
+        }
+      }
     ]
   },
   {
@@ -560,7 +608,7 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
-    referralCode: ['JAKK6F', 'Z2F29R', 'Y72C6E', 'L367EN', 'UN6G66', 'FVZ9KE', 'FZWFLD'],
+    referralCode: ['UE92Q4', 'L367EN', 'Y72C6E', 'FZWFLD'],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
     referralBonus: '₹1500 per successful referral',
@@ -617,6 +665,9 @@ export const posts: Post[] = [
     ],
     faq: [
       {
+        question: "Does Stable Money have a referral code?",
+        answer: "No, Stable Money does not provide a manual referral code. Instead, it offers a referral link that automatically applies any eligible signup bonus when you register and book your first FD."
+      }, {
         question: "What are the Joining and Annual charges for the Kiwi Credit Card?",
         answer: "The Kiwi RuPay credit card is typically issued as a 'Lifetime Free' (LTF) card with ₹0 joining fee and ₹0 annual fee for most users. However, for exclusive benefits, users can opt for the 'Kiwi Neon' membership which has an annual fee of ₹999 + taxes. Always check your specific offer in the app before applying."
       },
@@ -820,6 +871,113 @@ export const posts: Post[] = [
       {
         question: "Is GoldenPi referral program worth it?",
         answer: "Yes, especially if you can refer high-value investors. Since rewards are linked to investment size, even a few successful referrals can generate significant income."
+      }
+    ]
+  },
+  {
+    slug: 'stable-money-referral-code',
+    brand: "Stable Money",
+    category: Category.Finance,
+    title: 'Stable Money Referral Code (Link): Get Up to ₹200 Bonus + 8.5% FD Rates',
+    summary: 'Stable Money is a comprehensive fixed-return investment platform that lets you access high-yield Fixed Deposits (up to 8.67%+ p.a.), invest in corporate bonds via Stable Bonds, and get a secured RuPay credit card against your FD. Use the latest Stable Money referral link to earn a ₹200 bonus on booking your first FD.',
+    metaDescription: "Apply with Stable Money referral link to get ₹200 bonus on your first FD. Earn up to 8.67% FD interest, invest in bonds, and get a secured RuPay credit card.",
+    referralCode: [],
+    referralLink: 'https://stablemoney.onelink.me/rkWL/757jb7yj',
+    signupBonus: 'Up to ₹200 bonus on first FD',
+    referralBonus: '₹200 or 1% of investment (Stable Bonds)',
+    validity: 'Ongoing Offer',
+    steps: [
+      'Click on the "Get Stable Money App" button to download the app. (Note: There is no manual code to enter; the ₹200 bonus is auto-applied when you use this link).',
+      'Sign up using your mobile number and complete your KYC.',
+      'Browse through the available Fixed Deposits and compare the rates.',
+      'Book your first FD to instantly receive a ₹200 sign-up reward.'
+    ],
+    ctaText: 'Get Stable Money App',
+    offer: {
+      price: 200,
+      currency: '₹'
+    },
+    howToRefer: [
+      'Open the Stable Money app and navigate to the Referral section.',
+      'Share your unique invite link with friends.',
+      'Your friend gets ₹200 on booking their first FD.',
+      'You get your referral bonus directly transferred to your KYC-verified bank account.'
+    ],
+    benefits: [
+      {
+        title: "Earn High FD Rates (Up to 8.67%)",
+        description: "Access some of the highest FD rates across India’s banks and NBFCs, allowing you to maximize returns compared to regular savings accounts.",
+        emoji: "📈"
+      },
+      {
+        title: "₹5L DICGC Insurance (RBI Backed)",
+        description: "Your bank fixed deposits are insured up to ₹5,00,000 by DICGC, a wholly-owned subsidiary of RBI, ensuring the safety of your principal and interest.",
+        emoji: "🛡️"
+      },
+      {
+        title: "Compare and Choose from 12+ Partners",
+        description: "Choose from 9+ banks and 3+ NBFCs all in one app. Compare rates intuitively without creating a savings account for each.",
+        emoji: "🔍"
+      },
+      {
+        title: "Backed by Top Investors",
+        description: "The platform is trusted by over 30 lakh users and backed by industry veterans like Kunal Bahl (Snapdeal), Nandan Nilekani (Infosys), and Sriharsha Majety (Swiggy).",
+        emoji: "🏆"
+      },
+      {
+        title: "Lifetime Free Secured RuPay Credit Card",
+        description: "Get a secured UPI-enabled RuPay credit card against your FD with zero joining fees or income proof required. Powered by Suryoday Bank, it offers cashback, lounge access, and helps build your credit score effortlessly.",
+        emoji: "💳"
+      },
+      {
+        title: "Stable Bonds for Higher Returns",
+        description: "Diversify your portfolio by investing in highly-rated corporate bonds through Stable Bonds, a SEBI-registered platform. Buy and sell bonds seamlessly to earn regular fixed income.",
+        emoji: "📄"
+      }
+    ],
+    faq: [
+      {
+        question: "Does Stable Money have a referral code?",
+        answer: "No, Stable Money does not provide a manual referral code. Instead, it offers a referral link that automatically applies any eligible signup bonus when you register and book your first FD."
+      }, {
+        question: "Is Stable Money safe to use?",
+        answer: "Yes, Stable Money is a secure digital platform. For FDs, it connects you directly with RBI-regulated banks and NBFCs. Deposits made through the platform in partner banks are insured up to ₹5 Lakhs by DICGC."
+      },
+      {
+        question: "Do I need to open a savings account to book an FD?",
+        answer: "No, one of the biggest benefits of Stable Money is that you don't need to open a separate savings account with each bank in order to book an FD."
+      },
+      {
+        question: "Are there any charges for booking FDs through Stable Money?",
+        answer: "Stable Money currently does not charge users any account opening fees or processing fees for booking Fixed Deposits through their platform."
+      },
+      {
+        question: "Can I prematurely withdraw my FD on Stable Money?",
+        answer: "Yes, premature withdrawal is possible, but it usually attracts a bank penalty (often 0.5% to 1%). You can initiate withdrawal directly through the app or the respective bank’s net banking portal."
+      },
+      {
+        question: "How does the Stable Money referral program work?",
+        answer: "When a new user joins using your referral link and successfully books their first FD, they receive a ₹200 bonus. Depending on ongoing campaigns (like the Stable Bonds program), referrers can also earn 1% of the referee's investment, up to ₹5,000 per referral."
+      },
+      {
+        question: "Is income from Stable Money FDs taxable?",
+        answer: "Yes, the interest earned on Fixed Deposits is fully taxable as per your income tax slab. TDS may be deducted by the bank if the interest exceeds ₹40,000 in a financial year (₹50,000 for senior citizens)."
+      },
+      {
+        question: "Can I submit Form 15G/15H to avoid TDS on Stable Money?",
+        answer: "Currently, you cannot submit Form 15G/15H directly through the Stable Money app. You will need to visit the respective partner bank's website or branch where the FD is held to submit the form and prevent TDS deduction."
+      },
+      {
+        question: "Why is my FD showing as 'processing' when money was already deducted?",
+        answer: "It generally takes T+1 or T+2 working days for the partner bank to generate the Fixed Deposit Advice (receipt). The interest, however, will be calculated from the day your funds were debited."
+      },
+      {
+        question: "Why did my KYC or Penny Drop verification fail?",
+        answer: "Verification usually fails if there is a name mismatch between your PAN Card, Aadhar Card, and your Bank Account. Ensure that the exact name format matches across all documents, as RBI regulations are strict for digital FD onboarding."
+      },
+      {
+        question: "Do I have to visit a bank branch to prematurely break my FD?",
+        answer: "Most partner FDs can be broken directly within the Stable Money app or the bank's digital portal. However, some partner banks might require a branch visit to break an FD and transfer the amount back if there are technical discrepancies."
       }
     ]
   }

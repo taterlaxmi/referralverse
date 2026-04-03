@@ -27,10 +27,7 @@ function PostFeedContent() {
             const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
             const matchesSearch = searchTerm === '' ||
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                post.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                (Array.isArray(post.referralCode)
-                    ? post.referralCode.some(code => code.toLowerCase().includes(searchTerm.toLowerCase()))
-                    : post.referralCode.toLowerCase().includes(searchTerm.toLowerCase()));
+                post.category.toLowerCase().includes(searchTerm.toLowerCase()) 
             return matchesCategory && matchesSearch;
         });
     }, [searchTerm, selectedCategory]);
