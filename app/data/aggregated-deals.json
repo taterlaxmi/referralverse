@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-01T08:44:31.942Z",
+  "lastUpdated": "2026-04-08T08:41:03.928Z",
   "deals": [
     {
       "application": "Angel One",
@@ -30,6 +30,30 @@
       "code": "ref-3332-de31945e",
       "signUpBonus": null,
       "referralBonus": null
+    },
+    {
+      "application": "Bhim UPI",
+      "code": "6COo46",
+      "signUpBonus": null,
+      "referralBonus": null
+    },
+    {
+      "application": "Growfitter",
+      "code": "SUNN619H",
+      "signUpBonus": null,
+      "referralBonus": "Rs.2000 worth Growfitter Shopping Coupon"
+    },
+    {
+      "application": "Blue Tokai",
+      "code": "AR71842326",
+      "signUpBonus": "100 rupee instant discount",
+      "referralBonus": "some points"
+    },
+    {
+      "application": "Third Wave Coffee",
+      "code": "AC71109900",
+      "signUpBonus": "100 rupee instant discount",
+      "referralBonus": "some points"
     }
   ]
 }
