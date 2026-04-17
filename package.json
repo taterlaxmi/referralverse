@@ -12,11 +12,11 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@next/third-parties": "^16.2.2",
-    "lucide-react": "^1.7.0",
-    "next": "^16.2.2",
-    "react": "19.2.4",
-    "react-dom": "^19.2.4"
+    "@next/third-parties": "^16.2.4",
+    "lucide-react": "^1.8.0",
+    "next": "^16.2.4",
+    "react": "19.2.5",
+    "react-dom": "^19.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -26,17 +26,17 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
-    "@types/jsdom": "^28.0.0",
+    "@types/jsdom": "^28.0.1",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.0.1",
-    "eslint": "^10",
-    "eslint-config-next": "16.2.1",
+    "eslint": "^10.2.0",
+    "eslint-config-next": "16.2.4",
     "jsdom": "^29.0.2",
     "next-sitemap": "^4.2.3",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5",
-    "vitest": "^4.1.2"
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6",
+    "vitest": "^4.1.4"
   }
 }

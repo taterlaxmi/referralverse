@@ -608,7 +608,7 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
-    referralCode: ['UE92Q4', 'L367EN', 'Y72C6E', 'FZWFLD'],
+    referralCode: ['UE92Q4',  'FZWFLD'],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
     referralBonus: '₹1500 per successful referral',

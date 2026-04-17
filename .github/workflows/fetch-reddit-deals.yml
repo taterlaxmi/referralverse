@@ -2,7 +2,7 @@ name: Fetch Reddit Referral Deals
 
 on:
   schedule:
-    - cron: '30 7 * * 3' # 9:00 AM IST (3:30 AM UTC) every Wednesday
+    - cron: '30 3 22 * *' # 9:00 AM IST (3:30 AM UTC) on the 22nd of the month
   workflow_dispatch: # Allows manual trigger
 
 jobs:

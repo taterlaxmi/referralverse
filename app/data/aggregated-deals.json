@@ -54,24 +54,6 @@
       "code": "AC71109900",
       "signUpBonus": "100 rupee instant discount",
       "referralBonus": "some points"
-    },
-    {
-      "application": "super.money",
-      "code": "https://link.super.money/yOOCjuZHLUb",
-      "signUpBonus": 10,
-      "referralBonus": [
-        10,
-        20,
-        30,
-        40,
-        50
-      ]
-    },
-    {
-      "application": "Layover Mobile",
-      "code": "https://layover.mobile/r/LAY-BTM2A6",
-      "signUpBonus": 5,
-      "referralBonus": 5
     }
   ]
 }
