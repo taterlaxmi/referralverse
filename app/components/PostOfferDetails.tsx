@@ -52,7 +52,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
   return (
     <div className="my-10">
       {/* Header */}
-      <h2 className="text-2xl font-semibold mb-6 text-gray-900 flex items-center gap-2">
+      <h2 id="offer" className="text-2xl font-semibold mb-6 text-gray-900 flex items-center gap-2">
         <Gift className="text-indigo-500" size={22} />
         <span>Offer Details</span>
       </h2>

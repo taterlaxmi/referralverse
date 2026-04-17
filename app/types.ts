@@ -4,7 +4,13 @@ export enum Category {
   Food = "Food",
   Shopping = "Shopping",
   Health = "Health",
-  Entertainment = "Entertainment"
+  Entertainment = "Entertainment",
+  HomeLiving = "Home & Living",
+  Utilities = "Utilities",
+  Rentals = "Rentals",
+  Lifestyle = "Lifestyle",
+  Subscriptions = "Subscriptions",
+  Rewards = "Rewards"
 }
 
 export interface Post {

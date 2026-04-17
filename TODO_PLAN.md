@@ -14,28 +14,26 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 
 ---
 
-## 🏃‍♂️ Phase 1: End-to-End Testing (Current Priority)
+## ✨ Phase 2: Schema & E-E-A-T Optimization (Immediate Priority)
 
-Now that Vitest covers our unit and logic tests, we must ensure the interface actually works for users.
-
-*   [ ] **Set up Playwright**: Initialize Playwright in the project (`npm init playwright@latest`).
-*   [ ] **Test Home Feed interactions**: Write tests verifying that changing category filters updates the feed accurately.
-*   [ ] **Test Search functionality**: Verify the search bar filters down referral cards.
-*   [ ] **Test Referral Code Copy**: Write a test executing the "Copy Code" button and assert clipboard content matches.
-*   [ ] **Integrate E2E with CI**: Add a Playwright run to GitHub Actions (`verify-site.yml`).
+*   [x] **Audit Existing Schema:** Verified `HowTo`, `Offer`, `FAQ`, and `Breadcrumb` presence on post pages.
+*   [x] **Home Page ItemList:** Added `ItemList` structured data to the home page with pagination support.
+*   [x] **Post Schema Consolidation:** Refactored schemas into a single linked graph using `@id` and specialized nesting (`FinancialProduct`/`SoftwareApplication`).
+*   [x] **Author & Publisher Markup:** Linked the `Organization` schema to all posts for improved E-E-A-T.
+*   [x] **Schema Verification Tests:** Implemented 14 automated Vitest checks covering data and logic.
 
 ---
 
-## ✨ Phase 2: UI/UX & Content Polish
+## 🏃‍♂️ Phase 3: UI/UX & Reliability
 
-*   [ ] **Refine Empty States:** Add a clear, user-friendly empty state when search or filters return 0 results (e.g. "No referral codes found for this category").
-*   [ ] **Add Loading Skeletons:** Ensure loading states (especially for Next.js Suspense boundaries) look like the content structure to avoid layout shift.
-*   [ ] **Interactive Hover states:** Add subtle CSS transforms and shadow transitions to the referral cards to make the interface feel more premium.
+*   [ ] **Set up Playwright**: Initialize E2E testing to prevent regressions in user flows.
+*   [ ] **Refine Empty States:** Add clear results-not-found messaging.
+*   [ ] **Add Loading Skeletons:** Ensure loading states look like the content structure.
 
 ---
 
-## 📈 Phase 3: Growth & Aggregation Automation (Upcoming)
+## 📈 Phase 4: Growth & Aggregation Automation (Upcoming)
 
-*   [ ] **Automated Data Fetching (Reddit/Telegram):** Finalize and deploy the GitHub Action that aggregates new codes.
-*   [ ] **RSS Feed Generation:** Automatically build an `rss.xml` feed based on the latest codes to help users and aggregators subscribe.
-*   [ ] **Google Search Console monitoring:** Verify domain indexing standing and watch to see if duplicate URL warnings drop.
+*   [ ] **Automated Data Fetching**: Finalize and deploy the GitHub Action that aggregates new codes.
+*   [ ] **RSS Feed Generation**: Build `rss.xml` for subscribers.
+*   [ ] **Google Search Console monitoring**: Verify domain indexing status.

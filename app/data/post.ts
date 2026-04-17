@@ -4,7 +4,7 @@ export const posts: Post[] = [
   {
     slug: 'drinkprime-referral-code',
     brand: "Drinkprime",
-    category: Category.Health,
+    category: Category.Utilities,
     title: 'DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)',
     summary: 'DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.',
     metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month. Updated Jan 2025.',
@@ -149,7 +149,7 @@ export const posts: Post[] = [
   {
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
-    category: Category.Health,
+    category: Category.HomeLiving,
     title: 'Livpure Smart Referral Code: 7 day free trail + ₹100 off',
     summary: 'Livpure Smart, a pay-as-you-drink water service, provides pure drinking water using 7-stage purification @ Rs 0.99/liter. Livpure Smart has various subscription plans suiting different needs.',
     metaDescription: "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
@@ -608,7 +608,7 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
-    referralCode: ['UE92Q4',  'FZWFLD'],
+    referralCode: ['UE92Q4', 'FZWFLD'],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
     referralBonus: '₹1500 per successful referral',
@@ -725,7 +725,7 @@ export const posts: Post[] = [
   {
     slug: 'club-corra-referral-code',
     brand: "Club Corra",
-    category: Category.Finance,
+    category: Category.Shopping,
     title: 'Club Corra Referral Code: Get Cashback on Every Bill Upload',
     summary: 'Use the Club Corra referral code to earn rewards when you upload shopping bills. Club Corra lets users upload bills from apps like Myntra, Swiggy, and Zepto to earn cashback points that can be redeemed later.',
     metaDescription: "Use the latest Club Corra referral code to earn cashback on every bill upload. Upload bills from Myntra, Swiggy, Zepto and more to earn Club Corra points.",

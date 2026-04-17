@@ -5,6 +5,7 @@ import { Post } from '../types';
 import { posts } from '../data/post';
 import SearchBar from './SearchBar';
 import CategoryMenu from './CategoryMenu';
+import * as schemaUtils from '../utils/schema';
 
 const POSTS_PER_PAGE = 6;
 
@@ -78,8 +79,14 @@ function PostFeedContent() {
         router.push(`/?${params.toString()}`, { scroll: false });
     };
 
+    const itemListSchema = schemaUtils.getItemListSchema(currentPosts, startIndex);
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+            />
             <SearchBar searchTerm={searchTerm} setSearchTerm={handleSearchChange} />
 
             <CategoryMenu

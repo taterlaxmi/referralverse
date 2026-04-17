@@ -3,12 +3,12 @@ import { HelpCircle } from "lucide-react";
 type FAQ = {
   question: string;
   answer:
-    | string
-    | string[]
-    | {
-        headers: string[];
-        rows: string[][];
-      };
+  | string
+  | string[]
+  | {
+    headers: string[];
+    rows: string[][];
+  };
 };
 
 type FAQSectionProps = {
@@ -29,7 +29,7 @@ export default function FAQSection({
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <HelpCircle className="w-6 h-6 text-indigo-600" />
-          <h2 className="text-2xl font-semibold text-gray-900">{heading}</h2>
+          <h2 id="faq" className="text-2xl font-semibold text-gray-900">{heading}</h2>
         </div>
         <p className="text-sm text-gray-500">{subheading}</p>
       </div>
