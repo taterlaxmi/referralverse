@@ -40,13 +40,13 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
         {/* Group logo and site name */}
         <div className="flex items-center space-x-3">
-          <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+          <div className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
             <Image
               src="/logo.webp"
               alt="Site logo"
-              fill
-              style={{ objectFit: "contain" }}
-              sizes="(max-width: 640px) 40px, 48px"
+              width={48}
+              height={48}
+              className="w-full h-full object-contain"
               priority
             />
           </div>
