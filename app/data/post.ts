@@ -7,12 +7,12 @@ export const posts: Post[] = [
     category: Category.Utilities,
     title: 'DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)',
     summary: 'DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.',
-    metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month. Updated Jan 2025.',
+    metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.',
     referralCode: 'ZIHCQMNY',
     referralLink: 'http://drinkprime.in/lp46?referral_code=ZIHCQMNY&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button',
     signupBonus: '₹200 Off',
     referralBonus: '₹1000',
-    validity: 'Valid until Dec 31, 2025',
+    validity: 'Valid for new users only',
     referralImage: "/drinkprime.webp",
     ctaText: 'Download DrinkPrime App',
     offer: { price: 200, currency: '₹' },
@@ -143,8 +143,7 @@ export const posts: Post[] = [
         question: "How often are filters replaced?",
         answer: "Filters are replaced automatically based on consumption data. Users do not need to request replacements."
       }
-    ],
-    playStoreId: 'waterwala.com.prime'
+    ]
   },
   {
     slug: 'livpure-smart-referral-code',
@@ -169,9 +168,7 @@ export const posts: Post[] = [
     offer: {
       price: 100,
       currency: '₹'
-    },
-    playStoreId: 'com.livpure.safedrink',
-  },
+    }},
   {
     slug: 'cultfit-referral-code',
     brand: "CultFit",

@@ -112,7 +112,7 @@ export default async function PostPage({ params }: Props) {
 
           {/* How to Claim / Signup Steps */}
           {post.steps?.length > 0 && (
-            <section className="my-20">
+            <section id="claim-offer" className="my-20">
               <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
                 <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M16 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2       m8-10a4 4 0 100-8 4 4 0 000 8zm8 4h-3m0 0v-3m0 3v3" />
@@ -173,7 +173,7 @@ export default async function PostPage({ params }: Props) {
 
           {/* Terms & Conditions */}
           {Array.isArray(post.termsAndConditions) && post.termsAndConditions.length > 0 && (
-            <section className="my-20">
+            <section id="offer-validity" className="my-20">
               <h2 className="text-3xl md:text-4xl font-semibold mb-10 flex items-center gap-3 text-gray-900">
                 <svg className="w-8 h-8 text-indigo-500 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" />

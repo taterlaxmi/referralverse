@@ -53,5 +53,4 @@ export interface Post {
       rows: string[][];   // array of rows
     };
   }[];
-  playStoreId?: string;
 }

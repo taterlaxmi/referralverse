@@ -37,6 +37,7 @@ export default function FAQSection({
       <div className="space-y-4">
         {faq.map((item, idx) => (
           <details
+            id={`faq-${idx + 1}`}
             key={idx}
             className="group rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
           >

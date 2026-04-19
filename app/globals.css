@@ -1,1 +1,9 @@
 @import 'tailwindcss';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Adjust this value based on your actual Header's height so it clears the navbar */
+    scroll-padding-top: 100px;
+  }
+}

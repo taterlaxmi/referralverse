@@ -4,14 +4,26 @@ import { Post, Category } from '../types';
  * Normalizes FAQ answers (string | string[] | table) into a single string for JSON-LD
  */
 export function formatFaqAnswer(answer: any): string {
-    if (typeof answer === 'string') return answer;
-    if (Array.isArray(answer)) return answer.join(' ');
-    if (answer && typeof answer === 'object' && Array.isArray(answer.headers) && Array.isArray(answer.rows)) {
-        const headerLine = answer.headers.join(' | ');
-        const rowsText = answer.rows.map((r: string[]) => r.join(' | ')).join(' ; ');
-        return `${headerLine}\n${rowsText}`;
-    }
-    return '';
+  if (!answer) return "";
+
+  // String
+  if (typeof answer === "string") return answer;
+
+  // Array → sentence
+  if (Array.isArray(answer)) {
+    return answer.join(" ");
+  }
+
+  // Table → natural sentence (CRITICAL FIX)
+  if (answer.headers && answer.rows) {
+    return answer.rows
+      .map((row: string[]) => {
+        return `${row[0]} plan starts at ${row[1]} per month and includes ${row[2]}.`;
+      })
+      .join(" ");
+  }
+
+  return "";
 }
 
 export function getMainEntityForCategory(category: Category): string {
@@ -108,49 +120,68 @@ export function getOfferSchema(post: Post) {
 }
 
 export function getFaqSchema(post: Post) {
-    const mainEntity = [
-        {
-            "@type": "Question",
-            "name": "How do I claim this offer?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": post.steps.join(" ")
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What is the signup bonus?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": post.signupBonus
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "What is the referral bonus?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": post.referralBonus
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How long is this offer valid?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": post.validity
-            }
-        }
-    ];
+    const baseUrl = `https://referralverse.in/${post.slug}`;
+    const mainEntity: any[] = [];
 
+    // ✅ Claim Offer
+    mainEntity.push({
+        "@type": "Question",
+        "@id": `${baseUrl}#claim-offer`,
+        "name": `How do I claim the ${post.brand} referral offer?`,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `${post.steps.join(" ")} This offer is available for new users and may vary based on location and availability.`
+        }
+    });
+
+    // ✅ Signup Bonus
+    mainEntity.push({
+        "@type": "Question",
+        "@id": `${baseUrl}#signup-bonus`,
+        "name": `What is the signup bonus for ${post.brand}?`,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `New users can get ${post.signupBonus} on their first subscription when applying a valid referral code during signup.`
+        }
+    });
+
+    // ✅ Referral Bonus
+    mainEntity.push({
+        "@type": "Question",
+        "@id": `${baseUrl}#referral-bonus`,
+        "name": `What referral rewards does ${post.brand} offer?`,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `Users can earn up to ${post.referralBonus} by referring friends who successfully sign up and complete their first subscription.`
+        }
+    });
+
+    // ✅ Validity
+    mainEntity.push({
+        "@type": "Question",
+        "@id": `${baseUrl}#offer-validity`,
+        "name": `How long is the ${post.brand} offer valid?`,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `${post.validity}. Offers may change or expire depending on company policies.`
+        }
+    });
+
+    // ✅ Dynamic FAQs (clean + normalized)
     if (Array.isArray(post.faq)) {
-        post.faq.forEach(f => {
+        post.faq.forEach((f, index) => {
+            const formattedAnswer = formatFaqAnswer(f.answer);
+
+            // Skip weak answers
+            if (!formattedAnswer || formattedAnswer.length < 20) return;
+
             mainEntity.push({
                 "@type": "Question",
+                "@id": `${baseUrl}#faq-${index + 1}`,
                 "name": f.question,
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": formatFaqAnswer(f.answer)
+                    "text": formattedAnswer
                 }
             });
         });
@@ -159,7 +190,9 @@ export function getFaqSchema(post: Post) {
     return {
         "@context": "https://schema.org",
         "@type": "FAQPage",
-        "@id": `https://referralverse.in/${post.slug}#faq`,
+        "@id": `${baseUrl}#faq`,
+        "name": `Frequently Asked Questions about ${post.brand}`,
+        "inLanguage": "en-IN",
         "mainEntity": mainEntity
     };
 }

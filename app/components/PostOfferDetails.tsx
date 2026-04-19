@@ -156,7 +156,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
             </tr>
 
             {/* Signup Bonus */}
-            <tr className="hover:bg-gray-50/80 transition">
+            <tr id="signup-bonus" className="hover:bg-gray-50/80 transition">
               <th className="py-4 px-5 text-left font-medium text-gray-600">
                 Signup Bonus
               </th>
@@ -164,7 +164,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
             </tr>
 
             {/* Referral Bonus */}
-            <tr className="hover:bg-gray-50/80 transition">
+            <tr id="referral-bonus" className="hover:bg-gray-50/80 transition">
               <th className="py-4 px-5 text-left font-medium text-gray-600">
                 Referral Bonus
               </th>

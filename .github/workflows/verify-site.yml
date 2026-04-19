@@ -32,4 +32,4 @@ jobs:
         run: |
           npx lhci autorun
         env:
-          LHCI_URL: 'https://referralverse.in, https://referralverse.in/drinkprime-referral-code'
+          LHCI_URL: 'https://referralverse.in'
