@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-15T09:01:11.950Z",
+  "lastUpdated": "2026-04-22T05:38:51.973Z",
   "deals": [
     {
       "application": "Angel One",
@@ -54,6 +54,30 @@
       "code": "AC71109900",
       "signUpBonus": "100 rupee instant discount",
       "referralBonus": "some points"
+    },
+    {
+      "application": "Stake",
+      "code": "None",
+      "signUpBonus": "$1",
+      "referralBonus": "$1"
+    },
+    {
+      "application": "Angel one",
+      "code": "None",
+      "signUpBonus": "Rs. 450",
+      "referralBonus": "Rs. 750 voucher"
+    },
+    {
+      "application": "Attapol",
+      "code": "bwjbv",
+      "signUpBonus": "None",
+      "referralBonus": "None"
+    },
+    {
+      "application": "Toing",
+      "code": "768B442",
+      "signUpBonus": "₹50",
+      "referralBonus": "₹50"
     }
   ]
 }
