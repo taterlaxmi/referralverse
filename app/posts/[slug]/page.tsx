@@ -122,7 +122,7 @@ export default async function PostPage({ params }: Props) {
               </h2>
               <ol className="relative border-l border-indigo-100 ml-5 space-y-2">
                 {post.steps.map((step, index) => (
-                  <li key={index} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
+                  <li id={`step-${index + 1}`} key={index} className="relative pl-10 group transition-all duration-300 hover:translate-x-1">
                     <div className="absolute -left-5 top-2 w-[34px] h-[34px] flex items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 text-white font-semibold shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                       {index + 1}
                     </div>

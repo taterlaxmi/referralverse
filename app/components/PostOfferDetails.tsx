@@ -85,7 +85,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
           <tbody className="divide-y divide-gray-100 text-gray-800">
             {/* Referral Code(s) */}
             {codes.length > 0 && (
-              <tr className="hover:bg-gray-50/80 transition">
+              <tr id="referral-code" className="hover:bg-gray-50/80 transition scroll-mt-24">
                 <th className="py-4 px-5 text-left font-medium text-gray-600 w-auto md:w-48 whitespace-nowrap align-top pt-8">
                   Referral Code
                 </th>
@@ -138,7 +138,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
             )}
 
             {/* Referral Link */}
-            <tr className="hover:bg-gray-50/80 transition">
+            <tr id="referral-link" className="hover:bg-gray-50/80 transition scroll-mt-24">
               <th className="py-4 px-5 text-left font-medium text-gray-600">
                 Referral Link
               </th>

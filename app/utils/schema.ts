@@ -167,6 +167,33 @@ export function getFaqSchema(post: Post) {
         }
     });
 
+    // ✅ Referral Code / Link
+    let referralCodeAnswer = "";
+    let referralCodeQuestion = `What is the ${post.brand} referral code?`;
+    let referralCodeAnchor = "referral-code";
+
+    if (typeof post.referralCode === "string" && post.referralCode.trim() !== "") {
+        referralCodeAnswer = `The ${post.brand} referral code is ${post.referralCode}. Use it during signup to claim your reward.`;
+    } else if (Array.isArray(post.referralCode) && post.referralCode.length > 0) {
+        referralCodeQuestion = `What are the active ${post.brand} referral codes?`;
+        referralCodeAnswer = `The active ${post.brand} referral codes are: ${post.referralCode.join(", ")}. Use any of these codes during signup.`;
+    } else if (post.referralLink) {
+        referralCodeAnchor = "referral-link";
+        referralCodeAnswer = `${post.brand} does not provide a manual referral code. You can use the referral link to claim the offer automatically.`;
+    }
+
+    if (referralCodeAnswer) {
+        mainEntity.push({
+            "@type": "Question",
+            "@id": `${baseUrl}#${referralCodeAnchor}`,
+            "name": referralCodeQuestion,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": referralCodeAnswer
+            }
+        });
+    }
+
     // ✅ Dynamic FAQs (clean + normalized)
     if (Array.isArray(post.faq)) {
         post.faq.forEach((f, index) => {

@@ -61,9 +61,33 @@ describe('Structured Data (Schema) Integrity', () => {
             const postWithFaq = posts.find(p => p.faq && p.faq.length > 0) || samplePost;
             const schema = schemaUtils.getFaqSchema(postWithFaq);
             expect(schema['@type']).toBe('FAQPage');
-            // Base 4 questions + custom FAQs
-            const expectedLength = 4 + (postWithFaq.faq?.length || 0);
+            // Base 4 questions + referral code + custom FAQs
+            const expectedLength = 4 + 1 + (postWithFaq.faq?.length || 0);
             expect(schema.mainEntity.length).toBe(expectedLength);
+        });
+
+        it('getFaqSchema generates correct referral code/link FAQ based on single code, multiple codes, or links', () => {
+            // Case 1: Single string code
+            const postSingle = { ...samplePost, referralCode: 'SINGLE123', referralLink: '' };
+            const schemaSingle = schemaUtils.getFaqSchema(postSingle);
+            const faqSingle = schemaSingle.mainEntity.find((q: any) => q['@id'].includes('#referral-code'));
+            expect(faqSingle.name).toBe(`What is the ${samplePost.brand} referral code?`);
+            expect(faqSingle.acceptedAnswer.text).toContain('SINGLE123');
+
+            // Case 2: Array of codes
+            const postArray = { ...samplePost, referralCode: ['CODE1', 'CODE2'], referralLink: '' };
+            const schemaArray = schemaUtils.getFaqSchema(postArray);
+            const faqArray = schemaArray.mainEntity.find((q: any) => q['@id'].includes('#referral-code'));
+            expect(faqArray.name).toBe(`What are the active ${samplePost.brand} referral codes?`);
+            expect(faqArray.acceptedAnswer.text).toContain('CODE1, CODE2');
+
+            // Case 3: Empty code but has link
+            const postLinkOnly = { ...samplePost, referralCode: [], referralLink: 'https://link.com' };
+            const schemaLinkOnly = schemaUtils.getFaqSchema(postLinkOnly);
+            const faqLinkOnly = schemaLinkOnly.mainEntity.find((q: any) => q['@id'].includes('#referral-link'));
+            expect(faqLinkOnly).toBeDefined();
+            expect(faqLinkOnly.acceptedAnswer.text).toContain('does not provide a manual referral code');
+            expect(faqLinkOnly.acceptedAnswer.text).toContain('referral link');
         });
 
         it('getItemListSchema correctly assigns positions', () => {

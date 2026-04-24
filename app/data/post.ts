@@ -168,7 +168,8 @@ export const posts: Post[] = [
     offer: {
       price: 100,
       currency: '₹'
-    }},
+    }
+  },
   {
     slug: 'cultfit-referral-code',
     brand: "CultFit",
@@ -605,7 +606,7 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
-    referralCode: ['UE92Q4', 'FZWFLD'],
+    referralCode: ['CVS89J', 'W34C65', 'ET5BYK', "ZML688", "X37SXS", "CTD5SC"],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
     referralBonus: '₹1500 per successful referral',
@@ -662,9 +663,6 @@ export const posts: Post[] = [
     ],
     faq: [
       {
-        question: "Does Stable Money have a referral code?",
-        answer: "No, Stable Money does not provide a manual referral code. Instead, it offers a referral link that automatically applies any eligible signup bonus when you register and book your first FD."
-      }, {
         question: "What are the Joining and Annual charges for the Kiwi Credit Card?",
         answer: "The Kiwi RuPay credit card is typically issued as a 'Lifetime Free' (LTF) card with ₹0 joining fee and ₹0 annual fee for most users. However, for exclusive benefits, users can opt for the 'Kiwi Neon' membership which has an annual fee of ₹999 + taxes. Always check your specific offer in the app before applying."
       },
