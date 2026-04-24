@@ -69,7 +69,8 @@ export function getBreadcrumbSchema(post: Post) {
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": post.title
+                "name": post.title,
+                "item": `https://referralverse.in/${post.slug}`
             }
         ]
     };
@@ -103,7 +104,7 @@ export function getOfferSchema(post: Post) {
             "@type": "Offer",
             "url": `https://referralverse.in/${post.slug}#offer`,
             "price": post.offer.price,
-            "priceCurrency": post.offer.currency,
+            "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
             "offeredBy": { "@id": "https://referralverse.in/#organization" }
         }

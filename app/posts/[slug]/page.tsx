@@ -41,6 +41,11 @@ export async function generateMetadata({ params }: Props) {
       title: post.title,
       description: post.metaDescription,
       url: `https://referralverse.in/${post.slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.metaDescription,
     }
   };
 }
@@ -100,7 +105,7 @@ export default async function PostPage({ params }: Props) {
             <div className="mb-6 flex justify-center">
               <Image
                 src={post.referralImage}
-                alt={`${post.brand} referral code — ${post.title}. ${post.summary.slice(0, 70)}...`}
+                alt={`${post.brand} referral offer and promo code`}
                 width={600}
                 height={400}
                 className="w-full max-w-md rounded-2xl shadow-md border border-gray-200 object-cover"
