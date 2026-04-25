@@ -2,10 +2,17 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PostFeed from './components/PostFeed';
+import * as schemaUtils from './utils/schema';
 
 export default function Home() {
+  const homeSchema = schemaUtils.getHomeGraphSchema();
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
       <Header />
       <main className="container mx-auto px-4 py-8">
         <div className="text-center my-8">

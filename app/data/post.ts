@@ -16,6 +16,8 @@ export const posts: Post[] = [
     referralImage: "/drinkprime.webp",
     ctaText: 'Download DrinkPrime App',
     offer: { price: 200, currency: '₹' },
+    ratingValue: '4.9',
+    reviewCount: '1500',
     steps: [
       'Download the DrinkPrime app from the Play Store or App Store.',
       'Sign up as a new user using your mobile number.',

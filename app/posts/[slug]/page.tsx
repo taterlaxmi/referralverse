@@ -55,31 +55,16 @@ export default async function PostPage({ params }: Props) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return notFound();
 
-  const howToJson = schemaUtils.getHowToSchema(post);
-  const offerJson = schemaUtils.getOfferSchema(post);
-  const faqSchema = schemaUtils.getFaqSchema(post);
-  const breadcrumbSchema = schemaUtils.getBreadcrumbSchema(post);
+  const graphSchema = schemaUtils.getFullGraphSchema(post);
 
   return (
     <>
       <Header />
       <main>
-        {/* Structured data for SEO */}
+        {/* Structured data for SEO (Consolidated Graph) */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJson) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(offerJson) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }}
         />
 
         <article id="content" className="container mx-auto px-4 py-12">

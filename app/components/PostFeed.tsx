@@ -28,7 +28,7 @@ function PostFeedContent() {
             const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
             const matchesSearch = searchTerm === '' ||
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                post.category.toLowerCase().includes(searchTerm.toLowerCase()) 
+                post.category.toLowerCase().includes(searchTerm.toLowerCase())
             return matchesCategory && matchesSearch;
         });
     }, [searchTerm, selectedCategory]);

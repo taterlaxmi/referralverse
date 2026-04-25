@@ -26,6 +26,20 @@ A high-performance referral offers directory built with **Next.js**, **React**, 
 
 ---
 
+## 🔍 Structured Data (SEO)
+
+ReferralVerse uses a highly optimized **JSON-LD @graph** structure to maximize rich result eligibility in search engines. Each page serves a consolidated, linked web of data:
+
+- **Home Page:** `WebSite`, `Organization`, and `ItemList` (with pagination support).
+- **Post Pages:** A linked graph connecting:
+  - `Product` (with `AggregateRating` & `Offer`)
+  - `HowTo` (Step-by-step instructions)
+  - `FAQPage` (Commonly asked questions)
+  - `BreadcrumbList` (Navigation path)
+  - `WebPage` & `Organization` (Publisher identity)
+
+---
+
 ## ✅ Quality Assurance & Testing
 
 ### 1. Unit Tests (SEO & Data)

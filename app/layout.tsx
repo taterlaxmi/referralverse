@@ -37,23 +37,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "ReferralVerse",
-    "url": "https://referralverse.in",
-    "logo": "https://referralverse.in/logo.webp"
-  };
-
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
-        {/* JSON-LD for Organization (helps SEO) */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         <GoogleAnalytics gaId={GA_ID} />
         <GoogleTagManager gtmId={GTM_ID} />
         {children}

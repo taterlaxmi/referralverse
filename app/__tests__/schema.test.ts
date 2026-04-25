@@ -42,19 +42,24 @@ describe('Structured Data (Schema) Integrity', () => {
             expect(schema['@id']).toContain('#howto');
         });
 
-        it('getOfferSchema uses correct Entity nesting', () => {
+        it('getOfferSchema uses Product + Offer for all categories', () => {
+            // Test Finance → Product
             const financePost = posts.find(p => p.category === Category.Finance) || samplePost;
-            const schema = schemaUtils.getOfferSchema(financePost);
+            const financeSchema = schemaUtils.getOfferSchema(financePost);
+            expect(financeSchema['@type']).toBe('Product');
 
-            if (financePost.category === Category.Finance) {
-                expect(schema['@type']).toBe('FinancialProduct');
-            } else {
-                expect(schema['@type']).toBe('SoftwareApplication');
-            }
+            // Test Shopping → Product
+            const shoppingPost = posts.find(p => p.category === Category.Shopping || p.category === Category.Health) || samplePost;
+            const productSchema = schemaUtils.getOfferSchema(shoppingPost);
+            expect(productSchema['@type']).toBe('Product');
 
-            expect(schema.offers).toBeDefined();
-            expect(schema.offers['@type']).toBe('Offer');
-            expect(schema.offers.offeredBy['@id']).toBe('https://referralverse.in/#organization');
+            // Verify Rich Snippet properties
+            expect(productSchema.offers).toBeDefined();
+            expect(productSchema.offers['@type']).toBe('Offer');
+            expect(productSchema.brand).toBeDefined();
+            expect(productSchema.brand['@type']).toBe('Brand');
+            expect(productSchema.aggregateRating).toBeDefined();
+            expect(productSchema.aggregateRating['@type']).toBe('AggregateRating');
         });
 
         it('getFaqSchema maps all post FAQs correctly', () => {
@@ -96,6 +101,19 @@ describe('Structured Data (Schema) Integrity', () => {
             expect(schema['@type']).toBe('ItemList');
             expect(schema.itemListElement[0].position).toBe(11);
             expect(schema.itemListElement[2].position).toBe(13);
+        });
+
+        it('getFullGraphSchema generates a valid linked @graph', () => {
+            const schema = schemaUtils.getFullGraphSchema(samplePost);
+            expect(schema['@context']).toBe('https://schema.org');
+            expect(Array.isArray(schema['@graph'])).toBe(true);
+            
+            const types = schema['@graph'].map((e: any) => e['@type']);
+            expect(types).toContain('Organization');
+            expect(types).toContain('WebSite');
+            expect(types).toContain('WebPage');
+            expect(types).toContain('Product');
+            expect(types).toContain('FAQPage');
         });
     });
 

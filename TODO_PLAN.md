@@ -21,19 +21,21 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 *   [x] **Post Schema Consolidation:** Refactored schemas into a single linked graph using `@id` and specialized nesting (`FinancialProduct`/`SoftwareApplication`).
 *   [x] **Author & Publisher Markup:** Linked the `Organization` schema to all posts for improved E-E-A-T.
 *   [x] **Schema Verification Tests:** Implemented 14 automated Vitest checks covering data and logic.
+*   [x] **Dynamic Schema Ratings:** Logic implemented and integrated into `post.ts`. Posts can now define their own ratings or fallback to defaults.
 
 ---
 
 ## 🏃‍♂️ Phase 3: UI/UX & Reliability
 
-*   [ ] **Set up Playwright**: Initialize E2E testing to prevent regressions in user flows.
-*   [ ] **Refine Empty States:** Add clear results-not-found messaging.
-*   [ ] **Add Loading Skeletons:** Ensure loading states look like the content structure.
+*   [/] **Set up Playwright**: Initial configuration started. Need to finalize E2E test suites for critical user flows.
+*   [/] **Refine Empty States:** Basic logic exists; need to add high-quality "Results not found" illustrations and suggestions.
+*   [/] **Add Loading Skeletons:** Implement shimmer effects for the post grid during pagination/filtering.
+*   [ ] **Internal Linking Strategy:** Implement "Related Referral Offers" sections on post pages to boost SEO siloing and user engagement.
 
 ---
 
 ## 📈 Phase 4: Growth & Aggregation Automation (Upcoming)
 
-*   [ ] **Automated Data Fetching**: Finalize and deploy the GitHub Action that aggregates new codes.
-*   [ ] **RSS Feed Generation**: Build `rss.xml` for subscribers.
-*   [ ] **Google Search Console monitoring**: Verify domain indexing status.
+*   [x] **Automated Data Fetching**: Deployed GitHub Action (`fetch-reddit-deals.yml`) to aggregate community codes.
+*   [ ] **RSS Feed Generation**: Build `rss.xml` for automated content distribution.
+*   [/] **Google Search Console monitoring**: Service account configured; awaiting initial indexing data for SEO analysis.

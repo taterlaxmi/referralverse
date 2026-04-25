@@ -53,4 +53,6 @@ export interface Post {
       rows: string[][];   // array of rows
     };
   }[];
-}
+  ratingValue?: string;
+  reviewCount?: string;
+}

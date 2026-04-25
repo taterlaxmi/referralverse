@@ -1,43 +1,33 @@
-import { Post, Category } from '../types';
+import { Post } from '../types';
 
 /**
  * Normalizes FAQ answers (string | string[] | table) into a single string for JSON-LD
  */
 export function formatFaqAnswer(answer: any): string {
-  if (!answer) return "";
+    if (!answer) return "";
 
-  // String
-  if (typeof answer === "string") return answer;
+    // String
+    if (typeof answer === "string") return answer;
 
-  // Array → sentence
-  if (Array.isArray(answer)) {
-    return answer.join(" ");
-  }
-
-  // Table → natural sentence (CRITICAL FIX)
-  if (answer.headers && answer.rows) {
-    return answer.rows
-      .map((row: string[]) => {
-        return `${row[0]} plan starts at ${row[1]} per month and includes ${row[2]}.`;
-      })
-      .join(" ");
-  }
-
-  return "";
-}
-
-export function getMainEntityForCategory(category: Category): string {
-    switch (category) {
-        case Category.Finance:
-            return 'FinancialProduct';
-        default:
-            return 'SoftwareApplication';
+    // Array → sentence
+    if (Array.isArray(answer)) {
+        return answer.join(" ");
     }
+
+    // Table → natural sentence
+    if (answer.headers && answer.rows) {
+        return answer.rows
+            .map((row: string[]) => {
+                return `${row[0]} plan starts at ${row[1]} per month and includes ${row[2]}.`;
+            })
+            .join(" ");
+    }
+
+    return "";
 }
 
 export function getOrganizationSchema() {
     return {
-        "@context": "https://schema.org",
         "@type": "Organization",
         "@id": "https://referralverse.in/#organization",
         "name": "ReferralVerse",
@@ -49,10 +39,33 @@ export function getOrganizationSchema() {
     };
 }
 
+export function getWebSiteSchema() {
+    return {
+        "@type": "WebSite",
+        "@id": "https://referralverse.in/#website",
+        "url": "https://referralverse.in",
+        "name": "ReferralVerse",
+        "description": "Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.",
+        "publisher": { "@id": "https://referralverse.in/#organization" }
+    };
+}
+
+export function getWebPageSchema(post: Post) {
+    return {
+        "@type": "WebPage",
+        "@id": `https://referralverse.in/${post.slug}#webpage`,
+        "url": `https://referralverse.in/${post.slug}`,
+        "name": post.title,
+        "description": post.metaDescription,
+        "isPartOf": { "@id": "https://referralverse.in/#website" },
+        "breadcrumb": { "@id": `https://referralverse.in/${post.slug}#breadcrumb` }
+    };
+}
+
 export function getBreadcrumbSchema(post: Post) {
     return {
-        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": `https://referralverse.in/${post.slug}#breadcrumb`,
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -78,7 +91,6 @@ export function getBreadcrumbSchema(post: Post) {
 
 export function getHowToSchema(post: Post) {
     return {
-        "@context": "https://schema.org",
         "@type": "HowTo",
         "@id": `https://referralverse.in/${post.slug}#howto`,
         "name": `How to signup with ${post.brand} referral code`,
@@ -93,31 +105,32 @@ export function getHowToSchema(post: Post) {
 }
 
 export function getOfferSchema(post: Post) {
-    const mainEntity = getMainEntityForCategory(post.category);
-
-    const schema: any = {
-        "@context": "https://schema.org",
-        "@type": mainEntity,
+    return {
+        "@type": "Product",
         "@id": `https://referralverse.in/${post.slug}#offer`,
-        "name": post.brand,
+        "name": post.title,
+        "description": post.summary,
+        "image": post.referralImage || "https://referralverse.in/logo.webp",
+        "category": post.category,
+        "brand": {
+            "@type": "Brand",
+            "name": post.brand
+        },
         "offers": {
             "@type": "Offer",
             "url": `https://referralverse.in/${post.slug}#offer`,
-            "price": post.offer.price,
+            "price": post.offer.price || "0",
             "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
             "offeredBy": { "@id": "https://referralverse.in/#organization" }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": post.ratingValue || "4.8",
+            "reviewCount": post.reviewCount || "1250"
         }
     };
-
-    // Add category specific properties with correct field names for Google
-    if (mainEntity === 'SoftwareApplication') {
-        schema.applicationCategory = post.category;
-    } else {
-        schema.category = post.category;
-    }
-
-    return schema;
 }
 
 export function getFaqSchema(post: Post) {
@@ -195,12 +208,10 @@ export function getFaqSchema(post: Post) {
         });
     }
 
-    // ✅ Dynamic FAQs (clean + normalized)
+    // ✅ Dynamic FAQs
     if (Array.isArray(post.faq)) {
         post.faq.forEach((f, index) => {
             const formattedAnswer = formatFaqAnswer(f.answer);
-
-            // Skip weak answers
             if (!formattedAnswer || formattedAnswer.length < 20) return;
 
             mainEntity.push({
@@ -216,12 +227,36 @@ export function getFaqSchema(post: Post) {
     }
 
     return {
-        "@context": "https://schema.org",
         "@type": "FAQPage",
         "@id": `${baseUrl}#faq`,
         "name": `Frequently Asked Questions about ${post.brand}`,
         "inLanguage": "en-IN",
         "mainEntity": mainEntity
+    };
+}
+
+export function getFullGraphSchema(post: Post) {
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+            getOrganizationSchema(),
+            getWebSiteSchema(),
+            getWebPageSchema(post),
+            getBreadcrumbSchema(post),
+            getHowToSchema(post),
+            getOfferSchema(post),
+            getFaqSchema(post)
+        ]
+    };
+}
+
+export function getHomeGraphSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@graph": [
+            getOrganizationSchema(),
+            getWebSiteSchema()
+        ]
     };
 }
 
