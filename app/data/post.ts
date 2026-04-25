@@ -359,9 +359,9 @@ export const posts: Post[] = [
     slug: 'tata-neu-credit-card-referral-code',
     brand: "Tata Neu",
     category: Category.Finance,
-    title: 'Tata Neu Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback)',
+    title: 'Tata Neu Credit Card Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback)',
     summary: 'Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers across fashion, groceries, electronics, medicines, flights and much more with NeuCard. Enjoy Tata Neu referral benefits including a ₹500 joining bonus and additional NeuCoins on your first spend.',
-    metaDescription: "Apply with Tata Neu referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive shopping rewards.",
+    metaDescription: "Apply with Tata Neu credit card referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive shopping rewards.",
     referralCode: 'RAHU7325',
     referralLink: 'https://www.tatadigital.com/finance/creditcard/product-detail?referralCode=RAHU7325&amp;utm_content=RAHU7325',
     signupBonus: '500 Neu coins on first transaction within 60 days',
@@ -581,8 +581,8 @@ export const posts: Post[] = [
         answer: "The minimum withdrawal amount built into the super.money app is ₹10."
       },
       {
-        question: "How does the SuperMoney referral bonus (Cashback Match) work?",
-        answer: "When you refer a friend, it triggers a 30-day 'Cashback Match' period after their first transaction. Whenever your friend earns eligible cashback on their own transactions during this period, you earn a 100% matching amount, up to a maximum cap of ₹100 per friend."
+        question: "What is the SuperMoney refer and earn amount and how does it work?",
+        answer: "When you refer a friend, it triggers a 30-day 'Cashback Match' period after their first transaction. Whenever your friend earns eligible cashback on their own transactions during this period, you earn a 100% matching amount (the refer and earn amount is capped at a maximum of ₹100 per friend)."
       },
       {
         question: "How do the Axis Bank vs. Kotak/Utkarsh SuperMoney Cards compare?",
@@ -605,7 +605,7 @@ export const posts: Post[] = [
     category: Category.Finance,
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
-    metaDescription: 'Apply with Kiwi referral code to get ₹100 cashback on your first transaction. Earn up to 1.5%–2% cashback on UPI Scan & Pay, plus milestone rewards & lounge benefits.',
+    metaDescription: 'Apply with our Kiwi invite code to get ₹100 cashback on your first transaction. Use the Kiwi credit card referral code to earn up to 1.5%–2% cashback on UPI.',
     referralCode: ['CVS89J', 'W34C65', 'ET5BYK', "ZML688", "X37SXS", "CTD5SC"],
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
@@ -721,9 +721,9 @@ export const posts: Post[] = [
     slug: 'club-corra-referral-code',
     brand: "Club Corra",
     category: Category.Shopping,
-    title: 'Club Corra Referral Code: Get Cashback on Every Bill Upload',
+    title: 'Club Corra App Referral Code: Get Cashback on Every Bill Upload',
     summary: 'Use the Club Corra referral code to earn rewards when you upload shopping bills. Club Corra lets users upload bills from apps like Myntra, Swiggy, and Zepto to earn cashback points that can be redeemed later.',
-    metaDescription: "Use the latest Club Corra referral code to earn cashback on every bill upload. Upload bills from Myntra, Swiggy, Zepto and more to earn Club Corra points.",
+    metaDescription: "Download the Club Corra app and use the latest referral code to earn cashback on every bill upload. Upload bills from Myntra, Swiggy, Zepto and more to earn points.",
     referralCode: 'CORRAE48F',
     referralLink: 'https://clubcorra.com/?ref=CORRAE48F',
     signupBonus: '50 club corra point',

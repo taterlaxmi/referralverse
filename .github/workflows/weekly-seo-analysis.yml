@@ -1,0 +1,30 @@
+name: Weekly SEO Analysis
+
+on:
+  schedule:
+    - cron: '0 2 * * 0' # 2:00 AM UTC every Sunday
+  workflow_dispatch: # Allows manual trigger from the GitHub UI
+
+jobs:
+  analyze-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run SEO Analysis
+        run: node scripts/analyze-seo.mjs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          GSC_SITE_URL: "https://referralverse.in/"

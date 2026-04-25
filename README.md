@@ -62,3 +62,28 @@ The offer feed supports dynamic search and category filtering with URL-based pag
    ```bash
    npm run build
    ```
+
+---
+
+## 🤖 GitHub Automation & Workflows
+
+This project uses GitHub Actions to automate site health, SEO analysis, and data fetching.
+
+### 🛡️ Site Health & Quality
+| Workflow | Description | Trigger |
+| :--- | :--- | :--- |
+| **Site Health Check** | Runs Unit Tests, Build check, and Lighthouse Audit. | Daily @ Midnight & Every Push/PR |
+| **Code Quality** | Checks for linting errors and code formatting. | Every Push/PR to `main` |
+| **Lighthouse CI** | Deep performance audit using Lighthouse. | Daily @ Midnight & Every Push |
+
+### 🔍 SEO & Data Automation
+| Workflow | Description | Trigger |
+| :--- | :--- | :--- |
+| **Weekly SEO Analysis**| Fetches GSC data and uses AI (Gemini/Groq) to suggest SEO improvements. | Every Sunday @ 2 AM UTC |
+| **Fetch Reddit Deals** | Scrapes top referral subreddits for new community deals. | 22nd of every month |
+
+### 🔒 Security & Maintenance
+| Workflow | Description | Trigger |
+| :--- | :--- | :--- |
+| **Security Audit** | Scans NPM packages for high-level security vulnerabilities. | Every Monday @ Midnight UTC |
+| **Dependabot** | Automatically manages dependency updates (Major versions only). | Weekly |

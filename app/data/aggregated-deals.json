@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-22T05:38:51.973Z",
+  "lastUpdated": "2026-04-25T12:50:50.620Z",
   "deals": [
     {
       "application": "Angel One",
@@ -18,49 +18,7 @@
       "code": "GROWW100",
       "signUpBonus": "₹100 Welcome Bonus",
       "referralBonus": "₹100 per referral"
-    },
-    {
-      "application": "WeCatchAI",
-      "code": "ref-2953-adf80838",
-      "signUpBonus": null,
-      "referralBonus": null
-    },
-    {
-      "application": "WeCatchAI",
-      "code": "ref-3332-de31945e",
-      "signUpBonus": null,
-      "referralBonus": null
-    },
-    {
-      "application": "Bhim UPI",
-      "code": "6COo46",
-      "signUpBonus": null,
-      "referralBonus": null
-    },
-    {
-      "application": "Growfitter",
-      "code": "SUNN619H",
-      "signUpBonus": null,
-      "referralBonus": "Rs.2000 worth Growfitter Shopping Coupon"
-    },
-    {
-      "application": "Blue Tokai",
-      "code": "AR71842326",
-      "signUpBonus": "100 rupee instant discount",
-      "referralBonus": "some points"
-    },
-    {
-      "application": "Third Wave Coffee",
-      "code": "AC71109900",
-      "signUpBonus": "100 rupee instant discount",
-      "referralBonus": "some points"
-    },
-    {
-      "application": "Stake",
-      "code": "None",
-      "signUpBonus": "$1",
-      "referralBonus": "$1"
-    },
+    } ,
     {
       "application": "Angel one",
       "code": "None",
@@ -78,6 +36,18 @@
       "code": "768B442",
       "signUpBonus": "₹50",
       "referralBonus": "₹50"
+    },
+    {
+      "application": "Toing",
+      "code": "8AFCB15",
+      "signUpBonus": 50,
+      "referralBonus": 100
+    },
+    {
+      "application": "Toing",
+      "code": "B5AA347",
+      "signUpBonus": 50,
+      "referralBonus": 100
     }
   ]
 }

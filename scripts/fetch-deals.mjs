@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateWithAI } from './utils/ai-client.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_FILE = path.join(__dirname, '../app/data/aggregated-deals.json');
@@ -108,75 +109,9 @@ async function fetchDeals() {
     `;
 
     let extractedDeals = [];
-    let success = false;
-
-    // 1. Attempt Gemini 2.0 Flash
-    if (geminiKey) {
-        try {
-            console.log("🤖 Attempting extraction with Gemini 2.0 Flash...");
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: promptText }] }],
-                    generationConfig: { responseMimeType: "application/json" }
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                const rawJsonText = data.candidates?.[0]?.content?.parts?.[0]?.text || "[]";
-                const parsed = JSON.parse(rawJsonText);
-                extractedDeals = Array.isArray(parsed) ? parsed : (parsed.deals || (Object.values(parsed)[0]));
-                console.log(`✅ Success with Gemini! Extracted ${extractedDeals.length} deals.`);
-                success = true;
-            } else {
-                console.warn(`⚠️ Gemini failed with status ${response.status}.`);
-            }
-        } catch (e) {
-            console.warn(`❌ Gemini error: ${e.message}`);
-        }
-    }
-
-    // 2. Fallback to Groq
-    if (!success && groqKey) {
-        try {
-            console.log("🤖 Attempting fallback to Groq (Llama-3)...");
-            const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${groqKey}`,
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    model: 'llama-3.3-70b-versatile',
-                    messages: [
-                        { role: 'user', content: promptText + "\nReturn ONLY valid JSON array." }
-                    ],
-                    response_format: { type: 'json_object' }
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                const content = data.choices?.[0]?.message?.content || "{}";
-                const parsed = JSON.parse(content);
-                extractedDeals = Array.isArray(parsed) ? parsed : (parsed.deals || (Object.values(parsed)[0]));
-                if (!Array.isArray(extractedDeals)) extractedDeals = [];
-                console.log(`✅ Success with Groq! Extracted ${extractedDeals.length} deals.`);
-                success = true;
-            } else {
-                console.warn(`⚠️ Groq failed with status ${response.status}.`);
-            }
-        } catch (e) {
-            console.warn(`❌ Groq error: ${e.message}`);
-        }
-    }
-
-    if (!success) {
-        throw new Error("Both extraction methods failed. Please check your API keys and quotas.");
-    }
+    const parsed = await generateWithAI(promptText, true);
+    extractedDeals = Array.isArray(parsed) ? parsed : (parsed.deals || (Object.values(parsed)[0]));
+    if (!Array.isArray(extractedDeals)) extractedDeals = [];
 
     // 3. Merge and Save
     const existingData = JSON.parse(await readFile(DATA_FILE, 'utf8'));
