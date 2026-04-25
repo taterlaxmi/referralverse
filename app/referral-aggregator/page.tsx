@@ -8,8 +8,8 @@ import aggregatedDeals from '../data/aggregated-deals.json';
 interface Deal {
   application: string;
   code: string;
-  signUpBonus: string | null;
-  referralBonus: string | null;
+  signUpBonus: string | number | null;
+  referralBonus: string | number | null;
 }
 
 export default function ReferralAggregatorPage() {
