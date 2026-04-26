@@ -1,8 +1,8 @@
 name: Weekly SEO Analysis
 
 on:
-  schedule:
-    - cron: '0 2 * * 0' # 2:00 AM UTC every Sunday
+#   schedule:
+#     - cron: '0 2 * * 0' # 2:00 AM UTC every Sunday
   workflow_dispatch: # Allows manual trigger from the GitHub UI
 
 jobs:

@@ -13,8 +13,11 @@ function PostFeedContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
 
+    // Get initial search term from URL
+    const initialSearchTerm = searchParams.get('q') || '';
+
     // States for search and category
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState(initialSearchTerm);
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
     // Get current page from URL params, default to 1
@@ -65,9 +68,14 @@ function PostFeedContent() {
 
     const handleSearchChange = (newTerm: string) => {
         setSearchTerm(newTerm);
-        // Reset to page 1 when search changes
+        // Reset to page 1 when search changes and update URL
         const params = new URLSearchParams(searchParams.toString());
         params.delete('page');
+        if (newTerm) {
+            params.set('q', newTerm);
+        } else {
+            params.delete('q');
+        }
         router.push(`/?${params.toString()}`, { scroll: false });
     };
 
@@ -79,14 +87,8 @@ function PostFeedContent() {
         router.push(`/?${params.toString()}`, { scroll: false });
     };
 
-    const itemListSchema = schemaUtils.getItemListSchema(currentPosts, startIndex);
-
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
-            />
             <SearchBar searchTerm={searchTerm} setSearchTerm={handleSearchChange} />
 
             <CategoryMenu

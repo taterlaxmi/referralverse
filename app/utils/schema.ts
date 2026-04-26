@@ -46,7 +46,12 @@ export function getWebSiteSchema() {
         "url": "https://referralverse.in",
         "name": "ReferralVerse",
         "description": "Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.",
-        "publisher": { "@id": "https://referralverse.in/#organization" }
+        "publisher": { "@id": "https://referralverse.in/#organization" },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://referralverse.in/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
     };
 }
 
@@ -105,12 +110,16 @@ export function getHowToSchema(post: Post) {
 }
 
 export function getOfferSchema(post: Post) {
+    const imageUrl = post.referralImage?.startsWith('/')
+        ? `https://referralverse.in${post.referralImage}`
+        : (post.referralImage || "https://referralverse.in/logo.webp");
+
     return {
         "@type": "Product",
-        "@id": `https://referralverse.in/${post.slug}#offer`,
+        "@id": `https://referralverse.in/${post.slug}#product`,
         "name": post.title,
         "description": post.summary,
-        "image": post.referralImage || "https://referralverse.in/logo.webp",
+        "image": imageUrl,
         "category": post.category,
         "brand": {
             "@type": "Brand",
@@ -118,17 +127,14 @@ export function getOfferSchema(post: Post) {
         },
         "offers": {
             "@type": "Offer",
+            "@id": `https://referralverse.in/${post.slug}#offer`,
             "url": `https://referralverse.in/${post.slug}#offer`,
-            "price": post.offer.price || "0",
+            "description": `${post.signupBonus} for new users`,
+            "price": "0",
             "priceCurrency": "INR",
             "availability": "https://schema.org/InStock",
             "itemCondition": "https://schema.org/NewCondition",
             "offeredBy": { "@id": "https://referralverse.in/#organization" }
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": post.ratingValue || "4.8",
-            "reviewCount": post.reviewCount || "1250"
         }
     };
 }
@@ -250,12 +256,45 @@ export function getFullGraphSchema(post: Post) {
     };
 }
 
-export function getHomeGraphSchema() {
+export function getHomeGraphSchema(allPosts: Post[], query: string = '', page: number = 1) {
+    const POSTS_PER_PAGE = 6;
+
+    // Filtering logic matches PostFeed.tsx
+    const filteredPosts = allPosts.filter(post => {
+        const matchesSearch = query === '' ||
+            post.title.toLowerCase().includes(query.toLowerCase()) ||
+            post.category.toLowerCase().includes(query.toLowerCase());
+        return matchesSearch;
+    });
+
+    const startIndex = (page - 1) * POSTS_PER_PAGE;
+    const currentPosts = filteredPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+
     return {
         "@context": "https://schema.org",
         "@graph": [
             getOrganizationSchema(),
-            getWebSiteSchema()
+            getWebSiteSchema(),
+            {
+                "@type": "WebPage",
+                "@id": "https://referralverse.in/#webpage",
+                "url": "https://referralverse.in",
+                "name": "ReferralVerse — Best Referral Offers & Coupons",
+                "description": "Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.",
+                "isPartOf": { "@id": "https://referralverse.in/#website" }
+            },
+            {
+                "@type": "ItemList",
+                "@id": "https://referralverse.in/#itemlist",
+                "name": query ? `Search results for "${query}"` : "Latest Referral Offers",
+                "description": query ? `Referral offers matching your search for ${query}` : "A collection of the best referral offers and coupons.",
+                "itemListElement": currentPosts.map((post, index) => ({
+                    "@type": "ListItem",
+                    "position": startIndex + index + 1,
+                    "url": `https://referralverse.in/${post.slug}`,
+                    "name": post.title
+                }))
+            }
         ]
     };
 }

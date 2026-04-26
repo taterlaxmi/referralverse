@@ -22,6 +22,7 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 *   [x] **Author & Publisher Markup:** Linked the `Organization` schema to all posts for improved E-E-A-T.
 *   [x] **Schema Verification Tests:** Implemented 14 automated Vitest checks covering data and logic.
 *   [x] **Dynamic Schema Ratings:** Logic implemented and integrated into `post.ts`. Posts can now define their own ratings or fallback to defaults.
+*   [x] **Final Schema Refinement:** Refactored Product IDs, enforced absolute URLs, and added `SearchAction`/`WebPage` to home page for maximum rich result eligibility.
 
 ---
 

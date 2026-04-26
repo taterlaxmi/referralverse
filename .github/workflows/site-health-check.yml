@@ -25,7 +25,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run Unit Tests (SEO & Data)
-        run: npm test
+        run: npm test -- --reporter=json --outputFile=vitest-results.json
 
       - name: Build project
         run: npm run build
@@ -35,3 +35,7 @@ jobs:
           npx lhci autorun
         env:
           LHCI_URL: 'https://referralverse.in'
+
+      - name: Generate Job Summary
+        if: always()
+        run: node scripts/generate-summary.mjs

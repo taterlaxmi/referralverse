@@ -2,10 +2,14 @@ import React from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PostFeed from './components/PostFeed';
+import { posts } from './data/post';
 import * as schemaUtils from './utils/schema';
 
-export default function Home() {
-  const homeSchema = schemaUtils.getHomeGraphSchema();
+export default function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+  const q = typeof searchParams.q === 'string' ? searchParams.q : '';
+  const page = typeof searchParams.page === 'string' ? parseInt(searchParams.page, 10) : 1;
+  
+  const homeSchema = schemaUtils.getHomeGraphSchema(posts, q, page);
 
   return (
     <>
