@@ -22,6 +22,7 @@ export interface Post {
   summary: string;
   metaDescription: string
   referralCode: string | string[];
+  referralCodeNote?:string;
   referralLink: string;
   signupBonus: string;
   referralBonus: string;
@@ -55,4 +56,4 @@ export interface Post {
   }[];
   ratingValue?: string;
   reviewCount?: string;
-}
+}

@@ -608,7 +608,8 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with our Kiwi invite code to get ₹100 cashback on your first transaction. Use the Kiwi credit card referral code to earn up to 1.5%–2% cashback on UPI.',
-    referralCode: ['CVS89J', 'T4PUC5', 'ET5BYK', "ZML688", "X37SXS", "CTD5SC"],
+    referralCode: ['WJ75T3', 'V7WJVX', 'B6349H', "T6223E", "MQ5825"],
+    referralCodeNote: 'Each Referral code works for max 3 users. If this one is exhausted, please click',
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
     referralBonus: '₹1500 per successful referral',
@@ -975,6 +976,116 @@ export const posts: Post[] = [
       {
         question: "Do I have to visit a bank branch to prematurely break my FD?",
         answer: "Most partner FDs can be broken directly within the Stable Money app or the bank's digital portal. However, some partner banks might require a branch visit to break an FD and transfer the amount back if there are technical discrepancies."
+      }
+    ]
+  },
+  {
+    slug: 'slice-referral-code',
+    brand: "Slice",
+    category: Category.Finance,
+    title: 'Slice Referral Code: Get ₹250 Cashback + UPI Credit Card Rewards',
+    summary: 'Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use the slice referral code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With daily interest linked to the repo rate and app-first banking features, slice is becoming a popular all-in-one finance app.',
+    metaDescription: 'Use the latest slice referral code to get ₹250 cashback on your first UPI payment. Apply now for slice UPI credit card, savings account, and rewards.',
+    referralCode: ['&ROHIT4924', '&RAHUL56841'],
+    referralCodeNote: 'Each Referral code works for max 5 users. If this one is exhausted, please click',
+    referralLink: 'https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924',
+    signupBonus: '₹250 Cashback on first eligible UPI payment',
+    referralBonus: '₹250',
+    validity: 'Limited time offer',
+    steps: [
+      'Download the slice app using the referral link.',
+      'Sign up with your mobile number and complete registration.',
+      'Enter the slice referral code during signup if prompted.',
+      'Complete KYC verification and activate your eligible slice account/card.',
+      'Make your first UPI payment using the slice UPI credit card.',
+      'Receive ₹250 cashback as per current offer terms.'
+    ],
+    ctaText: 'Apply for slice Now',
+    offer: {
+      price: 250,
+      currency: '₹'
+    },
+    howToRefer: [
+      'Open the slice app and go to the Refer & Earn section.',
+      'Copy your unique invite code or referral link.',
+      'Share it with friends and family.',
+      'When they sign up and complete the required transaction, you receive referral rewards.',
+      'Track your earnings inside the app.'
+    ],
+    benefits: [
+      {
+        title: "UPI Credit Card for Daily Payments",
+        description:
+          "Pay via any supported UPI QR code using your slice UPI credit card instead of directly using your bank balance. Great for groceries, food orders, chai stalls, and everyday spends.",
+        emoji: "💳"
+      },
+      {
+        title: "₹250 Signup Cashback Offer",
+        description:
+          "New users can get ₹250 cashback after joining with a valid slice referral code and completing their first eligible UPI transaction, subject to campaign terms.",
+        emoji: "🎁"
+      },
+      {
+        title: "Zero Balance Savings Account",
+        description:
+          "slice offers a digital savings account with no minimum balance requirement, making it ideal for students, salaried users, and anyone who prefers app-based banking.",
+        emoji: "🏦"
+      },
+      {
+        title: "Daily Interest Linked to Repo Rate",
+        description:
+          "slice promotes daily interest payouts with rates linked to 100% of the RBI repo rate, offering a modern alternative to traditional savings account interest structures.",
+        emoji: "📈"
+      },
+      {
+        title: "Deposits & Smart Money Management",
+        description:
+          "Users can also explore deposits and other savings features directly in the app, making slice more than just a credit card platform.",
+        emoji: "💰"
+      }
+    ],
+    faq: [
+      {
+        question: "What is the latest slice referral code?",
+        answer: "The latest working slice referral code on this page is ROHIT4924. Use it while signing up to become eligible for the ₹250 cashback offer, subject to terms."
+      },
+      {
+        question: "How do I get ₹250 cashback on slice?",
+        answer: "Sign up using the referral link or code, complete registration and KYC, activate the eligible product, and make your first qualifying UPI payment using the slice UPI credit card."
+      },
+      {
+        question: "Does slice only provide a credit card?",
+        answer: "No. slice also offers a savings account, deposits, and digital banking features in addition to its UPI credit card product."
+      },
+      {
+        question: "Is there any minimum balance requirement in slice savings account?",
+        answer: "slice promotes a zero balance savings account, meaning users typically do not need to maintain a minimum balance. Always verify the latest terms inside the app."
+      },
+      {
+        question: "Where can I use the slice UPI credit card?",
+        answer: {
+          headers: ["Use Case", "Examples"],
+          rows: [
+            ["Retail Stores", "Grocery shops, supermarkets, local stores"],
+            ["Food & Drinks", "Restaurants, cafes, tea stalls"],
+            ["Online Merchants", "Apps and websites supporting UPI"],
+            ["Bill Payments", "Eligible merchants accepting UPI"],
+            ["Daily Expenses", "Small and frequent QR payments"]
+          ]
+        }
+      },
+      {
+        question: "Who should use slice?",
+        answer: {
+          headers: ["User Type", "Why slice Can Help"],
+          rows: [
+            ["Students", "Zero balance account and easy digital banking"],
+            ["Young Professionals", "UPI credit card + rewards"],
+            ["Frequent UPI Users", "Convenient QR payments using credit"],
+            ["Savings Focused Users", "Interest-bearing savings features"],
+            ["Cashback Seekers", "Offers on eligible transactions"]
+          ]
+        }
       }
     ]
   }

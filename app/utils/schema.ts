@@ -32,7 +32,10 @@ export function getOrganizationSchema() {
         "@id": "https://referralverse.in/#organization",
         "name": "ReferralVerse",
         "url": "https://referralverse.in",
-        "logo": "https://referralverse.in/logo.webp",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://referralverse.in/logo.webp"
+        },
         "sameAs": [
             "https://twitter.com/referralverse"
         ]
@@ -51,7 +54,8 @@ export function getWebSiteSchema() {
             "@type": "SearchAction",
             "target": "https://referralverse.in/?q={search_term_string}",
             "query-input": "required name=search_term_string"
-        }
+        },
+        "inLanguage": "en-IN"
     };
 }
 
@@ -281,7 +285,18 @@ export function getHomeGraphSchema(allPosts: Post[], query: string = '', page: n
                 "url": "https://referralverse.in",
                 "name": "ReferralVerse — Best Referral Offers & Coupons",
                 "description": "Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.",
-                "isPartOf": { "@id": "https://referralverse.in/#website" }
+                "isPartOf": { "@id": "https://referralverse.in/#website" },
+                "breadcrumb": { "@id": "https://referralverse.in/#breadcrumb" }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://referralverse.in/#breadcrumb",
+                "itemListElement": [{
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://referralverse.in/"
+                }]
             },
             {
                 "@type": "ItemList",

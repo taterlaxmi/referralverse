@@ -121,8 +121,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <p className="text-[0.85rem] text-gray-700 leading-snug font-medium">
-                            Each Referral code works for max 5 users. If this one is exhausted,
-                            please click <span className="text-indigo-600 font-bold decoration-indigo-200 decoration-2 underline-offset-2">Try Another</span> to see other codes.
+                            {post.referralCodeNote} <span className="text-indigo-600 font-bold decoration-indigo-200 decoration-2 underline-offset-2">Try Another</span> to see other codes.
                           </p>
                           <div className="flex items-center gap-2 mt-1">
                             <span className="px-3 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-lg tracking-widest uppercase shadow-sm">
