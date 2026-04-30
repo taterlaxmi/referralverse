@@ -1,0 +1,39 @@
+name: Track Competitor Posts
+
+on:
+  schedule:
+    - cron: '0 3 * * 5' # Friday 8:30 AM IST
+  workflow_dispatch:
+
+jobs:
+  track-posts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: all-posts.json
+          key: posts-cache
+          restore-keys: |
+            posts-cache
+
+      - name: Run tracker script
+        run: node scripts/track-competitor-posts.js
+
+      - name: Save cache
+        uses: actions/cache@v4
+        with:
+          path: all-posts.json
+          key: posts-cache

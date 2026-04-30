@@ -9,7 +9,7 @@ on:
     - cron: '0 0 * * *' # Daily at Midnight UTC
 
 jobs:
-  verify:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
