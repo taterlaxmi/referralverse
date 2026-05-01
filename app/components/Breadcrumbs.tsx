@@ -1,5 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
+import { slugify } from '@/app/utils/slugify';
 
 interface BreadcrumbsProps {
   category: string;
@@ -33,9 +33,8 @@ export default function Breadcrumbs({ category, title }: BreadcrumbsProps) {
 
         {/* Category */}
         <li className="flex items-center">
-          {/* Using search query for category since hub pages aren't built yet */}
           <Link 
-            href={`/?q=${category}`} 
+            href={`/category/${slugify(category)}`} 
             className="flex items-center gap-1.5 px-3 py-1.5 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50/50 rounded-full transition-all duration-200"
           >
             <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

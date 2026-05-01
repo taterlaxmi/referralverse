@@ -34,7 +34,7 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 *   [ ] **Internal Linking Strategy:** Implement contextual and structural linking to boost SEO siloing and user engagement.
     *   [x] **Related Offers Component:** Add a "Related Referrals" section to the bottom of post pages based on shared categories/tags.
     *   [ ] **Contextual In-Content Links:** Interlink relevant posts directly within the markdown content (e.g., link "SuperMoney" inside a "Slice" article).
-    *   [ ] **Category/Hub Pages:** Create index pages for main categories (Finance, Software) and link tags from individual posts to these hubs. *(Note: Update the `/?q=${category}` link in `Breadcrumbs.tsx` to point to these new hub pages once completed).*
+    *   [x] **Category/Hub Pages:** Create index pages for main categories (Finance, Software) and link tags from individual posts to these hubs. *(Note: Update the `/?q=${category}` link in `Breadcrumbs.tsx` to point to these new hub pages once completed).*
     *   [x] **Breadcrumb Navigation:** Add visual breadcrumb links (Home > Category > Title) at the top of post pages to improve UX and retention.
 
 ---

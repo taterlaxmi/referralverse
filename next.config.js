@@ -21,7 +21,7 @@ const nextConfig = {
     return [
       {
         // Rewrite root-level slugs (that are not other known routes) to /posts/:slug
-        source: '/:slug((?!api|_next|posts|about|contact|privacy|favicon.ico).*)',
+        source: '/:slug((?!api|_next|posts|about|contact|privacy|favicon\\.ico|category).*)',
         destination: '/posts/:slug',
       },
     ];

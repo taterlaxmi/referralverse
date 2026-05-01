@@ -1,6 +1,7 @@
 export enum Category {
   Travel = "Travel",
   Finance = "Finance",
+  CreditCard = "CreditCard",
   Food = "Food",
   Shopping = "Shopping",
   Health = "Health",

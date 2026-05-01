@@ -360,7 +360,7 @@ export const posts: Post[] = [
   {
     slug: 'tata-neu-credit-card-referral-code',
     brand: "Tata Neu",
-    category: Category.Finance,
+    category: Category.CreditCard,
     title: 'Tata Neu Credit Card Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback)',
     summary: 'Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers across fashion, groceries, electronics, medicines, flights and much more with NeuCard. Enjoy Tata Neu referral benefits including a ₹500 joining bonus and additional NeuCoins on your first spend.',
     metaDescription: "Apply with Tata Neu credit card referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive shopping rewards.",
@@ -520,7 +520,7 @@ export const posts: Post[] = [
   {
     slug: 'supermoney-creditcard-referral-code',
     brand: "SuperMoney",
-    category: Category.Finance,
+    category: Category.CreditCard,
     title: 'SuperMoney Credit Card Referral Link: Upto 5% Cashback (RuPay LTF)',
     summary: 'SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹100 cashback on your first payment.',
     metaDescription: "Use the latest SuperMoney Credit Card referral link to get a Lifetime Free RuPay credit card backed by Utkarsh, Kotak or Axis Bank. Enjoy up to 5% cashback on UPI.",
@@ -604,7 +604,7 @@ export const posts: Post[] = [
   {
     slug: 'kiwi-referral-code',
     brand: "Kiwi",
-    category: Category.Finance,
+    category: Category.CreditCard,
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with our Kiwi invite code to get ₹100 cashback on your first transaction. Use the Kiwi credit card referral code to earn up to 1.5%–2% cashback on UPI.',
