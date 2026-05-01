@@ -1,18 +1,10 @@
 export enum Category {
-  Travel = "Travel",
   Finance = "Finance",
-  CreditCard = "CreditCard",
-  Food = "Food",
+  CreditCard = "Credit Card",
   Shopping = "Shopping",
   Health = "Health",
-  Entertainment = "Entertainment",
-  HomeLiving = "Home & Living",
-  Utilities = "Utilities",
-  Fitness = "Fitness",
-  Rentals = "Rentals",
-  Lifestyle = "Lifestyle",
-  Subscriptions = "Subscriptions",
-  Rewards = "Rewards"
+  WaterPurifier = "Water Purifier",
+  Fitness = "Fitness"
 }
 
 export interface Post {
@@ -24,7 +16,7 @@ export interface Post {
   summary: string;
   metaDescription: string
   referralCode: string | string[];
-  referralCodeNote?:string;
+  referralCodeNote?: string;
   referralLink: string;
   signupBonus: string;
   referralBonus: string;

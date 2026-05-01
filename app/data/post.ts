@@ -4,7 +4,7 @@ export const posts: Post[] = [
   {
     slug: 'drinkprime-referral-code',
     brand: "Drinkprime",
-    category: Category.Utilities,
+    category: Category.WaterPurifier,
     title: 'DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)',
     summary: 'DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.',
     metaDescription: 'Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.',
@@ -150,7 +150,7 @@ export const posts: Post[] = [
   {
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
-    category: Category.Utilities,
+    category: Category.WaterPurifier,
     title: 'Livpure Smart Referral Code: 7 day free trial + ₹100 off',
     summary: 'Livpure Smart, a pay-as-you-drink water service, provides pure drinking water using 7-stage purification @ Rs 0.99/liter. Livpure Smart has various subscription plans suiting different needs.',
     metaDescription: "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
