@@ -9,6 +9,7 @@ import ComparisonSection from "@/app/components/ComparisonSection";
 import BenefitsSection from "@/app/components/BenefitsSection";
 import * as schemaUtils from '@/app/utils/schema';
 import RelatedOffers from "@/app/components/RelatedOffers";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -73,6 +74,9 @@ export default async function PostPage({ params }: Props) {
         />
 
         <article id="content" className="container mx-auto px-4 py-12">
+          {/* Breadcrumbs */}
+          <Breadcrumbs category={post.category} title={post.title} />
+
           {/* Header */}
           <header className="mb-8">
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">

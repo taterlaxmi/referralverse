@@ -49,7 +49,7 @@ export default function RelatedOffers({ relatedPosts }: RelatedOffersProps) {
 
             <div className="mt-auto relative z-10">
                 <span className="block w-full text-center bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 font-semibold py-2 rounded-xl text-sm hover:from-blue-600 hover:to-indigo-600 hover:text-white hover:shadow-lg transition-all duration-300">
-                    View Offer
+                    {post.ctaText}
                 </span>
             </div>
           </Link>
