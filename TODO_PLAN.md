@@ -14,7 +14,7 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 
 ---
 
-## ✨ Phase 2: Schema & E-E-A-T Optimization (Immediate Priority)
+## ✅ Phase 2: Schema & E-E-A-T Optimization (Completed)
 
 *   [x] **Audit Existing Schema:** Verified `HowTo`, `Offer`, `FAQ`, and `Breadcrumb` presence on post pages.
 *   [x] **Home Page ItemList:** Added `ItemList` structured data to the home page with pagination support.
@@ -31,7 +31,10 @@ This updated plan reflects the completion of our primary SEO, performance, and u
 *   [/] **Set up Playwright**: Initial configuration started. Need to finalize E2E test suites for critical user flows.
 *   [/] **Refine Empty States:** Basic logic exists; need to add high-quality "Results not found" illustrations and suggestions.
 *   [/] **Add Loading Skeletons:** Implement shimmer effects for the post grid during pagination/filtering.
-*   [ ] **Internal Linking Strategy:** Implement "Related Referral Offers" sections on post pages to boost SEO siloing and user engagement.
+*   [ ] **Internal Linking Strategy:** Implement contextual and structural linking to boost SEO siloing and user engagement.
+    *   [x] **Related Offers Component:** Add a "Related Referrals" section to the bottom of post pages based on shared categories/tags.
+    *   [ ] **Contextual In-Content Links:** Interlink relevant posts directly within the markdown content (e.g., link "SuperMoney" inside a "Slice" article).
+    *   [ ] **Category/Hub Pages:** Create index pages for main categories (Finance, Software) and link tags from individual posts to these hubs.
 
 ---
 

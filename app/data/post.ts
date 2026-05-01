@@ -150,7 +150,7 @@ export const posts: Post[] = [
   {
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
-    category: Category.HomeLiving,
+    category: Category.Utilities,
     title: 'Livpure Smart Referral Code: 7 day free trial + ₹100 off',
     summary: 'Livpure Smart, a pay-as-you-drink water service, provides pure drinking water using 7-stage purification @ Rs 0.99/liter. Livpure Smart has various subscription plans suiting different needs.',
     metaDescription: "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
@@ -175,7 +175,7 @@ export const posts: Post[] = [
   {
     slug: 'cultfit-referral-code',
     brand: "CultFit",
-    category: Category.Health,
+    category: Category.Fitness,
     title: 'Save on Your Fitness Journey with CultFit Referral Code IUMEQHMT',
     summary: 'Sharing a CultFit referral code is a smart way to unlock exclusive discounts while promoting a healthier lifestyle. When a friend signs up using your code, both of you benefit—whether it’s discounted memberships, free sessions, or access to premium fitness content. It’s a win-win that turns your fitness journey into a shared, rewarding experience.',
     metaDescription: "Use the latest Cultfit referral code to get exclusive discounts and referral benefits. Learn how Cultfit referral works, benefits, and how to redeem offers.",

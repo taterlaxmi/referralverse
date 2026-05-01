@@ -8,6 +8,7 @@ import FAQSection from '../../components/FAQSection';
 import ComparisonSection from "@/app/components/ComparisonSection";
 import BenefitsSection from "@/app/components/BenefitsSection";
 import * as schemaUtils from '@/app/utils/schema';
+import RelatedOffers from "@/app/components/RelatedOffers";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -55,7 +56,11 @@ export default async function PostPage({ params }: Props) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return notFound();
 
-  const graphSchema = schemaUtils.getFullGraphSchema(post);
+  const relatedPosts = posts
+    .filter(p => p.category === post.category && p.slug !== post.slug)
+    .slice(0, 3);
+
+  const graphSchema = schemaUtils.getFullGraphSchema(post, relatedPosts);
 
   return (
     <>
@@ -186,6 +191,9 @@ export default async function PostPage({ params }: Props) {
           {post.faq && post.faq.length > 0 && (
             <FAQSection faq={post.faq} />
           )}
+
+          {/* Related Offers */}
+          <RelatedOffers relatedPosts={relatedPosts} />
         </article>
       </main>
       <Footer />

@@ -59,8 +59,8 @@ export function getWebSiteSchema() {
     };
 }
 
-export function getWebPageSchema(post: Post) {
-    return {
+export function getWebPageSchema(post: Post, relatedPosts: Post[] = []) {
+    const baseSchema: any = {
         "@type": "WebPage",
         "@id": `https://referralverse.in/${post.slug}#webpage`,
         "url": `https://referralverse.in/${post.slug}`,
@@ -69,6 +69,12 @@ export function getWebPageSchema(post: Post) {
         "isPartOf": { "@id": "https://referralverse.in/#website" },
         "breadcrumb": { "@id": `https://referralverse.in/${post.slug}#breadcrumb` }
     };
+
+    if (relatedPosts.length > 0) {
+        baseSchema.relatedLink = relatedPosts.map(rp => `https://referralverse.in/${rp.slug}`);
+    }
+
+    return baseSchema;
 }
 
 export function getBreadcrumbSchema(post: Post) {
@@ -245,13 +251,13 @@ export function getFaqSchema(post: Post) {
     };
 }
 
-export function getFullGraphSchema(post: Post) {
+export function getFullGraphSchema(post: Post, relatedPosts: Post[] = []) {
     return {
         "@context": "https://schema.org",
         "@graph": [
             getOrganizationSchema(),
             getWebSiteSchema(),
-            getWebPageSchema(post),
+            getWebPageSchema(post, relatedPosts),
             getBreadcrumbSchema(post),
             getHowToSchema(post),
             getOfferSchema(post),

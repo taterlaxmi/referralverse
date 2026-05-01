@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body suppressHydrationWarning={true}>
         <GoogleAnalytics gaId={GA_ID} />
         <GoogleTagManager gtmId={GTM_ID} />

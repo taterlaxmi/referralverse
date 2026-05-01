@@ -7,6 +7,7 @@ export enum Category {
   Entertainment = "Entertainment",
   HomeLiving = "Home & Living",
   Utilities = "Utilities",
+  Fitness = "Fitness",
   Rentals = "Rentals",
   Lifestyle = "Lifestyle",
   Subscriptions = "Subscriptions",
