@@ -1,4 +1,4 @@
-name: Verify Site (Tests & Lighthouse Analysis)
+name: Run Automation Tests (Unit Test & Lighthouse Analysis)
 
 on:
   push:
@@ -38,4 +38,4 @@ jobs:
 
       - name: Generate Job Summary
         if: always()
-        run: node scripts/generate-summary.mjs
+        run: node scripts/runTest.mjs

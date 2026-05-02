@@ -1,0 +1,30 @@
+name: Compare Competitor SEO
+
+on:
+  schedule:
+    - cron: '0 4 * * 5' # Friday 9:30 AM IST (after post tracking)
+  workflow_dispatch:
+
+jobs:
+  compare-seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Run SEO Comparison
+        run: |
+          node scripts/compare-seo-with-competitors.mjs \
+          https://referralverse.in \
+          https://www.techbuy.in \
+          https://www.gopaisa.com \
+          https://www.bookofer.com \
+          https://www.referkaroearnkaro.com

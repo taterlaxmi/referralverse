@@ -4,8 +4,8 @@ const cheerio = require('cheerio');
 const fetch = globalThis.fetch;
 
 const sites = [
-    'https://www.techbuy.in',
-    'https://www.bookofer.com'
+    'https://www.techbuy.in', 'https://www.gopaisa.com/',
+    'https://www.bookofer.com', 'https://www.referkaroearnkaro.com/'
 ];
 
 const ALL_POSTS_FILE = 'all-posts.json';
@@ -103,7 +103,43 @@ async function getAllSitemapLinks(site) {
     saveFile(ALL_POSTS_FILE, allPosts);
     saveFile(NEW_POSTS_FILE, newPosts);
 
-    console.log('\n====================');
+    // 👉 Generate GitHub Step Summary
+    let totalNew = 0;
+    let summaryMd = '## 🕵️ Competitor Post Tracker Report\n\n';
+    summaryMd += '| Competitor Site | New Posts | Latest New Link |\n';
+    summaryMd += '| :--- | :---: | :--- |\n';
+
+    for (const site of sites) {
+        const diff = newPosts[site] || [];
+        totalNew += diff.length;
+        const count = diff.length > 0 ? `**${diff.length}** 🆕` : '0';
+        const latest = diff.length > 0 ? `[View Link](${diff[0]})` : '—';
+        summaryMd += `| ${site.replace('https://', '')} | ${count} | ${latest} |\n`;
+    }
+
+    if (totalNew > 0) {
+        summaryMd += `\n\n### 🆕 Detailed New Links\n`;
+        for (const site in newPosts) {
+            if (newPosts[site].length > 0) {
+                summaryMd += `\n**${site}**:\n`;
+                newPosts[site].forEach(link => {
+                    summaryMd += `- ${link}\n`;
+                });
+            }
+        }
+    } else {
+        summaryMd += `\n\n*No new posts detected since the last check.*`;
+    }
+
+    if (process.env.GITHUB_STEP_SUMMARY) {
+        fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summaryMd);
+        console.log('✅ Summary added to GITHUB_STEP_SUMMARY');
+    } else {
+        console.log('\n====================');
+        console.log(summaryMd);
+        console.log('====================');
+    }
+
     console.log('✅ Done');
 })();
 

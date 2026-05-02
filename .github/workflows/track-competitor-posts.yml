@@ -22,18 +22,19 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Restore cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: all-posts.json
-          key: posts-cache
+          key: posts-cache-${{ github.run_id }}
           restore-keys: |
-            posts-cache
+            posts-cache-
 
       - name: Run tracker script
         run: node scripts/track-competitor-posts.js
 
       - name: Save cache
-        uses: actions/cache@v4
+        uses: actions/cache/save@v4
+        if: success()
         with:
           path: all-posts.json
-          key: posts-cache
+          key: posts-cache-${{ github.run_id }}
