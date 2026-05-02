@@ -18,7 +18,11 @@ export function formatFaqAnswer(answer: any): string {
     if (answer.headers && answer.rows) {
         return answer.rows
             .map((row: string[]) => {
-                return `${row[0]} plan starts at ${row[1]} per month and includes ${row[2]}.`;
+                // Format: "Feature Name: Header1 (Value1), Header2 (Value2)..."
+                const details = row.slice(1)
+                    .map((val, idx) => `${answer.headers[idx + 1]}: ${val}`)
+                    .join(", ");
+                return `${row[0]}: ${details}.`;
             })
             .join(" ");
     }

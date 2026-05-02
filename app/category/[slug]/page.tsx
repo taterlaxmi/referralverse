@@ -36,12 +36,25 @@ export async function generateMetadata({ params }: Props) {
 
   const categoryName = categoryPost.category;
   const seo = categoryContent[categoryName as Category];
+  const title = seo?.seoTitle ? `${seo.seoTitle} (${monthYear})` : `Best ${categoryName} Referral Codes (${monthYear}) – Latest Cashback & Offers`;
+  const description = seo?.seoDescription || `Explore verified ${categoryName} referral codes and latest cashback offers. Find working invite codes, signup bonuses, and rewards updated for ${monthYear}.`;
 
   return {
-    title: seo?.seoTitle ? `${seo.seoTitle} (${monthYear})` : `Best ${categoryName} Referral Codes (${monthYear}) – Latest Cashback & Offers`,
-    description: seo?.seoDescription || `Explore verified ${categoryName} referral codes and latest cashback offers. Find working invite codes, signup bonuses, and rewards updated for ${monthYear}.`,
+    title: title,
+    description: description,
     alternates: {
       canonical: `https://referralverse.in/category/${slug}`,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: `https://referralverse.in/category/${slug}`,
+      type: 'website',
+    },
+    twitter: {
+      title: title,
+      description: description,
+      card: 'summary_large_image',
     },
   };
 }
