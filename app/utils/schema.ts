@@ -334,3 +334,19 @@ export function getItemListSchema(currentPosts: Post[], startIndex: number = 0) 
         }))
     };
 }
+
+export function getCategoryFaqSchema(categoryUrl: string, faqs: any[]) {
+    return {
+        "@type": "FAQPage",
+        "@id": `${categoryUrl}#faq`,
+        "mainEntity": faqs.map((f, i) => ({
+            "@type": "Question",
+            "@id": `${categoryUrl}#faq-${i + 1}`,
+            "name": f.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": formatFaqAnswer(f.answer)
+            }
+        }))
+    };
+}
