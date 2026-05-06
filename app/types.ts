@@ -12,6 +12,7 @@ export interface Post {
   brand: string;
   title: string;
   referralImage?: string;
+  referralImage2?: string;
   category: Category;
   summary: string;
   metaDescription: string

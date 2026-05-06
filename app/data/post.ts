@@ -151,26 +151,58 @@ export const posts: Post[] = [
     slug: 'livpure-smart-referral-code',
     brand: "Livpure Smart",
     category: Category.WaterPurifier,
-    title: 'Livpure Smart Referral Code: 7 day free trial + ₹100 off',
+    title: 'Livpure Referral Code: 7 day free trial + ₹100 off',
     summary: 'Livpure Smart, a pay-as-you-drink water service, provides pure drinking water using 7-stage purification @ Rs 0.99/liter. Livpure Smart has various subscription plans suiting different needs.',
     metaDescription: "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
-    referralCode: 'J0YEN7',
+    referralCode: ['J0YEN7', 'SZKKT3'],
     referralLink: 'https://play.google.com/store/apps/details?id=com.livpure.safedrink',
     signupBonus: '7 day free trial + ₹100 off',
     referralBonus: '₹500 Amazon Voucher',
     validity: 'Limited time offer',
     referralImage: "/livpure-smart.webp",
     steps: [
-      'Click on the "Claim Now" button to download Livpure Smart app.',
-      'Now open the app and sign up for a new account',
-      'Choose your plan and apply coupon J0YEN7.',
-      'Complete the payment and you will get ₹100 off on your subscription.'
+      'Click on the “Get Livpure Subscription” button to download the Livpure Smart app.',
+      'Sign up using your mobile number and create a new account. ',
+      'Choose a suitable subscription plan.',
+      'Enter the referral code (J0YEN7 or SZKKT3) during checkout.',
+      'Complete your payment to unlock ₹100 discount and free trial benefits.'
     ],
     ctaText: 'Get Livpure Subscription',
     offer: {
       price: 100,
       currency: '₹'
-    }
+    },
+    faq: [
+      {
+        question: "What is the Livpure Smart referral code for 2026?",
+        answer:
+          "The latest Livpure Smart referral codes are J0YEN7 and SZKKT3. These codes offer a 7-day free trial along with ₹100 off on your first subscription plan. If one code doesn’t work, try another as usage may be limited."
+      },
+      {
+        question: "In which cities is Livpure Smart available?",
+        answer: [
+          "Bengaluru",
+          "Chandigarh",
+          "Chennai",
+          "Delhi NCR",
+          "Hyderabad",
+          "Jaipur",
+          "Kolkata",
+          "Mohali",
+          "Mumbai",
+          "Panchkula",
+          "Pune",
+          "Bhopal",
+          "Bhubaneswar",
+          "Dehradun",
+          "Indore",
+          "Kanpur",
+          "Lucknow",
+          "Nagpur",
+          "Raipur"
+        ]
+      }
+    ]
   },
   {
     slug: 'cultfit-referral-code',
@@ -368,6 +400,7 @@ export const posts: Post[] = [
     referralLink: 'https://www.tatadigital.com/finance/creditcard/product-detail?referralCode=RAHU7325&amp;utm_content=RAHU7325',
     signupBonus: '500 Neu coins on first transaction within 60 days',
     referralBonus: '₹700',
+    referralImage2: "/tata-neu-success.webp",
     validity: 'Valid for new users only',
     steps: [
       'Click on the "Apply for TataNeu Credit Card".',
@@ -608,7 +641,7 @@ export const posts: Post[] = [
     title: 'Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards',
     summary: 'The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.',
     metaDescription: 'Apply with our Kiwi invite code to get ₹100 cashback on your first transaction. Use the Kiwi credit card referral code to earn up to 1.5%–2% cashback on UPI.',
-    referralCode: ['WJ75T3', 'UW855Z', 'B6349H', "T6223E", "MQ5825"],
+    referralCode: ['S82M66', 'UW855Z', 'B6349H', "T6223E", "MQ5825"],
     referralCodeNote: 'Each Referral code works for max 3 users. If this one is exhausted, please click',
     referralLink: 'https://gokiwi.sng.link/E5owq/afdy/3m4a',
     signupBonus: '₹100 Cashback on first UPI transaction',
@@ -982,10 +1015,10 @@ export const posts: Post[] = [
   {
     slug: 'slice-referral-code',
     brand: "Slice",
-    category: Category.Finance,
+    category: Category.CreditCard,
     title: 'Slice Referral Code: Get ₹250 Cashback + UPI Credit Card Rewards',
     summary: 'Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use the slice referral code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With daily interest linked to the repo rate and app-first banking features, slice is becoming a popular all-in-one finance app.',
-    metaDescription: 'Use the latest slice referral code to get ₹250 cashback on your first UPI payment. Apply now for slice UPI credit card, savings account, and rewards.',
+    metaDescription: 'Get ₹250 cashback using the latest Slice referral code (updated May 2026). Apply for Slice UPI credit card & start earning rewards instantly.',
     referralCode: ['&ROHIT4924', '&RAHUL56841'],
     referralCodeNote: 'Each Referral code works for max 5 users. If this one is exhausted, please click',
     referralLink: 'https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924',

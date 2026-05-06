@@ -5,6 +5,8 @@ const fetch = globalThis.fetch;
 
 const sites = [
     'https://www.techbuy.in', 'https://www.gopaisa.com/',
+    'https://earningkart.in/','https://creditcult.in/',
+    'https://www.couponkidukaan.com/','https://www.flux.ai/',
     'https://www.bookofer.com', 'https://www.referkaroearnkaro.com/'
 ];
 

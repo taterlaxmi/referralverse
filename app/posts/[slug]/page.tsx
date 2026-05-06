@@ -165,6 +165,22 @@ export default async function PostPage({ params }: Props) {
             </section>
           )}
 
+          {/* Post Offer Image */}
+          {post.referralImage2 && (
+            <div className="mb-6 flex justify-center">
+              <Image
+                src={post.referralImage2}
+                alt={`${post.brand} referral offer and promo code`}
+                width={600}
+                height={400}
+                className="w-full max-w-md rounded-2xl shadow-md border border-gray-200 object-cover"
+                sizes="(max-width: 768px) 80vw, 400px"
+                priority
+                fetchPriority="high"
+              />
+            </div>
+          )}
+
           {/* Benefits Section */}
           <BenefitsSection benefits={post.benefits} brand={post.brand} />
 
