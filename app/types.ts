@@ -18,7 +18,7 @@ export interface Post {
   proofImageHeader?: string;
   category: Category;
   summary: string;
-  metaDescription: string
+  metaDescription: string;
   referralCode: string | string[];
   referralCodeNote?: string;
   referralLink: string;
@@ -46,11 +46,14 @@ export interface Post {
   };
   faq?: {
     question: string;
-    answer: string |
-    string[] | {                     // table structure
-      headers: string[];  // column headers
-      rows: string[][];   // array of rows
-    };
+    answer:
+      | string
+      | string[]
+      | {
+          // table structure
+          headers: string[]; // column headers
+          rows: string[][]; // array of rows
+        };
   }[];
   ratingValue?: string;
   reviewCount?: string;
