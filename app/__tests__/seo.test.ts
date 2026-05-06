@@ -27,8 +27,8 @@ describe('SEO Metadata and Content Integrity', () => {
 
   it('all referral images must exist in the public folder (referenced logic)', () => {
     posts.forEach(post => {
-      if (post.referralImage) {
-        expect(post.referralImage.startsWith('/'), `Post ${post.slug} image path must be absolute from public/`).toBe(true);
+      if (post.heroImage) {
+        expect(post.heroImage.startsWith('/'), `Post ${post.slug} image path must be absolute from public/`).toBe(true);
       }
     });
   });

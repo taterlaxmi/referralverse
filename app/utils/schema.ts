@@ -124,9 +124,9 @@ export function getHowToSchema(post: Post) {
 }
 
 export function getOfferSchema(post: Post) {
-    const imageUrl = post.referralImage?.startsWith('/')
-        ? `https://referralverse.in${post.referralImage}`
-        : (post.referralImage || "https://referralverse.in/logo.webp");
+    const imageUrl = post.heroImage?.startsWith('/')
+        ? `https://referralverse.in${post.heroImage}`
+        : (post.heroImage || "https://referralverse.in/logo.webp");
 
     return {
         "@type": "Product",

@@ -11,8 +11,11 @@ export interface Post {
   slug: string;
   brand: string;
   title: string;
-  referralImage?: string;
-  referralImage2?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
+  proofImage?: string;
+  proofImageAlt?: string;
+  proofImageHeader?: string;
   category: Category;
   summary: string;
   metaDescription: string
