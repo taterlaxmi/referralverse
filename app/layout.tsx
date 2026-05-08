@@ -6,6 +6,10 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 export const metadata = {
   title: 'ReferralVerse — Best Referral Offers & Coupons',
   description: 'Find top referral offers, coupons and promo codes curated for travel, finance, food and lifestyle.',
+  metadataBase: new URL('https://referralverse.in'),
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: "/logo.webp",
   },

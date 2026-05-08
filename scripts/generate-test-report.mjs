@@ -4,6 +4,7 @@ import path from 'path';
 const lhciDir = '.lighthouseci';
 const linksFile = path.join(lhciDir, 'links.json');
 const vitestFile = 'vitest-results.json';
+const seoAuditFile = 'seo-audit-results.json';
 
 async function run() {
   let fullSummary = '';
@@ -19,6 +20,40 @@ async function run() {
       fullSummary += '---\n\n';
     } catch (e) {
       console.error('Error parsing Vitest results:', e);
+    }
+  }
+
+  // 1b. SEO & AI Audit Summary
+  if (fs.existsSync(seoAuditFile)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(seoAuditFile, 'utf8'));
+      fullSummary += '## 🔍 Multi-Page SEO & AI Audit\n\n';
+      
+      data.pages.forEach(page => {
+        fullSummary += `### 📄 Page: \`${page.path}\`\n`;
+        fullSummary += `| Metric | Result |\n| :--- | :--- |\n`;
+        fullSummary += `| **Title** | ${page.technical.title} |\n`;
+        fullSummary += `| **H1** | ${page.technical.h1} |\n`;
+        fullSummary += `| **Canonical** | ${page.technical.canonical} |\n`;
+        fullSummary += `| **Schema** | ${Object.entries(page.technical.schema).filter(([k]) => page.technical.schema[k]).map(([k]) => k.toUpperCase()).join(' · ') || '❌ None'} |\n`;
+        
+        if (page.performance && !page.performance.error) {
+            fullSummary += `| **Speed Score** | ${page.performance.score} (LCP: ${page.performance.lcp}) |\n`;
+        }
+        fullSummary += '\n';
+
+        if (page.aiVisibility) {
+            fullSummary += '#### 🤖 AI Overview Visibility (GEO)\n';
+            fullSummary += '| Query | Cited in AI | Organic Rank |\n| :--- | :---: | :---: |\n';
+            page.aiVisibility.forEach(v => {
+                fullSummary += `| ${v.query} | ${v.citedInAI} | ${v.organicRank} |\n`;
+            });
+            fullSummary += '\n';
+        }
+      });
+      fullSummary += '---\n\n';
+    } catch (e) {
+      console.error('Error parsing SEO audit results:', e);
     }
   }
 

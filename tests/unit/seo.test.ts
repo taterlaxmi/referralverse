@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { posts } from "../data/post";
+import { posts } from "../../app/data/post";
 
 describe("SEO Metadata and Content Integrity", () => {
   it("every post must have a unique slug", () => {

@@ -34,8 +34,16 @@ jobs:
         run: |
           npx lhci autorun
         env:
-          LHCI_URL: 'https://referralverse.in'
+          LHCI_URL: 'http://localhost:3000'
+
+      - name: Run SEO & AI Audit
+        run: node scripts/site-audit.mjs https://referralverse.in
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
 
       - name: Generate Job Summary
         if: always()
-        run: node scripts/runTest.mjs
+        run: node scripts/generate-test-report.mjs
+        env:
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}

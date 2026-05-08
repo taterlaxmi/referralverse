@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "postbuild": "next-sitemap",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "audit": "npm test && node scripts/site-audit.mjs http://localhost:3000 && node scripts/generate-test-report.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.4",

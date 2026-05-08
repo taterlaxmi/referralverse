@@ -21,7 +21,10 @@ A high-performance referral offers directory built with **Next.js**, **React**, 
   - `components/`: UI components (Header, Footer, FAQ, etc.).
   - `data/`: Centralized store for all referral post data.
   - `posts/[slug]/`: Generated individual offer landing pages.
-- `scripts/`: Data fetching automation.
+- `scripts/`: Data fetching and auditing automation.
+  - `auditors/`: Modular logic for SEO, AI visibility, and Performance.
+  - `site-audit.mjs`: Core auditor that runs multi-page checks.
+  - `generate-test-report.mjs`: Consolidated reporter for all test results.
 - `public/`: Optimized static assets (WebP format).
 
 ---
@@ -52,6 +55,18 @@ npm test
 Automated performance and accessibility audits.
 ```bash
 npx lhci autorun
+```
+
+### 3. Comprehensive SEO & AI Audit
+Modular audit system for technical SEO, Schema validation, and AI Overview citations.
+```bash
+node scripts/site-audit.mjs [url]
+```
+
+### 4. Unified Test Reporting
+Consolidates results from Vitest, Lighthouse, and SEO audits into a single GitHub summary.
+```bash
+node scripts/generate-test-report.mjs
 ```
 
 ### 3. Case-Insensitive Search & Filtering

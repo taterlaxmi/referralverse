@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { posts } from '../data/post';
-import * as schemaUtils from '../utils/schema';
-import { Category } from '../types';
+import { posts } from '../../app/data/post';
+import * as schemaUtils from '../../app/utils/schema';
+import { Category } from '../../app/types';
 
 describe('Structured Data (Schema) Integrity', () => {
 
