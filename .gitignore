@@ -44,3 +44,4 @@ next-env.d.ts
 .lighthouseci/*
 all-posts.json
 vitest-results.json
+seo-audit-results.json
