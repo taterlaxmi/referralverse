@@ -280,6 +280,21 @@ export default async function PostPage({ params }: Props) {
                     </li>
                   ))}
                 </ul>
+                {post.tcImage && (
+                  <div className="mt-8 flex justify-center bg-gray-50 rounded-3xl p-4 md:p-8 border border-dashed border-gray-300">
+                    <Image
+                      src={post.tcImage}
+                      alt={
+                        post.tcImageAlt ||
+                        `${post.brand} terms and conditions`
+                      }
+                      width={600}
+                      height={400}
+                      className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
+                      sizes="(max-width: 768px) 80vw, 400px"
+                    />
+                  </div>
+                )}
               </section>
             )}
 

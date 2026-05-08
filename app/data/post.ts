@@ -21,6 +21,9 @@ export const posts: Post[] = [
     offer: { price: 200, currency: "₹" },
     ratingValue: "4.9",
     reviewCount: "1500",
+    proofImage: "/drinkprime-referral-code-reward-proof.webp",
+    proofImageHeader: "DrinkPrime Referral Reward Proof",
+    proofImageAlt: "Screenshot showing successful DrinkPrime referral bonus credit of ₹1000",
     steps: [
       "Download the DrinkPrime app from the Play Store or App Store.",
       "Sign up as a new user using your mobile number.",
@@ -654,27 +657,37 @@ export const posts: Post[] = [
     slug: "supermoney-creditcard-referral-code",
     brand: "SuperMoney",
     category: Category.CreditCard,
-    title: "SuperMoney Credit Card Referral Link: Upto 5% Cashback (RuPay LTF)",
+    title: "SuperMoney Credit Card Referral Link: Get ₹500 Bonus + Upto 5% Cashback",
     summary:
-      "SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹100 cashback on your first payment.",
+      "SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹500 cashback on your first payment.",
     metaDescription:
       "Use the latest SuperMoney Credit Card referral link to get a Lifetime Free RuPay credit card backed by Utkarsh, Kotak or Axis Bank. Enjoy up to 5% cashback on UPI.",
     referralCode: [],
     referralLink: "https://link.super.money/gJGY9KiLKUb",
-    signupBonus: "₹100 cashback on first payment",
-    referralBonus: "Up to ₹100 (Cashback Match for 30 days)",
-    validity: "Limited time offer",
+    signupBonus: "₹500 on Credit Card",
+    referralBonus: "Upto ₹500(Card) and Upto ₹50(Only UPI App)",
+    ctaText: "SuperMoney Card Referral Link",
+    offer: {
+      price: 500,
+      currency: "₹",
+    },
     steps: [
       "Click on the above referral link button to download the SuperMoney App. (Note: No manual code needed).",
       "Signup for a new account using your mobile number.",
       "Apply for the Lifetime Free SuperMoney Credit Card.",
-      "Complete your first UPI payment using the app to get ₹100 cashback.",
+      "Complete your first UPI payment using the app to get ₹500 cashback.",
     ],
-    ctaText: "Get LTF SuperMoney Credit Card",
-    offer: {
-      price: 100,
-      currency: "₹",
-    },
+    termsAndConditions: [
+      "Refer Axis superCard Pro: Earn ₹500 when your friend gets the Axis card within 25 days of clicking your referral link. Your friend can also earn up to ₹500.",
+      "Refer Utkarsh superCard: Earn ₹1,000 for every set of 3 successful referrals — ₹200 for the 1st referral, ₹200 for the 2nd, and ₹600 for the 3rd. After your first 3 successful referrals, you will earn a flat ₹200 for every additional successful referral. You must already own an Utkarsh superCard to participate, and your referred friend must complete a UPI transaction using their superCard.",
+      "Refer super.money App (UPI only): Complete referral streaks to earn up to ₹150. For every successful referral (when your friend completes their first transaction via super.money), unlock rewards in this order: ₹10, ₹20, ₹30, ₹40, and ₹50. The streak resets after every 5 successful referrals. This streak-based reward applies to your first 15 successful referrals; after that, you earn a flat ₹10 per successful referral.",
+      "Total referral earnings are capped at ₹4,000 per week."
+    ],
+    tcImage: "/supermoney-referral-terms-and-conditions.webp",
+    tcImageAlt: "SuperMoney terms and conditions details",
+    proofImage: "/supermoney-referral-reward-proof.webp",
+    proofImageHeader: "SuperMoney Referral Reward Proof",
+    proofImageAlt: "Screenshot showing successful SuperMoney referral bonus credit of ₹500",
     benefits: [
       {
         title: "Two Distinct Card Options",
@@ -702,6 +715,14 @@ export const posts: Post[] = [
           "No, SuperMoney does not require a manual referral code. You just need to click a valid referral link, download the app, and make your first payment to automatically qualify for the signup bonus.",
       },
       {
+        question: "What is the super.money refer and earn reward amount?",
+        answer: [
+          "super.money App (UPI only): Earn rewards in an increasing streak pattern for every successful referral — ₹10 for the 1st referral, ₹20 for the 2nd, ₹30 for the 3rd, ₹40 for the 4th, and ₹50 for the 5th referral, allowing you to earn up to ₹150 per streak cycle.",
+          "Axis Bank superCard Pro: Earn ₹500 for every successful referral when your friend gets the card within the eligible period.",
+          "Utkarsh superCard: Earn ₹1,000 for your first 3 successful referrals — ₹200 for the 1st referral, ₹200 for the 2nd, and ₹600 for the 3rd. After completing the first 3 referrals, you will earn a flat ₹200 for every additional successful referral."
+        ],
+      },
+      {
         question: "Is the SuperMoney Credit Card really free for life?",
         answer:
           "Yes, the annual fee is NIL. However, for the Kotak811 FD-backed variant, a ₹249 joining fee applies if your credit limit is less than ₹4,500 and you opt for a physical card.",
@@ -727,12 +748,6 @@ export const posts: Post[] = [
         question: "What is the minimum withdrawal amount for cashback?",
         answer:
           "The minimum withdrawal amount built into the super.money app is ₹10.",
-      },
-      {
-        question:
-          "What is the SuperMoney refer and earn amount and how does it work?",
-        answer:
-          "When you refer a friend, it triggers a 30-day 'Cashback Match' period after their first transaction. Whenever your friend earns eligible cashback on their own transactions during this period, you earn a 100% matching amount (the refer and earn amount is capped at a maximum of ₹100 per friend).",
       },
       {
         question:

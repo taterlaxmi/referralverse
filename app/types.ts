@@ -16,6 +16,8 @@ export interface Post {
   proofImage?: string;
   proofImageAlt?: string;
   proofImageHeader?: string;
+  tcImage?: string;
+  tcImageAlt?: string;
   category: Category;
   summary: string;
   metaDescription: string;
@@ -24,7 +26,7 @@ export interface Post {
   referralLink: string;
   signupBonus: string;
   referralBonus: string;
-  validity: string;
+  validity?: string;
   steps: string[];
   ctaText: string;
   offer: {
