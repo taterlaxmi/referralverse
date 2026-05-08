@@ -20,6 +20,7 @@ export default function Breadcrumbs({ category, title }: BreadcrumbsProps) {
         <li className="flex items-center">
           <Link 
             href="/" 
+            aria-label="Home"
             className="group flex items-center gap-2 px-3.5 py-2 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all duration-300 ease-out active:scale-95"
           >
             <Home className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />

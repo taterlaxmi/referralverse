@@ -1,0 +1,36 @@
+# ReferralVerse
+
+> Find the best referral offers, coupons, and promo codes curated for travel, finance, food, and lifestyle in India.
+
+ReferralVerse is a curated platform that helps users discover and share verified referral codes, signup bonuses, and promotional offers across popular Indian apps and services. Each listing includes step-by-step signup instructions, current bonus amounts, terms and conditions, comparison tables, and FAQs.
+
+## Site Structure
+
+- **Homepage** (`/`): Browse all referral offers with category filtering and search.
+- **Post Pages** (`/{slug}`): Detailed referral offer pages with referral code, signup steps, benefits, T&C, proof screenshots, and FAQs.
+- **Category Pages** (`/category/{slug}`): Browse offers filtered by category (e.g., Credit Cards, Water Purifiers, Fitness).
+- **Referral Aggregator** (`/referral-aggregator`): A consolidated view of the latest referral codes.
+
+## Categories Covered
+
+- Credit Cards (Tata Neu, SuperMoney, Kiwi, etc.)
+- Water Purifiers (DrinkPrime, Livpure Smart)
+- Fitness (CultFit)
+- And more categories being added regularly.
+
+## Content Types
+
+Each referral offer page typically includes:
+- Verified referral code and/or referral link
+- Signup bonus and referral bonus amounts
+- Step-by-step claim instructions
+- Key benefits of the product/service
+- Comparison tables with competitors
+- Terms and conditions
+- Frequently Asked Questions (with structured data)
+- Proof of reward screenshots
+
+## Contact
+
+- Website: https://referralverse.in
+- Sitemap: https://referralverse.in/sitemap.xml
