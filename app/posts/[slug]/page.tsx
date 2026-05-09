@@ -73,7 +73,7 @@ export default async function PostPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(graphSchema) }}
         />
 
-        <article id="content" className="container mx-auto px-4 py-12">
+        <article id="content" className="container mx-auto px-4 pt-28 pb-12">
           {/* Breadcrumbs */}
           <Breadcrumbs category={post.category} title={post.title} />
 

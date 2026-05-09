@@ -2,7 +2,6 @@ export enum Category {
   Finance = "Finance",
   CreditCard = "Credit Card",
   Shopping = "Shopping",
-  Health = "Health",
   WaterPurifier = "Water Purifier",
   Fitness = "Fitness"
 }
@@ -49,13 +48,13 @@ export interface Post {
   faq?: {
     question: string;
     answer:
-      | string
-      | string[]
-      | {
-          // table structure
-          headers: string[]; // column headers
-          rows: string[][]; // array of rows
-        };
+    | string
+    | string[]
+    | {
+      // table structure
+      headers: string[]; // column headers
+      rows: string[][]; // array of rows
+    };
   }[];
   ratingValue?: string;
   reviewCount?: string;

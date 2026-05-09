@@ -10,51 +10,52 @@ interface BreadcrumbsProps {
 export default function Breadcrumbs({ category, title }: BreadcrumbsProps) {
   return (
     <nav 
-      className="flex items-center text-sm font-medium mb-10 pb-4" 
+      className="flex items-center text-sm font-medium mb-8 pb-4 overflow-hidden" 
       aria-label="Breadcrumb"
     >
       {/* Main Glass Container */}
-      <ol className="flex items-center gap-1 p-1.5 bg-white/40 backdrop-blur-md border border-white/60 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-black/5 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-500">
+      <ol className="flex items-center gap-1 p-1 bg-white/40 backdrop-blur-md border border-white/60 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] ring-1 ring-black/5 max-w-full">
         
         {/* Home Link */}
-        <li className="flex items-center">
+        <li className="flex-shrink-0 flex items-center">
           <Link 
             href="/" 
-            aria-label="Home"
-            className="group flex items-center gap-2 px-3.5 py-2 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all duration-300 ease-out active:scale-95"
+            aria-label="Go to Home"
+            className="group flex items-center gap-2 px-2.5 py-1.5 md:px-3.5 md:py-2 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all duration-300"
           >
-            <Home className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
-            <span className="hidden sm:inline font-semibold tracking-tight">Home</span>
+            <Home className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+            <span className="hidden md:inline font-semibold">Home</span>
           </Link>
         </li>
 
-        <li className="text-slate-300 flex items-center justify-center">
+        <li className="text-slate-300 flex-shrink-0 flex items-center justify-center" aria-hidden="true">
           <ChevronRight className="w-4 h-4 stroke-[2.5]" />
         </li>
 
         {/* Category Link */}
-        <li className="flex items-center">
+        <li className="flex-shrink-0 flex items-center">
           <Link 
             href={`/category/${slugify(category)}`} 
-            className="group flex items-center gap-2 px-3.5 py-2 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all duration-300 ease-out active:scale-95"
+            aria-label={`View all ${category} offers`}
+            className="group flex items-center gap-2 px-2.5 py-1.5 md:px-3.5 md:py-2 text-slate-500 hover:text-indigo-600 hover:bg-white/80 rounded-full transition-all duration-300"
           >
-            <Layers className="w-4 h-4 transition-transform group-hover:rotate-12" />
-            <span className="font-semibold tracking-tight truncate max-w-[60px] min-[400px]:max-w-[100px] sm:max-w-none">{category}</span>
+            <Layers className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+            <span className="hidden sm:inline font-semibold">{category}</span>
           </Link>
         </li>
 
-        <li className="text-slate-300 flex items-center justify-center">
+        <li className="text-slate-300 flex-shrink-0 flex items-center justify-center" aria-hidden="true">
           <ChevronRight className="w-4 h-4 stroke-[2.5]" />
         </li>
 
         {/* Current Page (Active) */}
-        <li className="flex items-center pr-1">
+        <li className="flex-shrink flex items-center pr-1 min-w-0">
           <span 
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-full shadow-lg shadow-indigo-200/50 ring-1 ring-white/20 animate-in fade-in zoom-in duration-500" 
+            className="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-br from-indigo-600 to-violet-600 text-white rounded-full shadow-lg shadow-indigo-200/50 ring-1 ring-white/20 min-w-0" 
             aria-current="page"
           >
-            <Info className="w-4 h-4" />
-            <span className="font-bold tracking-tight truncate max-w-[80px] min-[400px]:max-w-[150px] sm:max-w-[300px] md:max-w-md">
+            <Info className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+            <span className="font-bold truncate max-w-[80px] min-[320px]:max-w-[100px] min-[375px]:max-w-[140px] sm:max-w-[250px] md:max-w-md">
               {title}
             </span>
           </span>

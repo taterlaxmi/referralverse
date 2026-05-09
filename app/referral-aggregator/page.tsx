@@ -40,7 +40,7 @@ export default function ReferralAggregatorPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FDFDFF]">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12 md:py-16">
+      <main className="flex-grow container mx-auto px-4 pt-28 pb-12 md:pb-16">
         <div className="max-w-5xl mx-auto">
 
           {/* Hero Section */}

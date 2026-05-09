@@ -44,7 +44,8 @@ export function getOrganizationSchema() {
     sameAs: [
       "https://twitter.com/referralverse",
       "https://www.linkedin.com/company/Referralverse",
-      "https://www.youtube.com/@ReferralVerse"
+      "https://www.youtube.com/@ReferralVerse",
+      "https://www.pinterest.com/Referralverse/"
     ],
   };
 }
