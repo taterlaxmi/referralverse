@@ -41,7 +41,11 @@ export function getOrganizationSchema() {
       "@type": "ImageObject",
       url: "https://referralverse.in/logo.webp",
     },
-    sameAs: ["https://twitter.com/referralverse"],
+    sameAs: [
+      "https://twitter.com/referralverse",
+      "https://www.linkedin.com/company/Referralverse",
+      "https://www.youtube.com/@ReferralVerse"
+    ],
   };
 }
 

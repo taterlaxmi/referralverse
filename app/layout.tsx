@@ -33,7 +33,13 @@ export const metadata = {
     title: 'ReferralVerse',
     description: 'Find top referral offers and coupons',
     creator: '@referralverse'
-  }
+  },
+  verification: {
+    other: {
+      'p:domain_verify': '8bc6674a40c80501470ca2e1cf3fcff5',
+      'trustpilot-one-time-domain-verification-id': '82d16737-266a-472e-8e76-14a7cb95b4f1',
+    },
+  },
 }
 
 export default function RootLayout({
