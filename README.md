@@ -12,6 +12,7 @@ A high-performance referral offers directory built with **Next.js**, **React**, 
 - **SEO/Sitemap:** [next-sitemap](https://github.com/iamvishnusankar/next-sitemap)
 - **Testing:** [Vitest](https://vitest.dev/) & [Playwright](https://playwright.dev/)
 - **Audit:** [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
+- **Mobile Container:** [ReferralVerse-Mobile](https://github.com/taterlaxmi/referralverse-mobile) (Companion Capacitor Repo)
 
 ---
 
@@ -69,7 +70,11 @@ Consolidates results from Vitest, Lighthouse, and SEO audits into a single GitHu
 node scripts/generate-test-report.mjs
 ```
 
-### 3. Case-Insensitive Search & Filtering
+### 5. Mobile App Tests (Android)
+All native Android unit and instrumented tests have been decoupled and moved to our companion repository:
+👉 [ReferralVerse-Mobile Repository](https://github.com/taterlaxmi/referralverse-mobile)
+
+### 6. Case-Insensitive Search & Filtering
 The offer feed supports dynamic search and category filtering with URL-based pagination for SEO friendliness.
 
 ---
@@ -78,7 +83,7 @@ The offer feed supports dynamic search and category filtering with URL-based pag
 
 1. **Clone & Install:**
    ```bash
-   git clone https://github.com/your-username/referralverse.git
+   git clone https://github.com/taterlaxmi/referralverse.git
    npm install
    ```
 
@@ -93,6 +98,19 @@ The offer feed supports dynamic search and category filtering with URL-based pag
    ```
 
 ---
+
+## 📱 Mobile App Container (Dual-Repo Architecture)
+
+The mobile version of ReferralVerse is a native Android application built using **Capacitor**. To maintain a pristine commit history and optimize CI/CD pipelines, the native codebase is hosted in a dedicated companion repository:
+
+👉 **[ReferralVerse-Mobile GitHub Repository](https://github.com/taterlaxmi/referralverse-mobile)**
+
+### 🏛️ Dual-Repo Workflow
+- **Web App (`ReferralVerse`)**: Serves the core responsive Next.js web application and API endpoints.
+- **Mobile Container (`ReferralVerse-Mobile`)**: Wraps `https://referralverse.in` in an advanced Android Webview.
+
+When the native app opens `https://referralverse.in`, the mobile container seamlessly renders the responsive web app without requiring any separate mobile-specific codebase inside the web repository.
+
 
 ## 🤖 GitHub Automation & Workflows
 

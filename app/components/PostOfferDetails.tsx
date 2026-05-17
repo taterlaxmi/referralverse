@@ -54,7 +54,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
       {/* Header */}
       <h2 id="offer" className="text-2xl font-semibold mb-6 text-gray-900 flex items-center gap-2">
         <Gift className="text-indigo-500" size={22} />
-        <span>Offer Details</span>
+        <span>Verified Offer Details</span>
       </h2>
 
       {/* Table Container with Visible Scrollbar */}
@@ -86,8 +86,13 @@ export default function PostOfferDetails({ post }: { post: Post }) {
             {/* Referral Code(s) */}
             {codes.length > 0 && (
               <tr id="referral-code" className="hover:bg-gray-50/80 transition scroll-mt-24">
-                <th className="py-4 px-5 text-left font-medium text-gray-600 w-auto md:w-48 whitespace-nowrap align-top pt-8">
-                  Referral Code
+                <th className="py-4 px-5 text-left font-medium text-gray-600 w-auto md:w-48 align-top pt-8">
+                  <div className="flex flex-col gap-1">
+                    <span>Referral Code</span>
+                    <span className="inline-flex w-fit items-center gap-1 text-[10px] uppercase font-bold tracking-wider text-emerald-700 bg-emerald-50 border border-emerald-200 rounded px-1.5 py-0.5 mt-0.5">
+                      <CheckIcon size={10} /> Active
+                    </span>
+                  </div>
                 </th>
                 <td className="py-4 px-5">
                   <div className="flex flex-col gap-4">

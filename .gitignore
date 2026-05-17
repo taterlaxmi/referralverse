@@ -45,3 +45,7 @@ next-env.d.ts
 all-posts.json
 vitest-results.json
 seo-audit-results.json
+
+# IDEs
+.idea/
+.vscode/

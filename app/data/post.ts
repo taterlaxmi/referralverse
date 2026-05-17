@@ -794,11 +794,11 @@ export const posts: Post[] = [
     brand: "Kiwi",
     category: Category.CreditCard,
     title:
-      "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay Rewards",
+      "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary:
-      "The Kiwi (GoKiwi) RuPay credit card, issued in partnership with Yes Bank and AU Small Finance Bank, is designed for the modern UPI user. Earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options and RuPay benefits, Kiwi is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and airport lounge access.",
+      "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
-      "Apply with our Kiwi invite code to get ₹100 cashback on your first transaction. Use the Kiwi credit card referral code to earn up to 1.5%–2% cashback on UPI.",
+      "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
     referralCode: [ "UW855Z", "DM9RR5","S82M66"],
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
@@ -809,7 +809,7 @@ export const posts: Post[] = [
     steps: [
       "Download the Kiwi App from Play Store/App Store using the link.",
       "Sign up with your mobile number and complete the basic profile.",
-      "Enter the Kiwi referral code during the credit card application.",
+      "Enter our 6-digit Kiwi app invite code during the credit card application.",
       "Wait for your digital RuPay Credit Card to be issued.",
       "Make your first UPI transaction with the Kiwi card to claim ₹100 cashback.",
     ],
@@ -953,7 +953,12 @@ export const posts: Post[] = [
       {
         question: "What is the value of 1 Kiwi reward point?",
         answer:
-          "1 Kiwi is worth ₹0.25 (i.e., 4 Kiwis = ₹1). You need at least 500 Kiwis to redeem rewards.",
+          "The value of 1 Kiwi point is exactly ₹0.25 (25 Paisa). Since 4 Kiwis equal ₹1, you can redeem them directly to your bank account via UPI once you reach the minimum threshold of 500 Kiwis.",
+      },
+      {
+        question: "How to get Kiwi Neon for free?",
+        answer:
+          "Currently, Kiwi Neon is a premium membership with an annual fee of ₹999 + GST. While you cannot get it entirely for free upfront, you can easily recover the cost through its 2% cashback on UPI scans and high-value milestone rewards (up to 5% effective cashback). Watch out for limited-time promotional offers where joining fees might be waived.",
       },
       {
         question: "How do I redeem my Kiwi cashback (Kiwis)?",
@@ -1271,11 +1276,11 @@ export const posts: Post[] = [
     slug: "slice-referral-code",
     brand: "Slice",
     category: Category.CreditCard,
-    title: "Slice Referral Code: Get ₹250 Cashback + UPI Credit Card Rewards",
+    title: "Slice Invite & Referral Code: Get ₹250 Cashback + UPI Credit Card Rewards",
     summary:
-      "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use the slice referral code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With daily interest linked to the repo rate and app-first banking features, slice is becoming a popular all-in-one finance app.",
+      "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice referral code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With daily interest linked to the repo rate and app-first banking features, slice is becoming a popular all-in-one finance app.",
     metaDescription:
-      "Get ₹250 cashback using the latest Slice referral code (updated May 2026). Apply for Slice UPI credit card & start earning rewards instantly.",
+      "Get ₹250 cashback using the latest working Slice referral code (updated May 2026). Apply for the Slice UPI credit card & start earning rewards instantly.",
     referralCode: ["&ROHIT4924", "&RAHUL56841"],
     referralCodeNote:
       "Each Referral code works for max 5 users. If this one is exhausted, please click",
@@ -1286,7 +1291,7 @@ export const posts: Post[] = [
     steps: [
       "Download the slice app using the referral link.",
       "Sign up with your mobile number and complete registration.",
-      "Enter the slice referral code during signup if prompted.",
+      "Enter our active slice referral code during signup if prompted.",
       "Complete KYC verification and activate your eligible slice account/card.",
       "Make your first UPI payment using the slice UPI credit card.",
       "Receive ₹250 cashback as per current offer terms.",
@@ -1337,9 +1342,9 @@ export const posts: Post[] = [
     ],
     faq: [
       {
-        question: "What is the latest slice referral code?",
+        question: "What is the latest verified slice referral code?",
         answer:
-          "The latest working slice referral code on this page is ROHIT4924. Use it while signing up to become eligible for the ₹250 cashback offer, subject to terms.",
+          "The latest verified and working slice referral code on this page is &ROHIT4924. Use it while signing up to become eligible for the ₹250 cashback offer, subject to terms.",
       },
       {
         question: "How do I get ₹250 cashback on slice?",

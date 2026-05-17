@@ -106,7 +106,7 @@ export default async function PostPage({ params }: Props) {
                 width={600}
                 height={400}
                 className="w-full max-w-md rounded-2xl shadow-md border border-gray-200 object-cover"
-                sizes="(max-width: 768px) 80vw, 400px"
+                sizes="(max-width: 768px) 100vw, 448px"
                 priority
                 fetchPriority="high"
               />
@@ -231,7 +231,7 @@ export default async function PostPage({ params }: Props) {
                   width={600}
                   height={400}
                   className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
-                  sizes="(max-width: 768px) 80vw, 400px"
+                  sizes="(max-width: 768px) 100vw, 448px"
                 />
               </div>
             </section>
@@ -291,7 +291,7 @@ export default async function PostPage({ params }: Props) {
                       width={600}
                       height={400}
                       className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
-                      sizes="(max-width: 768px) 80vw, 400px"
+                      sizes="(max-width: 768px) 100vw, 448px"
                     />
                   </div>
                 )}

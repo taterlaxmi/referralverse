@@ -210,20 +210,20 @@ export function getFaqSchema(post: Post) {
 
   // ✅ Referral Code / Link
   let referralCodeAnswer = "";
-  let referralCodeQuestion = `What is the ${post.brand} referral code?`;
+  let referralCodeQuestion = `What is the latest working ${post.brand} referral code?`;
   let referralCodeAnchor = "referral-code";
 
   if (
     typeof post.referralCode === "string" &&
     post.referralCode.trim() !== ""
   ) {
-    referralCodeAnswer = `The ${post.brand} referral code is ${post.referralCode}. Use it during signup to claim your reward.`;
+    referralCodeAnswer = `The verified ${post.brand} referral code is ${post.referralCode}. Use it during signup to claim your reward successfully.`;
   } else if (Array.isArray(post.referralCode) && post.referralCode.length > 0) {
     referralCodeQuestion = `What are the active ${post.brand} referral codes?`;
-    referralCodeAnswer = `The active ${post.brand} referral codes are: ${post.referralCode.join(", ")}. Use any of these codes during signup.`;
+    referralCodeAnswer = `The active, working ${post.brand} referral codes are: ${post.referralCode.join(", ")}. Use any of these verified codes during signup.`;
   } else if (post.referralLink) {
     referralCodeAnchor = "referral-link";
-    referralCodeAnswer = `${post.brand} does not provide a manual referral code. You can use the referral link to claim the offer automatically.`;
+    referralCodeAnswer = `${post.brand} does not provide a manual referral code. You can use the verified referral link to claim the offer automatically.`;
   }
 
   if (referralCodeAnswer) {

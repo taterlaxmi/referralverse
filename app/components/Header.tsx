@@ -76,6 +76,7 @@ const Header: React.FC = () => {
                 src="/logo.webp"
                 alt="ReferralVerse Logo"
                 fill
+                sizes="40px"
                 className="object-contain"
                 priority
               />
