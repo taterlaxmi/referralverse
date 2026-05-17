@@ -81,7 +81,7 @@ describe('Structured Data (Schema) Integrity', () => {
             const postSingle = { ...samplePost, referralCode: 'SINGLE123', referralLink: '' };
             const schemaSingle = schemaUtils.getFaqSchema(postSingle);
             const faqSingle = schemaSingle.mainEntity.find((q: any) => q['@id'].includes('#referral-code'));
-            expect(faqSingle.name).toBe(`What is the ${samplePost.brand} referral code?`);
+            expect(faqSingle.name).toBe(`What is the latest working ${samplePost.brand} referral code?`);
             expect(faqSingle.acceptedAnswer.text).toContain('SINGLE123');
 
             // Case 2: Array of codes
