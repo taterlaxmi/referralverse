@@ -3,7 +3,8 @@ export enum Category {
   CreditCard = "Credit Card",
   Shopping = "Shopping",
   WaterPurifier = "Water Purifier",
-  Fitness = "Fitness"
+  Fitness = "Fitness",
+  Grocery = "Grocery"
 }
 
 export interface Post {
@@ -11,7 +12,6 @@ export interface Post {
   brand: string;
   title: string;
   heroImage?: string;
-  heroImageAlt?: string;
   proofImage?: string;
   proofImageAlt?: string;
   proofImageHeader?: string;

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useMemo, Suspense } from 'react';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Post } from '../types';
 import { posts } from '../data/post';
@@ -99,7 +100,7 @@ function PostFeedContent() {
 
             <div id="post-feed-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-mt-20">
                 {currentPosts.map((post: Post) => (
-                    <a
+                    <Link
                         key={post.slug}
                         href={`/${post.slug}`}
                         className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between
@@ -153,7 +154,7 @@ function PostFeedContent() {
                             </span>
                         </div>
 
-                    </a>
+                    </Link>
                 ))}
             </div>
 

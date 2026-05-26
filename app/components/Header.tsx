@@ -56,14 +56,15 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/90 backdrop-blur-md shadow-lg py-3' 
-          : 'bg-white py-5 shadow-sm'
-      }`}
-    >
-      <a href="#content" className="sr-only focus:not-sr-only absolute top-4 left-4 bg-indigo-600 text-white p-2 rounded-md z-[110]">
+    <>
+      <header 
+        className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white/90 backdrop-blur-md shadow-lg py-3' 
+            : 'bg-white py-5 shadow-sm'
+        }`}
+      >
+        <a href="#content" className="sr-only focus:not-sr-only absolute top-4 left-4 bg-indigo-600 text-white p-2 rounded-md z-[110]">
         Skip to content
       </a>
 
@@ -142,7 +143,8 @@ const Header: React.FC = () => {
         >
           {navOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </div>
+        </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <div 
@@ -223,7 +225,7 @@ const Header: React.FC = () => {
 
           </div>
         </div>
-    </header>
+    </>
   );
 };
 

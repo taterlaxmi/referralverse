@@ -799,7 +799,7 @@ export const posts: Post[] = [
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: [ "CLDV4W", "L5S687","P7F4Q5","W9D347","X84MLB"],
+    referralCode: ["T3U3MX","BSHK58","P8863D", "SQ9H56", "W839WP", "RDGP92", "QM976H","NQQ8H9"],
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
@@ -818,6 +818,9 @@ export const posts: Post[] = [
       price: 100,
       currency: "₹",
     },
+    proofImage: "/kiwi-referral-code-reward-proof.webp",
+    proofImageHeader: "Kiwi Referral Reward Proof",
+    proofImageAlt: "Screenshot showing successful Kiwi referral bonus credit of ₹1500",
     howToRefer: [
       'Open the Kiwi app and navigate to the "Refer & Earn" section.',
       "Copy your unique referral link or invite code.",
@@ -1276,12 +1279,12 @@ export const posts: Post[] = [
     slug: "slice-referral-code",
     brand: "Slice",
     category: Category.CreditCard,
-    title: "Slice Invite & Referral Code: Get ₹250 Cashback + UPI Credit Card Rewards",
+    title: "Slice Invite Code & Referral: ₹250 Cashback (Refer and Earn)",
     summary:
-      "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice referral code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With daily interest linked to the repo rate and app-first banking features, slice is becoming a popular all-in-one finance app.",
+      "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice invite code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With app-first banking features, slice is a popular finance app. Join the Slice bank refer and earn program today.",
     metaDescription:
-      "Get ₹250 cashback using the latest working Slice referral code (updated May 2026). Apply for the Slice UPI credit card & start earning rewards instantly.",
-    referralCode: ["&ROHIT4924", "&RAHUL56841"],
+      "Use the latest Slice invite code to get ₹250 cashback. Apply for the Slice UPI credit card, explore the Slice refer and earn program, and start earning.",
+    referralCode: ["&ROHIT4924", "RAHUL56841"],
     referralCodeNote:
       "Each Referral code works for max 5 users. If this one is exhausted, please click",
     referralLink: "https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924",
@@ -1308,7 +1311,15 @@ export const posts: Post[] = [
       "When they sign up and complete the required transaction, you receive referral rewards.",
       "Track your earnings inside the app.",
     ],
-    benefits: [
+    tcImage: "/slice-referral-terms-and-conditions.webp",
+    tcImageAlt: "slice refer and earn terms and conditions",
+    termsAndConditions: [
+      "Invite friends to Slice and both users get ₹250 cashback in the Slice savings account.",
+      "The referred friend must make their first UPI payment using the Slice UPI credit card within 7 days for the referrer to receive the reward.",
+      "Cashback rewards are limited to the first 10 successful referrals every month.",
+      "Cashback will not be provided if the referred friend is recreating a Slice account after deleting a previous account.",
+      "Existing Slice users are not eligible for referral cashback rewards.",
+    ], benefits: [
       {
         title: "UPI Credit Card for Daily Payments",
         description:
@@ -1387,6 +1398,146 @@ export const posts: Post[] = [
             ["Cashback Seekers", "Offers on eligible transactions"],
           ],
         },
+      },
+    ],
+  },
+  {
+    slug: "firstclub-referral-code",
+    brand: "FirstClub",
+    category: Category.Grocery,
+    title:
+      "FirstClub Referral Code: Get Exclusive Welcome Gifts + Premium Grocery Access",
+    summary:
+      "FirstClub is India's quality-first grocery delivery app focused on clean ingredients, verified sourcing, and premium everyday essentials. The platform bans 200+ harmful ingredients including artificial preservatives, sweeteners, benzoates, and chemical additives. New users can join using our FirstClub referral code to unlock curated welcome gifts and experience trusted groceries delivered fast.",
+    metaDescription:
+      "Use our FirstClub referral code NKNKLB to join India's premium grocery app. Get curated welcome gifts, clean groceries, and products free from 200+ harmful ingredients.",
+    referralCode: ["NKNKLB"],
+    referralCodeNote:
+      "Use this active FirstClub invite code during signup to unlock welcome rewards and premium membership benefits.",
+    referralLink: "https://go.firstclub.co.in/u3g6JIGbb3b",
+    signupBonus:
+      "Exclusive curated welcome gifts for new users",
+    referralBonus:
+      "Referral rewards may vary based on ongoing campaigns",
+    validity: "Limited time offer",
+    steps: [
+      "Download the FirstClub app using the referral link.",
+      "Sign up using your mobile number.",
+      "Enter the referral code NKNKLB during registration if prompted.",
+      "Complete your profile and place your first grocery order.",
+      "Receive curated welcome gifts and explore premium quality groceries.",
+    ],
+    ctaText: "Download FirstClub App",
+    offer: {
+      price: 100,
+      currency: "₹",
+    },
+    howToRefer: [
+      'Open the FirstClub app and navigate to the referral or invite section.',
+      "Copy your referral code or invite link.",
+      "Share it with friends and family.",
+      "Earn referral rewards whenever someone joins and places eligible orders.",
+    ],
+    benefits: [
+      {
+        title: "200+ Harmful Ingredients Banned",
+        description:
+          "FirstClub removes over 200 harmful ingredients including artificial preservatives, sweeteners, benzoates, refined additives, and chemical pesticides from products listed on the platform.",
+        emoji: "🚫",
+      },
+      {
+        title: "Quality-First Grocery Platform",
+        description:
+          "Every product on FirstClub goes through ingredient screening, claim verification, and quality testing before being listed. Their philosophy is simple — if it's not good enough for their families, it won't be sold.",
+        emoji: "✅",
+      },
+      {
+        title: "Premium Curated Grocery Experience",
+        description:
+          "Unlike regular grocery apps focused only on delivery speed, FirstClub curates trusted, better-quality groceries including dairy, bakery, fruits, snacks, and packaged foods.",
+        emoji: "🥑",
+      },
+      {
+        title: "Clean Label Products",
+        description:
+          "Products available on FirstClub are free from artificial colors, preservatives, carbides, harmful oils, synthetic antioxidants, and unnecessary chemical additives.",
+        emoji: "🌿",
+      },
+      {
+        title: "Fast Delivery with Trusted Sourcing",
+        description:
+          "FirstClub combines premium grocery curation with quick delivery, helping users shop confidently without reading complicated ingredient labels.",
+        emoji: "⚡",
+      },
+    ],
+    faq: [
+      {
+        question: "What is FirstClub?",
+        answer:
+          "FirstClub is India's quality-first grocery delivery app that focuses on trusted, tested, and carefully curated grocery products. The platform bans 200+ harmful ingredients and prioritizes clean-label food products.",
+      },
+      {
+        question: "What do I get using the FirstClub referral code?",
+        answer:
+          "New users joining through the referral code NKNKLB may receive curated welcome gifts and access to premium grocery benefits depending on ongoing campaigns.",
+      },
+      {
+        question: "Which cities is FirstClub available in?",
+        answer:
+          "Currently, FirstClub is available in Bengaluru and Hyderabad with plans to expand further.",
+      },
+      {
+        question: "What ingredients are banned on FirstClub?",
+        answer: {
+          headers: ["Category", "Examples"],
+          rows: [
+            [
+              "Artificial Additives",
+              "Artificial colours, flavours, preservatives",
+            ],
+            [
+              "Sweeteners",
+              "Artificial sweeteners and refined sweeteners",
+            ],
+            [
+              "Chemicals",
+              "Benzoates, dough conditioners, synthetic antioxidants",
+            ],
+            [
+              "Harmful Oils",
+              "Low-quality refined and harmful oils",
+            ],
+            [
+              "Agriculture Chemicals",
+              "Chemical pesticides and growth hormones",
+            ],
+          ],
+        },
+      },
+      {
+        question: "How is FirstClub different from other grocery apps?",
+        answer:
+          "Most grocery apps prioritize speed and discounts, while FirstClub focuses heavily on ingredient quality, product verification, and trusted sourcing. Every product is reviewed before listing.",
+      },
+      {
+        question: "Does FirstClub test products before listing them?",
+        answer:
+          "Yes. FirstClub states that every product undergoes ingredient screening, fact-checking of claims, and quality verification before becoming available on the app.",
+      },
+      {
+        question: "What categories are available on FirstClub?",
+        answer:
+          "FirstClub offers fruits & vegetables, dairy & eggs, breads & bakery, staples, snacks, beverages, packaged foods, health supplements, cleaning essentials, and more.",
+      },
+      {
+        question: "Is FirstClub only for premium groceries?",
+        answer:
+          "FirstClub positions itself as a premium quality-first grocery platform where users can buy trusted products without worrying about harmful ingredients or misleading labels.",
+      },
+      {
+        question: "Who founded FirstClub?",
+        answer:
+          "FirstClub was founded by Ayyappan R with the goal of making trustworthy groceries easily accessible without forcing consumers to decode ingredient labels themselves.",
       },
     ],
   },

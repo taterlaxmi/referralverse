@@ -135,7 +135,7 @@ export default async function CategoryPage({ params }: Props) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
             {categoryPosts.map((post) => (
-              <a
+              <Link
                 key={post.slug}
                 href={`/${post.slug}`}
                 className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg"
@@ -173,7 +173,7 @@ export default async function CategoryPage({ params }: Props) {
                     {post.ctaText}
                   </span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
 

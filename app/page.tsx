@@ -5,16 +5,8 @@ import PostFeed from './components/PostFeed';
 import { posts } from './data/post';
 import * as schemaUtils from './utils/schema';
 
-type Props = {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
-
-export default async function Home({ searchParams }: Props) {
-  const resolvedParams = await searchParams;
-  const q = typeof resolvedParams.q === 'string' ? resolvedParams.q : '';
-  const page = typeof resolvedParams.page === 'string' ? parseInt(resolvedParams.page, 10) : 1;
-  
-  const homeSchema = schemaUtils.getHomeGraphSchema(posts, q, page);
+export default function Home() {
+  const homeSchema = schemaUtils.getHomeGraphSchema(posts, '', 1);
 
   return (
     <>

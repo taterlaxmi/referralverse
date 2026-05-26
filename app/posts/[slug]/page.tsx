@@ -100,8 +100,7 @@ export default async function PostPage({ params }: Props) {
               <Image
                 src={post.heroImage}
                 alt={
-                  post.heroImageAlt ||
-                  `${post.brand} referral offer and promo code`
+                  `${post.brand} referral code, invite code and refer & earn offer`
                 }
                 width={600}
                 height={400}

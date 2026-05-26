@@ -23,9 +23,10 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
     <button
       onClick={copyToClipboard}
       className={`flex items-center justify-center p-2.5 rounded-lg border transition-all duration-200 ${isCopied
-          ? "bg-green-500 border-green-500 text-white"
-          : "bg-white border-gray-200 text-gray-700 hover:bg-gray-100"
+        ? "bg-green-500 border-green-500 text-white"
+        : "bg-white border-gray-200 text-gray-700 hover:bg-gray-100"
         }`}
+      id="copy-referral-code"
       aria-label="Copy referral code"
     >
       {isCopied ? <CheckIcon size={18} /> : <CopyIcon size={18} />}
