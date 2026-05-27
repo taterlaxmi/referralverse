@@ -105,7 +105,7 @@ export default async function PostPage({ params }: Props) {
                 width={600}
                 height={400}
                 className="w-full max-w-md rounded-2xl shadow-md border border-gray-200 object-cover"
-                sizes="(max-width: 768px) 100vw, 448px"
+                sizes="(max-width: 448px) 100vw, 448px"
                 priority
                 fetchPriority="high"
               />
@@ -230,7 +230,7 @@ export default async function PostPage({ params }: Props) {
                   width={600}
                   height={400}
                   className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
-                  sizes="(max-width: 768px) 100vw, 448px"
+                  sizes="(max-width: 448px) 100vw, 448px"
                 />
               </div>
             </section>
@@ -267,7 +267,7 @@ export default async function PostPage({ params }: Props) {
                       d="M9 12l2 2 4-4"
                     />
                   </svg>
-                  Terms &amp; Conditions
+                  {`${post.brand} Referral Terms & Conditions`}
                 </h2>
                 <ul className="space-y-5 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
                   {post.termsAndConditions.map((term, idx) => (
@@ -290,7 +290,7 @@ export default async function PostPage({ params }: Props) {
                       width={600}
                       height={400}
                       className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
-                      sizes="(max-width: 768px) 100vw, 448px"
+                      sizes="(max-width: 448px) 100vw, 448px"
                     />
                   </div>
                 )}

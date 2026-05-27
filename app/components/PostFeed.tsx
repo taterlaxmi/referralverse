@@ -200,9 +200,50 @@ function PostFeedContent() {
     );
 }
 
+function PostFeedSkeleton() {
+    return (
+        <div className="w-full">
+            {/* Search Bar Skeleton */}
+            <div className="my-8 max-w-2xl mx-auto">
+                <div className="w-full h-12 rounded-full bg-gray-100 animate-pulse border border-gray-50"></div>
+            </div>
+
+            {/* Category Menu Skeleton */}
+            <div className="mb-10 flex flex-wrap justify-center gap-2">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div key={i} className="h-9 w-24 bg-gray-100 animate-pulse rounded-full"></div>
+                ))}
+            </div>
+
+            {/* Grid Skeleton */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                    <div key={i} className="bg-white rounded-2xl border border-gray-50 shadow-sm p-6 flex flex-col h-[280px] animate-pulse">
+                        <div className="h-7 bg-gray-100 rounded-md w-3/4 mb-4"></div>
+                        <div className="h-4 bg-gray-100 rounded w-full mb-2"></div>
+                        <div className="h-4 bg-gray-100 rounded w-5/6 mb-4"></div>
+                        <div className="mt-auto flex justify-between items-center mb-4">
+                            <div className="h-7 w-20 bg-gray-100 rounded-full"></div>
+                            <div className="h-6 w-16 bg-gray-100 rounded"></div>
+                        </div>
+                        <div className="h-10 w-full bg-gray-100 rounded-xl"></div>
+                    </div>
+                ))}
+            </div>
+
+            {/* Pagination Controls Skeleton */}
+            <div className="flex items-center justify-center gap-4 mt-10">
+                <div className="h-10 w-28 bg-gray-100 rounded-lg animate-pulse"></div>
+                <div className="h-10 w-32 bg-gray-100 rounded-lg animate-pulse"></div>
+                <div className="h-10 w-28 bg-gray-100 rounded-lg animate-pulse"></div>
+            </div>
+        </div>
+    );
+}
+
 export default function PostFeed() {
     return (
-        <Suspense fallback={<div className="text-center py-12">Loading posts...</div>}>
+        <Suspense fallback={<PostFeedSkeleton />}>
             <PostFeedContent />
         </Suspense>
     );

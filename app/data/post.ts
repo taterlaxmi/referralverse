@@ -9,7 +9,7 @@ export const posts: Post[] = [
     summary:
       "DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.",
     metaDescription:
-      "Verified DrinkPrime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.",
+      "Verified Drink Prime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.",
     referralCode: "ZIHCQMNY",
     referralLink:
       "http://drinkprime.in/lp46?referral_code=ZIHCQMNY&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button",
@@ -677,6 +677,10 @@ export const posts: Post[] = [
       "Apply for the Lifetime Free SuperMoney Credit Card.",
       "Complete your first UPI payment using the app to get ₹500 cashback.",
     ],
+    howToRefer: [
+      'Open the App and click on "Earn ₹650" in left top.',
+      "Share your referral link with WhatsApp and other social media.",
+    ],
     termsAndConditions: [
       "Refer Axis superCard Pro: Earn ₹500 when your friend gets the Axis card within 25 days of clicking your referral link. Your friend can also earn up to ₹500.",
       "Refer Utkarsh superCard: Earn ₹1,000 for every set of 3 successful referrals — ₹200 for the 1st referral, ₹200 for the 2nd, and ₹600 for the 3rd. After your first 3 successful referrals, you will earn a flat ₹200 for every additional successful referral. You must already own an Utkarsh superCard to participate, and your referred friend must complete a UPI transaction using their superCard.",
@@ -799,7 +803,7 @@ export const posts: Post[] = [
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["T3U3MX","BSHK58","P8863D", "SQ9H56", "W839WP", "RDGP92", "QM976H","NQQ8H9"],
+    referralCode: ["UQ89K8","BSHK58","P8863D", "SQ9H56", "W839WP", "RDGP92", "QM976H","NQQ8H9"],
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",

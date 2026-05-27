@@ -1,5 +1,5 @@
 import './globals.css'
-import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import Analytics from './components/Analytics';
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-HNTYGBLFK3";
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 
@@ -47,8 +47,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body suppressHydrationWarning={true}>
-        <GoogleAnalytics gaId={GA_ID} />
-        <GoogleTagManager gtmId={GTM_ID} />
+        <Analytics gaId={GA_ID} gtmId={GTM_ID} />
         {children}
       </body>
     </html>
