@@ -55,8 +55,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link href="/referral-aggregator" className="hover:text-white transition-colors">Latest Referral Codes</Link></li>
-              <li><Link href="/category/credit-card" className="hover:text-white transition-colors">Credit Card Offers</Link></li>
-              <li><Link href="/category/finance" className="hover:text-white transition-colors">Finance Apps</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -78,13 +78,13 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Get in Touch</h3>
             <p className="text-sm text-slate-300 mb-4">Have a code to share or found an expired one?</p>
-            <a
-              href="mailto:rohittater786@gmail.com"
+            <Link
+              href="/contact"
               className="inline-flex items-center space-x-2 text-sm bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition-colors"
             >
               <Mail size={16} />
-              <span>Email Us</span>
-            </a>
+              <span>Contact Us</span>
+            </Link>
           </div>
 
         </div>

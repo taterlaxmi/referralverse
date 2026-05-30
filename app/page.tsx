@@ -19,9 +19,7 @@ export default function Home() {
         <div className="text-center my-8">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800">Find the Best Deals & Coupons</h1>
         </div>
-
         <PostFeed />
-
       </main>
       <Footer />
     </>

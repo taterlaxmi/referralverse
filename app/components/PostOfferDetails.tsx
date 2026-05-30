@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import type { Post } from "../types";
-import { Copy as CopyIcon, Check as CheckIcon, Link as LinkIcon, Gift, RefreshCcw, Info } from "lucide-react";
+import { Copy as CopyIcon, Check as CheckIcon, Link as LinkIcon, Gift, RefreshCcw, Info, Send } from "lucide-react";
+import SubmitCodeModal from "./SubmitCodeModal";
 
 function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -37,6 +38,7 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
 export default function PostOfferDetails({ post }: { post: Post }) {
   const codes = Array.isArray(post.referralCode) ? post.referralCode : [post.referralCode];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Randomize initial code on mount to distribute usage fairly
   useEffect(() => {
@@ -127,7 +129,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <p className="text-[0.85rem] text-gray-700 leading-snug font-medium">
-                            {post.referralCodeNote} <span className="text-indigo-600 font-bold decoration-indigo-200 decoration-2 underline-offset-2">Try Another</span> to see other codes.
+                            {post.referralCodeNote || "Try multiple codes."} <span className="text-indigo-600 font-bold decoration-indigo-200 decoration-2 underline-offset-2">Try Another</span> to see other codes.
                           </p>
                           <div className="flex items-center gap-2 mt-1">
                             <span className="px-3 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-lg tracking-widest uppercase shadow-sm">
@@ -135,6 +137,22 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                             </span>
                           </div>
                         </div>
+                      </div>
+                    )}
+                    
+                    {/* Submit Code Prompt */}
+                    {post.referralCodeNote && (
+                      <div className="mt-2 bg-indigo-50/60 p-4 rounded-2xl border border-indigo-100 max-w-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+                        <div className="text-sm font-medium text-slate-700">
+                          Have your own {post.brand} code?
+                        </div>
+                        <button
+                          onClick={() => setIsModalOpen(true)}
+                          className="flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-colors shadow-sm active:scale-[0.98] w-full sm:w-auto flex-shrink-0"
+                        >
+                          <Send size={14} />
+                          <span>Share yours here</span>
+                        </button>
                       </div>
                     )}
                   </div>
@@ -178,6 +196,12 @@ export default function PostOfferDetails({ post }: { post: Post }) {
           </tbody>
         </table>
       </div>
+
+      <SubmitCodeModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        appName={post.brand}
+      />
     </div>
   );
 }

@@ -42,11 +42,18 @@ export function getOrganizationSchema() {
       url: "https://referralverse.in/logo.webp",
     },
     sameAs: [
-      "https://twitter.com/referralverse",
       "https://www.linkedin.com/company/Referralverse",
       "https://www.youtube.com/@ReferralVerse",
-      "https://www.pinterest.com/Referralverse/"
+      "https://x.com/referralverse",
+      "https://github.com/taterlaxmi/referralverse",
+      "https://www.pinterest.com/Referralverse/",
+      "https://www.trustpilot.com/review/referralverse.in",
+      "https://open.spotify.com/show/033oAL3Rz1Ad9eCT5fFNao"
     ],
+    areaServed: {
+      "@type": "AdministrativeArea",
+      name: "India"
+    }
   };
 }
 

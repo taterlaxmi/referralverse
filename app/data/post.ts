@@ -803,7 +803,7 @@ export const posts: Post[] = [
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["UQ89K8","BSHK58","P8863D", "SQ9H56", "W839WP", "RDGP92", "QM976H","NQQ8H9"],
+    referralCode: ["P8863D","FEQ2Q8","DULSFZ", "UQ89K8", "PZ9YCK", "FLQUCW", "SQ9H56", "Q6HC4U", "J6HA7P", "H23973"],
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
@@ -983,15 +983,16 @@ export const posts: Post[] = [
     slug: "club-corra-referral-code",
     brand: "Club Corra",
     category: Category.Shopping,
-    title: "Club Corra App Referral Code: Get Cashback on Every Bill Upload",
+    title: "Club Corra App Referral Code: Get ₹50 Bonus + Cashback on Bill Uploads",
     summary:
-      "Use the Club Corra referral code to earn rewards when you upload shopping bills. Club Corra lets users upload bills from apps like Myntra, Swiggy, and Zepto to earn cashback points that can be redeemed later.",
+      "Use the latest Club Corra referral code to get a signup bonus and start earning Corra Coins. Club Corra is India's first receipt scanning cashback app that rewards users for uploading bills from brands like Swiggy, Zepto, Myntra, Rapido, and BookMyShow. Redeem Corra Coins as direct UPI cashback.",
     metaDescription:
-      "Download the Club Corra app and use the latest referral code to earn cashback on every bill upload. Upload bills from Myntra, Swiggy, Zepto and more to earn points.",
+      "Use the latest Club Corra referral code CORRAE48F to get a ₹50 signup bonus. Earn Corra Coins by uploading bills from Swiggy, Zepto, Myntra, Rapido, BookMyShow and 40+ brands. Redeem rewards as UPI cashback.",
     referralCode: "CORRAE48F",
     referralLink: "https://clubcorra.com/?ref=CORRAE48F",
     signupBonus: "50 club corra point",
     referralBonus: "₹50",
+    heroImage: "/club-corra-referral-code.webp",
     validity: "Limited time offer",
     steps: [
       "Click on the referral link above to open the Club Corra website.",
@@ -1004,16 +1005,209 @@ export const posts: Post[] = [
       price: 50,
       currency: "₹",
     },
-    faq: [
+    proofImage: "/club-corra-referral-code-redeem-proof.webp",
+    proofImageHeader: "How to redeem club corra points",
+    proofImageAlt: "Screenshot showing how to redeem ClubCorra reward points",
+    benefits: [
       {
-        question: "Which apps' bills are accepted on Club Corra?",
-        answer:
-          "Club Corra accepts bills from popular e-commerce and delivery apps such as Myntra, Swiggy, Zepto and other supported platforms.",
+        title: "Earn Cashback from 40+ Popular Brands",
+        description:
+          "Club Corra partners with leading brands across grocery, food delivery, fashion, beauty, entertainment, and lifestyle categories. Instead of earning rewards from just one store, you can collect Corra Coins from many brands you already use regularly.",
+        emoji: "🛍️",
       },
       {
-        question: "What is the value of 1 Club Corra point?",
+        title: "Earn Cashback on Offline and Online Purchases",
+        description:
+          "Club Corra's receipt-scanning technology lets you earn rewards from both offline and online purchases. Simply upload eligible receipts from partner brands and receive cashback on spending that most traditional cashback apps completely miss.",
+        emoji: "📸",
+      },
+      {
+        title: "Simple Rewards: 1 Corra Coin = ₹1",
+        description:
+          "Unlike apps with confusing point systems, Club Corra keeps rewards transparent. Every Corra Coin is worth ₹1, making it easy to track your earnings and calculate the real value of your cashback.",
+        emoji: "💰",
+      },
+      {
+        title: "Get Real UPI Cashback, Not Just Vouchers",
+        description:
+          "Your rewards can be redeemed as direct UPI cashback or bank transfer once you reach the payout threshold. This means you receive actual money instead of being restricted to coupons or gift cards.",
+        emoji: "🏦",
+      },
+      {
+        title: "Unlock Up to 40% Extra Earnings Through Brand Milestones",
+        description:
+          "Upload receipts from multiple partner brands to boost your rewards. Earn 5% extra after 5 brands, 10% extra after 7 brands, 20% extra after 10 brands, and up to 40% extra earnings after uploading bills from 12 different brands.",
+        emoji: "🚀",
+      },
+    ],
+    comparisonTable: {
+      title: "Top Receipt Scanning Cashback Apps in India",
+      columns: ["Feature", "Club Corra", "Magicpin", "BonusBeez", "CashKaro"],
+      rows: [
+        [
+          "Primary Focus",
+          "Multi-brand cashback and loyalty rewards",
+          "Local merchant discovery and dining rewards",
+          "Receipt cashback across multiple retailers",
+          "Online shopping cashback",
+        ],
+        [
+          "Cashback Model",
+          "Receipt scanning",
+          "Receipt scanning",
+          "Receipt scanning",
+          "Affiliate cashback (receipt support limited)",
+        ],
+        [
+          "Partner Coverage",
+          "40+ national brands",
+          "Local merchants and restaurants",
+          "Growing retailer network",
+          "Primarily online shopping partners",
+        ],
+        [
+          "Dining Cashback",
+          "Yes",
+          "Excellent",
+          "Limited",
+          "Limited",
+        ],
+        [
+          "Grocery Cashback",
+          "Yes",
+          "Limited",
+          "Moderate",
+          "Limited",
+        ],
+        [
+          "Fashion Cashback",
+          "Yes",
+          "Merchant dependent",
+          "Moderate",
+          "Online-focused",
+        ],
+        [
+          "Beauty & Lifestyle Cashback",
+          "Yes",
+          "Limited",
+          "Moderate",
+          "Limited",
+        ],
+        [
+          "Reward Currency",
+          "Corra Coins",
+          "magicPoints",
+          "Reward Points",
+          "Cashback Balance",
+        ],
+        [
+          "Reward Value Transparency",
+          "1 Coin = ₹1",
+          "Varies by redemption",
+          "Varies by offer",
+          "Cash value displayed directly",
+        ],
+        [
+          "Direct UPI Cashback",
+          "Yes",
+          "Limited",
+          "Limited",
+          "Yes",
+        ],
+        [
+          "Bank Transfer Support",
+          "Yes",
+          "Limited",
+          "Varies",
+          "Yes",
+        ],
+        [
+          "Receipt Upload Required",
+          "Yes",
+          "Yes",
+          "Yes",
+          "Only for select campaigns",
+        ],
+        [
+          "Works for Offline Purchases",
+          "Yes",
+          "Yes",
+          "Yes",
+          "Limited",
+        ],
+        [
+          "Works for Online Purchases",
+          "Limited",
+          "Limited",
+          "Limited",
+          "Excellent",
+        ],
+        [
+          "Coverage Outside Metro Cities",
+          "Strong through national brands",
+          "Can vary by city",
+          "Moderate",
+          "Nationwide for online shopping",
+        ],
+        [
+          "Best For",
+          "Everyday shopping across multiple categories",
+          "Restaurant deals and local offers",
+          "Users seeking broader retailer acceptance",
+          "Online shoppers and affiliate cashback",
+        ],
+      ],
+    },
+    faq: [
+      {
+        question: "What is Club Corra?",
         answer:
-          "1 Club Corra point is equal to ₹1 and can be redeemed for rewards or cashback depending on available options.",
+          "Club Corra is India's first multi-brand loyalty and cashback app. Users earn Corra Coins by shopping at 40+ partner brands and can redeem those coins for UPI cashback or bank transfers. Every 1 Corra Coin is worth ₹1.",
+      },
+      {
+        question: "How does the Club Corra app work?",
+        answer:
+          "The Club Corra app lets you upload bills from partner brands, earn Corra Coins on eligible purchases, and redeem those coins for cashback. Users can also earn extra rewards through referrals and quarterly bonus offers.",
+      },
+      {
+        question: "Which brands can help me unlock Club Corra earning bonuses faster?",
+        answer:
+          "Popular partner brands such as Zepto, Swiggy, Rapido, Myntra, and BookMyShow are commonly used by members to qualify for multi-brand earning bonuses and tier progression more quickly.",
+      },
+      {
+        question: "How do I redeem Club Corra points or Corra Coins?",
+        answer:
+          "To redeem Club Corra points, enable the 'Use Coins for Cashback' option while uploading a bill. Enter the number of Corra Coins you want to use and submit the bill. Once approved, the cashback is transferred to your registered UPI ID or bank account.",
+      },
+      {
+        question: "What are Corra Coins and what is their value?",
+        answer:
+          "Corra Coins are the reward currency of Club Corra. Every 1 Corra Coin equals ₹1 in cashback value, making it easy to understand your rewards and savings.",
+      },
+      {
+        question: "What is the minimum withdrawal amount in Club Corra?",
+        answer:
+          "You can withdraw your cashback once your approved balance reaches ₹250. After crossing the payout threshold, cashback can be transferred to your registered UPI ID or bank account.",
+      },
+      {
+        question: "How can I maximize earnings in the Club Corra app?",
+        answer:
+          "The easiest way to increase earnings is by uploading bills from multiple partner brands. Uploading bills from 5 different brands unlocks an additional 5% earning boost. Uploading bills from 7 brands unlocks 10% extra earnings, 10 brands unlock 20% extra earnings, and 12 brands unlock up to 40% extra earnings. Popular brands such as Zepto, Swiggy, Rapido, BookMyShow, and Myntra can help you achieve these milestones faster.",
+      },
+      {
+        question: "Can I upload offline shopping bills in Club Corra?",
+        answer:
+          "Yes. Club Corra is designed specifically for receipt scanning cashback and accepts eligible offline purchase receipts from partner brands. Simply upload a clear photo of your receipt to earn Corra Coins.",
+      },
+      {
+        question: "Can family members use a joint Club Corra account?",
+        answer:
+          "Yes. Club Corra allows joint accounts with up to 4 members. Families can combine eligible purchases and upload receipts through a shared account to reach earning milestones and cashback thresholds faster.",
+      },
+      {
+        question: "What is the Club Corra Tier System?",
+        answer:
+          "Club Corra rewards active users through a five-level tier system: Base, Silver, Gold, Platinum, and Elite. Higher tiers unlock better earning multipliers, higher redemption limits, enhanced benefits, and exclusive offers.",
       },
     ],
   },
@@ -1283,17 +1477,16 @@ export const posts: Post[] = [
     slug: "slice-referral-code",
     brand: "Slice",
     category: Category.CreditCard,
-    title: "Slice Invite Code & Referral: ₹250 Cashback (Refer and Earn)",
+    title: "Slice Invite Code & Referral: ₹500 Cashback (Refer and Earn)",
     summary:
       "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice invite code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With app-first banking features, slice is a popular finance app. Join the Slice bank refer and earn program today.",
     metaDescription:
-      "Use the latest Slice invite code to get ₹250 cashback. Apply for the Slice UPI credit card, explore the Slice refer and earn program, and start earning.",
+      "Use the latest Slice invite code to get ₹500 cashback. Apply for the Slice UPI credit card, explore the Slice refer and earn program, and start earning.",
     referralCode: ["&ROHIT4924", "RAHUL56841"],
-    referralCodeNote:
-      "Each Referral code works for max 5 users. If this one is exhausted, please click",
+    referralCodeNote: "Each Referral code works for max 5 users. If this one is exhausted, please click",
     referralLink: "https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924",
-    signupBonus: "₹250 Cashback on first eligible UPI payment",
-    referralBonus: "₹250",
+    signupBonus: "₹500 Cashback on first eligible UPI payment",
+    referralBonus: "₹500",
     validity: "Limited time offer",
     steps: [
       "Download the slice app using the referral link.",
@@ -1301,11 +1494,11 @@ export const posts: Post[] = [
       "Enter our active slice referral code during signup if prompted.",
       "Complete KYC verification and activate your eligible slice account/card.",
       "Make your first UPI payment using the slice UPI credit card.",
-      "Receive ₹250 cashback as per current offer terms.",
+      "Receive ₹500 cashback as per current offer terms.",
     ],
     ctaText: "Apply for slice Now",
     offer: {
-      price: 250,
+      price: 500,
       currency: "₹",
     },
     howToRefer: [
@@ -1318,7 +1511,7 @@ export const posts: Post[] = [
     tcImage: "/slice-referral-terms-and-conditions.webp",
     tcImageAlt: "slice refer and earn terms and conditions",
     termsAndConditions: [
-      "Invite friends to Slice and both users get ₹250 cashback in the Slice savings account.",
+      "Invite friends to Slice and both users get ₹500 cashback in the Slice savings account.",
       "The referred friend must make their first UPI payment using the Slice UPI credit card within 7 days for the referrer to receive the reward.",
       "Cashback rewards are limited to the first 10 successful referrals every month.",
       "Cashback will not be provided if the referred friend is recreating a Slice account after deleting a previous account.",
@@ -1331,9 +1524,9 @@ export const posts: Post[] = [
         emoji: "💳",
       },
       {
-        title: "₹250 Signup Cashback Offer",
+        title: "₹500 Signup Cashback Offer",
         description:
-          "New users can get ₹250 cashback after joining with a valid slice referral code and completing their first eligible UPI transaction, subject to campaign terms.",
+          "New users can get ₹500 cashback after joining with a valid slice referral code and completing their first eligible UPI transaction, subject to campaign terms.",
         emoji: "🎁",
       },
       {
@@ -1359,10 +1552,10 @@ export const posts: Post[] = [
       {
         question: "What is the latest verified slice referral code?",
         answer:
-          "The latest verified and working slice referral code on this page is &ROHIT4924. Use it while signing up to become eligible for the ₹250 cashback offer, subject to terms.",
+          "The latest verified and working slice referral code on this page is &ROHIT4924. Use it while signing up to become eligible for the ₹500 cashback offer, subject to terms.",
       },
       {
-        question: "How do I get ₹250 cashback on slice?",
+        question: "How do I get ₹500 cashback on slice?",
         answer:
           "Sign up using the referral link or code, complete registration and KYC, activate the eligible product, and make your first qualifying UPI payment using the slice UPI credit card.",
       },
@@ -1415,9 +1608,7 @@ export const posts: Post[] = [
       "FirstClub is India's quality-first grocery delivery app focused on clean ingredients, verified sourcing, and premium everyday essentials. The platform bans 200+ harmful ingredients including artificial preservatives, sweeteners, benzoates, and chemical additives. New users can join using our FirstClub referral code to unlock curated welcome gifts and experience trusted groceries delivered fast.",
     metaDescription:
       "Use our FirstClub referral code NKNKLB to join India's premium grocery app. Get curated welcome gifts, clean groceries, and products free from 200+ harmful ingredients.",
-    referralCode: ["NKNKLB"],
-    referralCodeNote:
-      "Use this active FirstClub invite code during signup to unlock welcome rewards and premium membership benefits.",
+    referralCode: "NKNKLB",
     referralLink: "https://go.firstclub.co.in/u3g6JIGbb3b",
     signupBonus:
       "Exclusive curated welcome gifts for new users",
@@ -1545,4 +1736,187 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "navi-referral-code",
+    brand: "Navi",
+    category: Category.Finance,
+    title:
+      "Navi Referral Code: GS2T0s (Get Rewards on Signup & Referrals)",
+    summary:
+      "Use the latest Navi referral code GS2T0s while signing up to unlock referral rewards and start using Navi's financial services. Navi offers UPI payments, loans, insurance, and investment products through a single app.",
+    metaDescription:
+      "Use Navi referral code GS2T0s and sign up through the referral link to earn rewards. Access UPI payments, loans, insurance and other financial services on Navi.",
+    referralCode: "GS2T0s",
+    referralLink: "https://r.navi.com/6txDZC",
+    signupBonus:
+      "Referral rewards may vary based on ongoing Navi promotions",
+    referralBonus:
+      "Earn rewards when eligible friends sign up and complete required actions",
+    validity: "Valid for new Navi users",
+    steps: [
+      'Click on the "Join Navi" button.',
+      "Download the Navi app and create an account.",
+      "Complete mobile verification and required KYC steps.",
+      "Enter referral code GS2T0s if prompted during registration.",
+      "Complete the required activities to become eligible for referral rewards.",
+    ],
+    ctaText: "Join Navi",
+    offer: {
+      price: 0,
+      currency: "₹",
+    },
+    benefits: [
+      {
+        title: "Fast & Secure UPI Payments",
+        description:
+          "Navi provides a simple UPI payment experience that allows users to transfer money, scan QR codes, and make daily payments directly from the app.",
+        emoji: "📱",
+      },
+      {
+        title: "Access Multiple Financial Products",
+        description:
+          "Users can access loans, insurance, mutual funds, and other financial services from a single platform without needing multiple apps.",
+        emoji: "🏦",
+      },
+      {
+        title: "Simple Digital Onboarding",
+        description:
+          "Account creation and verification can be completed online, helping new users get started quickly.",
+        emoji: "⚡",
+      },
+      {
+        title: "Refer & Earn Program",
+        description:
+          "Navi regularly runs referral campaigns that allow users to invite friends and earn rewards after successful signups and qualifying actions.",
+        emoji: "🎁",
+      },
+      {
+        title: "Modern User-Friendly Interface",
+        description:
+          "The Navi app offers a clean design and streamlined experience for payments and financial management.",
+        emoji: "✨",
+      },
+    ],
+    faq: [
+      {
+        question: "What is the latest Navi referral code?",
+        answer:
+          "The latest Navi referral code is GS2T0s.",
+      },
+      {
+        question: "How do I use the Navi referral code?",
+        answer:
+          "Download the Navi app, sign up using the referral link, and enter GS2T0s during registration if required.",
+      },
+      {
+        question: "Is Navi referral code free to use?",
+        answer:
+          "Yes, referral codes are free to use for eligible new users.",
+      },
+      {
+        question: "Does Navi have a refer and earn program?",
+        answer:
+          "Yes, Navi periodically offers referral rewards when users invite friends who complete qualifying actions.",
+      },
+      {
+        question: "What services does Navi provide?",
+        answer:
+          "Navi offers financial services such as UPI payments, personal loans, insurance, and investment products.",
+      },
+    ],
+  },
+  {
+    slug: "gpay-referral-code",
+    brand: "Google Pay",
+    category: Category.Finance,
+    title:
+      "GPay Referral Code: 4r37W (Google Pay Refer & Earn Rewards)",
+    summary:
+      "Use the latest GPay referral code 4r37W while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
+    metaDescription:
+      "Use Google Pay referral code 4r37W to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
+    referralCode: "4r37W",
+    referralLink: "",
+    signupBonus:
+      "Rewards vary depending on Google Pay's current referral campaign",
+    referralBonus:
+      "Earn rewards when friends sign up and complete eligible transactions",
+    validity: "Valid for eligible new Google Pay users",
+    steps: [
+      'Click on the "Join Google Pay" button.',
+      "Download and install the Google Pay (GPay) app.",
+      "Register using your mobile number linked to your bank account.",
+      "Enter referral code 4r37W if prompted during signup.",
+      "Complete your first eligible UPI transaction to qualify for referral rewards.",
+    ],
+    ctaText: "Join Google Pay",
+    offer: {
+      price: 0,
+      currency: "₹",
+    },
+    benefits: [
+      {
+        title: "Fast UPI Money Transfers",
+        description:
+          "Google Pay allows users to send money instantly using UPI, bank account transfers, mobile numbers, and QR code payments.",
+        emoji: "⚡",
+      },
+      {
+        title: "Refer & Earn Rewards",
+        description:
+          "Google Pay regularly runs referral programs where users can invite friends and earn rewards after successful registration and eligible transactions.",
+        emoji: "🎁",
+      },
+      {
+        title: "Pay Bills and Recharge Services",
+        description:
+          "Use GPay to pay electricity bills, mobile recharges, broadband bills, DTH subscriptions, and other utility payments from a single app.",
+        emoji: "📱",
+      },
+      {
+        title: "Secure Payments Backed by Google",
+        description:
+          "Google Pay uses UPI security standards and multiple verification layers to help keep transactions safe and secure.",
+        emoji: "🔒",
+      },
+      {
+        title: "Accepted at Millions of Merchants",
+        description:
+          "Pay online and offline using UPI QR codes at shops, restaurants, supermarkets, fuel stations, and e-commerce platforms across India.",
+        emoji: "🛍️",
+      },
+    ],
+    faq: [
+      {
+        question: "What is the latest GPay referral code?",
+        answer:
+          "The latest Google Pay referral code is 4r37W.",
+      },
+      {
+        question: "How do I use the Google Pay referral code?",
+        answer:
+          "Install Google Pay, register your account, link your bank account, and enter referral code 4r37W if prompted during signup.",
+      },
+      {
+        question: "Does Google Pay have a refer and earn program?",
+        answer:
+          "Yes. Google Pay frequently offers refer and earn rewards when eligible users invite friends who complete signup and qualifying transactions.",
+      },
+      {
+        question: "Can existing users use a GPay referral code?",
+        answer:
+          "Referral codes are generally intended for new Google Pay users. Existing users may not be eligible for signup rewards.",
+      },
+      {
+        question: "How do I earn Google Pay rewards?",
+        answer:
+          "Users can earn Google Pay rewards through referral campaigns, eligible UPI transactions, merchant offers, cashback promotions, and seasonal reward programs.",
+      },
+      {
+        question: "Is Google Pay free to use?",
+        answer:
+          "Yes. Google Pay is free to download and use for standard UPI transactions in India.",
+      },
+    ],
+  }
 ];
