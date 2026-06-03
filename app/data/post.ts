@@ -796,14 +796,14 @@ export const posts: Post[] = [
   {
     slug: "kiwi-referral-code",
     brand: "Kiwi",
-    category: Category.CreditCard,
+    category: [Category.CreditCard, Category.Finance],
     title:
       "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary:
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["P8863D","FEQ2Q8","DULSFZ", "UQ89K8", "PZ9YCK", "FLQUCW", "SQ9H56", "Q6HC4U", "J6HA7P", "H23973"],
+    referralCode: ["UC847S","D45KDS","FEQ2Q8","DSGH82","AR5C8D","K76P72"],
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
@@ -987,7 +987,7 @@ export const posts: Post[] = [
     summary:
       "Use the latest Club Corra referral code to get a signup bonus and start earning Corra Coins. Club Corra is India's first receipt scanning cashback app that rewards users for uploading bills from brands like Swiggy, Zepto, Myntra, Rapido, and BookMyShow. Redeem Corra Coins as direct UPI cashback.",
     metaDescription:
-      "Use the latest Club Corra referral code CORRAE48F to get a ₹50 signup bonus. Earn Corra Coins by uploading bills from Swiggy, Zepto, Myntra, Rapido, BookMyShow and 40+ brands. Redeem rewards as UPI cashback.",
+      "Use Club Corra referral code CORRAE48F to get a ₹50 signup bonus. Earn Corra Coins by uploading bills from Swiggy, Zepto, Myntra, Rapido, and 40+ brands. Redeem rewards as UPI cashback.",
     referralCode: "CORRAE48F",
     referralLink: "https://clubcorra.com/?ref=CORRAE48F",
     signupBonus: "50 club corra point",

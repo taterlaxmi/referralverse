@@ -17,6 +17,25 @@ async function run() {
       fullSummary += '### Summary\n';
       fullSummary += `- **Test Files:** ${data.numTotalTestSuites === data.numPassedTestSuites ? '✅' : '❌'} ${data.numPassedTestSuites} passes · ${data.numTotalTestSuites} total\n`;
       fullSummary += `- **Test Results:** ${data.numTotalTests === data.numPassedTests ? '✅' : '❌'} ${data.numPassedTests} passes · ${data.numTotalTests} total\n\n`;
+
+      if (data.testResults && Array.isArray(data.testResults)) {
+        fullSummary += '#### Test Suites Breakdown\n';
+        data.testResults.forEach(suite => {
+          const isPassed = suite.status === 'passed';
+          const name = suite.name.split('/').pop() || suite.name;
+          fullSummary += `- ${isPassed ? '✅' : '❌'} **${name}**\n`;
+          
+          if (!isPassed && suite.assertionResults) {
+            suite.assertionResults.forEach(test => {
+              if (test.status === 'failed') {
+                fullSummary += `  - ❌ *${test.title}*\n`;
+              }
+            });
+          }
+        });
+        fullSummary += '\n';
+      }
+
       fullSummary += '---\n\n';
     } catch (e) {
       console.error('Error parsing Vitest results:', e);

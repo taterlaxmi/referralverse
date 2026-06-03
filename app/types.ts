@@ -17,7 +17,7 @@ export interface Post {
   proofImageHeader?: string;
   tcImage?: string;
   tcImageAlt?: string;
-  category: Category;
+  category: Category | Category[];
   summary: string;
   metaDescription: string;
   referralCode: string | string[];

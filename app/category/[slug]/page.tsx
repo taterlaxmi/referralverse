@@ -15,7 +15,7 @@ const now = new Date();
 const monthYear = now.toLocaleString('en-IN', { month: 'long', year: 'numeric', });
 
 export async function generateStaticParams() {
-  const uniqueCategories = Array.from(new Set(posts.map(p => p.category)));
+  const uniqueCategories = Array.from(new Set(posts.flatMap(p => Array.isArray(p.category) ? p.category : [p.category])));
   return uniqueCategories.map((category) => ({
     slug: slugify(category),
   }));
@@ -26,15 +26,18 @@ export async function generateMetadata({ params }: Props) {
   const normalizedSlug = decodeURIComponent(slug).toLowerCase();
 
 
-  // Find the original category string by checking the slugified version
-  const categoryPost = posts.find(p => slugify(p.category) === normalizedSlug);
+  // Find the original category string by checking the slugified version against all categories of a post
+  const categoryPost = posts.find(p => {
+    const cats = Array.isArray(p.category) ? p.category : [p.category];
+    return cats.some(c => slugify(c) === normalizedSlug);
+  });
   if (!categoryPost) {
     return {
       title: 'Category Not Found — ReferralVerse',
     };
   }
 
-  const categoryName = categoryPost.category;
+  const categoryName = (Array.isArray(categoryPost.category) ? categoryPost.category : [categoryPost.category]).find(c => slugify(c) === normalizedSlug)!;
   const seo = categoryContent[categoryName as Category];
   const title = seo?.seoTitle ? `${seo.seoTitle} (${monthYear})` : `Best ${categoryName} Referral Codes (${monthYear}) – Latest Cashback & Offers`;
   const description = seo?.seoDescription || `Explore verified ${categoryName} referral codes and latest cashback offers. Find working invite codes, signup bonuses, and rewards updated for ${monthYear}.`;
@@ -64,11 +67,14 @@ export default async function CategoryPage({ params }: Props) {
   const normalizedSlug = decodeURIComponent(slug).toLowerCase();
 
   // Find all posts matching the category slug
-  const categoryPosts = posts.filter(p => slugify(p.category) === normalizedSlug);
+  const categoryPosts = posts.filter(p => {
+    const cats = Array.isArray(p.category) ? p.category : [p.category];
+    return cats.some(c => slugify(c) === normalizedSlug);
+  });
 
   if (categoryPosts.length === 0) return notFound();
 
-  const categoryName = categoryPosts[0].category;
+  const categoryName = (Array.isArray(categoryPosts[0].category) ? categoryPosts[0].category : [categoryPosts[0].category]).find(c => slugify(c) === normalizedSlug)!;
 
   // Generate ItemList schema
   const itemListSchema = schemaUtils.getItemListSchema(categoryPosts);
@@ -159,11 +165,15 @@ export default async function CategoryPage({ params }: Props) {
                   )}
                 </p>
 
-                <div className="flex justify-between items-center mb-4 relative z-10">
-                  <span className="bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">
-                    {post.category}
-                  </span>
-                  <span className="text-green-700 font-semibold">
+                <div className="flex flex-wrap items-center gap-2 mb-4 relative z-10">
+                  <div className="flex flex-wrap gap-2 flex-1">
+                    {(Array.isArray(post.category) ? post.category : [post.category]).map((cat) => (
+                      <span key={cat} className="bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-green-700 font-semibold whitespace-nowrap">
                     {post.offer.currency}{post.offer.price}
                   </span>
                 </div>

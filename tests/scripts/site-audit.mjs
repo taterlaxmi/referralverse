@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { auditTechnical } from '../tests/auditors/seo.mjs';
-import { auditPerformance } from '../tests/auditors/performance.mjs';
-import { auditAIVisibility } from '../tests/auditors/ai.mjs';
+import { auditTechnical } from './audit-seo.mjs';
+import { auditPerformance } from './audit-performance.mjs';
+import { auditAIVisibility } from './audit-ai.mjs';
 
 /**
  * 🚀 ReferralVerse Comprehensive Multi-Page Audit

@@ -9,43 +9,103 @@ on:
     - cron: '0 0 * * *' # Daily at Midnight UTC
 
 jobs:
-  run-tests:
+  unit-tests:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'latest'
           cache: 'npm'
-
       - name: Install dependencies
         run: npm install --legacy-peer-deps
+      - name: Run Unit Tests
+        # We use reporter=json for our custom report, and github-actions for inline PR annotations
+        run: npm test -- --reporter=json --outputFile=vitest-results.json --reporter=github-actions
+      - name: Upload Vitest Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitest-results
+          path: vitest-results.json
 
-      - name: Run Unit Tests (SEO & Data)
-        run: npm test -- --reporter=json --outputFile=vitest-results.json
-
-      - name: Build project
-        run: npm run build
-
+  lighthouse-tests:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
       - name: Run Lighthouse Audit
-        run: |
-          npx lhci autorun
+        # Running directly against the live URL (no local build needed)
+        run: npx lhci autorun
         env:
-          LHCI_URL: 'http://localhost:3000'
+          LHCI_URL: 'https://referralverse.in'
+      - name: Upload Lighthouse Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
 
+  seo-tests:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
       - name: Run SEO & AI Audit
-        run: node scripts/site-audit.mjs https://referralverse.in
+        # Running directly against the live URL
+        run: npm run test:audit
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
           SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
-
-      - name: Generate Job Summary
+      - name: Upload SEO Audit Results
         if: always()
-        run: node scripts/generate-test-report.mjs
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-audit-results
+          path: seo-audit-results.json
+
+  test-report:
+    # This runs AFTER all the other tests, regardless of pass/fail
+    needs: [unit-tests, lighthouse-tests, seo-tests]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download Vitest Results
+        uses: actions/download-artifact@v4
+        with:
+          name: vitest-results
+          path: ./
+      - name: Download Lighthouse Results
+        uses: actions/download-artifact@v4
+        with:
+          name: lighthouse-results
+          path: ./.lighthouseci
+      - name: Download SEO Audit Results
+        uses: actions/download-artifact@v4
+        with:
+          name: seo-audit-results
+          path: ./
+      - name: Generate Job Summary
+        run: npm run test:report
         env:
           GITHUB_STEP_SUMMARY: ${{ github.step_summary }}

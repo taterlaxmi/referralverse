@@ -1,4 +1,5 @@
 import { Post } from "../types";
+import { getCategories } from "./category";
 
 /**
  * Normalizes FAQ answers (string | string[] | table) into a single string for JSON-LD
@@ -109,8 +110,8 @@ export function getBreadcrumbSchema(post: Post) {
       {
         "@type": "ListItem",
         position: 2,
-        name: post.category,
-        item: `https://referralverse.in/category/${post.category.toLowerCase()}`,
+        name: getCategories(post)[0],
+        item: `https://referralverse.in/category/${getCategories(post)[0].toLowerCase()}`,
       },
       {
         "@type": "ListItem",
@@ -148,7 +149,7 @@ export function getOfferSchema(post: Post) {
     name: post.title,
     description: post.summary,
     image: imageUrl,
-    category: post.category,
+    category: getCategories(post)[0],
     brand: {
       "@type": "Brand",
       name: post.brand,
@@ -272,18 +273,50 @@ export function getFaqSchema(post: Post) {
   };
 }
 
+export function getComparisonTableSchema(post: Post) {
+  if (!post.comparisonTable) return null;
+
+  const { title, columns, rows } = post.comparisonTable;
+
+  return {
+    "@type": "Table",
+    "@id": `https://referralverse.in/${post.slug}#comparison-table`,
+    name: title,
+    description: `A feature comparison table: ${title}`,
+    about: {
+      "@type": "ItemList",
+      itemListElement: rows.map((row, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: row[0], // the feature name
+        description: columns
+          .slice(1)
+          .map((col, cIdx) => `${col}: ${row[cIdx + 1]}`)
+          .join(", "),
+      })),
+    },
+  };
+}
+
 export function getFullGraphSchema(post: Post, relatedPosts: Post[] = []) {
+  const graph: any[] = [
+    getOrganizationSchema(),
+    getWebSiteSchema(),
+    getWebPageSchema(post, relatedPosts),
+    getBreadcrumbSchema(post),
+    getHowToSchema(post),
+    getOfferSchema(post),
+    getFaqSchema(post),
+  ];
+
+  const comparisonSchema = getComparisonTableSchema(post);
+  if (comparisonSchema) {
+    graph.push(comparisonSchema);
+  }
+
   return {
     "@context": "https://schema.org",
-    "@graph": [
-      getOrganizationSchema(),
-      getWebSiteSchema(),
-      getWebPageSchema(post, relatedPosts),
-      getBreadcrumbSchema(post),
-      getHowToSchema(post),
-      getOfferSchema(post),
-      getFaqSchema(post),
-    ],
+    "@graph": graph,
   };
 }
 
@@ -299,7 +332,7 @@ export function getHomeGraphSchema(
     const matchesSearch =
       query === "" ||
       post.title.toLowerCase().includes(query.toLowerCase()) ||
-      post.category.toLowerCase().includes(query.toLowerCase());
+      getCategories(post).some(c => c.toLowerCase().includes(query.toLowerCase()));
     return matchesSearch;
   });
 

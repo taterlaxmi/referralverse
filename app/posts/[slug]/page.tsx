@@ -10,6 +10,7 @@ import BenefitsSection from "@/app/components/BenefitsSection";
 import * as schemaUtils from "@/app/utils/schema";
 import RelatedOffers from "@/app/components/RelatedOffers";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
+import { getCategories } from "@/app/utils/category";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -57,8 +58,13 @@ export default async function PostPage({ params }: Props) {
   const post = posts.find((p) => p.slug === slug);
   if (!post) return notFound();
 
+  const postCategories = getCategories(post);
   const relatedPosts = posts
-    .filter((p) => p.category === post.category && p.slug !== post.slug)
+    .filter((p) => {
+      if (p.slug === post.slug) return false;
+      const pCats = getCategories(p);
+      return pCats.some(c => postCategories.includes(c));
+    })
     .slice(0, 3);
 
   const graphSchema = schemaUtils.getFullGraphSchema(post, relatedPosts);
@@ -75,7 +81,7 @@ export default async function PostPage({ params }: Props) {
 
         <article id="content" className="container mx-auto px-4 pt-28 pb-12">
           {/* Breadcrumbs */}
-          <Breadcrumbs category={post.category} title={post.title} />
+          <Breadcrumbs category={postCategories[0]} title={post.title} />
 
           {/* Header */}
           <header className="mb-8">

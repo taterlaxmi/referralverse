@@ -7,6 +7,8 @@ import { posts } from '../data/post';
 import SearchBar from './SearchBar';
 import CategoryMenu from './CategoryMenu';
 import * as schemaUtils from '../utils/schema';
+import { getCategories } from '../utils/category';
+import { Category } from '../types';
 
 const POSTS_PER_PAGE = 6;
 
@@ -25,14 +27,15 @@ function PostFeedContent() {
     const currentPageParam = searchParams.get('page');
     const currentPage = currentPageParam ? parseInt(currentPageParam, 10) : 1;
 
-    const categories = ['All', ...new Set(posts.map(post => post.category))];
+    const categories = ['All', ...new Set(posts.flatMap(post => getCategories(post)))];
 
     const filteredPosts = useMemo(() => {
         return posts.filter(post => {
-            const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+            const pCats = getCategories(post);
+            const matchesCategory = selectedCategory === 'All' || pCats.includes(selectedCategory as Category);
             const matchesSearch = searchTerm === '' ||
                 post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                post.category.toLowerCase().includes(searchTerm.toLowerCase())
+                pCats.some(c => c.toLowerCase().includes(searchTerm.toLowerCase()))
             return matchesCategory && matchesSearch;
         });
     }, [searchTerm, selectedCategory]);
@@ -131,11 +134,15 @@ function PostFeedContent() {
                         </p>
 
                         {/* Category & Offer */}
-                        <div className="flex justify-between items-center mb-4 relative z-10">
-                            <span className="bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">
-                                {post.category}
-                            </span>
-                            <span className="text-green-700 font-semibold">
+                        <div className="flex flex-wrap items-center gap-2 mb-4 relative z-10">
+                            <div className="flex flex-wrap gap-2 flex-1">
+                                {getCategories(post).map((cat) => (
+                                    <span key={cat} className="bg-gradient-to-r from-indigo-50 to-purple-50 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                        {cat}
+                                    </span>
+                                ))}
+                            </div>
+                            <span className="text-green-700 font-semibold whitespace-nowrap">
                                 {post.offer.currency}{post.offer.price}
                             </span>
                         </div>
