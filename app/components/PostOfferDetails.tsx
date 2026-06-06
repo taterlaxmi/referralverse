@@ -36,17 +36,33 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
 }
 
 export default function PostOfferDetails({ post }: { post: Post }) {
-  const codes = Array.isArray(post.referralCode) ? post.referralCode : [post.referralCode];
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const initialCodes = Array.isArray(post.referralCode) ? post.referralCode : [post.referralCode];
+  const [codes, setCodes] = useState<string[]>(initialCodes);
+  const [currentIndex, setCurrentIndex] = useState(0); // Always start at 0 to avoid SSR hydration mismatch
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Randomize initial code on mount to distribute usage fairly
+  // Randomize the starting code client-side only (after hydration) to distribute usage fairly
   useEffect(() => {
-    if (codes.length > 1) {
-      const randomIndex = Math.floor(Math.random() * codes.length);
-      setCurrentIndex(randomIndex);
+    if (initialCodes.length > 1) {
+      setCurrentIndex(Math.floor(Math.random() * initialCodes.length));
     }
-  }, [codes.length]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Run once on mount
+
+  // Fetch dynamic codes in the background and silently update if available
+  useEffect(() => {
+    if (post.dynamicCodesUrl) {
+      fetch(`/api/referral-codes?url=${encodeURIComponent(post.dynamicCodesUrl)}`,)
+        .then((res) => res.json())
+        .then((data) => {
+          if (Array.isArray(data) && data.length > 0) {
+            setCodes(data);
+            setCurrentIndex(data.length > 1 ? Math.floor(Math.random() * data.length) : 0);
+          }
+        })
+        .catch((err) => console.error("Error loading dynamic codes:", err));
+    }
+  }, [post.dynamicCodesUrl]);
 
   const handleNextCode = () => {
     setCurrentIndex((prev: number) => (prev + 1) % codes.length);
@@ -139,7 +155,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                         </div>
                       </div>
                     )}
-                    
+
                     {/* Submit Code Prompt */}
                     {post.referralCodeNote && (
                       <div className="mt-2 bg-indigo-50/60 p-4 rounded-2xl border border-indigo-100 max-w-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">

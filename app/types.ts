@@ -22,6 +22,7 @@ export interface Post {
   metaDescription: string;
   referralCode: string | string[];
   referralCodeNote?: string;
+  dynamicCodesUrl?: string;
   referralLink: string;
   signupBonus: string;
   referralBonus: string;

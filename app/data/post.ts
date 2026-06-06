@@ -803,7 +803,8 @@ export const posts: Post[] = [
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["UC847S","D45KDS","FEQ2Q8","DSGH82","AR5C8D","K76P72"],
+    referralCode: ["ES53B2","JGQM67","WX3UJ2","UKG559","K3DA74","B3H7PS","V5S7C8","B2A254","P39677","J7252J","U9Y89U"],
+    dynamicCodesUrl: "https://gist.githubusercontent.com/taterlaxmi/a2dcb424f318ac677c27eab1a04809fd/raw/gistfile1.txt",
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
@@ -1482,7 +1483,7 @@ export const posts: Post[] = [
       "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice invite code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With app-first banking features, slice is a popular finance app. Join the Slice bank refer and earn program today.",
     metaDescription:
       "Use the latest Slice invite code to get ₹500 cashback. Apply for the Slice UPI credit card, explore the Slice refer and earn program, and start earning.",
-    referralCode: ["&ROHIT4924", "RAHUL56841"],
+    referralCode: ["&ROHIT4924"],
     referralCodeNote: "Each Referral code works for max 5 users. If this one is exhausted, please click",
     referralLink: "https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924",
     signupBonus: "₹500 Cashback on first eligible UPI payment",
