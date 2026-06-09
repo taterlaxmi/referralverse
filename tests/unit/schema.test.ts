@@ -145,4 +145,31 @@ describe('Structured Data (Schema) Integrity', () => {
             expect(schema['@id']).toBe('https://referralverse.in/#organization');
         });
     });
+
+    describe('Breadcrumb URL slugification', () => {
+        it('getBreadcrumbSchema uses slugified category URLs for multi-word categories', () => {
+            const creditCardPost = posts.find((p) => {
+                const cats = Array.isArray(p.category) ? p.category : [p.category];
+                return cats.includes(Category.CreditCard);
+            });
+            expect(creditCardPost).toBeDefined();
+
+            const schema = schemaUtils.getBreadcrumbSchema(creditCardPost!);
+            const categoryItem = schema.itemListElement[1].item as string;
+            expect(categoryItem).toBe('https://referralverse.in/category/credit-card');
+            expect(categoryItem).not.toMatch(/\s/);
+        });
+
+        it('getBreadcrumbSchema slugifies Water Purifier category', () => {
+            const waterPost = posts.find((p) => {
+                const cats = Array.isArray(p.category) ? p.category : [p.category];
+                return cats.includes(Category.WaterPurifier);
+            });
+            expect(waterPost).toBeDefined();
+
+            const schema = schemaUtils.getBreadcrumbSchema(waterPost!);
+            const categoryItem = schema.itemListElement[1].item as string;
+            expect(categoryItem).toBe('https://referralverse.in/category/water-purifier');
+        });
+    });
 });

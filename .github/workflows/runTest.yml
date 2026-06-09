@@ -1,4 +1,4 @@
-name: Run Automation Tests (Unit Test & Lighthouse Analysis)
+name: Run Automation Tests
 
 on:
   push:
@@ -46,10 +46,7 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       - name: Run Lighthouse Audit
-        # Running directly against the live URL (no local build needed)
-        run: npx lhci autorun
-        env:
-          LHCI_URL: 'https://referralverse.in'
+        run: npm run test:lighthouse
       - name: Upload Lighthouse Results
         if: always()
         uses: actions/upload-artifact@v4

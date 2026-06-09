@@ -2,11 +2,10 @@ module.exports = {
   ci: {
     collect: {
       url: [
-        'http://localhost:3000/',
-        'http://localhost:3000/drinkprime-referral-code'
+        'https://referralverse.in/',
+        'https://referralverse.in/drinkprime-referral-code',
       ],
       numberOfRuns: 3,
-      startServerCommand: 'npm run start',
     },
     assert: {
       assertions: {

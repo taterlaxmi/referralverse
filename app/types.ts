@@ -1,5 +1,6 @@
 export enum Category {
   Finance = "Finance",
+  UPI = "UPI",
   CreditCard = "Credit Card",
   Shopping = "Shopping",
   WaterPurifier = "Water Purifier",

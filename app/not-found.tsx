@@ -1,8 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { Search, Home, ArrowRight } from 'lucide-react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found — ReferralVerse',
+  description: 'The referral offer or page you are looking for could not be found.',
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default function NotFound() {
   return (

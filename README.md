@@ -22,10 +22,16 @@ A high-performance referral offers directory built with **Next.js**, **React**, 
   - `components/`: UI components (Header, Footer, FAQ, etc.).
   - `data/`: Centralized store for all referral post data.
   - `posts/[slug]/`: Generated individual offer landing pages.
-- `scripts/`: Data fetching and auditing automation.
-  - `auditors/`: Modular logic for SEO, AI visibility, and Performance.
-  - `site-audit.mjs`: Core auditor that runs multi-page checks.
-  - `generate-test-report.mjs`: Consolidated reporter for all test results.
+- `scripts/`: Data fetching and competitor tooling (not test runners).
+- `tests/`: All automated quality checks.
+  - `unit/`: Vitest tests for post data, schema generators, and SEO metadata rules.
+  - `audit/`: Live production audit pipeline (CI + local).
+    - `run.mjs`: Multi-page SEO, performance, and AI visibility audit.
+    - `aggregate-report.mjs`: Merges Vitest, Lighthouse, and audit results for GitHub Summary.
+    - `config.mjs`: Pages and query sets to audit.
+    - `auditors/`: SEO, performance (PSI), and AI (Serper) checks.
+    - `lib/`: Shared parsers, thresholds, and validators.
+    - `lighthouserc.js`: Lighthouse CI config (production URLs + score thresholds).
 - `public/`: Optimized static assets (WebP format).
 
 ---
@@ -55,19 +61,21 @@ npm test
 ### 2. Lighthouse Audit
 Automated performance and accessibility audits.
 ```bash
-npx lhci autorun
+npm run test:lighthouse
 ```
 
 ### 3. Comprehensive SEO & AI Audit
 Modular audit system for technical SEO, Schema validation, and AI Overview citations.
 ```bash
-node scripts/site-audit.mjs [url]
+npm run test:audit
+# or: node tests/audit/run.mjs [url]
 ```
 
 ### 4. Unified Test Reporting
 Consolidates results from Vitest, Lighthouse, and SEO audits into a single GitHub summary.
 ```bash
-node scripts/generate-test-report.mjs
+npm run test:report
+# or: node tests/audit/aggregate-report.mjs
 ```
 
 ### 5. Mobile App Tests (Android)

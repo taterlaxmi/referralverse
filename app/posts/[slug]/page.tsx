@@ -33,6 +33,9 @@ export async function generateMetadata({ params }: Props) {
   }
 
   const canonicalUrl = `https://referralverse.in/${post.slug}`;
+  const ogImage = post.heroImage?.startsWith("/")
+    ? `https://referralverse.in${post.heroImage}`
+    : post.heroImage || "https://referralverse.in/og-image.png";
 
   return {
     title: `${post.title}`,
@@ -43,12 +46,19 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       title: post.title,
       description: post.metaDescription,
-      url: `https://referralverse.in/${post.slug}`,
+      url: canonicalUrl,
+      images: [
+        {
+          url: ogImage,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.metaDescription,
+      images: [ogImage],
     },
   };
 }

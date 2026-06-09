@@ -796,14 +796,14 @@ export const posts: Post[] = [
   {
     slug: "kiwi-referral-code",
     brand: "Kiwi",
-    category: [Category.CreditCard, Category.Finance],
+    category: [Category.Finance, Category.CreditCard, Category.UPI],
     title:
       "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary:
       "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription:
       "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["ES53B2","JGQM67","WX3UJ2","UKG559","K3DA74","B3H7PS","V5S7C8","B2A254","P39677","J7252J","U9Y89U"],
+    referralCode: ["ES53B2","N34G9W","JGQM67","WX3UJ2","UKG559","K3DA74","B3H7PS","V5S7C8","B2A254","P39677","J7252J","U9Y89U","VBL33P","B2A254","G9XXVW","P4FT74","HMB66T","DR3LEC","UY7Y25","ZRMVC4","U27872","JC6JP8"],
     dynamicCodesUrl: "https://gist.githubusercontent.com/taterlaxmi/a2dcb424f318ac677c27eab1a04809fd/raw/gistfile1.txt",
     referralCodeNote:
       "Each Referral code works for max 3 users. If this one is exhausted, please click",
@@ -1740,7 +1740,7 @@ export const posts: Post[] = [
   {
     slug: "navi-referral-code",
     brand: "Navi",
-    category: Category.Finance,
+    category: Category.UPI,
     title:
       "Navi Referral Code: GS2T0s (Get Rewards on Signup & Referrals)",
     summary:
@@ -1829,19 +1829,14 @@ export const posts: Post[] = [
   {
     slug: "gpay-referral-code",
     brand: "Google Pay",
-    category: Category.Finance,
-    title:
-      "GPay Referral Code: 4r37W (Google Pay Refer & Earn Rewards)",
-    summary:
-      "Use the latest GPay referral code 4r37W while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
-    metaDescription:
-      "Use Google Pay referral code 4r37W to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
+    category: Category.UPI,
+    title: "GPay Referral Code: 4r37W (Google Pay Refer & Earn Rewards)",
+    summary: "Use the latest GPay referral code 4r37W while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
+    metaDescription: "Use Google Pay referral code 4r37W to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
     referralCode: "4r37W",
-    referralLink: "",
-    signupBonus:
-      "Rewards vary depending on Google Pay's current referral campaign",
-    referralBonus:
-      "Earn rewards when friends sign up and complete eligible transactions",
+    referralLink: "https://gpay.app.goo.gl/invite-4r37W",
+    signupBonus: "Rewards vary depending on Google Pay's current referral campaign",
+    referralBonus: "₹21",
     validity: "Valid for eligible new Google Pay users",
     steps: [
       'Click on the "Join Google Pay" button.',
@@ -1852,7 +1847,7 @@ export const posts: Post[] = [
     ],
     ctaText: "Join Google Pay",
     offer: {
-      price: 0,
+      price: 51,
       currency: "₹",
     },
     benefits: [
@@ -1917,6 +1912,491 @@ export const posts: Post[] = [
         question: "Is Google Pay free to use?",
         answer:
           "Yes. Google Pay is free to download and use for standard UPI transactions in India.",
+      },
+    ],
+  },
+  {
+    slug: "phonepe-sbi-credit-card-referral-code",
+    brand: "PhonePe SBI Card",
+    category: [Category.CreditCard],
+    title: "PhonePe SBI Credit Card Referral Code 2026 (SELECT BLACK vs PURPLE Comparison)",
+    summary: "Apply for the PhonePe SBI Credit Card using a referral code to unlock exclusive benefits. Compare PhonePe SBI Card SELECT BLACK and PhonePe SBI Card PURPLE, including reward rates, annual fees, airport lounge access, milestone rewards, and welcome benefits before applying.",
+    metaDescription: "Looking for a PhonePe SBI Credit Card referral code? Compare SELECT BLACK and PURPLE cards, including rewards, annual fees, lounge access, travel vouchers, and welcome benefits.",
+    referralCode: [],
+    referralLink: "https://phon.pe/de3yxhz4",
+    signupBonus: "Get 100% joining fee as gift voucher(i.e ₹1500 for SELECT BLACK and ₹500 for PURPLE)",
+    referralBonus: "₹200",
+    validity: "Ongoing Offer",
+    steps: [
+      'Click on the "Apply for PhonePe SBI Credit Card" button.',
+      "Choose between PhonePe SBI Card SELECT BLACK or PhonePe SBI Card PURPLE.",
+      "Complete the online application and KYC process.",
+      "Receive approval and activate your credit card.",
+      "Pay your first credit card bill to receive 100% joining fee as gift voucher(i.e ₹1500 for SELECT BLACK and ₹500 for PURPLE).",
+    ],
+    ctaText: "Apply for PhonePe SBI Credit Card",
+    offer: {
+      price: 1500,
+      currency: "₹",
+    },
+    comparisonTable: {
+      title: "PhonePe SBI Card SELECT BLACK vs PURPLE",
+      columns: ["Feature", "SELECT BLACK", "PURPLE"],
+      rows: [
+        ["Joining Fee", "₹1,499", "₹499"],
+        ["Welcome Voucher", "₹1,500 PhonePe Gift Voucher", "₹500 PhonePe Gift Voucher"],
+        ["Renewal Fee", "₹1,499", "₹499"],
+        ["Annual Fee Waiver", "₹3,00,000 annual spends", "₹1,00,000 annual spends"],
+        ["PhonePe Spends", "10% Reward Points", "3% Reward Points"],
+        ["Online Spends", "5% Reward Points", "2% Reward Points"],
+        ["Other Spends", "1% Reward Points", "1% Reward Points"],
+        ["Fuel Surcharge Waiver", "1%", "1%"],
+        ["Domestic Lounge Access", "4 visits per year", "Not Available"],
+        ["Priority Pass Membership", "Complimentary", "Not Available"],
+        ["Travel Milestone Benefit", "₹5,000 Travel Voucher", "₹3,000 Travel Voucher"],
+        ["Reward Point Value", "1 RP = ₹1", "1 RP = ₹1"],
+      ],
+    },
+    benefits: [
+      {
+        title: "Earn 10% Reward Points on PhonePe Transactions",
+        description:
+          "PhonePe SBI Card SELECT BLACK offers 10% reward points on eligible PhonePe transactions including bill payments, recharges, insurance purchases, hotel bookings, and flight bookings.",
+        emoji: "📱",
+      },
+      {
+        title: "Up to 5% Rewards on Online Shopping",
+        description:
+          "Earn up to 5% reward points on online spends across popular brands such as Amazon, Swiggy, Zomato, Uber, Myntra, Nykaa, Blinkit, Zepto, BookMyShow, and MakeMyTrip.",
+        emoji: "🛍️",
+      },
+      {
+        title: "Reward Points Worth ₹1 Each",
+        description:
+          "Every reward point earned on PhonePe SBI Cards is worth ₹1 and can be redeemed as statement credit or gift vouchers through the SBI Card Rewards Portal.",
+        emoji: "💰",
+      },
+      {
+        title: "Rewards on Everyday Spending",
+        description:
+          "Earn reward points on Scan & Pay transactions, Tap & Pay purchases, and other eligible spends, making the card useful for daily usage.",
+        emoji: "💳",
+      },
+      {
+        title: "Domestic Airport Lounge Access",
+        description:
+          "SELECT BLACK cardholders receive four complimentary domestic airport lounge visits every year, with one visit available per quarter.",
+        emoji: "✈️",
+      },
+      {
+        title: "International Lounge Benefits with Priority Pass",
+        description:
+          "SELECT BLACK includes complimentary Priority Pass membership for two years, providing access to international airport lounges.",
+        emoji: "🌍",
+      },
+      {
+        title: "Travel Voucher Milestone Rewards",
+        description:
+          "Receive travel vouchers worth up to ₹5,000 annually by reaching spending milestones on your PhonePe SBI Credit Card.",
+        emoji: "🎁",
+      },
+      {
+        title: "Get Back the Joining Fee Value",
+        description:
+          "Receive a PhonePe gift voucher equal to the joining fee amount after making your first credit card bill payment.",
+        emoji: "🎉",
+      },
+    ],
+    faq: [
+      {
+        question:
+          "What is the difference between PhonePe SBI Card SELECT BLACK and PhonePe SBI Card PURPLE?",
+        answer: {
+          headers: ["Feature", "SELECT BLACK", "PURPLE"],
+          rows: [
+            ["Joining Fee", "₹1,499", "₹499"],
+            ["PhonePe Spends", "10%", "3%"],
+            ["Online Spends", "5%", "2%"],
+            ["Other Spends", "1%", "1%"],
+            ["Domestic Lounge Access", "4 per year", "Not Available"],
+            ["Priority Pass", "Available", "Not Available"],
+            ["Travel Voucher", "₹5,000", "₹3,000"],
+            ["Annual Fee Waiver", "₹3 Lakh", "₹1 Lakh"],
+          ],
+        },
+      },
+      {
+        question:
+          "How much are PhonePe SBI Card reward points worth?",
+        answer:
+          "Each reward point is worth ₹1 and can be redeemed as statement credit or gift vouchers through the SBI Card Rewards portal.",
+      },
+      {
+        question:
+          "What welcome benefit do PhonePe SBI Cards offer?",
+        answer: {
+          headers: ["Card", "Welcome Benefit"],
+          rows: [
+            ["SELECT BLACK", "₹1,500 PhonePe Gift Voucher after first bill payment"],
+            ["PURPLE", "₹500 PhonePe Gift Voucher after first bill payment"],
+          ],
+        },
+      },
+      {
+        question:
+          "How can I get the annual fee waived on PhonePe SBI Credit Card?",
+        answer: {
+          headers: ["Card", "Annual Spend Requirement"],
+          rows: [
+            ["SELECT BLACK", "₹3,00,000 annual retail spends"],
+            ["PURPLE", "₹1,00,000 annual retail spends"],
+          ],
+        },
+      },
+      {
+        question:
+          "Does PhonePe SBI Credit Card provide airport lounge access?",
+        answer:
+          "PhonePe SBI Card SELECT BLACK provides four complimentary domestic airport lounge visits annually along with complimentary Priority Pass membership. The PURPLE card does not provide these benefits.",
+      },
+      {
+        question:
+          "Does PhonePe SBI Credit Card support UPI payments?",
+        answer:
+          "Yes. Users can link the card where supported and earn reward points on eligible Scan & Pay and everyday transactions.",
+      },
+      {
+        question:
+          "What is the value of 1 reward point on PhonePe SBI Credit Card?",
+        answer:
+          "One reward point equals ₹1 and can be redeemed through the SBI Card Rewards platform.",
+      },
+      {
+        question:
+          "Which PhonePe SBI Credit Card is better?",
+        answer:
+          "SELECT BLACK is generally better for heavy PhonePe users, frequent travelers, and online shoppers due to its higher reward rates and lounge benefits. PURPLE is better suited for users looking for a lower annual fee and basic rewards.",
+      },
+      {
+        question:
+          "Is there a fuel surcharge waiver on PhonePe SBI Credit Card?",
+        answer:
+          "Yes. Both SELECT BLACK and PURPLE cards offer a 1% fuel surcharge waiver as per applicable terms and conditions.",
+      },
+      {
+        question:
+          "What milestone benefits are available on PhonePe SBI Credit Cards?",
+        answer: {
+          headers: ["Card", "Milestone Benefit"],
+          rows: [
+            ["SELECT BLACK", "₹5,000 travel voucher on annual spends of ₹5 lakh"],
+            ["PURPLE", "₹3,000 travel voucher on annual spends of ₹3 lakh"],
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "phonepe-wish-credit-card-referral-code",
+    brand: "PhonePe Wish Credit Card",
+    category: [Category.CreditCard],
+    title: "PhonePe Wish Credit Card Referral Code 2026 (Get Easy Approval with FD Backed Credit Card)",
+    summary: "Apply for the PhonePe Wish Credit Card using a referral link and get one of the easiest FD-backed credit cards in India. Enjoy cashback on UPI payments, bill payments, online shopping, Scan & Pay transactions, and build your credit score with no joining fee and no annual fee.",
+    metaDescription: "Apply for PhonePe Wish Credit Card using referral link. Get cashback on UPI, bill payments and online shopping. No joining fee, no annual fee and FD-backed approval.",
+    referralCode: [],
+    referralLink: "https://phon.pe/fpja7r5k",
+    signupBonus: "No joining fee and no annual fee",
+    referralBonus: "₹0",
+    steps: [
+      "Click on the Apply Now button.",
+      "Open the PhonePe Wish Credit Card referral link.",
+      "Complete the credit card application.",
+      "Create the required Fixed Deposit (FD).",
+      "Complete KYC verification with Utkarsh Small Finance Bank.",
+      "Receive your PhonePe Wish Credit Card and start earning cashback.",
+    ],
+    ctaText: "Get LTF PhonePe Wish Credit Card",
+    offer: {
+      price: 0,
+      currency: "₹",
+    },
+    benefits: [
+      {
+        title: "No Joining Fee and No Annual Fee",
+        description:
+          "PhonePe Wish Credit Card comes with zero joining fee and zero annual fee, making it one of the most beginner-friendly credit cards in India.",
+        emoji: "💸",
+      },
+      {
+        title: "Easy Approval with Fixed Deposit",
+        description:
+          "The card is backed by a Fixed Deposit, making approval easier even for users with limited or no credit history.",
+        emoji: "✅",
+      },
+      {
+        title: "Cashback on UPI Payments",
+        description:
+          "Link the card with PhonePe and earn cashback on eligible UPI transactions, Scan & Pay payments and daily spending.",
+        emoji: "📱",
+      },
+      {
+        title: "3% Cashback on Recharge and Bill Payments",
+        description:
+          "Earn 3% reward points on mobile recharge, electricity, broadband, DTH, FASTag, piped gas and other eligible bill payments made through PhonePe.",
+        emoji: "⚡",
+      },
+      {
+        title: "Cashback on Popular Online Brands",
+        description:
+          "Get 1% reward points on brands including Amazon, Flipkart, Myntra, Ajio, Swiggy, Zomato, Nykaa, Urban Company and more.",
+        emoji: "🛍️",
+      },
+      {
+        title: "1% Cashback on Scan & Pay",
+        description:
+          "Earn reward points on eligible Scan & Pay transactions made through PhonePe at offline merchants.",
+        emoji: "📷",
+      },
+      {
+        title: "Build Your Credit Score",
+        description:
+          "Regular usage and timely payments can help establish and improve your credit score over time.",
+        emoji: "📈",
+      },
+      {
+        title: "Milestone Reward Benefits",
+        description:
+          "Earn an additional 200 reward points when your monthly spending crosses ₹15,000 in a statement cycle.",
+        emoji: "🎁",
+      },
+    ],
+
+    faq: [
+      {
+        question:
+          "What is PhonePe Wish Credit Card?",
+        answer:
+          "PhonePe Wish Credit Card is an FD-backed credit card issued by Utkarsh Small Finance Bank. It offers cashback on UPI payments, bill payments, online shopping and Scan & Pay transactions.",
+      },
+      {
+        question:
+          "Is PhonePe Wish Credit Card free?",
+        answer: {
+          headers: ["Fee Type", "Amount"],
+          rows: [
+            ["Joining Fee", "₹0"],
+            ["Annual Fee", "₹0"],
+            ["Interest Free Period", "Up to 45 Days"],
+            ["Physical Card Fee", "₹249 (conditions apply)"],
+          ],
+        },
+      },
+      {
+        question:
+          "What is the minimum FD required for PhonePe Wish Credit Card?",
+        answer:
+          "You can start with a Fixed Deposit as low as ₹2,000. The credit limit is generally up to 90% of the FD value.",
+      },
+      {
+        question:
+          "How much cashback does PhonePe Wish Credit Card offer?",
+        answer: {
+          headers: ["Category", "Reward Rate"],
+          rows: [
+            ["PhonePe Bill Payments & Recharges", "3%"],
+            ["Selected Online Brands", "1%"],
+            ["PhonePe Scan & Pay", "1%"],
+            ["Monthly Milestone Bonus", "200 Reward Points on ₹15,000 spends"],
+          ],
+        },
+      },
+      {
+        question:
+          "Which bill payments qualify for 3% cashback?",
+        answer:
+          "Eligible categories include mobile recharge, FASTag recharge, DTH, cable TV, electricity, broadband, landline, prepaid meter and piped gas payments made through PhonePe.",
+      },
+      {
+        question:
+          "Which online merchants qualify for cashback?",
+        answer:
+          "Eligible merchants include Amazon, Flipkart, Myntra, Ajio, Nykaa, Swiggy, Zomato, District and Urban Company among others.",
+      },
+      {
+        question:
+          "How much is 1 reward point worth?",
+        answer:
+          "Each reward point is worth ₹1 and can be redeemed through the PhonePe app subject to applicable redemption terms.",
+      },
+      {
+        question:
+          "What is the monthly reward cap on PhonePe Wish Credit Card?",
+        answer: {
+          headers: ["Category", "Maximum Reward Points Per Statement Month"],
+          rows: [
+            ["Bill Payments & Recharges", "150"],
+            ["Online Brands", "200"],
+            ["Scan & Pay", "150"],
+          ],
+        },
+      },
+      {
+        question:
+          "Who can apply for PhonePe Wish Credit Card?",
+        answer:
+          "Indian residents aged between 18 and 80 years with a valid PAN, mobile number, email address and eligible Fixed Deposit can apply.",
+      },
+      {
+        question:
+          "Is PhonePe Wish Credit Card good for beginners?",
+        answer:
+          "Yes. Because it is FD-backed, has no annual fee and supports UPI payments, it is one of the better starter credit cards for first-time users looking to build credit history.",
+      },
+      {
+        question:
+          "Which transactions do not earn reward points?",
+        answer:
+          "Transactions such as rent payments, wallet loads, fuel purchases, gold purchases, education payments, government transactions, insurance payments, EMI transactions, cash withdrawals and card fee payments are generally excluded from rewards.",
+      },
+    ],
+  },
+  {
+    slug: "phonepe-referral-code",
+    brand: "PhonePe",
+    category: Category.UPI,
+    title: "PhonePe Referral Code & Referral Link 2026 (Get ₹200 Bonus on Signup)",
+    summary: "Join PhonePe using a referral link and earn up to ₹200 bonus rewards after completing eligible transactions. Use PhonePe for UPI payments, mobile recharges, bill payments, money transfers, investments, insurance and more.",
+    metaDescription: "Looking for a PhonePe referral code? Join PhonePe using a referral link and get up to ₹200 bonus rewards. Send money, pay bills, recharge mobiles and earn cashback with PhonePe.",
+    referralCode: [],
+    referralLink: "https://phon.pe/xwfzs1xy",
+    signupBonus: "Up to ₹200 reward",
+    referralBonus: "₹200 per successful referral",
+    steps: [
+      "Click on the PhonePe referral link.",
+      "Install and register on PhonePe using your mobile number.",
+      "Complete account verification and link your bank account.",
+      "Make your first eligible UPI transaction through PhonePe.",
+      "Receive referral rewards after meeting the applicable offer conditions.",
+    ],
+    ctaText: "Join PhonePe",
+    offer: {
+      price: 200,
+      currency: "₹",
+    },
+    benefits: [
+      {
+        title: "Earn Referral Rewards",
+        description:
+          "Invite friends and family to PhonePe and earn referral rewards when they complete eligible transactions.",
+        emoji: "🎁",
+      },
+      {
+        title: "Instant UPI Payments",
+        description:
+          "Send and receive money instantly using UPI with support for all major Indian banks.",
+        emoji: "📱",
+      },
+      {
+        title: "Recharge and Bill Payments",
+        description:
+          "Pay electricity bills, mobile recharges, DTH, FASTag, broadband and other utility bills directly from the PhonePe app.",
+        emoji: "⚡",
+      },
+      {
+        title: "Safe and Secure Transactions",
+        description:
+          "PhonePe uses secure UPI infrastructure and multiple layers of protection for digital payments.",
+        emoji: "🔒",
+      },
+      {
+        title: "Scan & Pay Anywhere",
+        description:
+          "Pay merchants across India by scanning QR codes through the PhonePe app.",
+        emoji: "📷",
+      },
+      {
+        title: "Book Travel and More",
+        description:
+          "Use PhonePe for flights, hotels, insurance, investments and a variety of digital services.",
+        emoji: "✈️",
+      },
+      {
+        title: "Track All Transactions",
+        description:
+          "View transaction history, payment status and spending records directly within the app.",
+        emoji: "📊",
+      },
+      {
+        title: "Works with Multiple Bank Accounts",
+        description:
+          "Link multiple bank accounts and choose your preferred account for UPI payments.",
+        emoji: "🏦",
+      },
+    ],
+    faq: [
+      {
+        question:
+          "What is the PhonePe referral bonus?",
+        answer:
+          "PhonePe may offer referral rewards for both the referrer and the new user. The exact reward amount can vary depending on the ongoing promotion and eligibility criteria.",
+      },
+      {
+        question:
+          "How do I claim the PhonePe referral reward?",
+        answer:
+          "Register through a valid referral link, link your bank account and complete the required eligible transaction to qualify for the reward.",
+      },
+
+      {
+        question:
+          "Is PhonePe free to use?",
+        answer:
+          "Yes. Creating a PhonePe account and making standard UPI payments is free for most users.",
+      },
+
+      {
+        question:
+          "Can I use PhonePe without a debit card?",
+        answer:
+          "Bank account linking requirements depend on your bank and UPI setup process. Some banks may require debit card verification during registration.",
+      },
+
+      {
+        question:
+          "How do I refer friends on PhonePe?",
+        answer:
+          "Open the PhonePe app, access the referral section, share your referral link and earn rewards when eligible users join and complete the required actions.",
+      },
+
+      {
+        question:
+          "Which banks are supported by PhonePe?",
+        answer:
+          "PhonePe supports UPI payments through most major Indian banks including SBI, HDFC Bank, ICICI Bank, Axis Bank, Kotak Mahindra Bank, Bank of Baroda, Punjab National Bank and many others.",
+      },
+      {
+        question:
+          "Can I pay bills using PhonePe?",
+        answer:
+          "Yes. PhonePe supports electricity, water, gas, broadband, landline, DTH, FASTag, credit card bills and many other payment categories.",
+      },
+      {
+        question:
+          "Can I earn cashback on PhonePe?",
+        answer:
+          "PhonePe occasionally offers cashback, rewards and promotional offers on eligible transactions. Availability depends on current campaigns and user eligibility.",
+      },
+      {
+        question:
+          "Is PhonePe safe for UPI transactions?",
+        answer:
+          "Yes. PhonePe operates on the UPI network and includes security measures such as device verification, UPI PIN authentication and transaction monitoring.",
+      },
+      {
+        question:
+          "Who can join PhonePe using a referral link?",
+        answer:
+          "New users who meet PhonePe's eligibility requirements and successfully complete account registration can join through a referral link.",
       },
     ],
   }

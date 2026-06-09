@@ -1,5 +1,6 @@
 import { Post } from "../types";
 import { getCategories } from "./category";
+import { slugify } from "./slugify";
 
 /**
  * Normalizes FAQ answers (string | string[] | table) into a single string for JSON-LD
@@ -111,7 +112,7 @@ export function getBreadcrumbSchema(post: Post) {
         "@type": "ListItem",
         position: 2,
         name: getCategories(post)[0],
-        item: `https://referralverse.in/category/${getCategories(post)[0].toLowerCase()}`,
+        item: `https://referralverse.in/category/${slugify(getCategories(post)[0])}`,
       },
       {
         "@type": "ListItem",

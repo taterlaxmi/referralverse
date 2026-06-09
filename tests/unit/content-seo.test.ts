@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
+import fs from "fs";
+import path from "path";
 import { posts } from "../../app/data/post";
+
+const publicHasImageAssets =
+  fs.existsSync("public") &&
+  fs.readdirSync("public").some((f) => /\.(webp|png|jpg|jpeg)$/i.test(f));
 
 describe("SEO Metadata and Content Integrity", () => {
   it("every post must have a unique slug", () => {
@@ -19,7 +25,7 @@ describe("SEO Metadata and Content Integrity", () => {
       expect(
         len,
         `Post ${post.slug} has an invalid meta description length (${len})`,
-      ).toBeLessThanOrEqual(200);
+      ).toBeLessThanOrEqual(165);
     });
   });
 
@@ -34,7 +40,7 @@ describe("SEO Metadata and Content Integrity", () => {
     });
   });
 
-  it("all referral images must exist in the public folder (referenced logic)", () => {
+  it("all referral images must use absolute public paths", () => {
     posts.forEach((post) => {
       if (post.heroImage) {
         expect(
@@ -44,6 +50,21 @@ describe("SEO Metadata and Content Integrity", () => {
       }
     });
   });
+
+  it.skipIf(!publicHasImageAssets)(
+    "hero images exist in the public folder when assets are checked in",
+    () => {
+      posts.forEach((post) => {
+        if (post.heroImage) {
+          const filePath = path.join("public", post.heroImage.replace(/^\//, ""));
+          expect(
+            fs.existsSync(filePath),
+            `Post ${post.slug} hero image missing at public${post.heroImage}`,
+          ).toBe(true);
+        }
+      });
+    },
+  );
 
   it("every post must have at least 3 FAQ items", () => {
     posts.forEach((post) => {
