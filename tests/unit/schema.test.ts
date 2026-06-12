@@ -49,7 +49,7 @@ describe('Structured Data (Schema) Integrity', () => {
             expect(financeSchema['@type']).toBe('Product');
 
             // Test Shopping → Product
-            const shoppingPost = posts.find(p => p.category === Category.Shopping || p.category === Category.Health) || samplePost;
+            const shoppingPost = posts.find(p => p.category === Category.Shopping) || samplePost;
             const productSchema = schemaUtils.getOfferSchema(shoppingPost);
             expect(productSchema['@type']).toBe('Product');
 

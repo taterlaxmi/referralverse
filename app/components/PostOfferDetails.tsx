@@ -23,11 +23,11 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
   return (
     <button
       onClick={copyToClipboard}
-      className={`flex items-center justify-center p-2.5 rounded-lg border transition-all duration-200 ${isCopied
+      className={`flex items-center justify-center p-2.5 rounded-lg border transition-all duration-200 copy-referral-code-btn [&>svg]:pointer-events-none ${isCopied
         ? "bg-green-500 border-green-500 text-white"
         : "bg-white border-gray-200 text-gray-700 hover:bg-gray-100"
         }`}
-      id="copy-referral-code"
+      id={`copy-referral-code-${code}`}
       aria-label="Copy referral code"
     >
       {isCopied ? <CheckIcon size={18} /> : <CopyIcon size={18} />}
@@ -36,36 +36,33 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
 }
 
 export default function PostOfferDetails({ post }: { post: Post }) {
-  const initialCodes = Array.isArray(post.referralCode) ? post.referralCode : [post.referralCode];
-  const [codes, setCodes] = useState<string[]>(initialCodes);
-  const [currentIndex, setCurrentIndex] = useState(0); // Always start at 0 to avoid SSR hydration mismatch
+  const maxCodes = 4;
+  const isMultiple = Array.isArray(post.referralCode);
+  const referralCodesArray = isMultiple ? (post.referralCode as string[]) : [post.referralCode as string];
+
+  // Initially (SSR), just take the first N codes to ensure static HTML has codes for Googlebot
+  const initialCodes = referralCodesArray.slice(0, maxCodes);
+
+  const [displayCodes, setDisplayCodes] = useState<string[]>(initialCodes);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Randomize the starting code client-side only (after hydration) to distribute usage fairly
+  // Randomize the codes client-side only (after hydration) to distribute usage fairly
   useEffect(() => {
-    if (initialCodes.length > 1) {
-      setCurrentIndex(Math.floor(Math.random() * initialCodes.length));
+    if (isMultiple && referralCodesArray.length > 1) {
+      const shuffleAndSet = () => {
+        const shuffled = [...referralCodesArray].sort(() => 0.5 - Math.random());
+        setDisplayCodes(shuffled.slice(0, maxCodes));
+      };
+      shuffleAndSet();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Run once on mount
+  }, [post.referralCode, isMultiple]);
 
-  // Fetch dynamic codes in the background and silently update if available
-  useEffect(() => {
-    if (post.dynamicCodesUrl) {
-      fetch(`/api/referral-codes?url=${encodeURIComponent(post.dynamicCodesUrl)}`,)
-        .then((res) => res.json())
-        .then((data) => {
-          if (Array.isArray(data) && data.length > 0) {
-            setCodes(data);
-            setCurrentIndex(data.length > 1 ? Math.floor(Math.random() * data.length) : 0);
-          }
-        })
-        .catch((err) => console.error("Error loading dynamic codes:", err));
+  const handleRotateCodes = () => {
+    if (isMultiple && referralCodesArray.length > maxCodes) {
+      const shuffled = [...referralCodesArray].sort(() => 0.5 - Math.random());
+      setDisplayCodes(shuffled.slice(0, maxCodes));
     }
-  }, [post.dynamicCodesUrl]);
-
-  const handleNextCode = () => {
-    setCurrentIndex((prev: number) => (prev + 1) % codes.length);
   };
 
   return (
@@ -103,7 +100,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
         <table className="min-w-full divide-y divide-gray-100">
           <tbody className="divide-y divide-gray-100 text-gray-800">
             {/* Referral Code(s) */}
-            {codes.length > 0 && (
+            {displayCodes.length > 0 && (
               <tr id="referral-code" className="hover:bg-gray-50/80 transition scroll-mt-24">
                 <th className="py-4 px-5 text-left font-medium text-gray-600 w-auto md:w-48 align-top pt-8">
                   <div className="flex flex-col gap-1">
@@ -116,48 +113,47 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                 <td className="py-4 px-5">
                   <div className="flex flex-col gap-4">
                     {/* Primary Code + Copy Row */}
-                    <div className="flex items-center gap-3">
-                      <div className="relative group">
-                        <span className="font-mono text-xl font-bold text-indigo-600 bg-indigo-50/50 px-4 py-2 rounded-xl border border-indigo-100 select-all min-w-[140px] text-center inline-block">
-                          {codes[currentIndex]}
-                        </span>
-                      </div>
-                      <CopyButton code={codes[currentIndex]} />
-                    </div>
+                    <ul className="flex flex-col gap-3">
+                      {displayCodes.map((code, idx) => (
+                        <li key={idx} className="flex items-center gap-3">
+                          <div className="relative group">
+                            <span className="font-mono text-xl font-bold text-indigo-600 bg-indigo-50/50 px-4 py-2 rounded-xl border border-indigo-100 select-all min-w-[140px] text-center inline-block">
+                              {code}
+                            </span>
+                          </div>
+                          <CopyButton code={code} />
+                        </li>
+                      ))}
+                    </ul>
 
-                    {/* "Try Another" Action Button */}
-                    {codes.length > 1 && (
+                    {/* "Rotate Codes" Action Button */}
+                    {isMultiple && post.referralCode.length > maxCodes && (
                       <button
-                        onClick={handleNextCode}
+                        onClick={handleRotateCodes}
                         className="flex items-center justify-center md:justify-start gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-indigo-700 bg-white border-2 border-indigo-50 shadow-sm hover:shadow-indigo-100/50 hover:bg-indigo-50 hover:border-indigo-100 transition-all active:scale-[0.98] w-full md:w-fit group/btn"
-                        title="Rotate to a new code"
+                        title="Show other codes"
                       >
                         <RefreshCcw size={16} className="text-indigo-500 group-hover/btn:rotate-180 transition-transform duration-500" />
-                        Try Another Code
+                        Show Other Codes
                       </button>
                     )}
 
                     {/* Status Indicator & Note */}
-                    {codes.length > 1 && (
+                    {isMultiple && (
                       <div className="flex items-start gap-3 bg-gradient-to-r from-indigo-50/60 to-white p-4 rounded-2xl border border-indigo-100/60 max-w-lg shadow-sm">
                         <div className="w-8 h-8 rounded-xl bg-white border border-indigo-100 flex items-center justify-center flex-shrink-0 shadow-sm">
                           <Info size={16} className="text-indigo-600" />
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <p className="text-[0.85rem] text-gray-700 leading-snug font-medium">
-                            {post.referralCodeNote || "Try multiple codes."} <span className="text-indigo-600 font-bold decoration-indigo-200 decoration-2 underline-offset-2">Try Another</span> to see other codes.
+                            {post.referralCodeNote || "Try these codes. If one doesn't work, try another."}
                           </p>
-                          <div className="flex items-center gap-2 mt-1">
-                            <span className="px-3 py-1 bg-indigo-600 text-white text-[10px] font-black rounded-lg tracking-widest uppercase shadow-sm">
-                              Option {currentIndex + 1} / {codes.length}
-                            </span>
-                          </div>
                         </div>
                       </div>
                     )}
 
                     {/* Submit Code Prompt */}
-                    {post.referralCodeNote && (
+                    {isMultiple && referralCodesArray.length > 1 && (
                       <div className="mt-2 bg-indigo-50/60 p-4 rounded-2xl border border-indigo-100 max-w-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
                         <div className="text-sm font-medium text-slate-700">
                           Have your own {post.brand} code?

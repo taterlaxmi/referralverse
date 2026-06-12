@@ -5,7 +5,7 @@ const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-MW2XFXF7";
 
 export const metadata = {
   title: 'ReferralVerse — Best Referral Offers & Coupons',
-  description: 'Find top referral offers, coupons, and promo codes curated for travel, finance, food, and lifestyle. Maximize your savings and earn exclusive bonuses with the best refer and earn apps today.',
+  description: 'Find top referral offers, coupons, and promo codes for travel, finance, food, and lifestyle. Maximize savings & earn exclusive bonuses with the best apps today.',
   metadataBase: new URL('https://referralverse.in'),
   alternates: {
     canonical: '/',
@@ -42,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>

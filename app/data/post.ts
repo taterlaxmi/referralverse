@@ -168,7 +168,7 @@ export const posts: Post[] = [
       "Livpure Smart, a pay-as-you-drink water service, provides pure drinking water using 7-stage purification @ Rs 0.99/liter. Livpure Smart has various subscription plans suiting different needs.",
     metaDescription:
       "Get pure, healthy water at ₹0.99/litre with Livpure Smart. Use our Livpure Smart referral code for 7-day free trial + ₹100 off your first plan.",
-    referralCode: ["J0YEN7", "SZKKT3"],
+    referralCode: "J0YEN7",
     referralLink:
       "https://play.google.com/store/apps/details?id=com.livpure.safedrink",
     signupBonus: "7 day free trial + ₹100 off",
@@ -415,7 +415,7 @@ export const posts: Post[] = [
     summary:
       "Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers across fashion, groceries, electronics, medicines, flights and much more with NeuCard. Enjoy Tata Neu referral benefits including a ₹500 joining bonus and additional NeuCoins on your first spend.",
     metaDescription:
-      "Apply with Tata Neu credit card referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive shopping rewards.",
+      "Apply with Tata Neu credit card referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive rewards.",
     referralCode: "RAHU7325",
     referralLink:
       "https://www.tatadigital.com/finance/creditcard/product-detail?referralCode=RAHU7325&amp;utm_content=RAHU7325",
@@ -797,16 +797,11 @@ export const posts: Post[] = [
     slug: "kiwi-referral-code",
     brand: "Kiwi",
     category: [Category.Finance, Category.CreditCard, Category.UPI],
-    title:
-      "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
-    summary:
-      "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
-    metaDescription:
-      "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["ES53B2","N34G9W","JGQM67","WX3UJ2","UKG559","K3DA74","B3H7PS","V5S7C8","B2A254","P39677","J7252J","U9Y89U","VBL33P","B2A254","G9XXVW","P4FT74","HMB66T","DR3LEC","UY7Y25","ZRMVC4","U27872","JC6JP8"],
-    dynamicCodesUrl: "https://gist.githubusercontent.com/taterlaxmi/a2dcb424f318ac677c27eab1a04809fd/raw/gistfile1.txt",
-    referralCodeNote:
-      "Each Referral code works for max 3 users. If this one is exhausted, please click",
+    title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
+    summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
+    metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
+    referralCode: ["CSBP3P", "JGQM67", "WX3UJ2", "UKG559", "J6H7E9","N34G9W", "K3DA74", "B3H7PS", "V5S7C8", "B2A254", "P39677", "J7252J", "U9Y89U", "VBL33P", "B2A254", "G9XXVW", "P4FT74", "HMB66T", "UY7Y25", "ZRMVC4", "U27872", "JC6JP8"],
+    referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",
     referralBonus: "₹1500 per successful referral",
@@ -1483,7 +1478,7 @@ export const posts: Post[] = [
       "Slice is a modern digital banking platform in India offering a UPI credit card, zero balance savings account, deposits, and cashback rewards. Use our verified slice invite code to unlock ₹250 cashback on your first eligible UPI payment using the slice UPI credit card. With app-first banking features, slice is a popular finance app. Join the Slice bank refer and earn program today.",
     metaDescription:
       "Use the latest Slice invite code to get ₹500 cashback. Apply for the Slice UPI credit card, explore the Slice refer and earn program, and start earning.",
-    referralCode: ["&ROHIT4924"],
+    referralCode: "&ROHIT4924",
     referralCodeNote: "Each Referral code works for max 5 users. If this one is exhausted, please click",
     referralLink: "https://slice.bank.in/t?c=DH_ksMb&ic=ROHIT4924",
     signupBonus: "₹500 Cashback on first eligible UPI payment",
@@ -1919,7 +1914,7 @@ export const posts: Post[] = [
     slug: "phonepe-sbi-credit-card-referral-code",
     brand: "PhonePe SBI Card",
     category: [Category.CreditCard],
-    title: "PhonePe SBI Credit Card Referral Code 2026 (SELECT BLACK vs PURPLE Comparison)",
+    title: "PhonePe SBI Card Referral Code 2026 (SELECT BLACK vs PURPLE Comparison)",
     summary: "Apply for the PhonePe SBI Credit Card using a referral code to unlock exclusive benefits. Compare PhonePe SBI Card SELECT BLACK and PhonePe SBI Card PURPLE, including reward rates, annual fees, airport lounge access, milestone rewards, and welcome benefits before applying.",
     metaDescription: "Looking for a PhonePe SBI Credit Card referral code? Compare SELECT BLACK and PURPLE cards, including rewards, annual fees, lounge access, travel vouchers, and welcome benefits.",
     referralCode: [],
