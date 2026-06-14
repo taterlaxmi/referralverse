@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/referral-aggregator',
   },
+  openGraph: {
+    url: 'https://referralverse.in/referral-aggregator',
+  },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

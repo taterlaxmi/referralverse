@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/about',
   },
+  openGraph: {
+    url: 'https://referralverse.in/about',
+  },
 };
 
 export default function AboutPage() {

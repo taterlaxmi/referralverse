@@ -3,6 +3,9 @@ name: Fetch Reddit Referral Deals
 on:
   workflow_dispatch: # Allows manual trigger
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   fetch-and-commit:
     runs-on: ubuntu-latest

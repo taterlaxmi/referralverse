@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import { ExternalLink, Copy, Check, Calendar } from 'lucide-react';
 import aggregatedDeals from '../data/aggregated-deals.json';
 
+
 interface Deal {
   application: string;
   code: string;

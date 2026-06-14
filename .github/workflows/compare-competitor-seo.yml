@@ -5,6 +5,9 @@ on:
     - cron: '0 4 * * 5' # Friday 9:30 AM IST (after post tracking)
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   compare-seo:
     runs-on: ubuntu-latest

@@ -2,6 +2,208 @@ import { Post, Category } from "../types";
 
 export const posts: Post[] = [
   {
+    slug: "eatclub-referral-code",
+    brand: "EatClub",
+    category: [Category.FoodDelivery],
+    title: "EatClub Referral Code: Flat 50% OFF + ₹0 Delivery Fee on First 3 Orders",
+    summary: "Looking for an active EatClub referral code? Use referral code ROHIT917SOE while signing up on the EatClub app and get Flat 50% OFF along with ₹0 Delivery Fee, ₹0 Packaging Fee, and ₹0 Platform Fee on your first 3 food orders. Enjoy delicious meals from popular brands like BOX8, MOJO Pizza, ZAZA, NH1 Bowls, LeanCrust Pizza, and more at unbeatable prices.",
+    metaDescription: "Use EatClub referral code ROHIT917SOE and get Flat 50% OFF plus ₹0 delivery, packaging and platform fees on your first 3 orders. Valid for new users.",
+    referralCode: "ROHIT917SOE",
+    referralCodeNote: "Enter this referral code during checkout on your first 3 orders to unlock the discount.",
+    referralLink: "https://get.eatclub.in/referral",
+    signupBonus: "Flat 50% OFF + ₹0 Delivery Fee, ₹0 Packaging Fee & ₹0 Platform Fee on first 3 orders",
+    referralBonus: "Refer friends and earn rewards as per the latest EatClub referral program",
+    steps: [
+      "Download the EatClub app using the referral link.",
+      "Create your account using your mobile number.",
+      "Enter referral code ROHIT917SOE during signup.",
+      "Browse restaurants and brands available in your city.",
+      "Place your first order and enjoy Flat 50% OFF along with zero additional charges.",
+      "Use the offer on your first 3 eligible orders."
+    ],
+    ctaText: "Claim EatClub Welcome Offer",
+    offer: {
+      price: 50,
+      currency: "%"
+    },
+    howToRefer: [
+      "Open the EatClub app and navigate to the Refer & Earn section.",
+      "Copy your unique referral code or referral link.",
+      "Share it with friends and family.",
+      "When they sign up and place eligible orders, referral rewards are credited as per the current program.",
+      "Track your referral rewards directly within the app."
+    ],
+    benefits: [
+      {
+        title: "Flat 50% OFF on First 3 Orders",
+        description: "New users can save significantly on their first three food orders by applying a valid EatClub referral code during signup.",
+        emoji: "🍔"
+      },
+      {
+        title: "₹0 Delivery Fee",
+        description: "Unlike many food delivery apps, EatClub waives the delivery fee for eligible first orders under this welcome offer.",
+        emoji: "🚚"
+      },
+      {
+        title: "₹0 Packaging Fee",
+        description: "Save extra money with zero packaging charges on eligible orders, making the overall meal cost lower.",
+        emoji: "📦"
+      },
+      {
+        title: "₹0 Platform Fee",
+        description: "No additional platform charges are applied under the promotional offer, helping you maximize savings.",
+        emoji: "💰"
+      },
+      {
+        title: "Access to Popular Food Brands",
+        description: "Order from leading cloud kitchen brands including BOX8, MOJO Pizza, ZAZA, NH1 Bowls, LeanCrust Pizza, ITMINAAN Biryani, and more.",
+        emoji: "🍕"
+      }
+    ],
+    faq: [
+      {
+        question: "What is the latest EatClub referral code?",
+        answer: "The latest active EatClub referral code is ROHIT917SOE. Enter it during signup to unlock Flat 50% OFF plus ₹0 Delivery Fee, ₹0 Packaging Fee, and ₹0 Platform Fee on your first 3 orders."
+      },
+      {
+        question: "How many times can I use the EatClub welcome offer?",
+        answer: "Eligible new users can avail the offer on their first three qualifying orders placed through the EatClub app."
+      },
+      {
+        question: "Do I need a coupon code at checkout?",
+        answer: "No. Simply enter the referral code during account registration. Eligible discounts are automatically applied according to the promotion terms."
+      },
+      {
+        question: "Which brands are available on EatClub?",
+        answer: "EatClub hosts several popular food brands including BOX8, MOJO Pizza, ZAZA, NH1 Bowls, LeanCrust Pizza, ITMINAAN Biryani, and other cloud kitchen concepts depending on your location."
+      },
+      {
+        question: "Is EatClub available across India?",
+        answer: "EatClub currently operates in major Indian cities. Availability of restaurants, delivery zones, and offers may vary by location."
+      },
+      {
+        question: "Can existing users use the referral code?",
+        answer: "Referral signup offers are generally intended for new users only. Existing users may not be eligible for the new-user welcome benefits."
+      },
+      {
+        question: "Why is EatClub often cheaper than other food delivery apps?",
+        answer: "EatClub operates several of its own food brands and frequently provides direct discounts, reduced fees, and exclusive promotions, helping users save more on food orders."
+      },
+      {
+        question: "Does EatClub charge delivery, packaging, or platform fees?",
+        answer: "Under this referral promotion, eligible new users receive ₹0 Delivery Fee, ₹0 Packaging Fee, and ₹0 Platform Fee on their first three orders. Standard charges may apply after the promotional period."
+      }
+    ]
+  },
+  {
+    slug: "roarbank-referral-code",
+    brand: "Roarbank",
+    category: [Category.Finance, Category.CreditCard, Category.UPI],
+    title: "Roarbank Referral Link: Get ₹200 Bonus + Lifetime Free Credit Card",
+    summary: "Looking for an active Roarbank referral link? Sign up through our exclusive Roarbank invite link and activate your free RuPay card to get a ₹200 welcome bonus. Roarbank offers a unique 2-in-1 credit card and savings account, up to 20% cashback in selected categories, UPI payments, and up to 62 days interest-free credit.",
+    metaDescription: "Use our Roarbank referral link and get ₹200 signup bonus after activating your card. Lifetime free credit card, up to 20% cashback, UPI payments and 62-day interest-free period.",
+    referralCode: [],
+    referralCodeNote: "Roarbank currently uses referral links instead of referral codes.",
+    referralLink: "https://roar.bank.in/r/LYoyX",
+    signupBonus: "₹200 Welcome Bonus",
+    referralBonus: "₹350 per successful referral",
+    validity: "Limited-time referral offer",
+    steps: [
+      "Open the Roarbank referral link.",
+      "Download and install the Roarbank app.",
+      "Complete mobile number verification and KYC.",
+      "Open your Roarbank savings account.",
+      "Activate your free Roarbank card.",
+      "Receive your ₹200 welcome bonus after meeting eligibility requirements."
+    ],
+    ctaText: "Claim ₹200 Roarbank Bonus",
+    offer: {
+      price: 200,
+      currency: "₹"
+    },
+    howToRefer: [
+      "Open the Roarbank app.",
+      "Navigate to the Refer & Earn section.",
+      "Copy your unique referral link.",
+      "Share the link with friends and family.",
+      "Earn ₹350 whenever an eligible friend joins and activates their account."
+    ],
+    benefits: [
+      {
+        title: "₹0 Joining Fee & ₹0 Annual Fee",
+        description: "Roarbank offers a lifetime free card with no joining charges, annual fees, or hidden costs.",
+        emoji: "🆓"
+      },
+      {
+        title: "Up to 20% Cashback",
+        description: "Choose your preferred cashback categories each month and earn up to 20% cashback on eligible purchases.",
+        emoji: "💸"
+      },
+      {
+        title: "Up to 62 Days Interest-Free Credit",
+        description: "Enjoy one of the longest interest-free periods available, helping you manage expenses more efficiently.",
+        emoji: "📅"
+      },
+      {
+        title: "2-in-1 Credit Card + Savings Account",
+        description: "Roarbank combines a savings account and credit line into a single seamless banking experience.",
+        emoji: "💳"
+      },
+      {
+        title: "UPI QR Payments",
+        description: "Scan and pay QR codes directly while enjoying the convenience of a modern digital banking platform.",
+        emoji: "📱"
+      },
+      {
+        title: "Up to 7% Savings Account Interest",
+        description: "Earn attractive interest on your savings while enjoying credit card benefits from the same account.",
+        emoji: "🏦"
+      }
+    ],
+    faq: [
+      {
+        question: "What is the latest Roarbank referral offer?",
+        answer: "New users who sign up through a valid Roarbank referral link and activate their card can receive a ₹200 welcome bonus. The referrer receives ₹350 for every successful referral."
+      },
+      {
+        question: "Does Roarbank have a referral code?",
+        answer: "No. Roarbank currently uses referral links rather than referral codes. Simply register through a valid invite link to become eligible for the offer."
+      },
+      {
+        question: "Is the Roarbank card lifetime free?",
+        answer: "Yes. Roarbank advertises its card as lifetime free with no joining fee, annual fee, or renewal charges."
+      },
+      {
+        question: "How does the Roarbank cashback program work?",
+        answer: "Users can select two preferred cashback categories every month and earn cashback on eligible purchases. Cashback rates can reach up to 20% depending on the category."
+      },
+      {
+        question: "What is the maximum cashback I can earn?",
+        answer: "Roarbank currently allows users to accumulate up to ₹2,500 cashback per month."
+      },
+      {
+        question: "When can cashback be redeemed?",
+        answer: "Cashback can generally be redeemed after accumulating at least ₹250 in rewards."
+      },
+      {
+        question: "Can I use Roarbank for UPI payments?",
+        answer: "Yes. Roarbank supports QR-code payments and offers a RuPay card that can be used for eligible UPI transactions."
+      },
+      {
+        question: "How much credit limit does Roarbank provide?",
+        answer: "Eligible users may receive an instant credit limit of up to ₹3 lakh depending on profile and approval criteria."
+      },
+      {
+        question: "Is Roarbank good for cashback?",
+        answer: "Roarbank is among the more rewarding lifetime-free cards for users who can maximize its selected cashback categories. The ability to earn up to 20% cashback makes it attractive for category-focused spending."
+      },
+      {
+        question: "What makes Roarbank different from traditional credit cards?",
+        answer: "Roarbank combines a savings account and credit card into a single product. Users can spend from savings first and then use their available credit line, creating a unique hybrid banking experience."
+      }
+    ]
+  },
+  {
     slug: "drinkprime-referral-code",
     brand: "Drinkprime",
     category: Category.WaterPurifier,
@@ -799,8 +1001,8 @@ export const posts: Post[] = [
     category: [Category.Finance, Category.CreditCard, Category.UPI],
     title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
-    metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits explained.",
-    referralCode: ["CSBP3P", "JGQM67", "WX3UJ2", "UKG559", "J6H7E9","N34G9W", "K3DA74", "B3H7PS", "V5S7C8", "B2A254", "P39677", "J7252J", "U9Y89U", "VBL33P", "B2A254", "G9XXVW", "P4FT74", "HMB66T", "UY7Y25", "ZRMVC4", "U27872", "JC6JP8"],
+    metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits.",
+    referralCode: ["JGQM67", "L34T2Q", "E69U27", "AG6Z78", "R7K848", "J7252J", "U9Y89U", "VBL33P", "B2A254", "G9XXVW", "P4FT74", "HMB66T", "UY7Y25", "ZRMVC4", "U27872", "JC6JP8", "WX3UJ2", "UKG559", "J6H7E9", "N34G9W", "K3DA74", "B3H7PS"],
     referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",

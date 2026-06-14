@@ -139,14 +139,14 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                     )}
 
                     {/* Status Indicator & Note */}
-                    {isMultiple && (
+                    {post.referralCodeNote && (
                       <div className="flex items-start gap-3 bg-gradient-to-r from-indigo-50/60 to-white p-4 rounded-2xl border border-indigo-100/60 max-w-lg shadow-sm">
                         <div className="w-8 h-8 rounded-xl bg-white border border-indigo-100 flex items-center justify-center flex-shrink-0 shadow-sm">
                           <Info size={16} className="text-indigo-600" />
                         </div>
                         <div className="flex flex-col gap-1.5">
                           <p className="text-[0.85rem] text-gray-700 leading-snug font-medium">
-                            {post.referralCodeNote || "Try these codes. If one doesn't work, try another."}
+                            {post.referralCodeNote}
                           </p>
                         </div>
                       </div>
