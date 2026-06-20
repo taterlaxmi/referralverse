@@ -150,7 +150,7 @@ describe('Structured Data (Schema) Integrity', () => {
         it('getBreadcrumbSchema uses slugified category URLs for multi-word categories', () => {
             const creditCardPost = posts.find((p) => {
                 const cats = Array.isArray(p.category) ? p.category : [p.category];
-                return cats.includes(Category.CreditCard);
+                return cats[0] === Category.CreditCard;
             });
             expect(creditCardPost).toBeDefined();
 
@@ -163,7 +163,7 @@ describe('Structured Data (Schema) Integrity', () => {
         it('getBreadcrumbSchema slugifies Water Purifier category', () => {
             const waterPost = posts.find((p) => {
                 const cats = Array.isArray(p.category) ? p.category : [p.category];
-                return cats.includes(Category.WaterPurifier);
+                return cats[0] === Category.WaterPurifier;
             });
             expect(waterPost).toBeDefined();
 

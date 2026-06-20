@@ -6,10 +6,10 @@ ReferralVerse is a curated platform that helps users discover and share verified
 
 ## Site Structure
 
-- **Homepage** (`/`): Browse all referral offers with category filtering and search.
-- **Post Pages** (`/{slug}`): Detailed referral offer pages with referral code, signup steps, benefits, T&C, proof screenshots, and FAQs.
-- **Category Pages** (`/category/{slug}`): Browse offers filtered by category (e.g., Credit Cards, Water Purifiers, Fitness).
-- **Referral Aggregator** (`/referral-aggregator`): A consolidated view of the latest referral codes.
+- [**Homepage**](https://referralverse.in/): Browse all referral offers with category filtering and search.
+- [**Post Pages Example**](https://referralverse.in/phonepe-sbi-credit-card-referral-code): Detailed referral offer pages with referral code, signup steps, benefits, T&C, proof screenshots, and FAQs.
+- [**Category Pages Example**](https://referralverse.in/category/credit-card): Browse offers filtered by category (e.g., Credit Cards, Water Purifiers, Fitness).
+- [**Referral Aggregator**](https://referralverse.in/referral-aggregator): A consolidated view of the latest referral codes.
 
 ## Categories Covered
 
@@ -32,5 +32,5 @@ Each referral offer page typically includes:
 
 ## Contact
 
-- Website: https://referralverse.in
-- Sitemap: https://referralverse.in/sitemap.xml
+- [Website](https://referralverse.in)
+- [Sitemap](https://referralverse.in/sitemap.xml)
