@@ -1487,7 +1487,7 @@ export const posts: Post[] = [
     title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits.",
-    referralCode: ["J949TM", "P9J22E", "X8ZY86", "U27872", "HPD448", "R56924", "DWUGM5", "JC6JP8", "L6MJ48", "TKWQ37", "S868U3", "X37SXS"],
+    referralCode: ["J6G248","J27JQA","NG77WU","L3VB79","BL224X","L343GD","L89338","J949TM"],
     referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",
