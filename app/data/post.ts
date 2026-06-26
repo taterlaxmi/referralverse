@@ -1487,7 +1487,7 @@ export const posts: Post[] = [
     title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits.",
-    referralCode: ["J6G248","J27JQA","NG77WU","L3VB79","BL224X","L343GD","L89338","J949TM"],
+    referralCode: ["M9QF2C","UDL46E", "B59E86", "TTH8JB", "BP3625", "B59E86", "G6MC46", "BFJ37B", "S7L536", "ZJ79GM", "D5BS35"],
     referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",
@@ -2424,13 +2424,13 @@ export const posts: Post[] = [
     brand: "Navi",
     category: Category.UPI,
     title:
-      "Navi Referral Code: GS2T0s (Get Rewards on Signup & Referrals)",
+      "Navi Referral Code: 6NHXsp (Get Rewards on Signup & Referrals)",
     summary:
-      "Use the latest Navi referral code GS2T0s while signing up to unlock referral rewards and start using Navi's financial services. Navi offers UPI payments, loans, insurance, and investment products through a single app.",
+      "Use the latest Navi referral code 6NHXsp while signing up to unlock referral rewards and start using Navi's financial services. Navi offers UPI payments, loans, insurance, and investment products through a single app.",
     metaDescription:
-      "Use Navi referral code GS2T0s and sign up through the referral link to earn rewards. Access UPI payments, loans, insurance and other financial services on Navi.",
-    referralCode: "GS2T0s",
-    referralLink: "https://r.navi.com/6txDZC",
+      "Use Navi referral code 6NHXsp and sign up through the referral link to earn rewards. Access UPI payments, loans, insurance and other financial services on Navi.",
+    referralCode: "6NHXsp",
+    referralLink: "https://r.navi.com/5YqsjC",
     signupBonus:
       "Referral rewards may vary based on ongoing Navi promotions",
     referralBonus:
@@ -2440,7 +2440,7 @@ export const posts: Post[] = [
       'Click on the "Join Navi" button.',
       "Download the Navi app and create an account.",
       "Complete mobile verification and required KYC steps.",
-      "Enter referral code GS2T0s if prompted during registration.",
+      "Enter referral code 6NHXsp if prompted during registration.",
       "Complete the required activities to become eligible for referral rewards.",
     ],
     ctaText: "Join Navi",
@@ -2484,12 +2484,12 @@ export const posts: Post[] = [
       {
         question: "What is the latest Navi referral code?",
         answer:
-          "The latest Navi referral code is GS2T0s.",
+          "The latest Navi referral code is 6NHXsp.",
       },
       {
         question: "How do I use the Navi referral code?",
         answer:
-          "Download the Navi app, sign up using the referral link, and enter GS2T0s during registration if required.",
+          "Download the Navi app, sign up using the referral link, and enter 6NHXsp during registration if required.",
       },
       {
         question: "Is Navi referral code free to use?",
@@ -2512,11 +2512,11 @@ export const posts: Post[] = [
     slug: "gpay-referral-code",
     brand: "Google Pay",
     category: Category.UPI,
-    title: "GPay Referral Code: 4r37W (Google Pay Refer & Earn Rewards)",
-    summary: "Use the latest GPay referral code 4r37W while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
-    metaDescription: "Use Google Pay referral code 4r37W to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
-    referralCode: "4r37W",
-    referralLink: "https://gpay.app.goo.gl/invite-4r37W",
+    title: "GPay Referral Code: yn5i82v (Google Pay Refer & Earn Rewards)",
+    summary: "Use the latest GPay referral code yn5i82v while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
+    metaDescription: "Use Google Pay referral code yn5i82v to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
+    referralCode: "yn5i82v",
+    referralLink: "https://gpay.app.goo.gl/invite-yn5i82v",
     signupBonus: "Rewards vary depending on Google Pay's current referral campaign",
     referralBonus: "₹21",
     validity: "Valid for eligible new Google Pay users",
@@ -2524,7 +2524,7 @@ export const posts: Post[] = [
       'Click on the "Join Google Pay" button.',
       "Download and install the Google Pay (GPay) app.",
       "Register using your mobile number linked to your bank account.",
-      "Enter referral code 4r37W if prompted during signup.",
+      "Enter referral code yn5i82v if prompted during signup.",
       "Complete your first eligible UPI transaction to qualify for referral rewards.",
     ],
     ctaText: "Join Google Pay",
@@ -2568,12 +2568,12 @@ export const posts: Post[] = [
       {
         question: "What is the latest GPay referral code?",
         answer:
-          "The latest Google Pay referral code is 4r37W.",
+          "The latest Google Pay referral code is yn5i82v.",
       },
       {
         question: "How do I use the Google Pay referral code?",
         answer:
-          "Install Google Pay, register your account, link your bank account, and enter referral code 4r37W if prompted during signup.",
+          "Install Google Pay, register your account, link your bank account, and enter referral code yn5i82v if prompted during signup.",
       },
       {
         question: "Does Google Pay have a refer and earn program?",

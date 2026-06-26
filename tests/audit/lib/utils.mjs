@@ -121,9 +121,15 @@ export function collectFailures(pages) {
       failures.push(`${page.path}: ${failedChecks.join('; ') || 'technical audit failed'}`);
     }
     if (page.performance?.passed === false) {
-      failures.push(
-        `${page.path}: performance score ${page.performance.score} below ${THRESHOLDS.performanceScoreMin}`,
-      );
+      const p = page.performance;
+      const reasons = [];
+      if (p.score < THRESHOLDS.performanceScoreMin) reasons.push(`score ${p.score} below ${THRESHOLDS.performanceScoreMin}`);
+      if (p.lcpMs !== null && p.lcpMs > THRESHOLDS.lcpMsMax) reasons.push(`LCP ${p.lcp} above ${THRESHOLDS.lcpMsMax}ms`);
+      
+      const clsVal = p.cls !== 'N/A' ? parseFloat(p.cls) : null;
+      if (clsVal !== null && clsVal > THRESHOLDS.clsMax) reasons.push(`CLS ${p.cls} above ${THRESHOLDS.clsMax}`);
+      
+      failures.push(`${page.path}: performance failed - ${reasons.join(', ')}`);
     }
   }
   return failures;
