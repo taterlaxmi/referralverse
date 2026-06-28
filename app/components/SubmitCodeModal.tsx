@@ -15,7 +15,8 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
 
   if (!isOpen) return null;
 
-  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://formspree.io/f/mvzyyapv";
+  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://api.web3forms.com/submit";
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
           Accept: "application/json",
         },
         body: JSON.stringify({
+          access_key: accessKey,
           "App Name": appName,
           "Referral Code": code.trim(),
         }),

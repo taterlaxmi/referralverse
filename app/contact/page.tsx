@@ -15,7 +15,8 @@ export default function ContactPage() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://formspree.io/f/mvzyyapv";
+  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://api.web3forms.com/submit";
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ export default function ContactPage() {
     setErrorMessage("");
 
     let payload: any = {
+      access_key: accessKey,
       "Inquiry Type": inquiryType === 'general' ? 'General Inquiry' : 'Code Submission',
     };
 
@@ -69,11 +71,11 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FDFDFF]">
       <Header />
-      
+
       <main className="flex-grow pt-32 pb-16 px-4">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            
+
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
@@ -115,7 +117,7 @@ export default function ContactPage() {
             {/* Form Section */}
             <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-200/50 border border-slate-100">
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Send a Message</h2>
-              
+
               {status === "success" ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -244,7 +246,7 @@ export default function ContactPage() {
                 </form>
               )}
             </div>
-            
+
           </div>
         </div>
       </main>

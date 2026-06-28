@@ -693,13 +693,10 @@ export const posts: Post[] = [
     brand: "Drinkprime",
     category: Category.WaterPurifier,
     title: "DrinkPrime Referral Code (₹200 Bonus + 7-Day Free Trial)",
-    summary:
-      "DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.",
-    metaDescription:
-      "Verified Drink Prime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.",
+    summary: "DrinkPrime is a smart water purifier subscription service ideal for renters and families who want clean drinking water without buying an RO purifier. Use the latest DrinkPrime referral code to get a 7-day free trial and ₹200 instant discount on your first subscription. Plans start from ₹349/month with free installation, maintenance, filter replacements, and relocation. This offer is valid for new users in select Indian cities.",
+    metaDescription: "Verified Drink Prime referral code for new users. Get ₹200 off + 7-day free trial. No installation or maintenance charges. Plans start at ₹349/month.",
     referralCode: "ZIHCQMNY",
-    referralLink:
-      "http://drinkprime.in/lp46?referral_code=ZIHCQMNY&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button",
+    referralLink: "http://drinkprime.in/lp46?referral_code=ZIHCQMNY&utm_campaign=subscriber_referral&utm_medium=app&utm_source=whatsapp_share_button",
     signupBonus: "₹200 Off",
     referralBonus: "₹1000",
     validity: "Valid for new users only",
@@ -1098,11 +1095,11 @@ export const posts: Post[] = [
     brand: "Tata Neu",
     category: Category.CreditCard,
     title:
-      "Tata Neu Credit Card Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback)",
+      "Tata Neu Referral Code : RAHU7325 (Get ₹500 Bonus + 5% Cashback on Credit Card)",
     summary:
       "Enter the world of rewards and savings with the Tata Neu HDFC Bank Credit Card – powered by RuPay/Visa. Unlock savings of up to 10% and exclusive offers across fashion, groceries, electronics, medicines, flights and much more with NeuCard. Enjoy Tata Neu referral benefits including a ₹500 joining bonus and additional NeuCoins on your first spend.",
     metaDescription:
-      "Apply with Tata Neu credit card referral code RAHU7325 to get ₹500 joining bonus + 500 NeuCoins. Enjoy up to 10% cashback, lounge access & exclusive rewards.",
+      "Apply with Tata Neu app referral code RAHU7325 to get ₹500 joining bonus. Learn how to refer and earn, explore pay later, personal loan & forex card invite codes.",
     referralCode: "RAHU7325",
     referralLink:
       "https://www.tatadigital.com/finance/creditcard/product-detail?referralCode=RAHU7325&amp;utm_content=RAHU7325",
@@ -1338,6 +1335,27 @@ export const posts: Post[] = [
           ],
         },
       },
+      {
+        question: "Is there a Tata Neu Pay Later referral code?",
+        answer:
+          "Currently, Tata Neu Pay Later (Tata Pay Later) does not have a separate referral code or invite code. However, you can use the general Tata Neu app referral code (RAHU7325) while signing up to the app, which might unlock access to Pay Later services along with sign-up rewards.",
+      },
+      {
+        question: "How to refer Tata Neu app and earn?",
+        answer:
+          "To refer and earn on the Tata Neu app, go to the 'Refer & Earn' section in the app menu. Share your unique Tata Neu referral code or link with friends. When they sign up and make an eligible transaction, you both earn NeuCoins.",
+      },
+      {
+        question: "Is there a Tata Neu Forex Card or IndusInd Bank Forex Card referral code?",
+        answer:
+          "The Tata Neu IndusInd Bank Forex Card sometimes offers referral bonuses. While the standard Tata Neu referral code applies to the app and HDFC credit cards, check the Forex section in the app for any specific invite code or promotional bonus before applying.",
+      },
+      {
+        question: "Can I use a referral code for Tata Neu Personal Loan?",
+        answer:
+          "Tata Neu occasionally runs referral programs for personal loans. You can usually find if a specific Tata Neu personal loan referral code is active by checking the 'Loans' section in your Tata Neu app. New users can sign up to the app with code RAHU7325 to start.",
+      },
+
     ],
   },
   {
@@ -1345,12 +1363,10 @@ export const posts: Post[] = [
     brand: "SuperMoney",
     category: Category.CreditCard,
     title: "SuperMoney Credit Card Referral Link: Get ₹500 Bonus + Upto 5% Cashback",
-    summary:
-      "SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹500 cashback on your first payment.",
-    metaDescription:
-      "Use the latest SuperMoney Credit Card referral link to get a Lifetime Free RuPay credit card backed by Utkarsh, Kotak or Axis Bank. Enjoy up to 5% cashback on UPI.",
+    summary: "SuperMoney offers a Lifetime Free (LTF) RuPay credit card co-branded with top banks (Utkarsh, Kotak 811, and Axis). Use it for your daily UPI payments to earn up to 5% cashback on merchants, plus flat cashback on standard UPI scans. Sign up via the latest SuperMoney referral link to earn up to ₹500 cashback on your first payment.",
+    metaDescription: "Use the latest SuperMoney Credit Card referral link to get a Lifetime Free RuPay credit card backed by Utkarsh, Kotak or Axis Bank. Enjoy up to 5% cashback on UPI.",
     referralCode: [],
-    referralLink: "https://link.super.money/gJGY9KiLKUb",
+    referralLink: "https://link.super.money/FP0t8iXvk4b",
     signupBonus: "₹500 on Credit Card",
     referralBonus: "Upto ₹500(Card) and Upto ₹50(Only UPI App)",
     ctaText: "SuperMoney Card Referral Link",
@@ -1487,7 +1503,7 @@ export const posts: Post[] = [
     title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits.",
-    referralCode: ["M9QF2C","UDL46E", "B59E86", "TTH8JB", "BP3625", "B59E86", "G6MC46", "BFJ37B", "S7L536", "ZJ79GM", "D5BS35"],
+    referralCode: ["P9FAHU", "DGPAKP", "J9D8DA", "BT9Y4F", "Y37467", "F549G4", "F73NYT", "DJ2S2C", "Z97LX9", "B59E86", "G6MC46", "BFJ37B", "S7L536", "ZJ79GM", "D5BS35"],
     referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",
@@ -2285,18 +2301,13 @@ export const posts: Post[] = [
     slug: "firstclub-referral-code",
     brand: "FirstClub",
     category: Category.Grocery,
-    title:
-      "FirstClub Referral Code: Get Exclusive Welcome Gifts + Premium Grocery Access",
-    summary:
-      "FirstClub is India's quality-first grocery delivery app focused on clean ingredients, verified sourcing, and premium everyday essentials. The platform bans 200+ harmful ingredients including artificial preservatives, sweeteners, benzoates, and chemical additives. New users can join using our FirstClub referral code to unlock curated welcome gifts and experience trusted groceries delivered fast.",
-    metaDescription:
-      "Use FirstClub referral code NKNKLB to join India's premium grocery app. Get welcome gifts, clean groceries, and products free from harmful ingredients.",
+    title: "FirstClub Referral Code: Get Exclusive Welcome Gifts + Premium Grocery Access",
+    summary: "FirstClub is India's quality-first grocery delivery app focused on clean ingredients, verified sourcing, and premium everyday essentials. The platform bans 200+ harmful ingredients including artificial preservatives, sweeteners, benzoates, and chemical additives. New users can join using our FirstClub referral code to unlock curated welcome gifts and experience trusted groceries delivered fast.",
+    metaDescription: "Use FirstClub referral code NKNKLB to join India's premium grocery app. Get welcome gifts, clean groceries, and products free from harmful ingredients.",
     referralCode: "NKNKLB",
     referralLink: "https://go.firstclub.co.in/u3g6JIGbb3b",
-    signupBonus:
-      "Exclusive curated welcome gifts for new users",
-    referralBonus:
-      "Referral rewards may vary based on ongoing campaigns",
+    signupBonus: "Exclusive curated welcome gifts for new users",
+    referralBonus: "Referral rewards may vary based on ongoing campaigns",
     validity: "Limited time offer",
     steps: [
       "Download the FirstClub app using the referral link.",
@@ -2512,9 +2523,9 @@ export const posts: Post[] = [
     slug: "gpay-referral-code",
     brand: "Google Pay",
     category: Category.UPI,
-    title: "GPay Referral Code: yn5i82v (Google Pay Refer & Earn Rewards)",
-    summary: "Use the latest GPay referral code yn5i82v while signing up for Google Pay. Complete your first eligible transaction to unlock referral rewards and start using one of India's most popular UPI payment apps.",
-    metaDescription: "Use Google Pay referral code yn5i82v to earn signup rewards. Download GPay, complete registration and make your first payment to become eligible for referral benefits.",
+    title: "GPay Referral Code: yn5i82v (Google Pay Refer & Earn Amount)",
+    summary: "Use the latest GPay referral code yn5i82v while signing up for Google Pay. Complete your first eligible transaction to unlock the referral reward and start using one of India's most popular UPI payment apps.",
+    metaDescription: "Use Google Pay referral code yn5i82v for max invite reward. Learn how to use GPay referral codes, refer friends, and check the refer & earn amount.",
     referralCode: "yn5i82v",
     referralLink: "https://gpay.app.goo.gl/invite-yn5i82v",
     signupBonus: "Rewards vary depending on Google Pay's current referral campaign",
@@ -2571,14 +2582,19 @@ export const posts: Post[] = [
           "The latest Google Pay referral code is yn5i82v.",
       },
       {
-        question: "How do I use the Google Pay referral code?",
+        question: "How to use referral code in GPay?",
         answer:
-          "Install Google Pay, register your account, link your bank account, and enter referral code yn5i82v if prompted during signup.",
+          "To use a referral code in GPay, first download the app. In the top right corner, tap your profile icon, then select the three dots and click 'Referral Code'. Enter the GPay code yn5i82v before making your first payment to claim the invite reward.",
       },
       {
-        question: "Does Google Pay have a refer and earn program?",
+        question: "What is the Google Pay refer and earn amount?",
         answer:
-          "Yes. Google Pay frequently offers refer and earn rewards when eligible users invite friends who complete signup and qualifying transactions.",
+          "The GPay refer and earn amount fluctuates based on current promotional campaigns. Typically, the inviter earns between ₹101 and ₹201 as a referral reward, while the new user using the referral code gets a signup bonus of ₹21 after their first transaction.",
+      },
+      {
+        question: "How to refer GPay to friends?",
+        answer:
+          "To refer GPay, open the app and scroll down to the 'Offers & Rewards' section. Tap on 'Refer & Earn' to find your unique Google Pay invite link and code. Share this GPay code with friends via WhatsApp or SMS to earn the referral amount when they join.",
       },
       {
         question: "Can existing users use a GPay referral code?",
@@ -2597,5 +2613,95 @@ export const posts: Post[] = [
       },
     ],
   },
-
+  {
+    slug: "urban-company-referral-code",
+    brand: "Urban Company",
+    category: Category.HomeServices,
+    title: "Urban Company Referral Code: Get ₹100 Discount on Home Services",
+    summary: "Use our exclusive Urban Company referral link to get an instant ₹100 discount voucher on your first home service booking. From cleaning to salon at home, experience premium quality services from verified professionals.",
+    metaDescription: "Looking for an Urban Company referral code? Use our invite link to get an instant ₹100 off your first booking. Discover top-rated home services today.",
+    referralCode: [],
+    referralLink: "https://m.urbancompany.com/ImbW/1b6rlsam",
+    signupBonus: "₹100 Voucher",
+    referralBonus: "₹100 Scratch Card",
+    validity: "Reward expires in 4 weeks",
+    steps: [
+      'Click on the "Get Urban Company Voucher" button.',
+      "Install the Urban Company app using the provided referral link.",
+      "Sign up as a new user to claim your instant ₹100 discount voucher.",
+      "Book your first service and apply the voucher at checkout.",
+    ],
+    ctaText: "Get Urban Company Voucher",
+    offer: {
+      price: 100,
+      currency: "₹",
+    },
+    tcImage: "/urban-company-referral-terms-and-conditions.webp",
+    tcImageAlt: "Urban Company terms and conditions details",
+    termsAndConditions: [
+      "The person being referred must be a new user who hasn't tried any Urban Company service before.",
+      "The referrer must have gotten at least one UC service delivered to be eligible for rewards.",
+      "Referral credits can only be redeemed as a discount on services availed on the UC app or website.",
+      "If multiple referral links are clicked, only the first link in chronological order will be counted for validation.",
+      "Rewards are strictly non-transferable and must be used on the same device ID.",
+      "You can only claim referral rewards for up to a maximum of 10 new users.",
+    ],
+    benefits: [
+      {
+        title: "Trusted Home Services",
+        description:
+          "Book verified, background-checked professionals for cleaning, repairs, salon services, and more directly at your home.",
+        emoji: "🏠",
+      },
+      {
+        title: "Instant ₹100 Signup Reward",
+        description:
+          "New users receive a flat ₹100 discount voucher simply by signing up through a valid referral link.",
+        emoji: "💸",
+      },
+      {
+        title: "Earn Up to 10 Scratch Cards",
+        description:
+          "Refer your friends and family to earn up to 10 scratch cards, each worth ₹100 in redeemable UC credits.",
+        emoji: "🎁",
+      },
+    ],
+    faq: [
+      {
+        question: "How do I get an Urban Company referral code?",
+        answer:
+          "Urban Company currently uses referral links instead of alphanumeric codes. Simply click the referral link provided to install the app and your ₹100 discount voucher will be automatically applied.",
+      },
+      {
+        question: "Who can I refer to Urban Company?",
+        answer:
+          "You can refer anyone who hasn't tried that specific service before, or anyone who hasn't tried any Urban Company service before.",
+      },
+      {
+        question: "What will I earn by referring friends on Urban Company?",
+        answer:
+          "When your friend successfully completes their first service, you will earn a scratch card containing a redeemable amount of ₹100 on all UC services.",
+      },
+      {
+        question: "Will these Urban Company rewards have an expiry duration?",
+        answer:
+          "Yes. Each reward will have an expiry period which is visible in the wallet section of the app. Your signup reward specifically expires in 4 weeks.",
+      },
+      {
+        question: "How many scratch cards can you earn from Urban Company referrals?",
+        answer:
+          "You can refer a maximum of 10 people and earn 10 scratch cards from referrals.",
+      },
+      {
+        question: "Can I gift these Urban Company rewards?",
+        answer:
+          "No. These rewards are non-transferable promotional discounts which can only be used by the customer they are intended for.",
+      },
+      {
+        question: "I already have some UC credits. Can I redeem both?",
+        answer:
+          "UC credits will take precedence over UC rewards when making a payment on the platform.",
+      },
+    ],
+  },
 ];

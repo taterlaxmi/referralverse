@@ -6,7 +6,8 @@ export enum Category {
   Shopping = "Shopping",
   WaterPurifier = "Water Purifier",
   Fitness = "Fitness",
-  Grocery = "Grocery"
+  Grocery = "Grocery",
+  HomeServices = "Home Services"
 }
 
 export interface Post {

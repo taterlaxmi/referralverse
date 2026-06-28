@@ -247,6 +247,7 @@ export default async function PostPage({ params }: Props) {
                   height={400}
                   className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
                   sizes="(max-width: 448px) 100vw, 448px"
+                  priority
                 />
               </div>
             </section>
@@ -307,6 +308,7 @@ export default async function PostPage({ params }: Props) {
                       height={400}
                       className="w-full max-w-md rounded-2xl shadow-xl border border-gray-200 object-cover"
                       sizes="(max-width: 448px) 100vw, 448px"
+                      priority
                     />
                   </div>
                 )}

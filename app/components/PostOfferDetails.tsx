@@ -182,7 +182,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                   href={post.referralLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline hover:text-indigo-700 transition-colors"
+                  className="referral-link-btn inline-flex items-center gap-1.5 text-indigo-600 font-medium hover:underline hover:text-indigo-700 transition-colors"
                 >
                   <LinkIcon size={16} />
                   {post.ctaText}
