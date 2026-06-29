@@ -1503,8 +1503,8 @@ export const posts: Post[] = [
     title: "Kiwi Referral Code: Get ₹100 Cashback + 1.5% UPI Scan & Pay",
     summary: "The Kiwi app is a digital banking platform that offers a RuPay credit card which helps you earn up to 2% cashback (Neon users) or 1.5% (regular users) on Scan & Pay transactions. With lifetime free options, it is widely considered the best credit card for UPI payments in India. Join the Kiwi Neon membership for exclusive 5% milestone rewards and apply with a RuPay invite code today.",
     metaDescription: "Use our 6-digit Kiwi app invite code to get ₹100 cashback on your first transaction. Active Kiwi referral codes, Neon rewards, 1.5% cashback & RuPay benefits.",
-    referralCode: ["P9FAHU", "DGPAKP", "J9D8DA", "BT9Y4F", "Y37467", "F549G4", "F73NYT", "DJ2S2C", "Z97LX9", "B59E86", "G6MC46", "BFJ37B", "S7L536", "ZJ79GM", "D5BS35"],
-    referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click",
+    referralCode: [],
+    referralCodeNote: "Each Referral code works for max 3 users. If this one is exhausted, please click 'Show more codes'",
     referralLink: "https://gokiwi.sng.link/E5owq/afdy/3m4a",
     signupBonus: "₹100 Cashback on first UPI transaction",
     referralBonus: "₹1500 per successful referral",
@@ -2434,88 +2434,107 @@ export const posts: Post[] = [
     slug: "navi-referral-code",
     brand: "Navi",
     category: Category.UPI,
-    title:
-      "Navi Referral Code: 6NHXsp (Get Rewards on Signup & Referrals)",
-    summary:
-      "Use the latest Navi referral code 6NHXsp while signing up to unlock referral rewards and start using Navi's financial services. Navi offers UPI payments, loans, insurance, and investment products through a single app.",
-    metaDescription:
-      "Use Navi referral code 6NHXsp and sign up through the referral link to earn rewards. Access UPI payments, loans, insurance and other financial services on Navi.",
+    title: "Navi UPI Referral Code 6NHXsp: How to Use & Get Rewards",
+    summary: "Navi offers personal loans, home loans, auto loans, health insurance, life insurance, mutual fund investments, and other financial products—all accessible from one app. Signup with navi Upi Referral Link and get navi referral reward worth ₹5 + earn up to ₹12,000 coins(i.e ₹120) per referral. Use Navi UPI referral code 6NHXsp to unlock signup rewards and referral bonuses.",
+    metaDescription: "How to use Navi UPI referral code 6NHXsp - Step-by-step guide to enter referral code in Navi app. Get signup rewards, referral bonus, and earn on each friend referral.",
     referralCode: "6NHXsp",
+    referralCodeNote: "Use the referral link to automatically apply the code during signup. The referral code 6NHXsp cannot be manually entered after account creation—you must sign up through the referral link to activate rewards.",
     referralLink: "https://r.navi.com/5YqsjC",
-    signupBonus:
-      "Referral rewards may vary based on ongoing Navi promotions",
-    referralBonus:
-      "Earn rewards when eligible friends sign up and complete required actions",
-    validity: "Valid for new Navi users",
+    signupBonus: "₹5",
+    referralBonus: "Up to 12,000 coins(i.e. ₹120)",
+    validity: "Valid for new Navi UPI users | Monthly cap: Up to 1000 referrals per month",
     steps: [
-      'Click on the "Join Navi" button.',
-      "Download the Navi app and create an account.",
-      "Complete mobile verification and required KYC steps.",
-      "Enter referral code 6NHXsp if prompted during registration.",
-      "Complete the required activities to become eligible for referral rewards.",
+      "Click the referral link to download the Navi app.",
+      "Create your account with mobile number and email.",
+      "Complete email and SMS verification.",
+      "Make your first UPI transaction to get ₹5 instant credit and activate rewards eligibility.",
+      "Share your unique referral link with friends and family.",
+      "Friends sign up using your link and make UPI payments in first 7 days.",
+      "Earn coins based on their UPI usage: 7,000 coins (1 day usage) + 3,000 coins (3 days) + 2,000 coins (5 days).",
     ],
-    ctaText: "Join Navi",
+    howToRefer: [
+      "Open the Navi app and scroll to bottom section and you will see 'Refer & Earn' section.",
+      "Copy your unique referral code 6NHXsp or referral link.",
+      "Share it with friends and family via messages, social media, or email.",
+      "When they sign up using your link and make UPI payments, referral rewards are credited as per the current program.",
+      "Track your referral earnings and coin balance directly within the Navi app.",
+    ],
+    heroImage: "/navi-upi-referral-code.webp",
+    proofImage: "/navi-referral-code-reward-proof.webp",
+    proofImageHeader: "Proof of Navi UPI Refer and Earn",
+    proofImageAlt: "Screenshot of navi referral rewards",
+    ctaText: "Join Navi with Referral Link",
     offer: {
-      price: 0,
+      price: 5,
       currency: "₹",
     },
     benefits: [
       {
-        title: "Fast & Secure UPI Payments",
-        description:
-          "Navi provides a simple UPI payment experience that allows users to transfer money, scan QR codes, and make daily payments directly from the app.",
-        emoji: "📱",
+        title: "Instant Money Transfers with Zero Transaction Fees",
+        description: "Send money instantly to any bank account or UPI ID. Navi UPI offers guaranteed security and reliable payments with zero processing fees on all UPI transactions.",
+        emoji: "💸",
       },
       {
-        title: "Access Multiple Financial Products",
-        description:
-          "Users can access loans, insurance, mutual funds, and other financial services from a single platform without needing multiple apps.",
-        emoji: "🏦",
+        title: "Earn Up to 12,000 Coins Per Referral",
+        description: "Get 7,000 coins when friend uses Navi UPI for 1 day, 3,000 coins for 3 days, and 2,000 coins for 5 days in their first week. Monthly cap: earn from up to 1,000 referrals.",
+        emoji: "🪙",
       },
       {
-        title: "Simple Digital Onboarding",
-        description:
-          "Account creation and verification can be completed online, helping new users get started quickly.",
+        title: "One-Click UPI Lite Payments (No PIN Required)",
+        description: "Complete transactions in just two easy steps with UPI Lite feature. No need to enter PIN every time—faster and more convenient for everyday payments.",
         emoji: "⚡",
       },
       {
-        title: "Refer & Earn Program",
-        description:
-          "Navi regularly runs referral campaigns that allow users to invite friends and earn rewards after successful signups and qualifying actions.",
-        emoji: "🎁",
+        title: "Scan & Pay at Any Merchant",
+        description: "Scan QR codes at physical stores and digital merchants. Pay directly without carrying cash or cards. Supported across all UPI-enabled payment terminals.",
+        emoji: "📱",
       },
       {
-        title: "Modern User-Friendly Interface",
-        description:
-          "The Navi app offers a clean design and streamlined experience for payments and financial management.",
-        emoji: "✨",
+        title: "RuPay Credit Card Integration",
+        description: "Link your RuPay credit card to Navi UPI and earn rewards on every transaction. Get more time to repay bills with cashback benefits and credit card statement tracking.",
+        emoji: "💳",
       },
     ],
     faq: [
       {
-        question: "What is the latest Navi referral code?",
+        question: "What is the latest Navi UPI referral code?",
         answer:
-          "The latest Navi referral code is 6NHXsp.",
+          "The latest Navi referral code is 6NHXsp. Use the referral link above to automatically apply this code during signup—manual code entry after account creation is not supported.",
       },
       {
-        question: "How do I use the Navi referral code?",
+        question: "How do I use the referral code in Navi UPI?",
         answer:
-          "Download the Navi app, sign up using the referral link, and enter 6NHXsp during registration if required.",
+          "Click the referral link provided above, download the Navi app, and sign up. The referral code 6NHXsp will be automatically applied. You don't need to enter it manually during registration.",
       },
       {
-        question: "Is Navi referral code free to use?",
+        question: "How to enter referral code in Navi UPI app?",
         answer:
-          "Yes, referral codes are free to use for eligible new users.",
+          "The referral code is applied automatically when you sign up through the referral link. Navi doesn't have a manual 'Enter Referral Code' field after account creation, so you must use the referral link before signing up.",
       },
       {
-        question: "Does Navi have a refer and earn program?",
+        question: "Can I use the Navi referral code after creating my account?",
         answer:
-          "Yes, Navi periodically offers referral rewards when users invite friends who complete qualifying actions.",
+          "No, the referral code must be applied during signup through the referral link. You cannot enter or apply the code after your account is already created.",
       },
       {
-        question: "What services does Navi provide?",
+        question: "How much can I earn from Navi referrals?",
         answer:
-          "Navi offers financial services such as UPI payments, personal loans, insurance, and investment products.",
+          "You can earn up to 12,000 coins per referral. Your friends earn 7,000 coins for 1 day of UPI usage in the first week, 3,000 coins for 3 days, and 2,000 coins for 5 days. Monthly cap: you can earn from up to 1,000 referrals per month.",
+      },
+      {
+        question: "What are eligible payments for Navi referral rewards?",
+        answer:
+          "Only payments made via Navi UPI are eligible for referral rewards—not self-transfers or peer-to-peer transfers within the same app. Your friend must make actual UPI payments to merchants or other bank accounts to trigger rewards. Eligible transactions include utility bills, mobile recharges, merchant purchases, and money transfers to other UPI IDs.",
+      },
+      {
+        question: "How long do my friends have to make UPI payments to earn referral rewards?",
+        answer:
+          "Your friends must make UPI payments within the first 7 days of signing up. The more days they use Navi UPI in this first week, the more coins you earn: 1 day = 7,000 coins, 3 days = 3,000 coins, 5 days = 2,000 coins.",
+      },
+      {
+        question: "Is there a limit on how many people I can refer?",
+        answer:
+          "Yes, there is a monthly referral cap. You can earn referral rewards for up to 1,000 referrals each month. Your limit resets at the start of the next month, and you'll be eligible to earn rewards for new referrals again.",
       },
     ],
   },

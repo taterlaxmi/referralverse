@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import type { Post } from "../types";
 import { Copy as CopyIcon, Check as CheckIcon, Link as LinkIcon, Gift, RefreshCcw, Info, Send } from "lucide-react";
 import SubmitCodeModal from "./SubmitCodeModal";
+import { getDisplayReferralCodes } from "../lib/referral-codes";
 
 function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
   const [isCopied, setIsCopied] = useState(false);
@@ -35,19 +36,28 @@ function CopyButton({ code, onCopy }: { code: string; onCopy?: () => void }) {
   );
 }
 
-export default function PostOfferDetails({ post }: { post: Post }) {
+export default function PostOfferDetails({ post, dynamicReferralCodes }: { post: Post; dynamicReferralCodes?: string[] }) {
   const maxCodes = 4;
   const isMultiple = Array.isArray(post.referralCode);
-  const referralCodesArray = isMultiple ? (post.referralCode as string[]) : [post.referralCode as string];
+  const staticCodesArray = isMultiple ? (post.referralCode as string[]) : [post.referralCode as string];
+  const dynamicCodesArray = Array.isArray(dynamicReferralCodes) ? dynamicReferralCodes : [];
+  const availableCodes = dynamicCodesArray.length > 0 ? dynamicCodesArray : staticCodesArray;
+  const referralCodesArray = availableCodes.filter((code): code is string => Boolean(code));
 
   // Initially (SSR), just take the first N codes to ensure static HTML has codes for Googlebot
   const initialCodes = referralCodesArray.slice(0, maxCodes);
 
-  const [displayCodes, setDisplayCodes] = useState<string[]>(initialCodes);
+  const [displayCodes, setDisplayCodes] = useState<string[]>(
+    getDisplayReferralCodes(dynamicReferralCodes, initialCodes, maxCodes)
+  );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Randomize the codes client-side only (after hydration) to distribute usage fairly
   useEffect(() => {
+    if (post.slug === "kiwi-referral-code") {
+      setDisplayCodes(getDisplayReferralCodes(dynamicReferralCodes, initialCodes, maxCodes));
+      return;
+    }
+
     if (isMultiple && referralCodesArray.length > 1) {
       const shuffleAndSet = () => {
         const shuffled = [...referralCodesArray].sort(() => 0.5 - Math.random());
@@ -56,10 +66,10 @@ export default function PostOfferDetails({ post }: { post: Post }) {
       shuffleAndSet();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [post.referralCode, isMultiple]);
+  }, [post.referralCode, isMultiple, post.slug, dynamicReferralCodes]);
 
   const handleRotateCodes = () => {
-    if (isMultiple && referralCodesArray.length > maxCodes) {
+    if (referralCodesArray.length > maxCodes) {
       const shuffled = [...referralCodesArray].sort(() => 0.5 - Math.random());
       setDisplayCodes(shuffled.slice(0, maxCodes));
     }
@@ -127,14 +137,16 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                     </ul>
 
                     {/* "Rotate Codes" Action Button */}
-                    {isMultiple && post.referralCode.length > maxCodes && (
+                    {referralCodesArray.length > maxCodes && (
                       <button
                         onClick={handleRotateCodes}
-                        className="flex items-center justify-center md:justify-start gap-2 px-6 py-3 rounded-2xl text-sm font-bold text-indigo-700 bg-white border-2 border-indigo-50 shadow-sm hover:shadow-indigo-100/50 hover:bg-indigo-50 hover:border-indigo-100 transition-all active:scale-[0.98] w-full md:w-fit group/btn"
-                        title="Show other codes"
+                        className="flex items-center justify-center md:justify-start gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-indigo-700 bg-white border border-indigo-200 shadow-sm hover:shadow-md hover:bg-indigo-50 hover:border-indigo-300 transition-all active:scale-[0.98] w-full md:w-fit group/btn ring-1 ring-indigo-100"
+                        title="Show more codes"
                       >
-                        <RefreshCcw size={16} className="text-indigo-500 group-hover/btn:rotate-180 transition-transform duration-500" />
-                        Show Other Codes
+                        <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 transition-colors group-hover/btn:bg-indigo-100">
+                          <RefreshCcw size={15} className="group-hover/btn:rotate-180 transition-transform duration-500" />
+                        </span>
+                        <span>Show more codes</span>
                       </button>
                     )}
 
@@ -153,7 +165,7 @@ export default function PostOfferDetails({ post }: { post: Post }) {
                     )}
 
                     {/* Submit Code Prompt */}
-                    {isMultiple && referralCodesArray.length > 1 && (
+                    {((isMultiple && referralCodesArray.length > 1) || post.slug === "kiwi-referral-code") && (
                       <div className="mt-2 bg-indigo-50/60 p-4 rounded-2xl border border-indigo-100 max-w-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
                         <div className="text-sm font-medium text-slate-700">
                           Have your own {post.brand} code?

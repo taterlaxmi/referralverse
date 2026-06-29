@@ -11,6 +11,7 @@ import * as schemaUtils from "@/app/utils/schema";
 import RelatedOffers from "@/app/components/RelatedOffers";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import { getCategories } from "@/app/utils/category";
+import { getActiveReferralCodes } from "@/app/lib/referral-code-data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -69,6 +70,9 @@ export default async function PostPage({ params }: Props) {
   if (!post) return notFound();
 
   const postCategories = getCategories(post);
+  const dynamicReferralCodes = post.slug === "kiwi-referral-code"
+    ? (await getActiveReferralCodes("kiwi")).codes
+    : undefined;
   const relatedPosts = posts
     .filter((p) => {
       if (p.slug === post.slug) return false;
@@ -108,7 +112,7 @@ export default async function PostPage({ params }: Props) {
           </div>
 
           {/* Post Offer Details */}
-          <PostOfferDetails post={post} />
+          <PostOfferDetails post={post} dynamicReferralCodes={dynamicReferralCodes} />
 
           {/* Post Hero Image */}
           {post.heroImage && (

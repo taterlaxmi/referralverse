@@ -15,9 +15,6 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
 
   if (!isOpen) return null;
 
-  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://api.web3forms.com/submit";
-  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE";
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!code.trim()) return;
@@ -26,16 +23,15 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
     setErrorMessage("");
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch("/api/referral-codes/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: accessKey,
-          "App Name": appName,
-          "Referral Code": code.trim(),
+          appSlug: appName.toLowerCase().replace(/\s+/g, "-"),
+          code: code.trim(),
         }),
       });
 
@@ -43,11 +39,11 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
         setStatus("success");
       } else {
         const data = await response.json();
-        if (Object.hasOwn(data, "errors")) {
-          setErrorMessage(data.errors.map((err: any) => err.message).join(", "));
-        } else {
-          setErrorMessage("Something went wrong. Please try again.");
-        }
+        setErrorMessage(
+          data?.error || (Object.hasOwn(data, "errors")
+            ? data.errors.map((err: any) => err.message).join(", ")
+            : "Something went wrong. Please try again.")
+        );
         setStatus("error");
       }
     } catch (error) {
