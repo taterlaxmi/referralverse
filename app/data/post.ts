@@ -2436,7 +2436,7 @@ export const posts: Post[] = [
     category: Category.UPI,
     title: "Navi UPI Referral Code 6NHXsp: How to Use & Get Rewards",
     summary: "Navi offers personal loans, home loans, auto loans, health insurance, life insurance, mutual fund investments, and other financial products—all accessible from one app. Signup with navi Upi Referral Link and get navi referral reward worth ₹5 + earn up to ₹12,000 coins(i.e ₹120) per referral. Use Navi UPI referral code 6NHXsp to unlock signup rewards and referral bonuses.",
-    metaDescription: "How to use Navi UPI referral code 6NHXsp - Step-by-step guide to enter referral code in Navi app. Get signup rewards, referral bonus, and earn on each friend referral.",
+    metaDescription: "How to use Navi UPI referral code 6NHXsp: step-by-step guide to enter referral code in Navi app and get signup rewards.",
     referralCode: "6NHXsp",
     referralCodeNote: "Use the referral link to automatically apply the code during signup. The referral code 6NHXsp cannot be manually entered after account creation—you must sign up through the referral link to activate rewards.",
     referralLink: "https://r.navi.com/5YqsjC",

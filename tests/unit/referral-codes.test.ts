@@ -29,7 +29,7 @@ describe('normalizeReferralCodes', () => {
       fetchedAt: 1_700_000_000_000,
     };
 
-    expect(shouldUseCachedReferralCodeData(cachedEntry, 1_700_000_000_000 + 60_000)).toBe(true);
-    expect(shouldUseCachedReferralCodeData(cachedEntry, 1_700_000_000_000 + 12 * 60 * 60 * 1000 + 1)).toBe(false);
+    expect(shouldUseCachedReferralCodeData(cachedEntry, 1_700_000_000_000 + 59_000)).toBe(true);
+    expect(shouldUseCachedReferralCodeData(cachedEntry, 1_700_000_000_000 + 61_000)).toBe(false);
   });
 });

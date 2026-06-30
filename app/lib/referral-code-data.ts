@@ -15,7 +15,8 @@ interface CachedReferralCodeEntry {
 const cache = new Map<string, CachedReferralCodeEntry>();
 
 function getCacheKey(slug: string) {
-  return `referral-codes:${slug.toLowerCase().trim() || 'kiwi'}`;
+  const buildId = process.env.NETLIFY_BUILD_ID || process.env.BUILD_ID || 'local';
+  return `referral-codes:${buildId}:${slug.toLowerCase().trim() || 'kiwi'}`;
 }
 
 export function shouldUseCachedReferralCodeData(entry: CachedReferralCodeEntry | undefined, now = Date.now()) {
@@ -69,10 +70,13 @@ export async function getActiveReferralCodes(slug: string): Promise<ActiveReferr
   const cachedEntry = cache.get(cacheKey);
 
   if (shouldUseCachedReferralCodeData(cachedEntry, now)) {
+    console.info('[referral-codes] serving cached snapshot', { slug: normalizedSlug, cacheKey, count: cachedEntry!.data.codes.length });
     return cachedEntry!.data;
   }
 
+  console.info('[referral-codes] refreshing snapshot', { slug: normalizedSlug, cacheKey });
   const freshData = await fetchCodesFromSupabase(normalizedSlug);
+  console.info('[referral-codes] fetched snapshot', { slug: normalizedSlug, count: freshData.codes.length, source: freshData.source });
   cache.set(cacheKey, {
     data: freshData,
     fetchedAt: now,
@@ -87,6 +91,6 @@ export async function getActiveReferralCodes(slug: string): Promise<ActiveReferr
 
 export async function getReferralCodeCacheHeaders() {
   return {
-    'Cache-Control': `public, s-maxage=${getCacheTtlSeconds()}, stale-while-revalidate=1800`,
+    'Cache-Control': 'no-store, max-age=0, must-revalidate',
   };
 }

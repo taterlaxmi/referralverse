@@ -18,7 +18,8 @@ export function normalizeReferralCodes(input: string | string[] | null | undefin
 }
 
 export function getCacheTtlSeconds() {
-  return 12 * 60 * 60;
+  const configuredTtl = Number(process.env.REFERRAL_CODES_CACHE_TTL_SECONDS || 60);
+  return Number.isFinite(configuredTtl) && configuredTtl > 0 ? configuredTtl : 60;
 }
 
 export function getDisplayReferralCodes(
