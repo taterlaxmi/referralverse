@@ -54,7 +54,6 @@ const Footer: React.FC = () => {
             <h3 className="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Navigation</h3>
             <ul className="space-y-4 text-sm">
               <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/referral-aggregator" className="hover:text-white transition-colors">Latest Referral Codes</Link></li>
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>

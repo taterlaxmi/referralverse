@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getSupabaseSubmissionErrorMessage } from '@/app/lib/referral-codes';
+import { getSupabaseSubmissionErrorMessage, validateReferralCodeInput } from '@/app/lib/referral-codes';
 import { supabaseAdmin } from '@/app/lib/supabase-admin';
 import { supabase } from '@/app/lib/supabase';
 
@@ -19,11 +19,13 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const appSlug = body?.appSlug || 'kiwi';
-    const code = body?.code?.toString().trim();
+    const validation = validateReferralCodeInput(body?.code?.toString());
 
-    if (!code) {
-      return NextResponse.json({ error: 'Missing code' }, { status: 400 });
+    if (!validation.isValid) {
+      return NextResponse.json({ error: validation.error }, { status: 400 });
     }
+
+    const code = validation.normalized;
 
     const client = supabaseAdmin ?? supabase;
 

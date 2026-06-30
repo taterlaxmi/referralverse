@@ -6,7 +6,7 @@ import { slugify } from '@/app/utils/slugify';
 import * as schemaUtils from '@/app/utils/schema';
 import Breadcrumbs from '@/app/components/Breadcrumbs';
 import Link from 'next/link';
-import { categoryContent } from '@/app/data/categoryContent';
+import { categoryContent } from '@/app/data/category';
 import { Category } from '@/app/types';
 import FAQSection from '@/app/components/FAQSection';
 

@@ -4,6 +4,12 @@ export interface ReferralCodeRecord {
   code: string;
 }
 
+export interface ReferralCodeValidationResult {
+  isValid: boolean;
+  normalized: string;
+  error?: string;
+}
+
 export function normalizeReferralCodes(input: string | string[] | null | undefined): string[] {
   if (!input) {
     return [];
@@ -15,6 +21,47 @@ export function normalizeReferralCodes(input: string | string[] | null | undefin
     .map((value) => value?.toString().trim())
     .filter((value): value is string => Boolean(value))
     .filter((value) => value.length > 0);
+}
+
+export function validateReferralCodeInput(input: string | null | undefined): ReferralCodeValidationResult {
+  const normalized = input?.toString().trim() || '';
+
+  if (!normalized) {
+    return {
+      isValid: false,
+      normalized,
+      error: 'Please enter a referral code.',
+    };
+  }
+
+  if (normalized.length < 3 || normalized.length > 10) {
+    return {
+      isValid: false,
+      normalized,
+      error: 'Referral code should be between 3 and 10 characters long.',
+    };
+  }
+
+  if (/^(test|demo|sample|dummy|example)$/i.test(normalized)) {
+    return {
+      isValid: false,
+      normalized,
+      error: 'Please enter a real referral code.',
+    };
+  }
+
+  if (/\s/.test(normalized)) {
+    return {
+      isValid: false,
+      normalized,
+      error: 'Referral codes should not contain spaces.',
+    };
+  }
+
+  return {
+    isValid: true,
+    normalized,
+  };
 }
 
 export function getCacheTtlSeconds() {

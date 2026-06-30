@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getDisplayReferralCodes, getSupabaseSubmissionErrorMessage, normalizeReferralCodes } from '@/app/lib/referral-codes';
+import { getDisplayReferralCodes, getSupabaseSubmissionErrorMessage, normalizeReferralCodes, validateReferralCodeInput } from '@/app/lib/referral-codes';
 import { shouldUseCachedReferralCodeData } from '@/app/lib/referral-code-data';
 
 describe('normalizeReferralCodes', () => {
@@ -21,6 +21,18 @@ describe('normalizeReferralCodes', () => {
 
   it('prefers dynamic codes over the fallback static list', () => {
     expect(getDisplayReferralCodes(['A1', 'B2'], ['STATIC1', 'STATIC2'], 2)).toEqual(['A1', 'B2']);
+  });
+
+  it('rejects empty, placeholder, and whitespace-filled codes', () => {
+    expect(validateReferralCodeInput('   ').isValid).toBe(false);
+    expect(validateReferralCodeInput('test').isValid).toBe(false);
+    expect(validateReferralCodeInput('ABC 123').isValid).toBe(false);
+  });
+
+  it('accepts normal referral-code formats', () => {
+    const result = validateReferralCodeInput('UQ89K81234');
+    expect(result.isValid).toBe(true);
+    expect(result.normalized).toBe('UQ89K81234');
   });
 
   it('reuses a cached snapshot until the TTL window expires', () => {

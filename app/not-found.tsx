@@ -54,7 +54,7 @@ export default function NotFound() {
             </Link>
             
             <Link 
-              href="/referral-aggregator"
+              href="/"
               className="flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 font-semibold rounded-xl border border-slate-200 hover:bg-slate-50 hover:border-slate-300 transition-all active:scale-95"
             >
               <span>See All Offers</span>

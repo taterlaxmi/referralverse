@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { X, CheckCircle, Send } from "lucide-react";
+import { validateReferralCodeInput } from "@/app/lib/referral-codes";
 
 interface SubmitCodeModalProps {
   isOpen: boolean;
@@ -17,7 +18,13 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!code.trim()) return;
+    const validation = validateReferralCodeInput(code);
+
+    if (!validation.isValid) {
+      setStatus("error");
+      setErrorMessage(validation.error || "Please enter a valid referral code.");
+      return;
+    }
 
     setStatus("submitting");
     setErrorMessage("");
@@ -31,7 +38,7 @@ export default function SubmitCodeModal({ isOpen, onClose, appName }: SubmitCode
         },
         body: JSON.stringify({
           appSlug: appName.toLowerCase().replace(/\s+/g, "-"),
-          code: code.trim(),
+          code: validation.normalized,
         }),
       });
 

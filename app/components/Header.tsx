@@ -52,7 +52,6 @@ const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Latest Codes', href: '/referral-aggregator' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -231,4 +230,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+export default Header;
